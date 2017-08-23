@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -10,210 +10,457 @@
     <link rel="stylesheet" href="styles/puyu.css">
 </head>
 <body>
-    <div id="navWrapper" class="nav-wrapper">
-        <nav id="nav">
+    <header id="header" role="banner">
+        <figure class="logo">
+            <img src="" alt="朴隅建筑logo">
+        </figure>
+        <nav id="nav" role="navigation">
             <ul>
-                <!--当前页面给 a 添加 active 类-->
                 <li>
-                    <a href="#" title="首页" class="active">首页</a>
+                    <a href="#" title="项目/projects">
+                        <strong>projects</strong>
+                        <strong>项目</strong>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" title="商业综合体/Commercial Mixed">
+                                <strong>commercial mixed</strong>
+                                <strong>商业综合体</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="居住/Residence">
+                                <strong>residence</strong>
+                                <strong>居住</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="酒店/Hospitality">
+                                <strong>hospitality</strong>
+                                <strong>酒店</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="办公/Office">
+                                <strong>office</strong>
+                                <strong>办公</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="教育/Education">
+                                <strong>education</strong>
+                                <strong>教育</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="规划/Master Planning">
+                                <strong>master planning</strong>
+                                <strong>规划</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="室内设计/Interior Design">
+                                <strong>interior design</strong>
+                                <strong>室内设计</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="其它/Others">
+                                <strong>others</strong>
+                                <strong>其它</strong>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#" title="新闻动态">新闻动态</a>
+                    <a href="#" title="理念/Philosophy">
+                        <strong>philosophy</strong>
+                        <strong>理念</strong>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" title="产品展示">产品展示</a>
+                    <a href="#" title="创意/Ideas">
+                        <strong>ideas</strong>
+                        <strong>创意</strong>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" title="支付平台">支付平台</a>
+                    <a href="#" title="朴隅+/Pure+">
+                        <strong>pure+</strong>
+                        <strong>朴隅</strong>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" title="访谈/talks">
+                                <strong>talks</strong>
+                                <strong>访谈</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="新闻/news">
+                                <strong>news</strong>
+                                <strong>新闻</strong>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#" title="招商联盟">招商联盟</a>
+                    <a href="#" title="关于/About">
+                        <strong>about</strong>
+                        <strong>关于</strong>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" title="联系我们">联系我们</a>
+                    <a href="#" title="联系/Contact us">
+                        <strong>contact us</strong>
+                        <strong>联系</strong>
+                    </a>
                 </li>
             </ul>
         </nav>
-    </div>
-    <div id="container" class="container">
-        <header id="header" role="banner">
-            <div class="heading">
-                <h1>红焱科技</h1>
-                <div id="menu">
-                    <i class="iconfont icon-menu"></i>
+    </header>
+    <main id="main" role="main">
+        <!--视频-->
+        <div class="media">
+            <video autoplay loop id="puyuVideo">
+                <source src="" type="video/mp4">
+                您的浏览器不支持 HTML5 video 标签。请更新浏览器或更换其它浏览器后重试。
+            </video>
+        </div>
+        <!--未来空间产品定义者-->
+        <div class="future-space-definer">
+            <h2>
+                <span class="en">future space definer</span>
+                <span class="cn">未来空间产品定义者</span>
+            </h2>
+        </div>
+        <!--下面有三种切换模式，项目(projects)、创意(ideas)、朴隅(pure+)-->
+        <div class="projects">
+            <!--未来的度假模式-->
+            <div class="holiday-mode">
+                <img src="" alt="开启面向未来的度假模式">
+                <div class="content">
+                    <hgroup>
+                        <h2>holiday mode open to the future</h2>
+                        <h3>
+                            <span>开启面向未来的度假模式</span>
+                            <span>--海南大观千舍精品酒店</span>
+                        </h3>
+                    </hgroup>
+                    <div class="label">
+                        <span class="classify">projects</span>
+                        <span class="details">education 酒店</span>
+                    </div>
                 </div>
             </div>
-        </header>
-        <main id="main" role="main">
-            <div class="banner home-banner">
-                <img src="images/home-banner.jpg" alt="红焱科技banner">
-            </div>
-            <!--关于我们-->
-            <section class="home-section about-us">
-                <div class="heading">
-                    <div class="line-left"></div>
-                    <h2>
-                        <span class="cn">关于我们</span>
-                        <span class="en">about us</span>
-                    </h2>
-                    <div class="line-right"></div>
-                </div>
-                <div class="content">
-                    <div class="text">
-                        <p>成都红焱科技有限公司成立于2017年3月，注册于成都市金牛区西华街道青杠社区五组。公司致力于为商户提供POS机办理、POS机维护、收银耗材批发等业务，目前我们团队收单签约商户，遍布酒店、商场、超市、加油站、连锁服装店、连锁美容SPA机构等众多行业。</p>
-                        <p>公司所有POS机支持所有带银联标志的银行卡，每笔交易的手续费率按中国人民银行标准扣取，交易结算均是由国企支付牌照的支付公司直接结算：安全、快捷、有保障，我们负责pos机的办理——安装——维护，多年来我公司客户从未出现资金未到账、到账金额不符等纠纷。</p>
-                        <p>我们坚持“多赢”的市场营销策略，将客户的成功、代理渠道的成功作为我们成功的标志。紧密围绕持卡人、企业、收单银行三者利益，在服务方面我们将：更专业，更安全、更迅捷，更真诚；在业务人员培训方面，我们都有经过专业的辅导培训才具备收单资格；</p>
-                        <p>在您资料完备提交开户申请后3天内开通，便可上门为您安装pos机具；并且由我们的专业装机人员为您演示且告知您机具的具体使用的方法，让您更快的掌握是我们义不容辞的责任。价格优惠，高品质服务。公司秉承运营卓越、技术领先、用户贴近的理念，致力于推动移动支付产业的快速发展，解决移动互联网的支付瓶颈，为用户提供安全、方便的贴身金融服务。</p>
-                    </div>
-                    <span>
-                        <i class="iconfont icon-phone"></i>
-                        <a href="tel:02812345678" title="给我们打电话">02812345678</a>
-                        <a href="tel:02812345678" title="给我们打电话">02812345678</a>
-                        <a href="tel:18227752001" title="给我们打电话">18227752001</a>
-                    </span>
-                        <span>
-                        <i class="iconfont icon-email"></i>
-                        <a href="mailto:123456789@qq.com" title="给我们发邮件">123456789@qq.com</a>
-                    </span>
-                    <span>
-                        <i class="iconfont icon-address"></i>
-                        <span>成都市武侯区人民南路四段三号</span>
-                    </span>
-                </div>
-                <div class="show-more">
-                    <span><i class="iconfont icon-bottom"></i>显示全部</span>
-                </div>
-            </section>
-            <!--我们的优势-->
-            <section class="home-section our-advantage">
-                <div class="heading">
-                    <div class="line-left"></div>
-                    <h2>
-                        <span class="cn">我们的优势</span>
-                        <span class="en">our advantage</span>
-                    </h2>
-                    <div class="line-right"></div>
-                </div>
-                <ol class="advantage-list">
-                    <li>刷卡费率按国家MCC标准，相对银联的费率有所降低</li>
-                    <li>申请门槛低，任何行业、商户均有合适的POS机可以申请安装办理，申请资料简单</li>
-                    <li>支付所有带银联标识的信用卡、和借记卡</li>
-                    <li>根据商户需求，T+1工作日到账，D+1默认第二天到账，D+0秒到账资金周转高效</li>
-                    <li>移动POS机收款就跟手机一样方便、灵活</li>
-                    <li>贴心的安装维护服务（提供全国范围安装及今后维护服务）</li>
-                </ol>
-            </section>
-            <!--如何办理-->
-            <section class="home-section process">
-                <div class="heading">
-                    <div class="line-left"></div>
-                    <h2>
-                        <span class="cn">如何办理?</span>
-                        <span class="en">process</span>
-                    </h2>
-                    <div class="line-right"></div>
-                </div>
-                <ol class="process-list">
-                    <li>签订安装协议提交资料</li>
-                    <li>银联审核</li>
-                    <li>设备参数写入</li>
-                    <li>设备安装</li>
-                </ol>
-                <div class="process-handle">
-                    <a href="#" title="立即办理">立即办理</a>
-                </div>
-            </section>
-            <!--产品推荐-->
-            <section class="home-section products">
-                <div class="heading">
-                    <div class="line-left"></div>
-                    <h2>
-                        <span class="cn">产品推荐</span>
-                        <span class="en">products</span>
-                    </h2>
-                    <div class="line-right"></div>
-                </div>
-                <div class="content">
-                    <div class="home-product product2">
-                        <figure>
-                            <img src="images/home-product2.png" alt="综合性经融支付解决方案">
-                        </figure>
-                        <div class="intro">
-                            <h4>产品名称</h4>
-                            <p>产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍</p>
+            <!--瀑布流布局的一些内容-->
+            <ul class="grid container">
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="商业综合体">
+                        <div class="content">
+                            <hgroup>
+                                <h2>guiyang city lounge</h2>
+                                <h3>
+                                    <span>贵阳城市会客厅</span>
+                                    <span>--贵阳博华智慧城</span>
+                                </h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">projects</span>
+                                <span class="details">commercial mixed 商业综合体</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="home-product product3">
-                        <figure>
-                            <img src="images/home-product3.png" alt="综合性经融支付解决方案">
-                        </figure>
-                        <div class="intro">
-                            <h4>产品名称</h4>
-                            <p>产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍</p>
+                </li>
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="推荐新闻">
+                        <div class="content">
+                            <hgroup>
+                                <h2>at this moment,we want to have some change</h2>
+                                <h3>在这个点，大家都想有一些转变</h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">pure+</span>
+                                <span class="details">news 新闻</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="home-product product4">
-                        <figure>
-                            <img src="images/home-product4.png" alt="综合性经融支付解决方案">
-                        </figure>
-                        <div class="intro">
-                            <h4>产品名称</h4>
-                            <p>产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍产品详细介绍</p>
+                </li>
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="未来生活目的地">
+                        <div class="content">
+                            <hgroup>
+                                <h2>life destination from the future</h2>
+                                <h3>
+                                    <span>来自未来的生活目的地</span>
+                                    <span>--海南大观千舍住宅</span>
+                                </h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">projects</span>
+                                <span class="details">residence 居住</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!--新闻动态-->
-            <section class="home-section news">
-                <div class="heading">
-                    <div class="line-left"></div>
-                    <h2>
-                        <span class="cn">新闻动态</span>
-                        <span class="en">news</span>
-                    </h2>
-                    <div class="line-right"></div>
-                </div>
-                <ul class="content">
+                </li>
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="玫瑰人生小镇">
+                        <div class="content">
+                            <hgroup>
+                                <h2>“rose life”town</h2>
+                                <h3>
+                                    <span>“玫瑰人生”小镇</span>
+                                    <span>--中国玫瑰谷香氛小镇概念规划设计</span>
+                                </h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">projects</span>
+                                <span class="details">master planning 规划</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="其它项目">
+                        <div class="content">
+                            <hgroup>
+                                <h2>其它项目的标题文字介绍，英文</h2>
+                                <h3>
+                                    <span>其它项目的标题文字介绍，中文</span>
+                                    <span>--对建筑的介绍</span>
+                                </h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">projects</span>
+                                <span class="details">others 其它</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="grid-item">
+                    <div class="item-box">
+                        <img src="" alt="室内设计">
+                        <div class="content">
+                            <hgroup>
+                                <h2>no zuo no die</h2>
+                                <h3>
+                                    <span>当然是选择原谅他</span>
+                                    <span>--成都朴隅建筑办公空间</span>
+                                </h3>
+                            </hgroup>
+                            <div class="label">
+                                <span class="classify">projects</span>
+                                <span class="details">interior design 室内设计</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--下面三个按钮对上面进行切换-->
+        <div class="tab">
+            <a href="#" title="项目/Projects">
+                <strong>projects</strong>
+                <strong>项目</strong>
+            </a>
+            <a href="#" title="创意/Ideas">
+                <strong>ideas</strong>
+                <strong>创意</strong>
+            </a>
+            <a href="#" title="朴隅/Pure+">
+                <strong>pure+</strong>
+                <strong>朴隅</strong>
+            </a>
+        </div>
+        <div class="work">
+            <img src="" alt="幸勤工作的人们">
+        </div>
+        <div class="innovation">
+            <h2>
+                <span class="en">in pure architects,the work limit boundary is explored width practices by all our architects.</span>
+                <span class="cn">朴隅建筑希望用自身的实践去探索建筑工程师的工作边界</span>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        <span>function innovation</span>
+                        <span>职能创新</span>
+                    </h3>
+                    <p>朴隅建筑希望用自身的实践去探索建筑师的工作边界。我们成立了自己的项目管理公司，介入建筑全过程的设计管理，让设计理念从建筑酝酿的初期就得以切入，从只知伏案绘图的“一支笔”转变为实现设计最终价值的“产品经理”。</p>
+                </li>
+                <li>
+                    <h3>
+                        <span>organization innovation</span>
+                        <span>机构创新</span>
+                    </h3>
+                    <p>主动的纵向整合缩短了产品到终端客户的距离，优化资本向产品转化的能效，赋予朴隅建筑全新的服务模式。朴隅建筑将以产品研发为核心能力，向前主动加入开发策略与市场定位，向后服务延伸至项目管理及工程实现。</p>
+                </li>
+                <li>
+                    <h3>
+                        <span>business innovation</span>
+                        <span>业务创新</span>
+                    </h3>
+                    <p>我们主动研究社群的需求，以需求为导向去延伸我们的设计和服务。我们不仅为设计师创造开放、协作、激发创造力的创作空间，同时，我们也主动根据个性化的市场需要，主动联合有共同价值观的室内、景观、工程、灯光、视觉等设计资源去定制个性化的产品，创造更加贴近终端客户细微需求的项目。</p>
+                </li>
+            </ul>
+        </div>
+        <div class="cooperation">
+            <h3>cooperation</h3>
+            <ul>
+                <li>
+                    <a href="#" title="">
+                        <img src="" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer id="footer" role="contentinfo">
+        <div class="footer-left">
+            <nav id="quickNav">
+                <ul>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="首页/home">
+                            <strong>home</strong>
+                            <strong>首页</strong>
+                        </a>
                     </li>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="项目/projects">
+                            <strong>projects</strong>
+                            <strong>项目</strong>
+                        </a>
                     </li>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="理念/Philosophy">
+                            <strong>philosophy</strong>
+                            <strong>理念</strong>
+                        </a>
                     </li>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="创意/Ideas">
+                            <strong>ideas</strong>
+                            <strong>创意</strong>
+                        </a>
                     </li>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="朴隅+/Pure+">
+                            <strong>pure+</strong>
+                            <strong>朴隅</strong>
+                        </a>
                     </li>
                     <li>
-                        <time>2017-06-30</time>
-                        <a href="#" title="支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付">支付宝收款码办理开通免费赠送0.35费率支持信用卡刷卡秒到账支付</a>
+                        <a href="#" title="关于/About">
+                            <strong>about</strong>
+                            <strong>关于</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="联系/Contact us">
+                            <strong>contact us</strong>
+                            <strong>联系</strong>
+                        </a>
                     </li>
                 </ul>
-            </section>
-        </main>
-        <footer id="footer" role="contentinfo">
-            <small>Copyright &copy; 2010-2017  红焱科技支付有限公司版权所有</small>
-            <div class="others">
-                <a href="#" title="给我们发QQ消息" class="qq">
-                    <i class="iconfont icon-qq"></i>
-                </a>
-                <a href="javascript: void(0)" title="返回顶部" id="toTop" class="totop">
-                    <i class="iconfont icon-totop"></i>
-                </a>
+                <ul>
+                    <li>
+                        <a href="#" title="商业综合体/Commercial Mixed">
+                            <strong>commercial mixed</strong>
+                            <strong>商业综合体</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="居住/Residence">
+                            <strong>residence</strong>
+                            <strong>居住</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="酒店/Hospitality">
+                            <strong>hospitality</strong>
+                            <strong>酒店</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="办公/Office">
+                            <strong>office</strong>
+                            <strong>办公</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="访谈/talks">
+                            <strong>talks</strong>
+                            <strong>访谈</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="教育/Education">
+                            <strong>education</strong>
+                            <strong>教育</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="规划/Master Planning">
+                            <strong>master planning</strong>
+                            <strong>规划</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="室内设计/Interior Design">
+                            <strong>interior design</strong>
+                            <strong>室内设计</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="其它/Others">
+                            <strong>others</strong>
+                            <strong>其它</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="新闻/news">
+                            <strong>news</strong>
+                            <strong>新闻</strong>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <small>copyright &copy; 2017 pure architects</small>
+        </div>
+        <div class="footer-right">
+            <div class="follow">
+                <span>follow</span>
+                <i class="iconfont icon-weibo"></i>
+                <div class="weixin">
+                    <i class="iconfont icon-weixin"></i>
+                    <div class="weixin-img">
+                        <img src="" alt="微信二维码">
+                    </div>
+                </div>
             </div>
-        </footer>
-    </div>
+            <div class="other-info">
+                <p>C: 成都（重庆）朴隅建筑设计有限公司</p>
+                <p>A: 成都市高新区天府三街219号腾讯大厦B座406</p>
+                <p>重庆市北部新区泰山大道西段2号1栋13A</p>
+                <p>上海市黄浦区半淞园路388号B4-2-D2A</p>
+                <p>E: info@purearch.com.cn</p>
+            </div>
+        </div>
+    </footer>
     <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/masonry.pkgd.min.js"></script>
     <script src="scripts/puyu.js"></script>
+    <script>
+        $(function() {
+            $(".grid").masonry({
+                itemSelector: ".grid-item"
+            });
+        });
+    </script>
 </body>
 </html>
