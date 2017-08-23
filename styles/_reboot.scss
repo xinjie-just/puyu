@@ -52,7 +52,18 @@ fieldset {
 
 //在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
 html {
-  font-size: 100px;
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    font-size: 15px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 14px;
+  }
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
   height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -67,20 +78,13 @@ html {
   }
 }
 
-// 页面最大宽
-%page-width {
-  width: 100%;
-  //max-width: 540px;
-  max-width: 767px;
-  margin-right: auto;
-  margin-left: auto;
-}
 
 body {
-  @extend %page-width;
-  font-size: .12rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
   color: $text-color;
-  background-color: #fff;
+  background: #eee url("../images/body-bg-image.png") repeat;
   font-family: "Microsoft Yahei", Arial, sans-serif;
 }
 
@@ -407,6 +411,10 @@ figure {
   }
 }
 
+@mixin transition($duration: 2s) {
+  transition: all $duration linear 0s;
+}
+
 label {
   margin-bottom: 0;
   cursor: pointer;
@@ -430,11 +438,23 @@ label {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $line-number;
 }
-@mixin center-content($width: 92%) {
+@mixin center-content($width: 87.5%) {
   display: block;
-  width: $width;
   margin-right: auto;
   margin-left: auto;
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 970px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 750px;
+  }
+  @media (max-width: 767px) {
+    width: $width;
+  }
+
 }
 
 %responsive-img {
