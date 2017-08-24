@@ -7,17 +7,18 @@
     <title>朴隅建筑</title>
     <meta name="keywords" content="朴隅建筑，智能创新，机构创新，业务创新">
     <meta name="description" content="朴隅建筑希望用自身的实践去探索建筑师的工作边界">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_hhox5w3pxqzadcxr.css">
     <link rel="stylesheet" href="styles/puyu.css">
 </head>
 <body>
     <header id="header" role="banner">
         <figure class="logo">
-            <img src="" alt="朴隅建筑logo">
+            <i class="iconfont icon-purelogo"></i>
         </figure>
         <nav id="nav" role="navigation">
-            <ul>
-                <li>
-                    <a href="#" title="项目/projects">
+            <ul class="clearfix">
+                <li class="projects">
+                    <a href="#" title="项目/projects" class="active">
                         <strong>projects</strong>
                         <strong>项目</strong>
                     </a>
@@ -84,7 +85,7 @@
                         <strong>创意</strong>
                     </a>
                 </li>
-                <li>
+                <li class="pure">
                     <a href="#" title="朴隅+/Pure+">
                         <strong>pure+</strong>
                         <strong>朴隅</strong>
@@ -121,12 +122,15 @@
     </header>
     <main id="main" role="main">
         <!--视频-->
-        <div class="media">
+        <!--<div class="media">
             <video autoplay loop id="puyuVideo">
                 <source src="" type="video/mp4">
                 您的浏览器不支持 HTML5 video 标签。请更新浏览器或更换其它浏览器后重试。
             </video>
-        </div>
+        </div>-->
+        <figure class="banner">
+            <img src="images/home-banner.jpg" alt="朴隅建筑首页banner">
+        </figure>
         <!--未来空间产品定义者-->
         <div class="future-space-definer">
             <h2>
@@ -138,7 +142,7 @@
         <div class="projects">
             <!--未来的度假模式-->
             <div class="holiday-mode">
-                <img src="" alt="开启面向未来的度假模式">
+                <img src="images/home-holiday-mode.jpg" alt="开启面向未来的度假模式">
                 <div class="content">
                     <hgroup>
                         <h2>holiday mode open to the future</h2>
@@ -157,7 +161,7 @@
             <ul class="grid container">
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="商业综合体">
+                        <img src="images/home-commercial-mixed.jpg" alt="商业综合体">
                         <div class="content">
                             <hgroup>
                                 <h2>guiyang city lounge</h2>
@@ -175,7 +179,7 @@
                 </li>
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="推荐新闻">
+                        <img src="images/home-news.jpg" alt="推荐新闻">
                         <div class="content">
                             <hgroup>
                                 <h2>at this moment,we want to have some change</h2>
@@ -190,7 +194,7 @@
                 </li>
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="未来生活目的地">
+                        <img src="images/home-residence.jpg" alt="未来生活目的地">
                         <div class="content">
                             <hgroup>
                                 <h2>life destination from the future</h2>
@@ -208,7 +212,7 @@
                 </li>
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="玫瑰人生小镇">
+                        <img src="images/home-master-planning.jpg" alt="玫瑰人生小镇">
                         <div class="content">
                             <hgroup>
                                 <h2>“rose life”town</h2>
@@ -226,7 +230,7 @@
                 </li>
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="其它项目">
+                        <img src="images/home-others.jpg" alt="其它项目">
                         <div class="content">
                             <hgroup>
                                 <h2>其它项目的标题文字介绍，英文</h2>
@@ -244,7 +248,7 @@
                 </li>
                 <li class="grid-item">
                     <div class="item-box">
-                        <img src="" alt="室内设计">
+                        <img src="images/home-inerior-design.jpg" alt="室内设计">
                         <div class="content">
                             <hgroup>
                                 <h2>no zuo no die</h2>
@@ -277,9 +281,9 @@
                 <strong>朴隅</strong>
             </a>
         </div>
-        <div class="work">
-            <img src="" alt="幸勤工作的人们">
-        </div>
+        <figure class="work">
+            <img src="images/home-work.jpg" alt="幸勤工作的人们">
+        </figure>
         <div class="innovation">
             <h2>
                 <span class="en">in pure architects,the work limit boundary is explored width practices by all our architects.</span>
@@ -313,8 +317,18 @@
             <h3>cooperation</h3>
             <ul>
                 <li>
+                    <a href="#" title="vanke">
+                        <img src="images/vanke-logo.png" alt="vanke logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="callisonrtkl">
+                        <img src="images/callisonrtkl-logo.png" alt="callisonrtkl logo">
+                    </a>
+                </li>
+                <li>
                     <a href="#" title="">
-                        <img src="" alt="">
+                        <img src="images/h20-logo.png" alt="h20 logo">
                     </a>
                 </li>
             </ul>
@@ -439,7 +453,7 @@
                 <div class="weixin">
                     <i class="iconfont icon-weixin"></i>
                     <div class="weixin-img">
-                        <img src="" alt="微信二维码">
+                        <img src="images/weixin-code.jpg" alt="微信二维码">
                     </div>
                 </div>
             </div>
@@ -460,6 +474,14 @@
             $(".grid").masonry({
                 itemSelector: ".grid-item"
             });
+
+            // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
+            $("#nav ul li").hover(function () {
+                $(this).find("ul").slideDown(600);
+            },function () {
+                $(this).find("ul").slideUp(600);
+            }
+            )
         });
     </script>
 </body>
