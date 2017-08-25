@@ -34,6 +34,7 @@
     float: right;
     > ul {
       > li {
+        z-index: 2;
         width: 6.4rem;
         position: relative;
         height: $size;
@@ -91,6 +92,7 @@
           }
         }
         > ul {
+          z-index: 99;
           display: none;
           position: absolute;
           top: $size;
@@ -147,6 +149,316 @@
 }
 
 /*主要内容*/
-.banner {
+.banner,
+.media {
+  z-index: 3;
+  @extend %page;
+  position: relative;
+  margin-bottom: 12.5rem;
+}
 
+.banner img,
+.media video {
+  z-index: 4;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*未来空间产品定义者*/
+.future-space-definer {
+  z-index: 9;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: -15rem;
+  @include center-content(67.5rem);
+  h2 {
+    width: 28.125rem;
+    height: 25rem;
+    padding: 1rem 2.375rem;
+    border-top: .625rem solid $text-color;
+    border-bottom: .625rem solid $text-color;
+    background-color: #fff;
+    color: $text-color;
+    line-height: 1.2;
+    overflow-y: auto;
+    span {
+      display: block;
+      &:first-of-type {
+        font-size: 5.4375rem;
+        text-transform: uppercase;
+        word-break: break-all;
+      }
+      &:last-of-type {
+        margin-top: .5rem;
+        font-size: .875rem;
+        letter-spacing: .3em;
+      }
+    }
+  }
+}
+
+/*度假模式*/
+.holiday-mode {
+  z-index: 3;
+  @include center-content(67.5rem);
+  height: 33.125rem;
+  position: relative;
+  margin-bottom: 1.25rem;
+  img {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 3.5rem;
+    padding-left: 1.75rem;
+    h2 {
+      display: inline-block;
+      background-color: $text-color;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-size: 2.25rem;
+      font-weight: normal;
+      text-transform: capitalize;
+      padding: .2em .6em;
+    }
+    h3 {
+      margin-bottom: 1.5rem;
+      font-size: 0;
+      span {
+        display: inline-block;
+        background-color: $text-color;
+        color: #fff;
+        font-weight: normal;
+        padding: .2em .6em;
+        &:first-of-type {
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+        &:last-of-type {
+          font-size: .75rem;
+          line-height: 1.6;
+        }
+      }
+    }
+    .label {
+      font-size: 0;
+      strong {
+        line-height: 1.5;
+        font-size: .875rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: .2em .6em;
+        text-transform: capitalize;
+      }
+      .classify {
+        background-color: $text-color;
+        color: #fff;
+      }
+      .details {
+        background-color: rgba(255, 255, 255, .6);
+        color: $text-color;
+      }
+    }
+  }
+}
+
+/*瀑布流布局的一些内容*/
+.grid {
+  @include center-content(67.5rem);
+  margin-bottom: 3.5rem;
+  li {
+    margin-bottom: 1.25rem;
+    @media(min-width: 768px) {
+      & {
+        width: 48%;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+    }
+  }
+}
+@media(max-width: 767px) {
+  .grid li { width: 100%; }
+}
+
+/*辛勤工作的人*/
+.work {
+  z-index: 3;
+  @extend %page;
+  position: relative;
+  margin-bottom: 18.125rem;
+  img {
+    z-index: 4;
+    @extend %responsive-img;
+  }
+  h2 {
+    z-index: 9;
+    @include center-content(67.5rem);
+    position: absolute;
+    bottom: -14.375rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 67.5rem;
+    height: 18.75rem;
+    background-color: #fff;
+    border-top: .625rem solid $text-color;
+    border-bottom: .625rem solid $text-color;
+    padding: .6rem 1rem;
+    letter-spacing: .1em;
+    overflow-y: auto;
+    span {
+      display: block;
+      color: $text-color;
+      text-transform: capitalize;
+      &:first-of-type {
+        font-size: 3.4375rem;
+        line-height: 1.3;
+      }
+      &:last-of-type {
+        font-size: .875rem;
+        line-height: 1.5;
+        letter-spacing: .3em;
+      }
+    }
+  }
+}
+
+/*创新*/
+.innovation {
+  @extend .clearfix;
+  @include center-content(67.5rem);
+  li {
+    float: left;
+    width: 33.33333333%;
+    &:not(:last-of-type) {
+      padding-right: 2.5rem;
+    }
+    h3 {
+      margin-bottom: 1.875rem;
+      strong {
+        display: inline-block;
+        text-transform: capitalize;
+        color: #fff;
+        font-weight: normal;
+        @include transition(0.4s);
+        &:first-of-type {
+          margin-bottom: .625rem;
+          font-size: 0;
+          span {
+            display: inline-block;
+            line-height: 1.1;
+            padding: .2em .6em;
+            font-size: 2rem;
+            background-color: $text-color;
+            @include transition(0.4s);
+          }
+        }
+        &:last-of-type {
+          font-size: 1rem;
+          letter-spacing: .3em;
+          padding: .2em .6em .2em .9em;
+          line-height: 1.4;
+          background-color: $text-color;
+        }
+      }
+      &:hover {
+        strong {
+          &:first-of-type {
+            span {
+              background-color: $main-color;
+            }
+          }
+          &:last-of-type {
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+    p {
+      width: 100%;
+      border-top: .3125rem solid $text-color;
+      border-bottom: .3215rem solid $text-color;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      font-size: .875rem;
+      line-height: 1.6;
+      overflow-y: auto;
+      color: $text-color;
+    }
+  }
+}
+
+/*合作伙伴*/
+.cooperation {
+  @include center-content(67.5rem);
+  margin-top: 2.5rem;
+  h3 {
+    padding: .2em .6em;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    background-color: $text-color;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  ul {
+    @extend .clearfix;
+    li {
+      margin: .8rem .3rem;
+      float: left;
+      a {
+        display: block;
+        width: 13rem;
+        height: 7.7rem;
+        padding: .2rem;
+        overflow: hidden;
+        position: relative;
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+/*底部*/
+#footer {
+  margin-top: 2rem;
+  background-color: $text-color;
+  color: #909090;
+  @extend %page;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  a {
+    color: #909090;
+  }
+  .footer-wrapper {
+    @include center-content(67.5rem);
+    @extend .clearfix;
+  }
+  .footer-left {
+    float: left;
+  }
+  .footer-right {
+    float: right;
+  }
 }
