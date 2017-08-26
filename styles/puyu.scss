@@ -34,7 +34,7 @@
     float: right;
     > ul {
       > li {
-        z-index: 2;
+        z-index: 9;
         width: 6.4rem;
         position: relative;
         height: $size;
@@ -135,7 +135,7 @@
         }
         &.projects {
          > ul{
-           width: 18rem;
+           width: 17rem;
          }
         }
         &.pure {
@@ -435,6 +435,11 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
+        &:hover {
+          img {
+            opacity: .8;
+          }
+        }
       }
     }
   }
@@ -457,8 +462,188 @@
   }
   .footer-left {
     float: left;
+    small {
+      display: block;
+      margin-top: 1rem;
+      font-size: .875rem;
+      color: #909090;
+      text-transform: capitalize;
+    }
   }
   .footer-right {
     float: right;
+    .follow {
+      margin-bottom: .875rem;
+      > span {
+        font-size: 1.375rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-right: 1rem;
+      }
+      > a {
+        margin-right: .875rem;
+        i {
+          font-size: 1.5rem;
+        }
+      }
+      > .weixin {
+        display: inline-block;
+        position: relative;
+        > i {
+          font-size: 1.5rem;
+        }
+        .weixin-img {
+          display: none;
+          position: absolute;
+          bottom: 2.5rem;
+          right: 0;
+          background-color: #fff;
+          padding: .4em;
+          font-size: .875rem;
+          img {
+            display: block;
+            width: 9rem;
+            height: 9rem;
+          }
+        }
+      }
+    }
+    .other-info {
+      line-height: 1.5;
+      p {
+        font-size: .75rem;
+        margin-bottom: .5em;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/*底部左侧快捷导航*/
+#quickNav {
+  $height: 34px;
+  > ul {
+      border-bottom: 1px solid #808080;
+      height: $height;
+      @extend .clearfix;
+      li {
+        float: left;
+        margin-right: 2rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          display: block;
+          padding-right: .4em;
+          padding-left: .4em;
+          font-size: 1rem;
+          height: $height;
+          line-height: $height;
+          strong {
+            display: block;
+            color: #909090;
+            &:last-of-type {
+              display: none;
+              color: #fff;
+            }
+            &:last-of-type {
+              display: none;
+            }
+          }
+          /*&:hover {
+            strong {
+              &:first-of-type {
+                display: none;
+              }
+              &:last-of-type {
+                display: block;
+              }
+            }
+          }*/
+        }
+      }
+    }
+  > .quickSubMenu {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    border-bottom: 1px solid #808080;
+    @extend .clearfix;
+    ul {
+      float: left;
+      @extend .clearfix;
+      li {
+        float: left;
+        a {
+          display: block;
+          height: $height;
+          line-height: $height;
+          position: relative;
+          padding-left: .4em;
+          padding-right: .8em;
+          font-size: .875rem;
+          &:after {
+            content: "/";
+            font-size: 1rem;
+            position: absolute;
+            top: 50%;
+            right: 0em;
+            transform: translateY(-50%);
+          }
+          strong {
+            &:last-of-type {
+              display: none;
+            }
+          }
+        }
+      }
+      &:first-of-type {
+        width: 26.5rem;
+        li {
+          &:nth-of-type(4),
+          &:last-of-type {
+            a {
+              &:after {
+                content: "";
+              }
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        width: 4rem;
+        li {
+          a {
+            &:after {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*回到顶部*/
+#toTop {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  bottom: 19.375rem;
+  left: 50%;
+  transform: translateX(36.75rem);
+  i {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  &:hover {
+    i {
+      //background-color: rgba(255, 255, 255, .7);
+      background-color: $main-color;
+    }
   }
 }

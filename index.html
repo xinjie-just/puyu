@@ -455,78 +455,82 @@
                             </a>
                         </li>
                     </ul>
-                    <ul>
-                        <li>
-                            <a href="#" title="商业综合体/Commercial Mixed">
-                                <strong>commercial mixed</strong>
-                                <strong>商业综合体</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="居住/Residence">
-                                <strong>residence</strong>
-                                <strong>居住</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="酒店/Hospitality">
-                                <strong>hospitality</strong>
-                                <strong>酒店</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="办公/Office">
-                                <strong>office</strong>
-                                <strong>办公</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="访谈/talks">
-                                <strong>talks</strong>
-                                <strong>访谈</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="教育/Education">
-                                <strong>education</strong>
-                                <strong>教育</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="规划/Master Planning">
-                                <strong>master planning</strong>
-                                <strong>规划</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="室内设计/Interior Design">
-                                <strong>interior design</strong>
-                                <strong>室内设计</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="其它/Others">
-                                <strong>others</strong>
-                                <strong>其它</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="新闻/news">
-                                <strong>news</strong>
-                                <strong>新闻</strong>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="quickSubMenu">
+                        <ul>
+                            <li>
+                                <a href="#" title="商业综合体/Commercial Mixed">
+                                    <strong>commercial mixed</strong>
+                                    <strong>商业综合体</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="居住/Residence">
+                                    <strong>residence</strong>
+                                    <strong>居住</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="酒店/Hospitality">
+                                    <strong>hospitality</strong>
+                                    <strong>酒店</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="办公/Office">
+                                    <strong>office</strong>
+                                    <strong>办公</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="教育/Education">
+                                    <strong>education</strong>
+                                    <strong>教育</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="规划/Master Planning">
+                                    <strong>master planning</strong>
+                                    <strong>规划</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="室内设计/Interior Design">
+                                    <strong>interior design</strong>
+                                    <strong>室内设计</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="其它/Others">
+                                    <strong>others</strong>
+                                    <strong>其它</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#" title="访谈/talks">
+                                    <strong>talks</strong>
+                                    <strong>访谈</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="新闻/news">
+                                    <strong>news</strong>
+                                    <strong>新闻</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
                 <small>copyright &copy; 2017 pure architects</small>
             </div>
             <div class="footer-right">
                 <div class="follow">
-                    <span>follow</span>
-                    <i class="iconfont icon-weibo"></i>
+                    <span class="en">follow us</span>
+                    <a href="#" title="我们的官方微博"><i class="iconfont icon-weibo"></i></a>
                     <div class="weixin">
-                        <i class="iconfont icon-weixin"></i>
-                        <div class="weixin-img">
+                        <i class="iconfont icon-weixin" id="weixinIcon"></i>
+                        <div class="weixin-img" id="weixinImg">
                             <img src="images/weixin-code.jpg" alt="微信二维码">
                         </div>
                     </div>
@@ -540,6 +544,10 @@
                 </div>
             </div>
         </div>
+        <!--回到顶部-->
+        <a id="toTop" href="javascript:void(0);" title="回到顶部">
+            <i class="iconfont icon-totop"></i>
+        </a>
     </footer>
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/masonry.pkgd.min.js"></script>
@@ -551,12 +559,25 @@
             });
 
             // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
-            $("#nav ul li").hover(function () {
-                $(this).find("ul").slideDown(600);
-            },function () {
-                $(this).find("ul").slideUp(600);
-            }
-            )
+            $("#nav ul li").hover(
+                function () {
+                    $(this).find("ul").slideDown(600);
+                },function () {
+                    $(this).find("ul").slideUp(600);
+                }
+            );
+
+            // 微信二维码的显示与影藏
+            $("#weixinIcon").hover(
+                function(){
+                    $(this).css("color", "#fff");
+                    $("#weixinImg").slideDown(400);
+                },function() {
+                    $(this).css("color", "#909090");
+                    $("#weixinImg").slideUp(400);
+                }
+            );
+
         });
     </script>
 </body>
