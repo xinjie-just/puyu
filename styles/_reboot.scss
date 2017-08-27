@@ -440,17 +440,17 @@ label {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     //width: 73.125rem;
     width: 67.5rem;
   }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     width: 60.625rem;
   }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     width: 46.875rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     width: $width;
   }
 }

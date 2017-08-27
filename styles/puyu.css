@@ -339,6 +339,11 @@ label.error {
       left: 0;
       transform: translateY(-50%); }
 
+@media (max-width: 47.9375rem) {
+  #header .logo {
+    width: 9rem; }
+    #header .logo i {
+      font-size: 1.8rem; } }
 /*导航*/
 @media (min-width: 62rem) {
   #nav {
@@ -428,6 +433,10 @@ label.error {
     #nav > .menu-icon {
       display: none; } }
 @media (max-width: 61.9375rem) {
+  #header {
+    padding-right: 3rem;
+    padding-left: 3rem; }
+
   #nav > ul {
     z-index: 9;
     display: none;
@@ -438,12 +447,12 @@ label.error {
     background-color: #fff; }
     #nav > ul > li {
       width: 100%;
-      height: 6.25rem; }
+      height: 4.25rem; }
       #nav > ul > li > a {
         display: block;
         width: 100%;
-        height: 6.25rem;
-        line-height: 6.25rem;
+        height: 4.25rem;
+        line-height: 4.25rem;
         font-size: 1rem;
         background-color: #000;
         color: #fff;
@@ -486,6 +495,9 @@ label.error {
     #nav > .menu-icon i {
       font-size: 3rem;
       color: #000; } }
+@media (max-width: 47.9375rem) {
+  #nav > .menu-icon i {
+    font-size: 2rem; } }
 /*主要内容*/
 .banner,
 .media {
@@ -500,6 +512,10 @@ label.error {
   max-width: 100%;
   height: auto; }
 
+@media (max-width: 47.9375rem) {
+  .banner,
+  .media {
+    margin-bottom: 10rem; } }
 /*未来空间产品定义者*/
 .future-space-definer {
   z-index: 9;
@@ -510,18 +526,18 @@ label.error {
   display: block;
   margin-right: auto;
   margin-left: auto; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     .future-space-definer {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .future-space-definer {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .future-space-definer {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .future-space-definer {
-      width: 67.5rem; } }
+      width: 87.5%; } }
   .future-space-definer h2 {
     width: 28.125rem;
     height: 25rem;
@@ -543,35 +559,43 @@ label.error {
         font-size: .875rem;
         letter-spacing: .3em; }
 
+@media (max-width: 47.9375rem) {
+  .future-space-definer {
+    margin-top: 0; }
+    .future-space-definer h2 {
+      width: 100%;
+      height: auto;
+      border-top: 3px solid #000;
+      border-bottom: 3px solid #000; }
+      .future-space-definer h2 span:first-of-type {
+        font-size: 2rem; } }
 /*度假模式*/
 .holiday-mode {
   z-index: 3;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  height: 33.125rem;
   position: relative;
-  margin-bottom: 1.25rem; }
-  @media (min-width: 1200px) {
+  margin-bottom: 1.25rem;
+  overflow: auto; }
+  @media (min-width: 75rem) {
     .holiday-mode {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .holiday-mode {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .holiday-mode {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .holiday-mode {
       width: 87.5%; } }
   .holiday-mode img {
-    z-index: 4;
-    position: absolute;
-    top: 0;
-    left: 0;
     display: block;
-    width: 100%;
-    height: 100%; }
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto; }
   .holiday-mode .content {
     z-index: 5;
     position: absolute;
@@ -579,8 +603,21 @@ label.error {
     left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 3.5rem;
-    padding-left: 1.75rem; }
+    padding: 2.5rem 1.75rem;
+    overflow: auto; }
+    .holiday-mode .content:hover h2 {
+      background-color: #f7ac3b;
+      color: #fff; }
+    .holiday-mode .content:hover h3 span {
+      background-color: #f7ac3b; }
+    .holiday-mode .content:hover .label .classify {
+      border-color: #f7ac3b;
+      background-color: #f7ac3b;
+      color: #fff; }
+    .holiday-mode .content:hover .label .details {
+      border-color: #f7ac3b;
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #f7ac3b; }
     .holiday-mode .content h2 {
       display: inline-block;
       background-color: #000;
@@ -590,7 +627,8 @@ label.error {
       font-size: 2.25rem;
       font-weight: normal;
       text-transform: capitalize;
-      padding: .2em .6em; }
+      padding: .2em .6em;
+      transition: all 0.6s linear 0s; }
     .holiday-mode .content h3 {
       margin-bottom: 1.5rem;
       font-size: 0; }
@@ -599,7 +637,8 @@ label.error {
         background-color: #000;
         color: #fff;
         font-weight: normal;
-        padding: .2em .6em; }
+        padding: .2em .6em;
+        transition: all 0.6s linear 0s; }
         .holiday-mode .content h3 span:first-of-type {
           font-size: 1rem;
           line-height: 1.4; }
@@ -614,59 +653,232 @@ label.error {
         display: inline-block;
         vertical-align: middle;
         padding: .2em .6em;
-        text-transform: capitalize; }
+        text-transform: capitalize;
+        transition: all 0.6s linear 0s; }
       .holiday-mode .content .label .classify {
+        border-color: #000;
         background-color: #000;
         color: #fff; }
       .holiday-mode .content .label .details {
+        border-color: #000;
         background-color: rgba(255, 255, 255, 0.6);
         color: #000; }
 
+@media (max-width: 47.9375rem) {
+  .holiday-mode {
+    height: auto; } }
 /*瀑布流布局的一些内容*/
 .grid {
   display: block;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 3.5rem; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     .grid {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .grid {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .grid {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .grid {
-      width: 67.5rem; } }
+      width: 87.5%; } }
   .grid li {
-    margin-bottom: 1.25rem; }
+    margin-bottom: 1.25rem;
+    background-color: #fff; }
     @media (min-width: 768px) {
       .grid li {
         width: 48%;
         margin-left: 1%;
         margin-right: 1%; } }
+    .grid li img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto; }
 
+/*@media (min-width: 75rem) {
+  .grid {
+    @include center-content(70.2rem);
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .grid {
+    @include center-content(62.8985rem);
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .grid {
+    @include center-content(48.5156rem);
+  }
+}*/
 @media (max-width: 767px) {
   .grid li {
     width: 100%; } }
+.outside .content {
+  padding: .5rem 1.5rem 2rem;
+  border-top: 0.2rem solid #000;
+  transition: all 0.6s linear 0s; }
+  .outside .content:hover {
+    border-top-color: #f7ac3b; }
+    .outside .content:hover h2 {
+      color: #f7ac3b; }
+    .outside .content:hover h3 {
+      margin-bottom: 1.5rem;
+      font-size: 0; }
+      .outside .content:hover h3 span {
+        color: #f7ac3b; }
+    .outside .content:hover .label .classify {
+      border-color: #f7ac3b;
+      background-color: #f7ac3b; }
+    .outside .content:hover .label .details {
+      border-color: #f7ac3b;
+      color: #f7ac3b; }
+  .outside .content h2 {
+    display: inline-block;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: .2em .6em;
+    transition: all 0.6s linear 0s; }
+  .outside .content h3 {
+    margin-bottom: 1.5rem;
+    font-size: 0;
+    transition: all 0.6s linear 0s; }
+    .outside .content h3 span {
+      display: inline-block;
+      color: #000;
+      font-weight: normal;
+      padding: .2em .6em;
+      transition: all 0.6s linear 0s; }
+      .outside .content h3 span:first-of-type {
+        font-size: 1rem;
+        line-height: 1.4; }
+      .outside .content h3 span:last-of-type {
+        font-size: .75rem;
+        line-height: 1.6; }
+  .outside .content .label {
+    font-size: 0; }
+    .outside .content .label strong {
+      line-height: 1.5;
+      font-size: .875rem;
+      display: inline-block;
+      vertical-align: middle;
+      padding: .2em .6em;
+      text-transform: capitalize; }
+    .outside .content .label .classify {
+      border: 1px solid #000;
+      background-color: #000;
+      color: #fff;
+      transition: all 0.6s linear 0s; }
+    .outside .content .label .details {
+      border: 1px solid #000;
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #000;
+      transition: all 0.6s linear 0s; }
+
+.inside {
+  z-index: 3;
+  position: relative;
+  margin-bottom: 1.25rem;
+  overflow: hidden; }
+  .inside img {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%; }
+  .inside .content {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem 1.75rem;
+    transition: all 0.6s linear 0s; }
+    .inside .content:hover h2 {
+      background-color: #f7ac3b; }
+    .inside .content:hover h3 span {
+      background-color: #f7ac3b; }
+    .inside .content:hover .label .classify {
+      border-color: #f7ac3b;
+      background-color: #f7ac3b; }
+    .inside .content:hover .label .details {
+      border-color: #f7ac3b;
+      color: #f7ac3b; }
+    .inside .content h2 {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-size: 2.25rem;
+      font-weight: normal;
+      text-transform: capitalize;
+      padding: .2em .6em;
+      transition: all 0.6s linear 0s; }
+    .inside .content h3 {
+      margin-bottom: 1.5rem;
+      font-size: 0;
+      transition: all 0.6s linear 0s; }
+      .inside .content h3 span {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        font-weight: normal;
+        padding: .2em .6em;
+        transition: all 0.6s linear 0s; }
+        .inside .content h3 span:first-of-type {
+          font-size: 1rem;
+          line-height: 1.4; }
+        .inside .content h3 span:last-of-type {
+          font-size: .75rem;
+          line-height: 1.6; }
+    .inside .content .label {
+      font-size: 0; }
+      .inside .content .label strong {
+        line-height: 1.5;
+        font-size: .875rem;
+        display: inline-block;
+        vertical-align: middle;
+        padding: .2em .6em;
+        text-transform: capitalize; }
+      .inside .content .label .classify {
+        border: 1px solid #000;
+        background-color: #000;
+        color: #fff;
+        transition: all 0.6s linear 0s; }
+      .inside .content .label .details {
+        border: 1px solid #000;
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #000;
+        transition: all 0.6s linear 0s; }
+
 /*菜单切换*/
 .tab {
   margin-bottom: 2.5rem;
   display: block;
   margin-right: auto;
   margin-left: auto; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     .tab {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .tab {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .tab {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .tab {
       width: 87.5%; } }
   .tab a {
@@ -727,10 +939,6 @@ label.error {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    position: absolute;
-    bottom: -14.375rem;
-    left: 50%;
-    transform: translate(-50%);
     width: 67.5rem;
     height: 18.75rem;
     background-color: #fff;
@@ -739,18 +947,24 @@ label.error {
     padding: .6rem 1rem;
     letter-spacing: .1em;
     overflow-y: auto; }
-    @media (min-width: 1200px) {
+    @media (min-width: 75rem) {
       .work h2 {
         width: 67.5rem; } }
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @media (min-width: 62rem) and (max-width: 74.9375rem) {
       .work h2 {
         width: 60.625rem; } }
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media (min-width: 48rem) and (max-width: 61.9375rem) {
       .work h2 {
         width: 46.875rem; } }
-    @media (max-width: 767px) {
+    @media (max-width: 47.9375rem) {
       .work h2 {
         width: 87.5%; } }
+    @media (min-width: 48rem) {
+      .work h2 {
+        position: absolute;
+        bottom: -14.375rem;
+        left: 50%;
+        transform: translate(-50%); } }
     .work h2 span {
       display: block;
       color: #000;
@@ -763,21 +977,61 @@ label.error {
         line-height: 1.5;
         letter-spacing: .3em; }
 
+@media (max-width: 47.9375rem) {
+  .work {
+    z-index: 3;
+    position: static;
+    margin-bottom: auto; }
+    .work h2 {
+      position: static;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      height: auto;
+      background-color: #fff;
+      border-top: 3px solid #000;
+      border-bottom: 3px solid #000;
+      bottom: auto;
+      margin-bottom: 7rem; } }
+    @media (max-width: 47.9375rem) and (min-width: 75rem) {
+      .work h2 {
+        width: 67.5rem; } }
+    @media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+      .work h2 {
+        width: 60.625rem; } }
+    @media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+      .work h2 {
+        width: 46.875rem; } }
+    @media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
+      .work h2 {
+        width: 87.5%; } }
+@media (max-width: 47.9375rem) {
+      .work h2 span {
+        display: block;
+        color: #000;
+        text-transform: capitalize; }
+        .work h2 span:first-of-type {
+          font-size: 2rem;
+          line-height: 1.3; }
+        .work h2 span:last-of-type {
+          font-size: .875rem;
+          line-height: 1.5;
+          letter-spacing: .3em; } }
 /*创新*/
 .innovation {
   display: block;
   margin-right: auto;
   margin-left: auto; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     .innovation {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .innovation {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .innovation {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .innovation {
       width: 87.5%; } }
   .innovation li {
@@ -839,16 +1093,16 @@ label.error {
   margin-right: auto;
   margin-left: auto;
   margin-top: 2.5rem; }
-  @media (min-width: 1200px) {
+  @media (min-width: 75rem) {
     .cooperation {
       width: 67.5rem; } }
-  @media (min-width: 992px) and (max-width: 1199px) {
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
     .cooperation {
       width: 60.625rem; } }
-  @media (min-width: 768px) and (max-width: 991px) {
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
     .cooperation {
       width: 46.875rem; } }
-  @media (max-width: 767px) {
+  @media (max-width: 47.9375rem) {
     .cooperation {
       width: 87.5%; } }
   .cooperation h3 {
@@ -892,16 +1146,16 @@ label.error {
     display: block;
     margin-right: auto;
     margin-left: auto; }
-    @media (min-width: 1200px) {
+    @media (min-width: 75rem) {
       #footer .footer-wrapper {
         width: 67.5rem; } }
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @media (min-width: 62rem) and (max-width: 74.9375rem) {
       #footer .footer-wrapper {
         width: 60.625rem; } }
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media (min-width: 48rem) and (max-width: 61.9375rem) {
       #footer .footer-wrapper {
         width: 46.875rem; } }
-    @media (max-width: 767px) {
+    @media (max-width: 47.9375rem) {
       #footer .footer-wrapper {
         width: 87.5%; } }
   #footer .footer-left {

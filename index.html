@@ -88,7 +88,7 @@
                 <li class="pure">
                     <a href="#" title="朴隅+/Pure+">
                         <strong class="en">pure+</strong>
-                        <strong>朴隅</strong>
+                        <strong>朴隅+</strong>
                     </a>
                     <ul>
                         <li>
@@ -165,7 +165,7 @@
             </div>
             <!--瀑布流布局的一些内容-->
             <ul class="grid container">
-                <li class="grid-item commercial-mixed">
+                <li class="grid-item commercial-mixed outside">
                     <div class="item-box">
                         <img src="images/home-commercial-mixed.jpg" alt="商业综合体">
                         <div class="content">
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid-item news">
+                <li class="grid-item news outside">
                     <div class="item-box">
                         <img src="images/home-news.jpg" alt="推荐新闻">
                         <div class="content">
@@ -204,7 +204,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid-item residence">
+                <li class="grid-item residence inside">
                     <div class="item-box">
                         <img src="images/home-residence.jpg" alt="未来生活目的地">
                         <div class="content">
@@ -212,7 +212,7 @@
                                 <h2 class="en">life destination from the future</h2><br>
                                 <h3>
                                     <span>来自未来的生活目的地</span><br>
-                                    <span>--海南大观千舍住宅</span>
+                                    <span>——海南大观千舍住宅</span>
                                 </h3>
                             </hgroup>
                             <div class="label">
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid-item master-planning">
+                <li class="grid-item master-planning inside">
                     <div class="item-box">
                         <img src="images/home-master-planning.jpg" alt="玫瑰人生小镇">
                         <div class="content">
@@ -233,7 +233,7 @@
                                 <h2 class="en">“rose life”town</h2><br>
                                 <h3>
                                     <span>“玫瑰人生”小镇</span><br>
-                                    <span>--中国玫瑰谷香氛小镇概念规划设计</span>
+                                    <span>——中国玫瑰谷香氛小镇概念规划设计</span>
                                 </h3>
                             </hgroup>
                             <div class="label">
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid-item others">
+                <li class="grid-item others outside">
                     <div class="item-box">
                         <img src="images/home-others.jpg" alt="其它项目">
                         <div class="content">
@@ -254,7 +254,7 @@
                                 <h2 class="en">其它项目的标题文字介绍，英文</h2><br>
                                 <h3>
                                     <span>其它项目的标题文字介绍，中文</span><br>
-                                    <span>--对建筑的介绍</span>
+                                    <span>——对建筑的介绍</span>
                                 </h3>
                             </hgroup>
                             <div class="label">
@@ -267,7 +267,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="grid-item inerior-design">
+                <li class="grid-item inerior-design inside">
                     <div class="item-box">
                         <img src="images/home-inerior-design.jpg" alt="室内设计">
                         <div class="content">
@@ -275,7 +275,7 @@
                                 <h2 class="en">no zuo no die</h2><br>
                                 <h3>
                                     <span>当然是选择原谅他</span><br>
-                                    <span>--成都朴隅建筑办公空间</span>
+                                    <span>——成都朴隅建筑办公空间</span>
                                 </h3>
                             </hgroup>
                             <div class="label">
@@ -560,6 +560,24 @@
             $(".grid").masonry({
                 itemSelector: ".grid-item"
             });
+        });
+
+        // 当页面宽度发生改变时 inside 类的宽度将改变
+        /*$(window).resize = function () {
+            setInsideWidth();
+        };*/
+//        function setInsideWidth() {
+            var insideLen = $(".inside").length;
+            $(window).resize(function(){
+                for (var i = 0; i < insideLen; i++) {
+                    $($(".inside").get(i)).height($($(".inside").get(i)).find("img").outerHeight());
+                }
+            });
+//        }
+
+        // 度假模式
+        $(window).resize(function() {
+            $(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
         });
     </script>
 </body>
