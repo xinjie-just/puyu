@@ -7,7 +7,7 @@
     <title>朴隅建筑</title>
     <meta name="keywords" content="朴隅建筑，智能创新，机构创新，业务创新">
     <meta name="description" content="朴隅建筑希望用自身的实践去探索建筑师的工作边界">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_hhox5w3pxqzadcxr.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_hctiu9k51ft7qfr.css">
     <link rel="stylesheet" href="styles/puyu.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
             <i class="iconfont icon-purelogo"></i>
         </figure>
         <nav id="nav" role="navigation">
-            <ul class="clearfix">
+            <ul class="clearfix" id="navList">
                 <li class="projects">
                     <a href="#" title="项目/projects" class="active">
                         <strong class="en">projects</strong>
@@ -118,6 +118,9 @@
                     </a>
                 </li>
             </ul>
+            <div class="menu-icon" id="menuIcon">
+                <i class="iconfont icon-menu"></i>
+            </div>
         </nav>
     </header>
     <main id="main" role="main">
@@ -557,27 +560,6 @@
             $(".grid").masonry({
                 itemSelector: ".grid-item"
             });
-
-            // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
-            $("#nav ul li").hover(
-                function () {
-                    $(this).find("ul").slideDown(600);
-                },function () {
-                    $(this).find("ul").slideUp(600);
-                }
-            );
-
-            // 微信二维码的显示与影藏
-            $("#weixinIcon").hover(
-                function(){
-                    $(this).css("color", "#fff");
-                    $("#weixinImg").slideDown(400);
-                },function() {
-                    $(this).css("color", "#909090");
-                    $("#weixinImg").slideUp(400);
-                }
-            );
-
         });
     </script>
 </body>

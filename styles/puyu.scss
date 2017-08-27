@@ -7,18 +7,20 @@
 /*头部*/
 #header {
   $size: 6.25rem;
+  @extend %page;
+  position: relative;
   background-color: #eee;
-  padding-right: $size;
-  padding-left: $size;
+  padding-right: $size - 2rem;
+  padding-left: $size - 2rem;
   @extend .clearfix;
   .logo {
     float: left;
     position: relative;
-    width: 18.5rem;
+    width: 13.75rem;
     height: $size;
     i {
       display: block;
-      font-size: 3rem;
+      font-size: 2.8rem;
       color: #000;
       position: absolute;
       top: 50%;
@@ -28,18 +30,18 @@
   }
 }
 /*导航*/
-@media (min-width: 1200px) {
+@media (min-width: 62rem) {
   #nav {
     $size: 6.25rem;
     float: right;
     > ul {
       > li {
         z-index: 9;
-        width: 6.4rem;
+        width: 5rem;
         position: relative;
         height: $size;
         float: left;
-        margin-right: 2.3rem;
+        margin-right: 2rem;
         &:last-of-type {
           margin-right: 0;
         }
@@ -134,15 +136,104 @@
           }
         }
         &.projects {
-         > ul{
-           width: 17rem;
-         }
+          > ul{
+            width: 17rem;
+          }
         }
         &.pure {
           > ul{
             width: 7.5rem;
           }
         }
+      }
+    }
+    > .menu-icon {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 61.9375rem) {
+  #nav {
+    $size: 6.25rem;
+    > ul {
+      z-index: 9;
+      display: none;
+      position: absolute;
+      top: $size;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      > li {
+        width: 100%;
+        height: $size;
+        > a {
+          $size: 6.25rem;
+          $height: 6.25rem - .3rem;
+          display: block;
+          width: 100%;
+          height: $size;
+          line-height: $size;
+          font-size: 1rem;
+          background-color: $text-color;
+          color: #fff;
+          border-bottom: 1px solid #666;
+          padding-right: 3rem;
+          padding-left: 3rem;
+          &::before,
+          &::after {
+            content: "";
+            display: table;
+          }
+          &::after {
+            clear: both;
+          }
+          strong {
+            display: block;
+            width: 50%;
+            font-weight: normal;
+            text-transform: capitalize;
+            &:first-of-type {
+              float: left;
+              text-align: left;
+            }
+            &:last-of-type {
+              float: right;
+              text-align: right;
+            }
+          }
+          &:hover,
+          &.active {
+            background-color: $main-color;
+            border-bottom-color: $main-color;
+          }
+        }
+        > ul {
+          display: none;
+        }
+        &.projects {
+          > ul {
+            width: 17rem;
+          }
+        }
+        &.pure {
+          > ul {
+            width: 7.5rem;
+          }
+        }
+      }
+    }
+    > .menu-icon {
+      display: block;
+      float: right;
+      width: $size;
+      height: $size;
+      line-height: $size;
+      text-align: right;
+      cursor: pointer;
+      i {
+        font-size: 3rem;
+        color: $text-color;
       }
     }
   }
@@ -202,7 +293,7 @@
 /*度假模式*/
 .holiday-mode {
   z-index: 3;
-  @include center-content(67.5rem);
+  @include center-content();
   height: 33.125rem;
   position: relative;
   margin-bottom: 1.25rem;
@@ -295,6 +386,90 @@
   .grid li { width: 100%; }
 }
 
+/*菜单切换*/
+.tab {
+  margin-bottom: 2.5rem;
+  @include center-content();
+  @extend.clearfix;
+  a {
+    display: block;
+    margin-bottom: .5rem;
+    width: 30%;
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border: 1px solid $text-color;
+    color: $text-color;
+    @include transition();
+    &:not(:last-of-type) {
+      margin-right: 5%;
+    }
+    strong {
+      font-size: .875rem;
+      &:first-of-type {
+
+      }
+      &:last-of-type {
+        display: none;
+      }
+    }
+    &:hover {
+      border-color: $main-color;
+      color: $main-color;
+      strong {
+        &:first-of-type {
+          display: none;
+
+        }
+        &:last-of-type {
+          display: block;
+        }
+
+      }
+    }
+  }
+}
+@media (max-width: 61.9375rem) {
+  .tab {
+    a {
+      font-size: 0;
+      strong {
+        font-size: .875rem;
+        vertical-align: middle;
+        &:first-of-type {
+          display: inline-block;
+          margin-right: 1rem;
+        }
+        &:last-of-type {
+          display: inline-block;
+        }
+      }
+      &:hover {
+        strong {
+          &:first-of-type {
+          display: inline-block;
+          }
+          &:last-of-type {
+          display: inline-block;
+          }
+
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .tab {
+    a {
+      height: 2.5rem;
+      line-height: 2.5rem;
+      width: 100%;
+      float: none;     
+    }
+  }
+}
+
 /*辛勤工作的人*/
 .work {
   z-index: 3;
@@ -307,7 +482,7 @@
   }
   h2 {
     z-index: 9;
-    @include center-content(67.5rem);
+    @include center-content();
     position: absolute;
     bottom: -14.375rem;
     left: 50%;
@@ -340,7 +515,7 @@
 /*创新*/
 .innovation {
   @extend .clearfix;
-  @include center-content(67.5rem);
+  @include center-content();
   li {
     float: left;
     width: 33.33333333%;
@@ -402,9 +577,25 @@
   }
 }
 
+@media (max-width: 47.9375rem) {
+  .innovation {
+    li {
+      float: none;
+      width: 100%;
+      margin-bottom: 2.5rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &:not(:last-of-type) {
+        padding-right: 0;
+      }      
+    }
+  }  
+}
+
 /*合作伙伴*/
 .cooperation {
-  @include center-content(67.5rem);
+  @include center-content();
   margin-top: 2.5rem;
   h3 {
     padding: .2em .6em;
@@ -457,15 +648,15 @@
     color: #909090;
   }
   .footer-wrapper {
-    @include center-content(67.5rem);
+    @include center-content();
     @extend .clearfix;
   }
   .footer-left {
     float: left;
     small {
       display: block;
-      margin-top: 1rem;
       font-size: .875rem;
+      line-height: 1.714;
       color: #909090;
       text-transform: capitalize;
     }
@@ -473,7 +664,6 @@
   .footer-right {
     float: right;
     .follow {
-      margin-bottom: .875rem;
       > span {
         font-size: 1.375rem;
         font-weight: bold;
@@ -509,6 +699,7 @@
       }
     }
     .other-info {
+      margin-top: .875rem;
       line-height: 1.5;
       p {
         font-size: .75rem;
@@ -522,6 +713,7 @@
 /*底部左侧快捷导航*/
 #quickNav {
   $height: 34px;
+  margin-bottom: 1rem;
   > ul {
       border-bottom: 1px solid #808080;
       height: $height;
@@ -550,16 +742,6 @@
               display: none;
             }
           }
-          /*&:hover {
-            strong {
-              &:first-of-type {
-                display: none;
-              }
-              &:last-of-type {
-                display: block;
-              }
-            }
-          }*/
         }
       }
     }
@@ -586,7 +768,7 @@
             font-size: 1rem;
             position: absolute;
             top: 50%;
-            right: 0em;
+            right: 0;
             transform: translateY(-50%);
           }
           strong {
@@ -622,28 +804,53 @@
     }
   }
 }
+@media (max-width: 74.9375rem){
+  #footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  #quickNav {
+    display: none;
+  }
+  .footer-right {
+    .other-info {
+      display: none;
+    }
+  }  
+}
+
 /*回到顶部*/
 #toTop {
   display: none;
   z-index: 9999;
   position: fixed;
-  bottom: 19.375rem;
-  left: 50%;
-  transform: translateX(36.75rem);
+  @media (min-width: 75rem) {
+    bottom: 19.375rem;
+    left: 50%;
+    transform: translateX(33.75rem);
+  }
+  @media (max-width: 74.9375rem) {
+    bottom: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
   i {
+    $size: 3rem;
     display: block;
     background-color: rgba(255, 255, 255, 0.7);
-    font-size: 30px;
-    color: rgba(0, 0, 0, 0.5);
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    border: 1px solid $text-color;
+    color: $text-color;
+    width: $size;
+    height: $size;
+    line-height: $size;
     text-align: center;
+    font-size: 2rem;
+    @include transition();
   }
   &:hover {
     i {
-      //background-color: rgba(255, 255, 255, .7);
-      background-color: $main-color;
+      border-color: $main-color;
+      color: $main-color;
     }
   }
 }

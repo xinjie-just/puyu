@@ -441,7 +441,8 @@ label {
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 1200px) {
-    width: 73.125rem;
+    //width: 73.125rem;
+    width: 67.5rem;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
     width: 60.625rem;
