@@ -45,6 +45,7 @@
     $size: 6.25rem;
     float: right;
     > ul {
+      display: block;
       > li {
         z-index: 9;
         width: 5rem;
