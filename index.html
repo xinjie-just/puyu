@@ -554,30 +554,32 @@
     </footer>
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/masonry.pkgd.min.js"></script>
+    <script src="scripts/jquery.dotdotdot.js"></script>
     <script src="scripts/puyu.js"></script>
     <script>
         $(function() {
+            // 多行文本省略号
+            $(window).resize(function(){
+                $(".innovation li p").dotdotdot();
+            });
+
+            // 瀑布流布局
             $(".grid").masonry({
                 itemSelector: ".grid-item"
             });
-        });
 
-        // 当页面宽度发生改变时 inside 类的宽度将改变
-        /*$(window).resize = function () {
-            setInsideWidth();
-        };*/
-//        function setInsideWidth() {
+            // 当页面宽度发生改变时 inside 类的宽度将改变
             var insideLen = $(".inside").length;
             $(window).resize(function(){
                 for (var i = 0; i < insideLen; i++) {
                     $($(".inside").get(i)).height($($(".inside").get(i)).find("img").outerHeight());
                 }
             });
-//        }
 
-        // 度假模式
-        $(window).resize(function() {
-            $(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
+            // 度假模式
+            $(window).resize(function() {
+                $(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
+            });
         });
     </script>
 </body>

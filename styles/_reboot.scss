@@ -441,14 +441,13 @@ label {
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 75rem) {
-    //width: 73.125rem;
-    width: 67.5rem;
+    width: 67.5rem; // 1080px
   }
   @media (min-width: 62rem) and (max-width: 74.9375rem) {
-    width: 60.625rem;
+    width: 60.625rem; // 970px
   }
   @media (min-width: 48rem) and (max-width: 61.9375rem) {
-    width: 46.875rem;
+    width: 46.875rem; // 750px
   }
   @media (max-width: 47.9375rem) {
     width: $width;

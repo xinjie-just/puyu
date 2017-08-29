@@ -302,17 +302,16 @@
     border-bottom: .625rem solid $text-color;
     background-color: #fff;
     color: $text-color;
-    line-height: 1.2;
+    line-height: 1.1;
     overflow-y: auto;
     span {
       display: block;
       &:first-of-type {
         font-size: 5.4375rem;
         text-transform: uppercase;
-        word-break: break-all;
       }
       &:last-of-type {
-        margin-top: .5rem;
+        margin-top: .8rem;
         font-size: .875rem;
         letter-spacing: .3em;
       }
@@ -321,7 +320,7 @@
 }
 @media (max-width: 47.9375rem) {
   .future-space-definer {
-    margin-top: 0;
+    margin-top: 1rem;
     h2 {
       width: 100%;
       height: auto;
@@ -336,13 +335,23 @@
   }
 }
 
+.projects,
+.ideas,
+.pure {
+  @media (max-width: 47.9375rem) {
+    .grid,
+    > div {
+      width: 100%;
+    }
+  }
+}
+
 /*度假模式*/
 .holiday-mode {
   z-index: 3;
   @include center-content();
   position: relative;
   margin-bottom: 1.25rem;
-  overflow: auto;
   img {
     display: block;
     max-width: 100%;
@@ -358,7 +367,6 @@
     width: 100%;
     height: 100%;
     padding: 2.5rem 1.75rem;
-    overflow: auto;
     &:hover {
       h2 {
         background-color: $main-color;
@@ -441,6 +449,19 @@
 @media (max-width: 47.9375rem) {
   .holiday-mode {
     height: auto;
+    .content {
+      padding: 1.25rem .875rem;
+      h2 {
+        margin-bottom: .6rem;
+        font-size: 1.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      h3 {
+        margin-bottom: .6rem;
+      }
+    }
   }
 }
 
@@ -451,12 +472,16 @@
   li {
     margin-bottom: 1.25rem;
     background-color: #fff;
-    @media(min-width: 768px) {
+    @media(min-width: 48rem) {
       & {
         width: 48%;
         margin-left: 1%;
         margin-right: 1%;
       }
+      /*.item-box {
+        margin-right: 1%;
+        margin-left: 1%;
+      }*/
     }
     img {
       display: block;
@@ -467,23 +492,24 @@
     }
   }
 }
-/*@media (min-width: 75rem) {
+
+@media (min-width: 75rem) {
   .grid {
-    @include center-content(70.2rem);
+    width: 68.85rem;
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .grid {
-    @include center-content(62.8985rem);
+    width: 61.8375rem;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .grid {
-    @include center-content(48.5156rem);
+    width: 47.8125rem;
   }
-}*/
+}
 
-@media(max-width: 767px) {
+@media(max-width: 47.9375rem) {
   .grid li { width: 100%; }
 }
 .outside {
@@ -522,7 +548,7 @@
       font-size: 2.25rem;
       font-weight: normal;
       text-transform: capitalize;
-      padding: .2em .6em;
+      padding: .2em 0;
       @include transition();
     }
     h3 {
@@ -548,11 +574,13 @@
     .label {
       font-size: 0;
       strong {
-        line-height: 1.5;
+        height: 1.75rem;
+        line-height: 1.75rem;
         font-size: .875rem;
         display: inline-block;
         vertical-align: middle;
-        padding: .2em .6em;
+        padding-right: .6em;
+        padding-left: .6rem;
         text-transform: capitalize;
       }
       .classify {
@@ -649,11 +677,13 @@
     .label {
       font-size: 0;
       strong {
-        line-height: 1.5;
+        height: 1.75rem;
+        line-height: 1.75rem;
         font-size: .875rem;
         display: inline-block;
         vertical-align: middle;
-        padding: .2em .6em;
+        padding-right: .6em;
+        padding-left: .6rem;
         text-transform: capitalize;
       }
       .classify {
@@ -692,6 +722,9 @@
       margin-right: 5%;
     }
     strong {
+      display: block;
+      height: 2rem;
+      line-height: 2rem;
       font-size: .875rem;
       &:first-of-type {
 
@@ -783,6 +816,7 @@
     padding: .6rem 1rem;
     letter-spacing: .1em;
     overflow-y: auto;
+    font-weight: 500;
     span {
       display: block;
       color: $text-color;
@@ -792,9 +826,23 @@
         line-height: 1.3;
       }
       &:last-of-type {
+        margin-top: .8rem;
         font-size: .875rem;
         line-height: 1.5;
         letter-spacing: .3em;
+      }
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .work {
+    h2 {
+      height: auto;
+      bottom: -12.375rem;
+      span {
+        &:first-of-type {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -812,6 +860,7 @@
       border-top: 3px solid $text-color;
       border-bottom: 3px solid $text-color;
       bottom: auto;
+      margin-top: 1rem;
       margin-bottom: 7rem;
       span {
         display: block;
@@ -885,13 +934,40 @@
     p {
       width: 100%;
       border-top: .3125rem solid $text-color;
-      border-bottom: .3215rem solid $text-color;
-      padding-top: 1em;
-      padding-bottom: 1em;
+      border-bottom: .3125rem solid $text-color;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
       font-size: .875rem;
       line-height: 1.6;
-      overflow-y: auto;
+      overflow-y: hidden;
       color: $text-color;
+    }
+  }
+}
+@media (min-width: 75rem) {
+  .innovation {
+    li {
+      p {
+        height: 9.625rem;
+      }
+    }
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .innovation {
+    li {
+      p {
+        height: 11.025rem;
+      }
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .innovation {
+    li {
+      p {
+        height: 12.425rem;
+      }
     }
   }
 }
@@ -931,14 +1007,16 @@
       float: left;
       a {
         display: block;
-        width: 13rem;
-        height: 7.7rem;
+        width: 12.5rem;
+        height: 7.5rem;
         padding: .2rem;
         overflow: hidden;
         position: relative;
         img {
           display: block;
           max-width: 100%;
+          max-height: 100%;
+          width: auto;
           height: auto;
           position: absolute;
           top: 50%;
@@ -949,6 +1027,19 @@
           img {
             opacity: .8;
           }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .cooperation {
+    ul {
+      li {
+        a {
+          display: block;
+          width: 7.8rem;
+          height: 4.62rem;
         }
       }
     }
@@ -1004,7 +1095,7 @@
         .weixin-img {
           display: none;
           position: absolute;
-          bottom: 2.5rem;
+          bottom: 2.625rem;
           right: 0;
           background-color: #fff;
           padding: .4em;
