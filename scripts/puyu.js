@@ -14,8 +14,8 @@ $("#toTop").click(function () {
     return false;
 });
 
-// 当页面宽度不小于 992px 时，二级菜单显示与隐藏
-if (!($("body").outerWidth() < 992)) {
+// 当页面宽度不小于 1199px 时，二级菜单显示与隐藏
+if (!($("body").outerWidth() < 1199)) {
     $("#nav ul li").hover(
         // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
         function () {
@@ -27,7 +27,7 @@ if (!($("body").outerWidth() < 992)) {
 }
 
 // 当页面宽度小于 992px 时，一级菜单显示与隐藏
-if ($("body").outerWidth() < 992) {
+if ($("body").outerWidth() < 1199) {
     $("#menuIcon").on("click", function(e){
         $("#navList").slideToggle(400);
         $(document).on("click", function(){
