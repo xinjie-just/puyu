@@ -264,16 +264,15 @@
 }
 
 /*主要内容*/
-.banner,
+.home-banner,
 .media {
   z-index: 3;
   @extend %page;
   position: relative;
   margin-bottom: 12.5rem;
-  overflow: hidden;
 }
 
-.banner img,
+.home-banner img,
 .media video {
   z-index: 4;
   display: block;
@@ -290,48 +289,52 @@
 }
 
 /*未来空间产品定义者*/
-.future-space-definer {
-  z-index: 9;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: -15rem;
-  @include center-content();
-  h2 {
-    width: 28.125rem;
-    height: 25rem;
-    padding: 1rem 2.375rem;
-    border-top: .625rem solid $text-color;
-    border-bottom: .625rem solid $text-color;
-    background-color: #fff;
-    color: $text-color;
-    line-height: 1.1;
-    overflow-y: auto;
-    span {
-      display: block;
-      &:first-of-type {
-        font-size: 5.4375rem;
-        text-transform: uppercase;
-      }
-      &:last-of-type {
-        margin-top: .8rem;
-        font-size: .875rem;
-        letter-spacing: .3em;
+.home-banner {
+  .future-space-definer {
+    z-index: 9;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: -15rem;
+    @include center-content();
+    h2 {
+      width: 28.125rem;
+      height: 25rem;
+      padding: 1rem 2.375rem;
+      border-top: .625rem solid $text-color;
+      border-bottom: .625rem solid $text-color;
+      background-color: #fff;
+      color: $text-color;
+      line-height: 1.1;
+      overflow-y: auto;
+      span {
+        display: block;
+        &:first-of-type {
+          font-size: 5.4375rem;
+          text-transform: uppercase;
+        }
+        &:last-of-type {
+          margin-top: .8rem;
+          font-size: .875rem;
+          letter-spacing: .3em;
+        }
       }
     }
   }
 }
 @media (max-width: 47.9375rem) {
-  .future-space-definer {
-    margin-top: 1rem;
-    h2 {
-      width: 100%;
-      height: auto;
-      border-top: 3px solid $text-color;
-      border-bottom: 3px solid $text-color;
-      span {
-        &:first-of-type {
-          font-size: 2rem;
+  .home-banner {
+    .future-space-definer {
+      margin-top: 1rem;
+      h2 {
+        width: 100%;
+        height: auto;
+        border-top: 3px solid $text-color;
+        border-bottom: 3px solid $text-color;
+        span {
+          &:first-of-type {
+            font-size: 2rem;
+          }
         }
       }
     }
@@ -885,7 +888,7 @@
 }
 
 /*创新*/
-.innovation {
+.home-innovation {
   @extend .clearfix;
   @include center-content();
   li {
@@ -907,8 +910,9 @@
           font-size: 0;
           span {
             display: inline-block;
-            line-height: 1.1;
-            padding: .2em .6em;
+            line-height: 1.3;
+            padding-right: .6rem;
+            padding-left: .6rem;
             font-size: 2rem;
             background-color: $text-color;
             @include transition(0.4s);
@@ -917,8 +921,9 @@
         &:last-of-type {
           font-size: 1rem;
           letter-spacing: .3em;
-          padding: .2em .6em .2em .9em;
-          line-height: 1.4;
+          line-height: 1.3;
+          padding-right: .6rem;
+          padding-left: .9rem;
           background-color: $text-color;
         }
       }
@@ -949,7 +954,7 @@
   }
 }
 @media (min-width: 75rem) {
-  .innovation {
+  .home-innovation {
     li {
       p {
         height: 9.625rem;
@@ -958,7 +963,7 @@
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
-  .innovation {
+  .home-innovation {
     li {
       p {
         height: 11.025rem;
@@ -967,7 +972,7 @@
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
-  .innovation {
+  .home-innovation {
     li {
       p {
         height: 12.425rem;
@@ -977,7 +982,7 @@
 }
 
 @media (max-width: 47.9375rem) {
-  .innovation {
+  .home-innovation {
     li {
       float: none;
       width: 100%;
@@ -2188,7 +2193,6 @@
           display: inline-block;
           background-color: $text-color;
           color: #fff;
-          //padding: .2rem .6rem;
           padding-right: .6rem;
           padding-left: .6rem;
           &:first-of-type {
@@ -2273,6 +2277,220 @@
     .partner-list {
       > li {
         float: none;
+      }
+    }
+  }
+}
+
+/*===企业理念===*/
+.philosophy-banner {
+  @extend %page;
+  height: 65rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  img {
+    display: block;
+    width: 100%;
+    height: 37.5rem;
+    object-fit: cover;
+  }
+  .future-space-definer {
+    @include center-content();
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $text-color;
+    background-color: #fff;
+    padding: 2.5rem;
+    border-top: .3rem solid $text-color;
+    border-bottom: .3rem solid $text-color;
+    h2 {
+      margin-bottom: 2.5rem;
+      span {
+        display: block;
+        text-decoration: underline;
+        &:first-of-type {
+          font-size: 3.2375rem;
+          text-transform: capitalize;
+          line-height: 1.1;
+          margin-bottom: .5rem;
+        }
+        &:last-of-type {
+          font-size: 1.125rem;
+        }
+      }
+    }
+    .details {
+      line-height: 1.5;
+      color: $text-color;
+      .cn {
+        margin-bottom: 1rem;
+        font-size: .875rem;
+      }
+      .en {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .philosophy-banner {
+    height: auto;
+    margin-bottom: 2rem;
+    position: static;
+    overflow: hidden;
+    img {
+      height: 27.5rem;
+      object-fit: cover;
+    }
+    .future-space-definer {
+      @include center-content();
+      position: static;
+      bottom: auto;
+      transform: translateX(0);
+      h2 {
+        margin-bottom: 1.5rem;
+        span {
+          &:first-of-type {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .details {
+        line-height: 1.5;
+        color: $text-color;
+        .cn {
+          margin-bottom: 1rem;
+          font-size: .875rem;
+        }
+        .en {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+/*理念*/
+.philosophy-innovation {
+  @include center-content();
+  margin-top: 2rem;
+  li {
+    @extend .clearfix;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $text-color;
+    h3 {
+      float: left;
+      strong {
+        display: inline-block;
+        text-transform: capitalize;
+        color: #fff;
+        font-weight: normal;
+        @include transition(0.4s);
+        &:first-of-type {
+          margin-bottom: .625rem;
+          font-size: 0;
+          span {
+            display: inline-block;
+            line-height: 1.3;
+            padding-right: .6rem;
+            padding-left: .6rem;
+            font-size: 2rem;
+            background-color: $text-color;
+            @include transition(0.4s);
+          }
+        }
+        &:last-of-type {
+          font-size: 1rem;
+          letter-spacing: .3em;
+          line-height: 1.3;
+          padding-right: .6rem;
+          padding-left: .9rem;
+          background-color: $text-color;
+        }
+      }
+      &:hover {
+        strong {
+          &:first-of-type {
+            span {
+              background-color: $main-color;
+            }
+          }
+          &:last-of-type {
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+    .details {
+      width: 70%;
+      float: right;
+      line-height: 1.5;
+      color: $text-color;
+      > div:first-of-type {
+        margin-bottom: 1rem;
+        font-size: .875rem;
+      }
+      > div:last-of-type {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .philosophy-innovation {
+    li {
+      h3 {
+        float: none;
+        margin-bottom: 1rem;
+      }
+      .details {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+/*合作伙伴*/
+.partner-bg {
+  @extend %page;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: $text-color;
+  .partner {
+    margin-top: 0;
+    @include center-content();
+    h2 {
+      color: #fff;
+    }
+    .partner-list {
+      .partner-intro {
+        strong {
+          span {
+            background-color: #fff;
+            color: $text-color;
+          }
+        }
+      }
+      .partner-details {
+        color: #fff;
+        > span {
+          background-color: #fff;
+          color: $text-color;
+        }
+        .education {
+          li {
+            color: #fff;
+          }
+        }
+        .take-office {
+          li {
+            color: #fff;
+          }
+        }
       }
     }
   }
