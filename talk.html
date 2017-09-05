@@ -398,9 +398,16 @@
         <script src="scripts/puyu.js"></script>
         <script>
             $(function(){
+                // 多行文本省略号
+                ellipsis();
+                $(window).resize = function () {
+                    ellipsis();
+                };
                 // 多行文本移除省略号
-                $(".tab-content span.en, .tab-content span.cn").dotdotdot();
-                $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
+                function ellipsis() {
+                    $(".tab-content span.en, .tab-content span.cn").dotdotdot();
+                    $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
+                }
 
                 // tab 切换(第一tab按钮对应第一tab内容)
                 for (var i = 0, tabCount = $(".tab-list a").length; i < tabCount; i++) {

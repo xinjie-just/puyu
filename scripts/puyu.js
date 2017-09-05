@@ -26,7 +26,7 @@ if (!($("body").outerWidth() < 1199)) {
     );
 }
 
-// 当页面宽度小于 992px 时，一级菜单显示与隐藏
+// 当页面宽度小于 1199px 时，一级菜单显示与隐藏
 if ($("body").outerWidth() < 1199) {
     $("#menuIcon").on("click", function(e){
         $("#navList").slideToggle(400);
@@ -50,3 +50,13 @@ $("#weixinIcon").hover(
         $("#weixinImg").slideUp(400);
     }
 );
+
+// 多行文本省略号
+$(window).load = function () {
+    ellipsis();
+    setWidth();
+};
+$(window).resize = function () {
+    ellipsis();
+    setWidth();
+};

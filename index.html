@@ -165,7 +165,7 @@
                 </div>
                 <!--瀑布流布局的一些内容-->
                 <ul class="grid container">
-                    <li class="grid-item commercial-mixed outside">
+                    <li class="grid-item commercial-mixed home-outside">
                         <div class="item-box">
                             <img src="images/home-commercial-mixed.jpg" alt="商业综合体">
                             <div class="content">
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="grid-item news outside">
+                    <li class="grid-item news home-outside">
                         <div class="item-box">
                             <img src="images/home-news.jpg" alt="推荐新闻">
                             <div class="content">
@@ -204,7 +204,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="grid-item residence inside">
+                    <li class="grid-item residence home-inside">
                         <div class="item-box">
                             <img src="images/home-residence.jpg" alt="未来生活目的地">
                             <div class="content">
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="grid-item master-planning inside">
+                    <li class="grid-item master-planning home-inside">
                         <div class="item-box">
                             <img src="images/home-master-planning.jpg" alt="玫瑰人生小镇">
                             <div class="content">
@@ -246,7 +246,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="grid-item others outside">
+                    <li class="grid-item others home-outside">
                         <div class="item-box">
                             <img src="images/home-others.jpg" alt="其它项目">
                             <div class="content">
@@ -267,7 +267,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="grid-item inerior-design inside">
+                    <li class="grid-item inerior-design home-inside">
                         <div class="item-box">
                             <img src="images/home-inerior-design.jpg" alt="室内设计">
                             <div class="content">
@@ -557,12 +557,6 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            window.onresize = function () {
-                setWidth();
-            };
-            window.onload = function () {
-                setWidth();
-            };
             function setWidth() {
                 var insideLen = $(".inside").length;
                 for (var i = 0; i < insideLen; i++) {
