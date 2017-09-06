@@ -557,20 +557,29 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            function setWidth() {
-                var insideLen = $(".inside").length;
-                for (var i = 0; i < insideLen; i++) {
-                    $($(".inside").get(i)).height($($(".inside").get(i)).find("img").outerHeight());
+            $(function(){
+                setHeight();
+                ellipsis();
+                $(window).resize = function () {
+                    setHeight();
+                    ellipsis();
+                };
+
+                function setHeight() {
+                    var insideLen = $(".inside").length;
+                    for (var i = 0; i < insideLen; i++) {
+                        $($(".inside").get(i)).height($($(".inside").get(i)).find("img").outerHeight());
+                    }
+
+                    // 度假模式
+                    $(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
                 }
 
-                // 度假模式
-                $(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
+                function ellipsis() {
+                    // 多行文本省略号
+                    $(".innovation li p").dotdotdot();
+                }
 
-                // 多行文本省略号
-                $(".innovation li p").dotdotdot();
-            }
-
-            $(function() {
                 // 瀑布流布局
                 $(".grid").masonry({
                     itemSelector: ".grid-item"
