@@ -18,9 +18,12 @@ $("#toTop").click(function () {
 // 重新加载页面时
 firstGrade();
 secondGrade();
+ellipsis();
+//页面缩放时
 $(window).resize = function () {
     firstGrade();
     secondGrade();
+    ellipsis();
 };
 
 // 当页面宽度不小于 1199px 时，二级菜单显示与隐藏
@@ -53,6 +56,11 @@ function firstGrade() {
     }
 }
 
+// 多行文本省略号
+function ellipsis() {
+    $(".multi-line-ellipsis").dotdotdot();
+}
+
 // 微信二维码的显示与影藏
 $("#weixinIcon").hover(
     function(){
@@ -63,3 +71,15 @@ $("#weixinIcon").hover(
         $("#weixinImg").slideUp(400);
     }
 );
+
+// IE浏览器对替换内容(img,video等)object-fit不兼容的处理
+objectFit.polyfill({
+    selector: 'img', // this can be any CSS selector
+    fittype: 'cover', // either contain, cover, fill or none
+    disableCrossDomain: 'true' // either 'true' or 'false' to not parse external CSS files.
+});
+
+// 轮播图自定义配置
+$('.carousel').carousel({
+    interval: 2000
+})

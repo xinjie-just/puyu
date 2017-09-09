@@ -7,13 +7,16 @@
         <title>创意 | 朴隅建筑</title>
         <meta name="keywords" content="朴隅建筑，智能创新，机构创新，业务创新">
         <meta name="description" content="朴隅建筑希望用自身的实践去探索建筑师的工作边界">
+        <link rel="stylesheet" href="styles/polyfill.object-fit.min.css">
         <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_qibavorm6wfry66r.css">
         <link rel="stylesheet" href="styles/puyu.css">
     </head>
     <body>
         <header id="header" role="banner">
             <figure class="logo">
-                <i class="iconfont icon-purelogo"></i>
+                <a href="#" title="去朴隅建筑首页">
+                    <i class="iconfont icon-purelogo"></i>
+                </a>
             </figure>
             <nav id="nav" role="navigation">
                 <ul class="clearfix" id="navList">
@@ -123,7 +126,7 @@
                 </div>
             </nav>
         </header>
-        <main id="main" role="main" class="idea-main">
+        <main id="main" role="main">
             <div class="idea-show">
                 <div class="idea-sidebar-left">
                     <img src="images/cy1.jpg" alt="创意-探索工作边界">
@@ -145,11 +148,11 @@
                         <img src="images/cy3.jpg" alt="贵阳博华智慧城">
                     </div>
                     <div class="item-inside">
-                        <img src="images/cy2.jpg" alt="其它项目">
+                        <img src="images/cy2.jpg" alt="其它项目" class="object-fit">
                         <div class="content">
                             <h3>
                                 <span class="en">life destination from the future</span><br>
-                                <span class="cn">来自未来的生活目的地</span><br>
+                                <span class="cn multi-line-ellipsis">来自未来的生活目的地</span><br>
                                 <span class="intro">——海南大观千舍住宅</span>
                             </h3>
                             <a href="#" title="了解更多" class="learn-more">Learn more</a>
@@ -164,7 +167,7 @@
                     <div class="text">
                         <h3>
                             <a href="#" title="">
-                                <span class="en">At this moment,we want to have some change</span>
+                                <span class="en multi-line-ellipsis">At this moment,we want to have some change</span>
                                 <span class="cn">在这一点，大家都想有些转变</span>
                             </a>
                         </h3>
@@ -177,7 +180,7 @@
                     <div class="text">
                         <h3>
                             <a href="#" title="">
-                                <span class="en">At this moment,we want to have some changeAt this moment,we want to have some changeAt this moment,we want to have some changeAt this moment,we want to have some change</span>
+                                <span class="en multi-line-ellipsis">At this moment,we want to have some changeAt this moment,we want to have some changeAt this moment,we want to have some changeAt this moment,we want to have some change</span>
                                 <span class="cn">在这一点，大家都想有些转变</span>
                             </a>
                         </h3>
@@ -332,19 +335,8 @@
             </a>
         </footer>
         <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/polyfill.object-fit.min.js"></script>
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
-        <script>
-            $(function() {
-                ellipsis();
-                $(window).resize = function () {
-                    ellipsis();
-                };
-                function ellipsis() {
-                    $(".item-inside .cn").dotdotdot();
-                    $(".idea-list .text .en").dotdotdot();
-                }
-            });
-        </script>
     </body>
 </html>

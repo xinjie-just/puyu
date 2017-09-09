@@ -413,6 +413,10 @@ figure {
   transition: all $duration linear 0s;
 }
 
+@mixin scale($xtimes: 1.2, $ytimes: 1.2) {
+  transform: scale($xtimes, $ytimes);
+}
+
 label {
   margin-bottom: 0;
   cursor: pointer;

@@ -78,7 +78,7 @@ html {
 }
 
 body, #header, .home-banner,
-.media, .work, #footer, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .project-intro, .project-carousel, .project-heading, .project-classify {
+.home-media, .work, #footer, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .project-intro, .project-carousel, .project-heading, .project-classify {
   width: 100%;
   max-width: 1920px;
   margin-right: auto;
@@ -354,7 +354,7 @@ label:hover {
   opacity: .8;
 }
 
-.talk-recommend > .text h2 span.cn, .about-heading span:last-of-type, .idea-show .idea-sidebar-left h2 span.cn, .idea-show .idea-side-right .item-outside .content h3 span.cn, .project-carousel .info h3 span.cn {
+.home-outside .content h3 span, .home-inside .content h3 span, .talk-recommend > .text h2 span.cn, .about-heading span:last-of-type, .idea-show .idea-sidebar-left h2 span.cn, .idea-show .idea-side-right .item-outside .content h3 span.cn, .project-carousel .info h3 span.cn {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -624,24 +624,36 @@ label.error {
 }
 /*主要内容*/
 .home-banner,
-.media {
+.home-media {
   z-index: 3;
   position: relative;
   margin-bottom: 12.5rem;
 }
 
 .home-banner img,
-.media video {
+.home-media video {
   z-index: 4;
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (max-width: 47.9375rem) {
-  .banner,
-  .media {
+  .home-banner,
+  .home-media {
     margin-bottom: 10rem;
+    width: 100%;
+    height: 20.25rem;
+  }
+
+  .home-banner img,
+  .home-media video {
+    z-index: 4;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 /*未来空间产品定义者*/
@@ -649,8 +661,8 @@ label.error {
   z-index: 9;
   position: absolute;
   left: 50%;
+  bottom: -10rem;
   transform: translate(-50%);
-  margin-top: -15rem;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -677,7 +689,6 @@ label.error {
 }
 .home-banner .future-space-definer h2 {
   width: 28.125rem;
-  height: 25rem;
   padding: 1rem 2.375rem;
   border-top: 0.625rem solid #000;
   border-bottom: 0.625rem solid #000;
@@ -689,27 +700,62 @@ label.error {
 .home-banner .future-space-definer h2 span {
   display: block;
 }
-.home-banner .future-space-definer h2 span:first-of-type {
-  font-size: 5.4375rem;
+.home-banner .future-space-definer h2 span.en {
+  font-size: 5rem;
   text-transform: uppercase;
 }
-.home-banner .future-space-definer h2 span:last-of-type {
+.home-banner .future-space-definer h2 span.cn {
   margin-top: .8rem;
   font-size: .875rem;
   letter-spacing: .3em;
 }
 
-@media (max-width: 47.9375rem) {
-  .home-banner .future-space-definer {
-    margin-top: 1rem;
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 10rem;
   }
-  .home-banner .future-space-definer h2 {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
+    bottom: -7rem;
+  }
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 8rem;
+  }
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
+    bottom: -5rem;
+  }
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 6rem;
+  }
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
+    bottom: -3rem;
+  }
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
     width: 100%;
     height: auto;
     border-top: 3px solid #000;
     border-bottom: 3px solid #000;
   }
-  .home-banner .future-space-definer h2 span:first-of-type {
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
     font-size: 2rem;
   }
 }
@@ -844,6 +890,7 @@ label.error {
 @media (max-width: 47.9375rem) {
   .holiday-mode {
     height: auto;
+    margin-bottom: 0;
   }
   .holiday-mode .content {
     padding: 1.25rem .875rem;
@@ -903,11 +950,15 @@ label.error {
   height: auto;
   margin-right: auto;
   margin-left: auto;
+  transition: all 0.6s linear 0s;
 }
 
 @media (min-width: 75rem) {
   .grid {
     width: 68.85rem;
+  }
+  .grid li:hover img {
+    transform: scale(1.2, 1.2);
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -955,7 +1006,8 @@ label.error {
 .home-outside .content h2 {
   display: inline-block;
   color: #000;
-  line-height: 1.2;
+  line-height: 1.2em;
+  max-height: 2.8em;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: normal;
@@ -1052,7 +1104,8 @@ label.error {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.2em;
+  max-height: 2.8em;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: normal;
@@ -1142,8 +1195,9 @@ label.error {
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  border: 1px solid #000;
   color: #000;
+  border: 1px solid;
+  background-color: #fff;
   transition: all 0.6s linear 0s;
 }
 .tab a:not(:last-of-type) {
@@ -1695,12 +1749,18 @@ label.error {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-
-  #quickNav {
+  #footer .footer-left {
+    float: none;
+    text-align: center;
+  }
+  #footer .footer-right {
+    display: none;
+  }
+  #footer .footer-right .other-info {
     display: none;
   }
 
-  .footer-right .other-info {
+  #quickNav {
     display: none;
   }
 }
@@ -1804,6 +1864,7 @@ label.error {
   margin-left: auto;
   border-bottom: .3rem solid #606060;
   padding-bottom: 1rem;
+  margin-bottom: -2rem;
 }
 @media (min-width: 75rem) {
   .map-list {
@@ -2806,7 +2867,6 @@ label.error {
   height: 100%;
   overflow: hidden;
   object-fit: cover;
-  /*vertical-align: middle;*/
 }
 .team h2 {
   position: absolute;
@@ -2990,12 +3050,12 @@ label.error {
 }
 .partner .partner-list > li {
   float: left;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 .partner .partner-list .partner-intro {
   width: 12.5rem;
   height: 14.8rem;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 .partner .partner-list .partner-intro img {
@@ -3053,26 +3113,18 @@ label.error {
 
 @media (min-width: 62rem) {
   .partner .partner-list > li {
-    width: 22%;
+    width: 19%;
   }
   .partner .partner-list > li:not(:nth-of-type(4n+4)) {
-    margin-right: 4%;
+    margin-right: 8%;
   }
 }
-@media (min-width: 48rem) and (max-width: 61.9375rem) {
+@media (min-width: 30rem) and (max-width: 61.9375rem) {
   .partner .partner-list > li {
-    width: 30%;
-  }
-  .partner .partner-list > li:not(:nth-of-type(3n+3)) {
-    margin-right: 5%;
-  }
-}
-@media (min-width: 30rem) and (max-width: 47.9375rem) {
-  .partner .partner-list > li {
-    width: 47%;
+    width: 45%;
   }
   .partner .partner-list > li:not(:nth-of-type(2n+2)) {
-    margin-right: 6%;
+    margin-right: 10%;
   }
 }
 @media (max-width: 29.9375rem) {
@@ -3311,7 +3363,7 @@ label.error {
 .partner-bg {
   margin-top: 3rem;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   background-color: #000;
 }
 .partner-bg .partner {
@@ -3354,10 +3406,8 @@ label.error {
   background-color: #fff;
   color: #000;
 }
-.partner-bg .partner .partner-list .partner-details .education li {
-  color: #fff;
-}
-.partner-bg .partner .partner-list .partner-details .take-office li {
+.partner-bg .partner .partner-list .partner-details li {
+  list-style-position: inside;
   color: #fff;
 }
 
@@ -3858,6 +3908,7 @@ label.error {
   }
   .idea-list li {
     height: auto;
+    margin-bottom: 0;
   }
   .idea-list li img {
     float: none;
@@ -3868,36 +3919,12 @@ label.error {
     margin-left: auto;
   }
   .idea-list li .text {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
     float: none;
     height: auto;
     padding: 1rem;
     border-top: 2px solid #000;
   }
-}
-@media (max-width: 47.9375rem) and (min-width: 75rem) {
-  .idea-list li .text {
-    width: 67.5rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
-  .idea-list li .text {
-    width: 60.625rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
-  .idea-list li .text {
-    width: 46.875rem;
-  }
-}
-@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
-  .idea-list li .text {
-    width: 87.5%;
-  }
-}
-@media (max-width: 47.9375rem) {
   .idea-list li .text h3 .en {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -4077,7 +4104,7 @@ label.error {
 @media (max-width: 47.9375rem) {
   .project-intro {
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     position: static;
   }
   .project-intro img {
@@ -4091,7 +4118,6 @@ label.error {
     position: static;
     bottom: auto;
     transform: translateX(0);
-    width: 100%;
     padding: 1rem .8rem .8rem 0;
     border-top: 2px solid #000;
   }
@@ -4294,7 +4320,7 @@ label.error {
 }
 
 .project-carousel-indicators li {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.8em;
   color: #808080;
   cursor: pointer;
 }
@@ -4343,6 +4369,9 @@ label.error {
     font-size: 1.8rem;
   }
 
+  .project-carousel-indicators li {
+    margin-bottom: 2.6rem;
+  }
   .project-carousel-indicators li p {
     line-height: 1.6em;
     max-height: 3.2em;
@@ -4364,6 +4393,9 @@ label.error {
     font-size: 1.6rem;
   }
 
+  .project-carousel-indicators li {
+    margin-bottom: 2.4rem;
+  }
   .project-carousel-indicators li p {
     line-height: 1.6em;
     max-height: 3.2em;
@@ -4385,6 +4417,9 @@ label.error {
     font-size: 1.4rem;
   }
 
+  .project-carousel-indicators li {
+    margin-bottom: 2rem;
+  }
   .project-carousel-indicators li p {
     line-height: 1.6em;
     max-height: 3.2em;
@@ -4427,10 +4462,9 @@ label.error {
     line-height: 1.3em;
   }
 
-  .project-carousel-indicators {
+  /*.project-carousel-indicators {
     text-align: center;
-  }
-
+  }*/
   .project-carousel-indicators li {
     display: inline-block;
     text-align: center;
@@ -4441,12 +4475,11 @@ label.error {
     }*/
   }
   .project-carousel-indicators li span {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     display: inline-block;
     vertical-align: middle;
-    margin-right: .5rem;
-    margin-left: .5rem;
+    margin-right: 2rem;
   }
   .project-carousel-indicators li p {
     display: none;
@@ -4576,15 +4609,15 @@ article img + div p {
   }
 }
 .new-projects-list li {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   background-color: #fff;
   padding-bottom: 1rem;
 }
 @media (min-width: 48rem) {
   .new-projects-list li {
-    width: 30.33333333%;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
+    width: 32.23333333%;
+    margin-left: 0.55%;
+    margin-right: 0.55%;
   }
 }
 .new-projects-list li img {
@@ -4593,6 +4626,7 @@ article img + div p {
   height: auto;
   margin-right: auto;
   margin-left: auto;
+  transition: all 0.6s linear 0s;
 }
 .new-projects-list li h4 {
   padding: 1rem .8rem 0;
@@ -4624,13 +4658,23 @@ article img + div p {
 .new-projects-list li:hover h4 {
   color: #f7ac3b;
 }
+.new-projects-list li:hover h4 span {
+  transition: all 0.4s linear 0s;
+}
 .new-projects-list li:hover p {
   color: #f7ac3b;
+  transition: all 0.4s linear 0s;
 }
 
 @media (min-width: 75rem) {
   .new-projects-list {
     width: 68.85rem;
+  }
+  .new-projects-list li:hover * {
+    color: #f7ac3b;
+  }
+  .new-projects-list li:hover img {
+    transform: scale(1.2, 1.2);
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -4644,8 +4688,12 @@ article img + div p {
   }
 }
 @media (max-width: 47.9375rem) {
+  .new-projects-list {
+    width: 100%;
+  }
   .new-projects-list li {
     width: 100%;
+    margin-bottom: 0;
   }
 }
 .project-classify {

@@ -265,7 +265,7 @@
 
 /*主要内容*/
 .home-banner,
-.media {
+.home-media {
   z-index: 3;
   @extend %page;
   position: relative;
@@ -273,18 +273,27 @@
 }
 
 .home-banner img,
-.media video {
+.home-media video {
   z-index: 4;
   display: block;
-  //max-width: 100%;
-  //height: auto;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 @media (max-width: 47.9375rem) {
-  .banner,
-  .media {
+  .home-banner,
+  .home-media {
     margin-bottom: 10rem;
+    width: 100%;
+    height: 20.25rem;
+  }
+  .home-banner img,
+  .home-media video {
+    z-index: 4;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -294,12 +303,11 @@
     z-index: 9;
     position: absolute;
     left: 50%;
+    bottom: -10rem;
     transform: translate(-50%);
-    margin-top: -15rem;
     @include center-content();
     h2 {
       width: 28.125rem;
-      height: 25rem;
       padding: 1rem 2.375rem;
       border-top: .625rem solid $text-color;
       border-bottom: .625rem solid $text-color;
@@ -309,11 +317,11 @@
       overflow-y: auto;
       span {
         display: block;
-        &:first-of-type {
-          font-size: 5.4375rem;
+        &.en {
+          font-size: 5rem;
           text-transform: uppercase;
         }
-        &:last-of-type {
+        &.cn {
           margin-top: .8rem;
           font-size: .875rem;
           letter-spacing: .3em;
@@ -322,17 +330,51 @@
     }
   }
 }
-@media (max-width: 47.9375rem) {
-  .home-banner {
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 10rem;
     .future-space-definer {
-      margin-top: 1rem;
+      bottom: -7rem;
+      h2 {
+        span {
+          &.en {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 8rem;
+    .future-space-definer {
+      bottom: -5rem;
+      h2 {
+        span {
+          &.en {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .home-banner,
+  .home-media {
+    margin-bottom: 6rem;
+    .future-space-definer {
+      bottom: -3rem;
       h2 {
         width: 100%;
         height: auto;
         border-top: 3px solid $text-color;
         border-bottom: 3px solid $text-color;
         span {
-          &:first-of-type {
+          &.en {
             font-size: 2rem;
           }
         }
@@ -455,6 +497,7 @@
 @media (max-width: 47.9375rem) {
   .holiday-mode {
     height: auto;
+    margin-bottom: 0;
     .content {
       padding: 1.25rem .875rem;
       h2 {
@@ -491,6 +534,7 @@
       height: auto;
       margin-right: auto;
       margin-left: auto;
+      @include transition();
     }
   }
 }
@@ -498,6 +542,13 @@
 @media (min-width: 75rem) {
   .grid {
     width: 68.85rem;
+    li {
+      &:hover {
+        img {
+          @include scale();
+        }
+      }
+    }
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -550,7 +601,8 @@
     h2 {
       display: inline-block;
       color: $text-color;
-      line-height: 1.2;
+      line-height: 1.2em;
+      max-height: 2.8em;
       margin-bottom: 1rem;
       font-size: 2.25rem;
       font-weight: normal;
@@ -568,6 +620,7 @@
         font-weight: normal;
         padding: .2em .6em;
         @include transition();
+        @extend %ellipsis;
         &:first-of-type {
           font-size: 1rem;
           line-height: 1.4;
@@ -652,7 +705,8 @@
       display: inline-block;
       background-color: $text-color;
       color: #fff;
-      line-height: 1.2;
+      line-height: 1.2em;
+      max-height: 2.8em;
       margin-bottom: 1rem;
       font-size: 2.25rem;
       font-weight: normal;
@@ -671,6 +725,7 @@
         font-weight: normal;
         padding: .2em .6em;
         @include transition();
+        @extend %ellipsis;
         &:first-of-type {
           font-size: 1rem;
           line-height: 1.4;
@@ -722,8 +777,9 @@
     height: 2rem;
     line-height: 2rem;
     text-align: center;
-    border: 1px solid $text-color;
     color: $text-color;
+    border: 1px solid;
+    background-color: #fff;
     @include transition();
     &:not(:last-of-type) {
       margin-right: 5%;
@@ -1128,7 +1184,6 @@
     }
   }
 }
-
 @media (max-width: 30rem) {
   #footer {
     .footer-left {
@@ -1140,7 +1195,6 @@
     }
   }
 }
-
 /*底部左侧快捷导航*/
 #quickNav {
   $height: 34px;
@@ -1239,15 +1293,20 @@
   #footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    .footer-left {
+      float: none;
+      text-align: center;
+    }
+    .footer-right {
+      display: none;
+      .other-info {
+        display: none;
+      }
+    }
   }
   #quickNav {
     display: none;
   }
-  .footer-right {
-    .other-info {
-      display: none;
-    }
-  }  
 }
 
 /*回到顶部*/
@@ -1326,6 +1385,7 @@
   @extend .clearfix;
   border-bottom: .3rem solid #606060;
   padding-bottom: 1rem;
+  margin-bottom: -2rem;
   li {
     float: left;
     width: 30%;
@@ -2063,7 +2123,6 @@
     height: 100%;
     overflow: hidden;
     object-fit: cover;
-    /*vertical-align: middle;*/
   }
   h2 {
     position: absolute;
@@ -2184,12 +2243,12 @@
     @extend .clearfix;
     > li {
       float: left;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .partner-intro {
       width: 12.5rem;
       height: 14.8rem;
-      margin: 0 auto 1.5rem;
+      margin-bottom: 1.5rem;
       position: relative;
       img {
         display: block;
@@ -2254,33 +2313,21 @@
   .partner {
     .partner-list {
       > li {
-        width: 22%;
+        width: 19%;
         &:not(:nth-of-type(4n+4)) {
-          margin-right: 4%;
+          margin-right: 8%;
         }
       }
     }
   }
 }
-@media (min-width: 48rem) and (max-width: 61.9375rem) {
+@media (min-width: 30rem) and (max-width: 61.9375rem) {
   .partner {
     .partner-list {
       > li {
-        width: 30%;
-        &:not(:nth-of-type(3n+3)) {
-          margin-right: 5%;
-        }
-      }
-    }
-  }
-}
-@media (min-width: 30rem) and (max-width: 47.9375rem) {
-  .partner {
-    .partner-list {
-      > li {
-        width: 47%;
+        width: 45%;
         &:not(:nth-of-type(2n+2)) {
-          margin-right: 6%;
+          margin-right: 10%;
         }
       }
     }
@@ -2472,7 +2519,7 @@
   @extend %page;
   margin-top: 3rem;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   background-color: $text-color;
   .partner {
     margin-top: 0;
@@ -2495,15 +2542,9 @@
           background-color: #fff;
           color: $text-color;
         }
-        .education {
-          li {
-            color: #fff;
-          }
-        }
-        .take-office {
-          li {
-            color: #fff;
-          }
+        li {
+          list-style-position: inside;
+          color: #fff;
         }
       }
     }
@@ -2526,7 +2567,6 @@
       display: block;
       width: 100%;
       height: 100%;
-      //object-fit: cover;
     }
     h2 {
       width: 70%;
@@ -3035,6 +3075,7 @@
     width: 100%;
     li {
       height: auto;
+      margin-bottom: 0;
       img {
         float: none;
         width: auto;
@@ -3044,7 +3085,7 @@
         margin-left: auto;
       }
       .text {
-        @include center-content();
+        width: 100%;
         float: none;
         height: auto;
         padding: 1rem;
@@ -3192,7 +3233,7 @@
 @media (max-width: 47.9375rem) {
   .project-intro {
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     position: static;
     img {
       display: block;
@@ -3205,7 +3246,6 @@
       position: static;
       bottom: auto;
       transform: translateX(0);
-      width: 100%;
       padding: 1rem .8rem .8rem 0;
       border-top: 2px solid $text-color;
       h3.en {
@@ -3354,7 +3394,7 @@
   }
 }
 .project-carousel-indicators li {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.8em;
   color: #808080;
   @extend .clearfix;
   cursor: pointer;
@@ -3404,6 +3444,7 @@
     }
   }
   .project-carousel-indicators li {
+    margin-bottom: 2.6rem;
     p {
       line-height: 1.6em;
       max-height: 3.2em;
@@ -3427,6 +3468,7 @@
     }
   }
   .project-carousel-indicators li {
+    margin-bottom: 2.4rem;
     p {
       line-height: 1.6em;
       max-height: 3.2em;
@@ -3450,6 +3492,7 @@
     }
   }
   .project-carousel-indicators li {
+    margin-bottom: 2rem;
     p {
       line-height: 1.6em;
       max-height: 3.2em;
@@ -3492,19 +3535,19 @@
       }
     }
   }
-  .project-carousel-indicators {
+  /*.project-carousel-indicators {
     text-align: center;
-  }
+  }*/
   .project-carousel-indicators li {
     display: inline-block;
     text-align: center;
+    //margin-bottom: 0;
     span {
-      width: 1rem;
-      height: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
       display: inline-block;
       vertical-align: middle;
-      margin-right: .5rem;
-      margin-left: .5rem;
+      margin-right: 2rem;
     }
     p {
       display: none;
@@ -3601,17 +3644,15 @@ article {
 .new-projects-list {
   @include center-content();
   margin-bottom: 2rem;
-  //@extend .clearfix;
   li {
-    //float: left;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     background-color: #fff;
     padding-bottom: 1rem;
     @media(min-width: 48rem) {
       & {
-        width: 30.33333333%;
-        margin-left: 1.5%;
-        margin-right: 1.5%;
+        width: 32.23333333%;
+        margin-left: 0.55%;
+        margin-right: 0.55%;
       }
     }
     img {
@@ -3620,6 +3661,7 @@ article {
       height: auto;
       margin-right: auto;
       margin-left: auto;
+      @include transition();
     }
     h4 {
       padding: 1rem .8rem 0;
@@ -3650,10 +3692,14 @@ article {
     }
     &:hover {
       h4 {
+        span {
+          @include transition(0.4s);
+        }
         color: $main-color;
       }
       p {
         color: $main-color;
+        @include transition(0.4s);
       }
     }
   }
@@ -3662,6 +3708,16 @@ article {
 @media (min-width: 75rem) {
   .new-projects-list {
     width: 68.85rem;
+    li {
+      &:hover {
+        * {
+          color: $main-color;
+        }
+        img {
+          @include scale();
+        }
+      }
+    }
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -3676,8 +3732,10 @@ article {
 }
 @media(max-width: 47.9375rem) {
   .new-projects-list {
+    width: 100%;
     li {
       width: 100%;
+      margin-bottom: 0;
     }
   }
 }

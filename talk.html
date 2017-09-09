@@ -7,13 +7,16 @@
         <title>访谈 | 朴隅建筑</title>
         <meta name="keywords" content="朴隅建筑，智能创新，机构创新，业务创新">
         <meta name="description" content="朴隅建筑希望用自身的实践去探索建筑师的工作边界">
+        <link rel="stylesheet" href="styles/polyfill.object-fit.min.css">
         <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_qibavorm6wfry66r.css">
         <link rel="stylesheet" href="styles/puyu.css">
     </head>
     <body>
         <header id="header" role="banner">
             <figure class="logo">
-                <i class="iconfont icon-purelogo"></i>
+                <a href="#" title="去朴隅建筑首页">
+                    <i class="iconfont icon-purelogo"></i>
+                </a>
             </figure>
             <nav id="nav" role="navigation">
                 <ul class="clearfix" id="navList">
@@ -123,16 +126,16 @@
                 </div>
             </nav>
         </header>
-        <main id="main" role="main" class="talk-main">
+        <main id="main" role="main">
             <div class="talk-recommend">
-                <img src="images/pure1.jpg" alt="推荐访谈">
+                <img src="images/pure1.jpg" alt="推荐访谈" class="object-fit">
                 <div class="text">
                     <h2>
-                        <span class="en">Ultra long scale station transformed into high B conference siteUltra long scale station transformed into high B conference siteUltra long scale station transformed into high B conference site</span>
+                        <span class="en multi-line-ellipsis">Ultra long scale station transformed into high B conference siteUltra long scale station transformed into high B conference siteUltra long scale station transformed into high B conference site</span>
                         <span class="cn">前车之鉴，尬聊余帆前车之鉴，尬聊余帆前车之鉴，尬聊余帆前车之鉴，尬聊余帆</span>
                     </h2>
                     <time class="en">2017.07.16</time>
-                    <p>朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间<a href="#" title="阅读全文" class="read-all">[ 阅读全文 ]</a></p>
+                    <p class="multi-line-ellipsis">朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间，可适应日常办公、年会、主题活动、分享会等活动。朴隅办公室装修创造了开放可变的办公空间<a href="#" title="阅读全文" class="read-all">[ 阅读全文 ]</a></p>
                     <a href="#" title="了解更多" class="more en">Learn more</a>
                 </div>
             </div>
@@ -151,8 +154,8 @@
                         <div class="text">
                             <h2>
                                 <a href="#" title="">
-                                    <span class="en">111111111At this moment,we want to have some change.At this moment,we want to have some change.At this moment,we want to have some change.</span>
-                                    <span class="cn">在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变</span>
+                                    <span class="en multi-line-ellipsis">111111111At this moment,we want to have some change.At this moment,we want to have some change.At this moment,we want to have some change.</span>
+                                    <span class="cn multi-line-ellipsis">在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变</span>
                                 </a>
                             </h2>
                             <div class="time-and-more">
@@ -166,8 +169,8 @@
                         <div class="text">
                             <h2>
                                 <a href="#" title="">
-                                    <span class="en">At this moment,we want to have some change</span>
-                                    <span class="cn">在这一点，大家都想有些转变</span>
+                                    <span class="en multi-line-ellipsis">At this moment,we want to have some change</span>
+                                    <span class="cn multi-line-ellipsis">在这一点，大家都想有些转变</span>
                                 </a>
                             </h2>
                             <div class="time-and-more">
@@ -394,6 +397,7 @@
             </a>
         </footer>
         <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/polyfill.object-fit.min.js"></script>
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
@@ -403,7 +407,6 @@
                 $(window).resize = function () {
                     ellipsis();
                 };
-                // 多行文本移除省略号
                 function ellipsis() {
                     $(".tab-content span.en, .tab-content span.cn").dotdotdot();
                     $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
