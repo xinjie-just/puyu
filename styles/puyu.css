@@ -78,7 +78,7 @@ html {
 }
 
 body, #header, .home-banner,
-.home-media, .work, #footer, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .idea-intro, .project-banner, .all-project, .project-intro, .project-carousel, .project-heading, .project-classify {
+.home-media, .work, #footer, .talk-heading, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .idea-intro, .project-banner, .all-project, .project-intro, .project-carousel, .project-heading, .project-classify {
   width: 100%;
   max-width: 1920px;
   margin-right: auto;
@@ -321,11 +321,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .team-member:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-intro .intro .content:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
+.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .talk-details-list li:before, .talk-details-list li .text .source-and-more:before, .team-member:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-intro .intro .content:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .team-member:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-intro .intro .content:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
+.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .talk-details-list li:after, .talk-details-list li .text .source-and-more:after, .team-member:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-intro .intro .content:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
   content: "";
   display: table;
   clear: both;
@@ -1945,7 +1945,7 @@ label.error {
     width: 100%;
   }
 }
-/*pure(访谈，新闻)*/
+/*===pure(访谈，新闻)===*/
 .talk-recommend {
   height: 39rem;
 }
@@ -2468,6 +2468,218 @@ label.error {
   }
 }
 
+/*===pure详情(访谈，新闻)===*/
+.talk-heading {
+  background-color: #000;
+  height: 6.5rem;
+  line-height: 6.5rem;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.talk-details-list {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 75rem) {
+  .talk-details-list {
+    width: 67.5rem;
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list {
+    width: 60.625rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .talk-details-list {
+    width: 87.5%;
+  }
+}
+.talk-details-list li {
+  margin-bottom: 1.25rem;
+  height: 15rem;
+}
+.talk-details-list li img {
+  display: block;
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+.talk-details-list li .text {
+  float: right;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  border-top: 0.3rem solid #000;
+  padding: 1.875rem 1.25rem;
+}
+.talk-details-list li .text a {
+  display: block;
+}
+.talk-details-list li .text h2 span {
+  font-weight: lighter;
+  display: block;
+  color: #000;
+}
+.talk-details-list li .text h2 span.en {
+  font-size: 1.75rem;
+  line-height: 1.2em;
+  margin-bottom: .5rem;
+  text-decoration: underline;
+  transition: all 0.3s linear 0s;
+}
+@media (min-width: 48rem) {
+  .talk-details-list li .text h2 span.en {
+    max-height: 2.4em;
+  }
+}
+.talk-details-list li .text h2 span.en:hover {
+  color: #f7ac3b;
+}
+.talk-details-list li .text h2 span.cn {
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin-bottom: 1rem;
+  transition: all 0.3s linear 0s;
+}
+@media (min-width: 48rem) {
+  .talk-details-list li .text h2 span.cn {
+    max-height: 3em;
+  }
+}
+.talk-details-list li .text h2 span.cn:hover {
+  color: #f7ac3b;
+}
+.talk-details-list li .text .source-and-more .source {
+  height: 2rem;
+  line-height: 2rem;
+  display: block;
+  float: left;
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+.talk-details-list li .text .source-and-more a {
+  display: block;
+  float: right;
+  width: 9rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border: 1px solid #000;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #000;
+  transition: all 0.3s linear 0s;
+}
+.talk-details-list li .text .source-and-more a:hover {
+  border-color: #f7ac3b;
+  color: #f7ac3b;
+}
+
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list li {
+    height: 14rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list li {
+    height: 13rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .talk-details-list {
+    width: 100%;
+  }
+  .talk-details-list li {
+    margin-bottom: 0;
+    height: auto;
+  }
+  .talk-details-list li img {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  .talk-details-list li .text {
+    float: none;
+    height: auto;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .talk-details-list li .text h2 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 75rem) {
+  .talk-details-list li .text h2 {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list li .text h2 {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list li .text h2 {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
+  .talk-details-list li .text h2 {
+    width: 87.5%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .talk-details-list li .text .source-and-more {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 75rem) {
+  .talk-details-list li .text .source-and-more {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list li .text .source-and-more {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list li .text .source-and-more {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
+  .talk-details-list li .text .source-and-more {
+    width: 87.5%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .talk-details-list li .text .source-and-more .source {
+    float: none;
+    margin-bottom: .5rem;
+  }
+  .talk-details-list li .text .source-and-more a {
+    float: none;
+  }
+}
 /*===关于我们===*/
 /*轮播 start*/
 .about-carousel {

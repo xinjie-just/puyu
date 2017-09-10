@@ -1461,8 +1461,7 @@
   }
 }
 
-/*pure(访谈，新闻)*/
-
+/*===pure(访谈，新闻)===*/
 .talk-recommend {
   @extend .clearfix;
   height: 39rem;
@@ -1814,6 +1813,156 @@
       }
       .more {
         @include center-content();
+      }
+    }
+  }
+}
+
+/*===pure详情(访谈，新闻)===*/
+
+
+.talk-heading {
+  @extend %page;
+  background-color: $text-color;
+  height: 6.5rem;
+  line-height: 6.5rem;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.talk-details-list {
+  @include center-content();
+  li {
+    margin-bottom: 1.25rem;
+    @extend .clearfix;
+    height: 15rem;
+    img {
+      display: block;
+      float: left;
+      width: 40%;
+      height: 100%;
+    }
+    .text {
+      float: right;
+      width: 60%;
+      height: 100%;
+      background-color: #fff;
+      border-top: .3rem solid $text-color;
+      padding: 1.875rem 1.25rem;
+      a {
+        display: block;
+      }
+      h2 {
+        span {
+          font-weight: lighter;
+          display: block;
+          color: $text-color;
+          &.en {
+            font-size: 1.75rem;
+            line-height: 1.2em;
+            @media (min-width: 48rem) {
+              max-height: 2.4em;
+            }
+            margin-bottom: .5rem;
+            text-decoration: underline;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+          &.cn {
+            font-size: 1rem;
+            line-height: 1.5em;
+            @media (min-width: 48rem) {
+              max-height: 3em;
+            }
+            margin-bottom: 1rem;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .source-and-more {
+        @extend .clearfix;
+        .source {
+          height: 2rem;
+          line-height: 2rem;
+          display: block;
+          float: left;
+          font-size: 1rem;
+          font-weight: lighter;
+          font-style: italic;
+        }
+        a {
+          display: block;
+          float: right;
+          width: 9rem;
+          height: 2rem;
+          line-height: 2rem;
+          text-align: center;
+          border: 1px solid $text-color;
+          font-size: 1rem;
+          font-weight: lighter;
+          color: $text-color;
+          @include transition(0.3s);
+          &:hover {
+            border-color: $main-color;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list {
+    li {
+      height: 14rem;
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list {
+    li {
+      height: 13rem;
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .talk-details-list {
+    width: 100%;
+    li {
+      margin-bottom: 0;
+      height: auto;
+      img {
+        float: none;
+        width: 100%;
+        height: auto;
+      }
+      .text {
+        float: none;
+        height: auto;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        h2 {
+          @include center-content();
+        }
+        .source-and-more {
+          @include center-content();
+          .source {
+            float: none;
+            margin-bottom: .5rem;
+          }
+          a {
+            float: none;
+          }
+        }
       }
     }
   }
