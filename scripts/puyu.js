@@ -26,9 +26,9 @@ $(window).resize = function () {
     ellipsis();
 };
 
-// 当页面宽度不小于 1199px 时，二级菜单显示与隐藏
+// 当页面宽度不小于 1200px 时，二级菜单显示与隐藏
 function secondGrade() {
-    if (!($("body").outerWidth() < 1199)) {
+    if (!($("body").outerWidth() < 1200)) {
         $("#nav ul li").hover(
             // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
             function () {
@@ -40,9 +40,9 @@ function secondGrade() {
     }
 }
 
-// 当页面宽度小于 1199px 时，一级菜单显示与隐藏
+// 当页面宽度小于 1200px 时，一级菜单显示与隐藏
 function firstGrade() {
-    if ($("body").outerWidth() < 1199) {
+    if ($("body").outerWidth() < 1200) {
         $("#menuIcon").on("click", function (e) {
             $("#navList").slideToggle(400);
             e.stopPropagation();
@@ -82,4 +82,4 @@ objectFit.polyfill({
 // 轮播图自定义配置
 $('.carousel').carousel({
     interval: 2000
-})
+});

@@ -78,7 +78,7 @@ html {
 }
 
 body, #header, .home-banner,
-.home-media, .work, #footer, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .idea-intro, .project-intro, .project-carousel, .project-heading, .project-classify {
+.home-media, .work, #footer, .team, .team-member, .philosophy-banner, .partner-bg, .idea-show, .idea-heading, .idea-intro, .project-banner, .all-project, .project-intro, .project-carousel, .project-heading, .project-classify {
   width: 100%;
   max-width: 1920px;
   margin-right: auto;
@@ -321,11 +321,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .team-member:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-intro .intro .content:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
+.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .team-member:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-intro .intro .content:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .team-member:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-intro .intro .content:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
+.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .team-member:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-intro .intro .content:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
   content: "";
   display: table;
   clear: both;
@@ -1946,19 +1946,22 @@ label.error {
   }
 }
 /*pure(访谈，新闻)*/
+.talk-recommend {
+  height: 39rem;
+}
 .talk-recommend > img {
   float: left;
   display: block;
   max-width: 100%;
   width: 55%;
-  height: 39rem;
+  height: 100%;
   object-fit: cover;
 }
 .talk-recommend > .text {
   background-color: #fff;
   float: right;
   width: 45%;
-  height: 39rem;
+  height: 100%;
   border-top: 0.3rem solid #000;
   padding: 3rem;
 }
@@ -2016,13 +2019,14 @@ label.error {
 }
 
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-recommend {
+    height: 21.45rem;
+  }
   .talk-recommend > img {
     width: 38.5rem;
-    height: 21.45rem;
   }
   .talk-recommend > .text {
     width: calc(100% - 38.5rem);
-    height: 21.45rem;
     padding: 2rem;
   }
   .talk-recommend > .text h2 span.en {
@@ -2040,13 +2044,14 @@ label.error {
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-recommend {
+    height: 15rem;
+  }
   .talk-recommend > img {
     width: 26rem;
-    height: 15rem;
   }
   .talk-recommend > .text {
     width: calc(100% - 26rem);
-    height: 15rem;
     padding: 1rem;
   }
   .talk-recommend > .text h2 span.en {
@@ -2063,6 +2068,9 @@ label.error {
   }
 }
 @media (max-width: 47.9375rem) {
+  .talk-recommend {
+    height: auto;
+  }
   .talk-recommend > img {
     float: none;
     width: 100%;
@@ -2344,13 +2352,13 @@ label.error {
   margin-top: 3rem;
   font-size: 1.5rem;
   color: #000;
-  border: 2px solid #787878;
+  border: 2px solid;
+  background-color: #fff;
   transition: all 0.6s linear 0s;
   cursor: pointer;
 }
 .tab-content > ul .more:hover {
   color: #f7ac3b;
-  border-color: #f7ac3b;
 }
 
 @media (max-width: 47.9375rem) {
@@ -4114,11 +4122,7 @@ label.error {
     position: static;
   }
   .idea-intro img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: none;
+    height: 15.25rem;
   }
   .idea-intro .intro {
     position: static;
@@ -4390,6 +4394,656 @@ label.error {
     margin-bottom: .5rem;
   }
   .idea-details-list li .text .source-and-more a {
+    float: none;
+  }
+}
+/*===项目===*/
+.project-banner {
+  margin-bottom: 14rem;
+  position: relative;
+}
+.project-banner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.project-banner h3 {
+  position: absolute;
+  left: 24%;
+  bottom: -10rem;
+  width: 76%;
+  padding: 1rem 2rem;
+  border-top: 0.5rem solid #000;
+  border-bottom: 0.5rem solid #000;
+  background-color: #fff;
+  font-weight: normal;
+}
+.project-banner h3 span {
+  display: block;
+  color: #000;
+}
+.project-banner h3 span:first-of-type {
+  font-size: 3rem;
+  line-height: 1.4em;
+  margin-bottom: .8rem;
+}
+.project-banner h3 span:last-of-type {
+  font-size: .875rem;
+  line-height: 1.2em;
+}
+
+@media (min-width: 75rem) and (max-width: 99.9375rem) {
+  .project-banner {
+    margin-bottom: 12rem;
+  }
+  .project-banner h3 {
+    width: 72%;
+    left: 28%;
+    bottom: -8rem;
+    padding: .8rem 1.6rem;
+  }
+  .project-banner h3 span:first-of-type {
+    font-size: 2.6rem;
+  }
+}
+@media (max-width: 74.9375rem) {
+  .project-banner h3 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 75rem) {
+  .project-banner h3 {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-banner h3 {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-banner h3 {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 74.9375rem) and (max-width: 47.9375rem) {
+  .project-banner h3 {
+    width: 87.5%;
+  }
+}
+
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-banner {
+    margin-bottom: 10rem;
+  }
+  .project-banner h3 {
+    bottom: -6rem;
+    padding: .7rem 1.4rem;
+  }
+  .project-banner h3 span:first-of-type {
+    font-size: 2.2rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-banner {
+    margin-bottom: 9rem;
+  }
+  .project-banner h3 {
+    bottom: -5rem;
+    padding: .6rem 1.2rem;
+  }
+  .project-banner h3 span:first-of-type {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    position: static;
+  }
+  .project-banner img {
+    max-width: none;
+    height: 14.625rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  .project-banner h3 {
+    position: static;
+    width: 100%;
+    bottom: auto;
+    transform: translateX(0);
+    padding: .5rem 1rem;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  .project-banner h3 span:first-of-type {
+    font-size: 1.4rem;
+  }
+}
+/*所有的项目*/
+.all-project {
+  margin-bottom: 2rem;
+}
+.all-project .project-list-classify {
+  float: left;
+}
+.all-project .project-list-content {
+  float: right;
+}
+
+@media (min-width: 75rem) {
+  .project-list-content li {
+    margin-right: .4%;
+    margin-left: .4%;
+    margin-bottom: .75rem;
+    background-color: #fff;
+    width: 24.2%;
+  }
+  .project-list-content li:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  .project-list-content li img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    transition: all 0.6s linear 0s;
+  }
+  .project-list-content li h4 {
+    padding: 1rem 1.4rem 0;
+    margin-bottom: .5rem;
+    color: #000;
+    border-top: .4rem solid;
+  }
+  .project-list-content li h4 a {
+    display: block;
+    transition: all 0.4s linear 0s;
+  }
+  .project-list-content li h4 span {
+    display: block;
+    transition: all 0.4s linear 0s;
+  }
+  .project-list-content li h4 .en {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: .5em;
+  }
+  .project-list-content li h4 .cn {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .project-list-content li p {
+    padding: 0 1.4rem 1.4rem;
+    font-size: .875rem;
+    color: #000;
+    transition: all 0.4s linear 0s;
+  }
+  .project-list-content li:hover h4 a,
+  .project-list-content li:hover h4 span {
+    color: #f7ac3b;
+  }
+  .project-list-content li:hover p {
+    color: #f7ac3b;
+  }
+}
+@media (min-width: 75rem) {
+  .project-list-classify .look-list {
+    display: none;
+  }
+  .project-list-classify li {
+    width: 100%;
+  }
+  .project-list-classify li a {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.4rem;
+    background-color: #000;
+    color: #fff;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding-right: .875rem;
+    padding-left: .875rem;
+    font-size: 0;
+    transition: all 0.4s linear 0s;
+  }
+  .project-list-classify li a strong {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+  .project-list-classify li a strong:first-of-type {
+    width: 65%;
+    text-align: left;
+    font-size: 1.215rem;
+  }
+  .project-list-classify li a strong:last-of-type {
+    width: 35%;
+    text-align: right;
+    font-size: .875rem;
+  }
+  .project-list-classify li a:hover, .project-list-classify li a.active {
+    background-color: #f7ac3b;
+    border-top-color: #f7ac3b;
+    border-bottom-color: #f7ac3b;
+  }
+}
+@media (min-width: 100rem) {
+  .project-list-classify {
+    width: 17%;
+    max-width: 22.5rem;
+  }
+
+  .project-list-content {
+    width: 76%;
+  }
+  .project-list-content li {
+    width: 24.2%;
+  }
+}
+@media (min-width: 75rem) and (max-width: 99.9375rem) {
+  .project-list-classify {
+    width: 23%;
+    max-width: 22.5rem;
+  }
+
+  .project-list-content {
+    width: 72%;
+  }
+  .project-list-content li {
+    width: 32.53333333%;
+  }
+}
+@media (max-width: 74.9375rem) {
+  .all-project .project-list-classify {
+    z-index: 3;
+    position: relative;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 75rem) {
+  .all-project .project-list-classify {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .all-project .project-list-classify {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .all-project .project-list-classify {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 74.9375rem) and (max-width: 47.9375rem) {
+  .all-project .project-list-classify {
+    width: 87.5%;
+  }
+}
+@media (max-width: 74.9375rem) {
+  .all-project .project-list-classify .look-list {
+    z-index: 5;
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #000;
+  }
+  .all-project .project-list-classify .look-list span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 0.875rem solid #000;
+    border-right: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+  }
+  .all-project .project-list-classify ul {
+    display: none;
+    z-index: 4;
+    position: absolute;
+    top: 3.4rem;
+    right: 1rem;
+  }
+  .all-project .project-list-classify ul::before, .all-project .project-list-classify ul::after {
+    content: "";
+    display: table;
+  }
+  .all-project .project-list-classify ul::after {
+    clear: both;
+  }
+  .all-project .project-list-classify ul li {
+    float: left;
+  }
+  .all-project .project-list-classify ul a {
+    display: block;
+    padding: .5rem .8rem;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid;
+  }
+  .all-project .project-list-classify ul a strong {
+    display: block;
+    transition: all 0.4s linear 0s;
+    text-align: center;
+  }
+  .all-project .project-list-classify ul a strong:first-of-type {
+    margin-bottom: .2rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+  .all-project .project-list-classify ul a strong:last-of-type {
+    font-size: .875rem;
+  }
+  .all-project .project-list-classify ul a:hover
+  .all-project .project-list-classify ul a.active {
+    background-color: #f7ac3b;
+  }
+  .all-project .project-list-content {
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 75rem) {
+  .all-project .project-list-content {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .all-project .project-list-content {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 74.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .all-project .project-list-content {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 74.9375rem) and (max-width: 47.9375rem) {
+  .all-project .project-list-content {
+    width: 87.5%;
+  }
+}
+@media (max-width: 74.9375rem) {
+  .all-project .project-list-content li {
+    margin-bottom: .75rem;
+    background-color: #fff;
+  }
+  .all-project .project-list-content li img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .all-project .project-list-content li h4 {
+    padding: 1rem 1.4rem 0;
+    margin-bottom: .5rem;
+    color: #000;
+    border-top: .4rem solid;
+  }
+  .all-project .project-list-content li h4 a {
+    display: block;
+  }
+  .all-project .project-list-content li h4 span {
+    display: block;
+  }
+  .all-project .project-list-content li h4 .en {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: .5em;
+  }
+  .all-project .project-list-content li h4 .cn {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .all-project .project-list-content li p {
+    padding: 0 1.4rem 1.4rem;
+    font-size: .875rem;
+    color: #000;
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list-content li {
+    margin-right: .4%;
+    margin-left: .4%;
+    width: 32.53333333%;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list-content li {
+    margin-right: .4%;
+    margin-left: .4%;
+    width: 49.2%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .all-project .project-list-content {
+    width: 100%;
+  }
+  .all-project .project-list-content li {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.project-list {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 75rem) {
+  .project-list {
+    width: 67.5rem;
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list {
+    width: 60.625rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-list {
+    width: 87.5%;
+  }
+}
+.project-list li {
+  margin-bottom: 1.25rem;
+  height: 15rem;
+}
+.project-list li img {
+  display: block;
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+.project-list li .text {
+  float: right;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  border-top: 0.3rem solid #000;
+  padding: 1.875rem 1.25rem;
+}
+.project-list li .text a {
+  display: block;
+}
+.project-list li .text h2 span {
+  font-weight: lighter;
+  display: block;
+  color: #000;
+}
+.project-list li .text h2 span.en {
+  font-size: 1.75rem;
+  line-height: 1.2em;
+  margin-bottom: .5rem;
+  text-decoration: underline;
+  transition: all 0.3s linear 0s;
+}
+@media (min-width: 48rem) {
+  .project-list li .text h2 span.en {
+    max-height: 2.4em;
+  }
+}
+.project-list li .text h2 span.en:hover {
+  color: #f7ac3b;
+}
+.project-list li .text h2 span.cn {
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin-bottom: 1rem;
+  transition: all 0.3s linear 0s;
+}
+@media (min-width: 48rem) {
+  .project-list li .text h2 span.cn {
+    max-height: 3em;
+  }
+}
+.project-list li .text h2 span.cn:hover {
+  color: #f7ac3b;
+}
+.project-list li .text .source-and-more .source {
+  height: 2rem;
+  line-height: 2rem;
+  display: block;
+  float: left;
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+.project-list li .text .source-and-more a {
+  display: block;
+  float: right;
+  width: 9rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border: 1px solid #000;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #000;
+  transition: all 0.3s linear 0s;
+}
+.project-list li .text .source-and-more a:hover {
+  border-color: #f7ac3b;
+  color: #f7ac3b;
+}
+
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list li {
+    height: 14rem;
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list li {
+    height: 13rem;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-list {
+    width: 100%;
+  }
+  .project-list li {
+    margin-bottom: 0;
+    height: auto;
+  }
+  .project-list li img {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  .project-list li .text {
+    float: none;
+    height: auto;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .project-list li .text h2 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 75rem) {
+  .project-list li .text h2 {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list li .text h2 {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list li .text h2 {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
+  .project-list li .text h2 {
+    width: 87.5%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-list li .text .source-and-more {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 75rem) {
+  .project-list li .text .source-and-more {
+    width: 67.5rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list li .text .source-and-more {
+    width: 60.625rem;
+  }
+}
+@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list li .text .source-and-more {
+    width: 46.875rem;
+  }
+}
+@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
+  .project-list li .text .source-and-more {
+    width: 87.5%;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-list li .text .source-and-more .source {
+    float: none;
+    margin-bottom: .5rem;
+  }
+  .project-list li .text .source-and-more a {
     float: none;
   }
 }

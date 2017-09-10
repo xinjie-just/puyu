@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>项目 | 朴隅建筑</title>
+        <meta name="keywords" content="朴隅建筑，智能创新，机构创新，业务创新">
+        <meta name="description" content="朴隅建筑希望用自身的实践去探索建筑师的工作边界">
+        <link rel="stylesheet" href="styles/polyfill.object-fit.min.css">
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_395743_qibavorm6wfry66r.css">
+        <link rel="stylesheet" href="styles/puyu.css">
+    </head>
+    <body>
+        <header id="header" role="banner">
+            <figure class="logo">
+                <a href="#" title="去朴隅建筑首页">
+                    <i class="iconfont icon-purelogo"></i>
+                </a>
+            </figure>
+            <nav id="nav" role="navigation">
+                <ul class="clearfix" id="navList">
+                    <li class="projects">
+                        <a href="#" title="项目/projects" class="active">
+                            <strong class="en">projects</strong>
+                            <strong>项目</strong>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" title="商业综合体/Commercial Mixed">
+                                    <strong class="en">commercial mixed</strong>
+                                    <strong>商业综合体</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="居住/Residence">
+                                    <strong class="en">residence</strong>
+                                    <strong>居住</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="酒店/Hospitality">
+                                    <strong class="en">hospitality</strong>
+                                    <strong>酒店</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="办公/Office">
+                                    <strong class="en">office</strong>
+                                    <strong>办公</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="教育/Education">
+                                    <strong class="en">education</strong>
+                                    <strong>教育</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="规划/Master Planning">
+                                    <strong class="en">master planning</strong>
+                                    <strong>规划</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="室内设计/Interior Design">
+                                    <strong class="en">interior design</strong>
+                                    <strong>室内设计</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="其它/Others">
+                                    <strong class="en">others</strong>
+                                    <strong>其它</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="理念/Philosophy">
+                            <strong class="en">philosophy</strong>
+                            <strong>理念</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="创意/Ideas">
+                            <strong class="en">ideas</strong>
+                            <strong>创意</strong>
+                        </a>
+                    </li>
+                    <li class="pure">
+                        <a href="#" title="朴隅+/Pure+">
+                            <strong class="en">pure+</strong>
+                            <strong>朴隅+</strong>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" title="访谈/talks">
+                                    <strong class="en">talks</strong>
+                                    <strong>访谈</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="新闻/news">
+                                    <strong class="en">news</strong>
+                                    <strong>新闻</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="关于/About">
+                            <strong class="en">about</strong>
+                            <strong>关于</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="联系/Contact us">
+                            <strong class="en">contact us</strong>
+                            <strong>联系</strong>
+                        </a>
+                    </li>
+                </ul>
+                <div class="menu-icon" id="menuIcon">
+                    <i class="iconfont icon-menu"></i>
+                </div>
+            </nav>
+        </header>
+        <main id="main" role="main">
+            <!-- 项目 banner -->
+            <div class="project-banner">
+                <img src="images/project-list-banner.jpg" alt="项目banner">
+                <h3>
+                    <span class="en multi-line-ellipsis">We participate in the whole process of design management so that the design concept can be maintained throughout the project.</span>
+                    <span class="cn">我们参与设计管理的整个过程，以便在整个项目中保持设计理念。</span>
+                </h3>
+            </div>
+            <!--所有的项目-->
+            <div class="all-project">
+                <!--不同的项目分类-->
+                <div class="project-list-classify">
+                    <button type="button" class="look-list" id="lookList">
+                        <span class="triangle"></span>
+                    </button>
+                    <ul id="projectClassifyList">
+                        <!--当前项目下给 a 标签添加 active 类-->
+                        <li>
+                            <a href="#" title="全部项目/All" class="active">
+                                <strong class="en">all</strong>
+                                <strong>全部项目</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="商业综合体/Commercial Mixed">
+                                <strong class="en">commercial mixed</strong>
+                                <strong>商业综合体</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="居住/Residence">
+                                <strong class="en">residence</strong>
+                                <strong>居住</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="酒店/Hospitality">
+                                <strong class="en">hospitality</strong>
+                                <strong>酒店</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="办公/Office">
+                                <strong class="en">office</strong>
+                                <strong>办公</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="教育/Education">
+                                <strong class="en">education</strong>
+                                <strong>教育</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="规划/Master Planning">
+                                <strong class="en">master planning</strong>
+                                <strong>规划</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="室内设计/Interior Design">
+                                <strong class="en">interior design</strong>
+                                <strong>室内设计</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="其它/Others">
+                                <strong class="en">others</strong>
+                                <strong>其它</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--每一个项目的列表-->
+                <ul class="project-list-content">
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list1.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Life Destination from the Future</span>
+                                <span class="cn">来自未来的生活目的地</span>
+                            </a>
+                        </h4>
+                        <p>——海南大观千舍住宅</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list2.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Zhenzhou Vanke City</span>
+                                <span class="cn">郑州万科城</span>
+                            </a>
+                        </h4>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list3.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">no zuo no die</span>
+                                <span class="cn">当然是选择原谅他</span>
+                            </a>
+                        </h4>
+                        <p>——成都朴隅建筑办公空间</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list4.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">maolai shanju</span>
+                                <span class="cn">矛莱山居</span>
+                            </a>
+                        </h4>
+                        <p>——重庆璧山矛莱山居</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list5.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">mini garden space</span>
+                                <span class="cn">迷你园林空间</span>
+                            </a>
+                        </h4>
+                        <p>——三圣乡小院</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list6.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Life Destination from the Future</span>
+                                <span class="cn">来自未来的生活目的地</span>
+                            </a>
+                        </h4>
+                        <p>——海南大观千舍住宅</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list7.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Zhenzhou Vanke City</span>
+                                <span class="cn">郑州万科城</span>
+                            </a>
+                        </h4>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list8.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">no zuo no die</span>
+                                <span class="cn">当然是选择原谅他</span>
+                            </a>
+                        </h4>
+                        <p>——成都朴隅建筑办公空间</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list9.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">maolai shanju</span>
+                                <span class="cn">矛莱山居</span>
+                            </a>
+                        </h4>
+                        <p>——重庆璧山矛莱山居</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list10.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">mini garden space</span>
+                                <span class="cn">迷你园林空间</span>
+                            </a>
+                        </h4>
+                        <p>——三圣乡小院</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list11.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Life Destination from the Future</span>
+                                <span class="cn">来自未来的生活目的地</span>
+                            </a>
+                        </h4>
+                        <p>——海南大观千舍住宅</p>
+                    </li>
+                    <li class="project-item-content">
+                        <figure>
+                            <img src="images/project-list12.jpg" alt="">
+                        </figure>
+                        <h4>
+                            <a href="#" title="">
+                                <span class="en">Zhenzhou Vanke City</span>
+                                <span class="cn">郑州万科城</span>
+                            </a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 class="project-heading">pure+</h2>
+            <!--项目（pure+）列表-->
+            <ul class="project-list">
+                <li>
+                    <img src="images/pure2.jpg" alt="">
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="">
+                                <span class="en multi-line-ellipsis">111111111At this moment,we want to have some change.At this moment,we want to have some change.At this moment,we want to have some change.</span>
+                                <span class="cn multi-line-ellipsis">在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变.在这一点，大家都想有些转变</span>
+                            </a>
+                        </h2>
+                        <div class="source-and-more">
+                            <p class="source">——贵阳博华智慧城</p>
+                            <a href="#" title="了解更多">Learn more</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/pure2.jpg" alt="">
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="">
+                                <span class="en multi-line-ellipsis">At this moment,we want to have some change</span>
+                                <span class="cn multi-line-ellipsis">在这一点，大家都想有些转变</span>
+                            </a>
+                        </h2>
+                        <div class="source-and-more">
+                            <p class="source">——贵阳博华智慧城</p>
+                            <a href="#" title="了解更多">Learn more</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="images/pure2.jpg" alt="">
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="">
+                                <span class="en multi-line-ellipsis">At this moment,we want to have some change</span>
+                                <span class="cn multi-line-ellipsis">在这一点，大家都想有些转变</span>
+                            </a>
+                        </h2>
+                        <div class="source-and-more">
+                            <p class="source">——贵阳博华智慧城</p>
+                            <a href="#" title="了解更多">Learn more</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        <footer id="footer" role="contentinfo">
+            <div class="footer-wrapper">
+                <div class="footer-left">
+                    <nav id="quickNav">
+                        <ul>
+                            <li>
+                                <a href="#" title="首页/home">
+                                    <strong>home</strong>
+                                    <strong>首页</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="项目/projects">
+                                    <strong>projects</strong>
+                                    <strong>项目</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="理念/Philosophy">
+                                    <strong>philosophy</strong>
+                                    <strong>理念</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="创意/Ideas">
+                                    <strong>ideas</strong>
+                                    <strong>创意</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="朴隅+/Pure+">
+                                    <strong>pure+</strong>
+                                    <strong>朴隅</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="关于/About">
+                                    <strong>about</strong>
+                                    <strong>关于</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="联系/Contact us">
+                                    <strong>contact us</strong>
+                                    <strong>联系</strong>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="quickSubMenu">
+                            <ul>
+                                <li>
+                                    <a href="#" title="商业综合体/Commercial Mixed">
+                                        <strong>commercial mixed</strong>
+                                        <strong>商业综合体</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="居住/Residence">
+                                        <strong>residence</strong>
+                                        <strong>居住</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="酒店/Hospitality">
+                                        <strong>hospitality</strong>
+                                        <strong>酒店</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="办公/Office">
+                                        <strong>office</strong>
+                                        <strong>办公</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="教育/Education">
+                                        <strong>education</strong>
+                                        <strong>教育</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="规划/Master Planning">
+                                        <strong>master planning</strong>
+                                        <strong>规划</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="室内设计/Interior Design">
+                                        <strong>interior design</strong>
+                                        <strong>室内设计</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="其它/Others">
+                                        <strong>others</strong>
+                                        <strong>其它</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#" title="访谈/talks">
+                                        <strong>talks</strong>
+                                        <strong>访谈</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="新闻/news">
+                                        <strong>news</strong>
+                                        <strong>新闻</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <small>copyright &copy; 2017 pure architects</small>
+                </div>
+                <div class="footer-right">
+                    <div class="follow">
+                        <span class="en">follow us</span>
+                        <a href="#" title="我们的官方微博"><i class="iconfont icon-weibo"></i></a>
+                        <div class="weixin">
+                            <i class="iconfont icon-weixin" id="weixinIcon"></i>
+                            <div class="weixin-img" id="weixinImg">
+                                <img src="images/weixin-code.jpg" alt="微信二维码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-info">
+                        <p>C: 成都（重庆）朴隅建筑设计有限公司</p>
+                        <p>A: 成都市高新区天府三街219号腾讯大厦B座406</p>
+                        <p>重庆市北部新区泰山大道西段2号1栋13A</p>
+                        <p>上海市黄浦区半淞园路388号B4-2-D2A</p>
+                        <p>E: info@purearch.com.cn</p>
+                    </div>
+                </div>
+            </div>
+            <!--回到顶部-->
+            <a id="toTop" href="javascript:void(0);" title="回到顶部">
+                <i class="iconfont icon-totop"></i>
+            </a>
+        </footer>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/jquery.pin.min.js"></script>
+        <script src="scripts/polyfill.object-fit.min.js"></script>
+        <script src="scripts/masonry.pkgd.min.js"></script>
+        <script src="scripts/jquery.dotdotdot.js"></script>
+        <script src="scripts/carousel.js"></script>
+        <script src="scripts/puyu.js"></script>
+        <script>
+            $(function () {
+                // 瀑布流布局
+                $(".project-list-content").masonry({
+                    itemSelector: ".project-item-content"
+                });
+
+                // 将项目分类列表钉在某处
+                /*$(".project-list-classify").pin({
+                    containerSelector: ".all-project"
+                });*/
+                /*$(".project-list-classify").pin();*/
+
+                // 手机和平板下项目分类列表的显示和隐藏
+                $("#lookList").click(function () {
+                    $("#projectClassifyList").slideToggle(300);
+                });
+            });
+        </script>
+    </body>
+</html>

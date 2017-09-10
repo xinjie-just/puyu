@@ -1465,19 +1465,20 @@
 
 .talk-recommend {
   @extend .clearfix;
+  height: 39rem;
   > img {
     float: left;
     display: block;
     max-width: 100%;
     width: 55%;
-    height: 39rem;
+    height: 100%;
     object-fit: cover;
   }
   > .text {
     background-color: #fff;
     float: right;
     width: 45%;
-    height: 39rem;
+    height: 100%;
     border-top: .3rem solid $text-color;
     padding: 3rem;
     h2 {
@@ -1537,13 +1538,12 @@
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .talk-recommend {
+    height: 21.45rem;
     > img {
       width: 38.5rem;
-      height: 21.45rem;
     }
     > .text {
       width: calc(100% - 38.5rem);
-      height: 21.45rem;
       padding: 2rem;
       h2 {
         span {
@@ -1567,13 +1567,12 @@
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .talk-recommend {
+    height: 15rem;
     > img {
       width: 26rem;
-      height: 15rem;
     }
     > .text {
       width: calc(100% - 26rem);
-      height: 15rem;
       padding: 1rem;
       h2 {
         span {
@@ -1596,6 +1595,7 @@
 }
 @media (max-width: 47.9375rem) {
   .talk-recommend {
+    height: auto;
     > img {
       float: none;
       width: 100%;
@@ -1768,12 +1768,12 @@
       margin-top: 3rem;
       font-size: 1.5rem;
       color: $text-color;
-      border: 2px solid #787878;
+      border: 2px solid;
+      background-color: #fff;
       @include transition();
       cursor: pointer;
       &:hover {
         color: $main-color;
-        border-color: $main-color;
       }
     }
   }
@@ -3247,11 +3247,7 @@
     margin-bottom: 2rem;
     position: static;
     img {
-      display: block;
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      object-fit: none;
+      height: 15.25rem;
     }
     .intro {
       position: static;
@@ -3383,6 +3379,557 @@
 }
 @media (max-width: 47.9375rem) {
   .idea-details-list {
+    width: 100%;
+    li {
+      margin-bottom: 0;
+      height: auto;
+      img {
+        float: none;
+        width: 100%;
+        height: auto;
+      }
+      .text {
+        float: none;
+        height: auto;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        h2 {
+          @include center-content();
+        }
+        .source-and-more {
+          @include center-content();
+          .source {
+            float: none;
+            margin-bottom: .5rem;
+          }
+          a {
+            float: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*===项目===*/
+.project-banner {
+  @extend %page;
+  margin-bottom: 14rem;
+  position: relative;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  h3 {
+    position: absolute;
+    left: 24%;
+    bottom: -10rem;
+    width: 76%;
+    padding: 1rem 2rem;
+    border-top: .5rem solid $text-color;
+    border-bottom: .5rem solid $text-color;
+    background-color: #fff;
+    font-weight: normal;
+    span {
+      display: block;
+      color: $text-color;
+      &:first-of-type {
+        font-size: 3rem;
+        line-height: 1.4em;
+        margin-bottom: .8rem;
+      }
+      &:last-of-type {
+        font-size: .875rem;
+        line-height: 1.2em;
+      }
+    }
+  }
+}
+@media (min-width: 75rem) and (max-width: 99.9375rem) {
+  .project-banner {
+    margin-bottom: 12rem;
+    h3 {
+      width: 72%;
+      left: 28%;
+      bottom: -8rem;
+      padding: .8rem 1.6rem;
+      span {
+        &:first-of-type {
+          font-size: 2.6rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 74.9375rem) {
+  .project-banner {
+    h3 {
+      @include center-content();
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-banner {
+    margin-bottom: 10rem;
+    h3 {
+      bottom: -6rem;
+      padding: .7rem 1.4rem;
+      span {
+        &:first-of-type {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-banner {
+    margin-bottom: 9rem;
+    h3 {
+      bottom: -5rem;
+      padding: .6rem 1.2rem;
+      span {
+        &:first-of-type {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    position: static;
+    img {
+      max-width: none;
+      height: 14.625rem;
+      width: 100%;
+      object-fit: cover;
+    }
+    h3 {
+      position: static;
+      width: 100%;
+      bottom: auto;
+      transform: translateX(0);
+      padding: .5rem 1rem;
+      border-top: 2px solid $text-color;
+      border-bottom: 2px solid $text-color;
+      span {
+        &:first-of-type {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+/*所有的项目*/
+.all-project {
+  @extend %page;
+  @extend .clearfix;
+  margin-bottom: 2rem;
+  .project-list-classify {
+    float: left;
+  }
+  .project-list-content {
+    float: right;
+  }
+}
+@media (min-width: 75rem) {
+  .project-list-content {
+    li {
+      margin-right: .4%;
+      margin-left: .4%;
+      margin-bottom: .75rem;
+      background-color: #fff;
+      width: 24.2%;
+      &:hover {
+        img {
+          @include scale();
+        }
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        @include transition();
+      }
+      h4 {
+        padding: 1rem 1.4rem 0;
+        margin-bottom: .5rem;
+        color: $text-color;
+        border-top: .4rem solid;
+        a {
+          display: block;
+          @include transition(0.4s);
+        }
+        span {
+          display: block;
+          @include transition(0.4s);
+        }
+        .en {
+          font-size: 1.5rem;
+          line-height: 1.3;
+          margin-bottom: .5em;
+        }
+        .cn {
+          display: block;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+      }
+      p {
+        padding: 0 1.4rem 1.4rem;
+        font-size: .875rem;
+        color: $text-color;
+        @include transition(0.4s);
+      }
+      &:hover {
+        h4 {
+          a,
+          span {
+            color: $main-color;
+          }
+        }
+        p {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 75rem) {
+  .project-list-classify {
+    .look-list {
+      display: none;
+    }
+    li {
+      width: 100%;
+      a {
+        $size: 2.5rem;
+        $height: 2.5rem - .1rem;
+        display: block;
+        width: 100%;
+        height: $size;
+        line-height: $height;
+        background-color: $text-color;
+        color: #fff;
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #666;
+        padding-right: .875rem;
+        padding-left: .875rem;
+        font-size: 0;
+        @include transition(0.4s);
+        strong {
+          display: inline-block;
+          vertical-align: middle;
+          font-weight: normal;
+          text-transform: capitalize;
+          &:first-of-type {
+            width: 65%;
+            text-align: left;
+            font-size: 1.215rem;
+          }
+          &:last-of-type {
+            width: 35%;
+            text-align: right;
+            font-size: .875rem;
+          }
+        }
+        &:hover,
+        &.active {
+          background-color: $main-color;
+          border-top-color: $main-color;
+          border-bottom-color: $main-color;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 100rem) {
+  .project-list-classify {
+    width: 17%;
+    max-width: 22.5rem;
+  }
+  .project-list-content {
+    width: 76%;
+    li {
+      width: 24.2%;
+    }
+  }
+}
+@media (min-width: 75rem) and (max-width: 99.9375rem) {
+  .project-list-classify {
+    width: 23%;
+    max-width: 22.5rem;
+  }
+  .project-list-content {
+    width: 72%;
+    li {
+      width: 32.53333333%;
+    }
+  }
+}
+@media (max-width: 74.9375rem) {
+  .all-project {
+    .project-list-classify {
+      z-index: 3;
+      position: relative;
+      float: none;
+      @include center-content();
+      .look-list {
+        z-index: 5;
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        line-height: 2.4rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, .6);
+        border: 1px solid $text-color;
+        span {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-top: .875rem solid $text-color;
+          border-right: .5rem solid transparent;
+          border-left: .5rem solid transparent;
+          //@include transition(0.3s);
+        }
+      }
+      ul {
+        display: none;
+        z-index: 4;
+        position: absolute;
+        top: 3.4rem;
+        right: 1rem;
+        &::before,
+        &::after {
+          content: "";
+          display: table;
+        }
+        &::after {
+          clear: both;
+        }
+        li {
+          float: left;
+        }
+        a {
+          display: block;
+          padding: .5rem .8rem;
+          background-color: $text-color;
+          color: #fff;
+          border: 1px solid;
+          strong {
+            display: block;
+            @include transition(0.4s);
+            text-align: center;
+            &:first-of-type {
+              margin-bottom: .2rem;
+              font-size: 1rem;
+              text-transform: capitalize;
+            }
+            &:last-of-type {
+              font-size: .875rem;
+            }
+          }
+          &:hover
+          &.active{
+            background-color: $main-color;
+          }
+        }
+      }
+    }
+    .project-list-content {
+      float: none;
+      @include center-content();
+      li {
+        margin-bottom: .75rem;
+        background-color: #fff;
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        h4 {
+          padding: 1rem 1.4rem 0;
+          margin-bottom: .5rem;
+          color: $text-color;
+          border-top: .4rem solid;
+          a {
+            display: block;
+          }
+          span {
+            display: block;
+          }
+          .en {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            margin-bottom: .5em;
+          }
+          .cn {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.5;
+          }
+        }
+        p {
+          padding: 0 1.4rem 1.4rem;
+          font-size: .875rem;
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list-content {
+    li {
+      margin-right: .4%;
+      margin-left: .4%;
+      width: 32.53333333%;
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list-content {
+    li {
+      margin-right: .4%;
+      margin-left: .4%;
+      width: 49.2%;
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .all-project {
+    .project-list-content {
+      width: 100%;
+      li {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.project-list {
+  @include center-content();
+  li {
+    margin-bottom: 1.25rem;
+    @extend .clearfix;
+    height: 15rem;
+    img {
+      display: block;
+      float: left;
+      width: 40%;
+      height: 100%;
+    }
+    .text {
+      float: right;
+      width: 60%;
+      height: 100%;
+      background-color: #fff;
+      border-top: .3rem solid $text-color;
+      padding: 1.875rem 1.25rem;
+      a {
+        display: block;
+      }
+      h2 {
+        span {
+          font-weight: lighter;
+          display: block;
+          color: $text-color;
+          &.en {
+            font-size: 1.75rem;
+            line-height: 1.2em;
+            @media (min-width: 48rem) {
+              max-height: 2.4em;
+            }
+            margin-bottom: .5rem;
+            text-decoration: underline;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+          &.cn {
+            font-size: 1rem;
+            line-height: 1.5em;
+            @media (min-width: 48rem) {
+              max-height: 3em;
+            }
+            margin-bottom: 1rem;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .source-and-more {
+        @extend .clearfix;
+        .source {
+          height: 2rem;
+          line-height: 2rem;
+          display: block;
+          float: left;
+          font-size: 1rem;
+          font-weight: lighter;
+          font-style: italic;
+        }
+        a {
+          display: block;
+          float: right;
+          width: 9rem;
+          height: 2rem;
+          line-height: 2rem;
+          text-align: center;
+          border: 1px solid $text-color;
+          font-size: 1rem;
+          font-weight: lighter;
+          color: $text-color;
+          @include transition(0.3s);
+          &:hover {
+            border-color: $main-color;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list {
+    li {
+      height: 14rem;
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list {
+    li {
+      height: 13rem;
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .project-list {
     width: 100%;
     li {
       margin-bottom: 0;
