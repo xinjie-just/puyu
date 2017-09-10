@@ -3109,6 +3109,302 @@
   }
 }
 
+/*===创意详情===*/
+.idea-intro {
+  @extend %page;
+  height: 21.25rem;
+  margin-bottom: 24rem;
+  position: relative;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .intro {
+    position: absolute;
+    bottom: -22rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @include center-content();
+    padding: 2.5rem 2rem 2rem 0;
+    border-top: .4rem solid $text-color;
+    background-color: #fff;
+    h3.en {
+      display: inline-block;
+      line-height: 1.4;
+      font-size: 2.4rem;
+      background-color: $text-color;
+      color: #fff;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      margin-bottom: 1em;
+      text-transform: capitalize;
+    }
+    .content {
+      @extend .clearfix;
+      .sidebar-left {
+        float: left;
+        width: 35%;
+        h3.cn {
+          display: inline-block;
+          font-size: 1rem;
+          background-color: $text-color;
+          color: #fff;
+          padding-right: 1rem;
+          padding-left: 1rem;
+          line-height: 1.5;
+        }
+        p {
+          display: inline-block;
+          font-size: 1rem;
+          line-height: 1.5;
+          padding-right: 1rem;
+          padding-left: 1rem;
+          background-color: $text-color;
+          color: #fff;
+        }
+        .customer-info {
+          color: $text-color;
+          margin-top: 1rem;
+          padding-left: 1rem;
+          span {
+            display: block;
+            font-size: .875rem;
+            line-height: 1.5;
+            margin-bottom: .5em;
+          }
+        }
+      }
+      .sidebar-right {
+        float: right;
+        width: 55%;
+        color: $text-color;
+        font-size: .875rem;
+        line-height: 2;
+      }
+    }
+  }
+}
+@media (min-width: 75rem) and (max-width: 99.9375rem) {
+  .idea-intro {
+    height: 19.25rem;
+    margin-bottom: 22rem;
+    position: relative;
+    .intro {
+      bottom: -20rem;
+      padding: 2rem 1.6rem 1.6rem 0;
+      h3.en {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
+  .idea-intro {
+    height: 17.25rem;
+    margin-bottom: 20rem;
+    position: relative;
+    .intro {
+      bottom: -18rem;
+      padding: 1.6rem 1.2rem 1.2rem 0;
+      border-top: .3rem solid $text-color;
+      h3.en {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
+  .idea-intro {
+    height: 15.25rem;
+    margin-bottom: 18rem;
+    position: relative;
+    .intro {
+      bottom: -16rem;
+      padding: 1.2rem 1rem 1rem 0;
+      border-top: .2rem solid $text-color;
+      h3.en {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .idea-intro {
+    height: auto;
+    margin-bottom: 2rem;
+    position: static;
+    img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      object-fit: none;
+    }
+    .intro {
+      position: static;
+      bottom: auto;
+      transform: translateX(0);
+      padding: 1rem .8rem .8rem 0;
+      border-top: 2px solid $text-color;
+      h3.en {
+        font-size: 1.4rem;
+      }
+      .content {
+        .sidebar-left {
+          float: none;
+          width: 100%;
+          margin-bottom: 1rem;
+          .customer-info {
+            @include center-content();
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+        .sidebar-right {
+          float: none;
+          @include center-content();
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+}
+
+.idea-heading {
+  @extend %page;
+  height: 3.8rem;
+  line-height: 3.8rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: $text-color;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+.idea-details-list {
+  @include center-content();
+  li {
+    margin-bottom: 1.25rem;
+    @extend .clearfix;
+    height: 15rem;
+    img {
+      display: block;
+      float: left;
+      width: 40%;
+      height: 100%;
+    }
+    .text {
+      float: right;
+      width: 60%;
+      height: 100%;
+      background-color: #fff;
+      border-top: .3rem solid $text-color;
+      padding: 1.875rem 1.25rem;
+      a {
+        display: block;
+      }
+      h2 {
+        span {
+          font-weight: lighter;
+          display: block;
+          color: $text-color;
+          &.en {
+            font-size: 1.75rem;
+            line-height: 1.2em;
+            @media (min-width: 48rem) {
+              max-height: 2.4em;
+            }
+            margin-bottom: .5rem;
+            text-decoration: underline;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+          &.cn {
+            font-size: 1rem;
+            line-height: 1.5em;
+            @media (min-width: 48rem) {
+              max-height: 3em;
+            }
+            margin-bottom: 1rem;
+            @include transition(0.3s);
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+      .source-and-more {
+        @extend .clearfix;
+        .source {
+          height: 2rem;
+          line-height: 2rem;
+          display: block;
+          float: left;
+          font-size: 1rem;
+          font-weight: lighter;
+          font-style: italic;
+        }
+        a {
+          display: block;
+          float: right;
+          width: 9rem;
+          height: 2rem;
+          line-height: 2rem;
+          text-align: center;
+          border: 1px solid $text-color;
+          font-size: 1rem;
+          font-weight: lighter;
+          color: $text-color;
+          @include transition(0.3s);
+          &:hover {
+            border-color: $main-color;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .idea-details-list {
+    width: 100%;
+    li {
+      margin-bottom: 0;
+      height: auto;
+      img {
+        float: none;
+        width: 100%;
+        height: auto;
+      }
+      .text {
+        float: none;
+        height: auto;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        h2 {
+          @include center-content();
+        }
+        .source-and-more {
+          @include center-content();
+          .source {
+            float: none;
+            margin-bottom: .5rem;
+          }
+          a {
+            float: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 /*===项目内页===*/
 .project-intro {
   @extend %page;
