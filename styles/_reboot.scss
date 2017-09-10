@@ -413,7 +413,7 @@ figure {
   transition: all $duration linear 0s;
 }
 
-@mixin scale($xtimes: 1.2, $ytimes: 1.2) {
+@mixin scale($xtimes: 1.1, $ytimes: 1.1) {
   transform: scale($xtimes, $ytimes);
 }
 
