@@ -10,15 +10,17 @@ $(window).scroll(function() {
     }
 });
 $("#toTop").click(function () {
-    $("html, body").animate({scrollTop: 0}, 200); /* 持续时间为 200ms */
+    $("html, body").animate({scrollTop: 0}, 400); /* 持续时间为 400ms */
     return false;
 });
 
 
 // 重新加载页面时
-firstGrade();
-secondGrade();
-ellipsis();
+$(function () {
+    firstGrade();
+    secondGrade();
+    ellipsis();
+});
 //页面缩放时
 $(window).resize = function () {
     firstGrade();
@@ -43,14 +45,14 @@ function secondGrade() {
 // 当页面宽度小于 1200px 时，一级菜单显示与隐藏
 function firstGrade() {
     if ($("body").outerWidth() < 1200) {
-        $("#menuIcon").on("click", function (e) {
+        $("#menuIcon").click(function (e) {
             $("#navList").slideToggle(400);
             e.stopPropagation();
         });
-        $(document).on("click", function () {
+        $(document).click(function () {
             $("#navList").slideUp();
         });
-        $("#navList").on("click", function (e) {
+        $("#navList").click(function (e) {
             e.stopPropagation();
         });
     }
@@ -74,12 +76,12 @@ $("#weixinIcon").hover(
 
 // IE浏览器对替换内容(img,video等)object-fit不兼容的处理
 objectFit.polyfill({
-    selector: 'img', // this can be any CSS selector
-    fittype: 'cover', // either contain, cover, fill or none
-    disableCrossDomain: 'true' // either 'true' or 'false' to not parse external CSS files.
+    selector: "img", // this can be any CSS selector
+    fittype: "cover", // either contain, cover, fill or none
+    disableCrossDomain: "true" // either 'true' or 'false' to not parse external CSS files.
 });
 
 // 轮播图自定义配置
-$('.carousel').carousel({
+$(".carousel").carousel({
     interval: 2000
 });

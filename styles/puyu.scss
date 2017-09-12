@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! lixinjie 20170731 github.com/xinjie-just/hongyan-phone.git */
+/*! lixinjie 20170826 github.com/xinjie-just/puyu.git */
 @import "variables";
 @import "reboot";
 
@@ -163,7 +163,6 @@
     }
   }
 }
-
 @media (max-width: 74.9375rem) {
   #header {
     padding-right: 3rem;
@@ -337,6 +336,7 @@
     .future-space-definer {
       bottom: -7rem;
       h2 {
+        padding: .8rem 1.875rem;
         span {
           &.en {
             font-size: 4rem;
@@ -353,6 +353,7 @@
     .future-space-definer {
       bottom: -5rem;
       h2 {
+        padding: .6rem 1.375rem;
         span {
           &.en {
             font-size: 3rem;
@@ -365,14 +366,20 @@
 @media (max-width: 47.9375rem) {
   .home-banner,
   .home-media {
-    margin-bottom: 6rem;
+    position: static;
+    height: auto;
+    margin-bottom: 2rem;
     .future-space-definer {
-      bottom: -3rem;
+      position: static;
+      width: 100%;
+      bottom: auto;
+      transform: translateX(0);
       h2 {
+        padding: .4rem .875rem;
         width: 100%;
         height: auto;
-        border-top: 3px solid $text-color;
-        border-bottom: 3px solid $text-color;
+        border-top: 2px solid $text-color;
+        border-bottom: 2px solid $text-color;
         span {
           &.en {
             font-size: 2rem;
@@ -876,21 +883,22 @@
   h2 {
     z-index: 9;
     @include center-content();
+    width: 67.5rem;
+    height: 18.75rem;
+    background-color: #fff;
+    color: $text-color;
+    border-top: .625rem solid;
+    border-bottom: .625rem solid;
+    padding: .6rem 1rem;
+    letter-spacing: .1em;
+    overflow-y: auto;
+    font-weight: 500;
     @media (min-width: 48rem) {
       position: absolute;
       bottom: -14.375rem;
       left: 50%;
       transform: translate(-50%);
     }
-    width: 67.5rem;
-    height: 18.75rem;
-    background-color: #fff;
-    border-top: .625rem solid $text-color;
-    border-bottom: .625rem solid $text-color;
-    padding: .6rem 1rem;
-    letter-spacing: .1em;
-    overflow-y: auto;
-    font-weight: 500;
     span {
       display: block;
       color: $text-color;
@@ -928,14 +936,14 @@
     margin-bottom: auto;
     h2 {
       position: static;
-      @include center-content();
+      width: 100%;
       height: auto;
       background-color: #fff;
-      border-top: 3px solid $text-color;
-      border-bottom: 3px solid $text-color;
+      border-top-width: 2px;
+      border-bottom-width: 2px;
       bottom: auto;
-      margin-top: 1rem;
-      margin-bottom: 7rem;
+      margin-top: 0;
+      margin-bottom: 2rem;
       span {
         display: block;
         color: $text-color;
@@ -1199,7 +1207,6 @@
   #footer {
     .footer-left {
       float: none;
-      margin-bottom: 1rem;
     }
     .footer-right {
       float: none;
@@ -1610,10 +1617,14 @@
         span {
           &.en {
             font-size: 1.25rem;
-            line-height: 1.5;
+            line-height: 1.5em;
+            max-height: none;
           }
           &.cn {
             font-size: 1rem;
+            overflow: visible;
+            //text-overflow: none;
+            white-space: normal;
           }
         }
       }
@@ -1779,6 +1790,7 @@
 }
 @media (max-width: 47.9375rem) {
   .tab-content {
+    margin-top: 0;
     > ul {
       &.active {
         width: 100%;
@@ -1819,8 +1831,6 @@
 }
 
 /*===pure详情(访谈，新闻)===*/
-
-
 .talk-heading {
   @extend %page;
   background-color: $text-color;
@@ -1833,6 +1843,12 @@
   color: #fff;
   margin-bottom: 2rem;
 }
+@media (max-width: 47.9375rem) {
+  .talk-heading {
+    margin-bottom: 0;
+  }
+}
+
 .talk-details-list {
   @include center-content();
   li {
@@ -2227,7 +2243,10 @@
 }
 @media (max-width: 47.9375rem) {
   .about-heading {
+    width: 100%;
     bottom: auto;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
     span {
       &:first-of-type {
         font-size: 1.3rem;
@@ -2462,6 +2481,7 @@
         color: $text-color;
         list-style-type: disc;
         margin-bottom: .6rem;
+        list-style-position: inside;
         &:last-of-type {
           margin-bottom: 0;
         }
@@ -2525,8 +2545,8 @@
     color: $text-color;
     background-color: #fff;
     padding: 2.5rem;
-    border-top: .3rem solid $text-color;
-    border-bottom: .3rem solid $text-color;
+    border-top: .3rem solid;
+    border-bottom: .3rem solid;
     h2 {
       margin-bottom: 2.5rem;
       span {
@@ -2567,10 +2587,13 @@
       object-fit: cover;
     }
     .future-space-definer {
-      @include center-content();
+      width: 100%;
+      border-top-width: 2px;
+      border-bottom-width: 2px;
       position: static;
       bottom: auto;
       transform: translateX(0);
+      padding: 1.5rem;
       h2 {
         margin-bottom: 1.5rem;
         span {
@@ -2996,7 +3019,7 @@
     }
     .idea-sidebar-left {
       position: relative;
-      margin-bottom: 2rem;
+      //margin-bottom: 2rem;
       img {
         display: block;
         max-width: 100%;
@@ -3117,6 +3140,7 @@
     height: 3.5rem;
     line-height: 3.5rem;
     font-size: 1.5rem;
+    margin-bottom: 0;
   }
 }
 
@@ -3399,6 +3423,7 @@
       height: 15.25rem;
     }
     .intro {
+      width: 100%;
       position: static;
       bottom: auto;
       transform: translateX(0);
@@ -3438,6 +3463,11 @@
   color: #fff;
   text-transform: capitalize;
   margin-bottom: 2rem;
+}
+@media (max-width: 47.9375rem) {
+  .idea-heading {
+    margin-bottom: 0;
+  }
 }
 
 .idea-details-list {
@@ -4246,6 +4276,7 @@
       object-fit: none;
     }
     .intro {
+      width: 100%;
       position: static;
       bottom: auto;
       transform: translateX(0);
@@ -4620,15 +4651,15 @@ article {
   article {
     width: 100%;
     padding: 1rem 6.25%;
-  }
-  h3 {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  div,
-  p {
-    padding-right: 0;
-    padding-left: 0;
+    h3 {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    div,
+    p {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }
 .project-heading {
@@ -4641,6 +4672,11 @@ article {
   color: #fff;
   text-transform: capitalize;
   margin-bottom: 2rem;
+}
+@media (max-width: 47.9375rem) {
+  .project-heading {
+    margin-bottom: 0;
+  }
 }
 
 /*瀑布流布局新的项目*/

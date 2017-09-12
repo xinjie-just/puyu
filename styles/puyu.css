@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! lixinjie 20170731 github.com/xinjie-just/hongyan-phone.git */
+/*! lixinjie 20170826 github.com/xinjie-just/puyu.git */
 body,
 h1,
 h2,
@@ -52,24 +52,24 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   html {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 62rem) and (max-width: 74.9375rem) {
   html {
-    font-size: 15px;
+    font-size: calc(1rem - 1px);
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 48rem) and (max-width: 61.9375rem) {
   html {
-    font-size: 14px;
+    font-size: calc(1rem - 2px);
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   html {
-    font-size: 13px;
+    font-size: calc(1rem - 3px);
   }
 }
 
@@ -85,13 +85,25 @@ body, #header, .home-banner,
   margin-left: auto;
 }
 
+/*===全站除英文外字体使用‘思源黑体-细’，英文在后面特殊定义===*/
+@font-face {
+  font-family: "SourceHanSans";
+  src: url("../fonts/webfont.eot");
+  /* IE9*/
+  src: url("../fonts/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/webfont.woff") format("woff"), url("../fonts/webfont.ttf") format("truetype"), url("../fonts/webfont.svg#webfont") format("svg");
+  /* iOS 4.1- */
+}
 body {
   width: 100%;
   height: 100%;
   font-size: 1rem;
   color: #000;
   background: #eee url("../images/body-bg-image.png") repeat;
-  font-family: "Microsoft Yahei", Arial, sans-serif;
+  font-family: "SourceHanSans" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 audio,
@@ -379,6 +391,58 @@ label.error {
   display: block;
   color: #f00;
   visibility: hidden;
+}
+
+/*===矢量图标字体===*/
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot?t=1505180876574");
+  /* IE9*/
+  src: url("../fonts/iconfont.eot?t=1505180876574#iefix") format("embedded-opentype"), url("../fonts/iconfont.ttf?t=1505180876574") format("truetype"), url("../fonts/iconfont.svg?t=1505180876574#iconfont") format("svg");
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-totop:before {
+  content: "\e68a";
+}
+
+.icon-weibo:before {
+  content: "\e603";
+}
+
+.icon-weixin:before {
+  content: "\e604";
+}
+
+.icon-purelogo:before {
+  content: "\e605";
+}
+
+.icon-menu:before {
+  content: "\e606";
+}
+
+.icon-close:before {
+  content: "\e607";
+}
+
+.icon-chongqingmap:before {
+  content: "\e608";
+}
+
+.icon-chengdumap:before {
+  content: "\e609";
+}
+
+.icon-shanghaimap:before {
+  content: "\e60a";
 }
 
 /*===英文字体===*/
@@ -719,6 +783,10 @@ label.error {
   .home-media .future-space-definer {
     bottom: -7rem;
   }
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
+    padding: .8rem 1.875rem;
+  }
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
     font-size: 4rem;
@@ -733,6 +801,10 @@ label.error {
   .home-media .future-space-definer {
     bottom: -5rem;
   }
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
+    padding: .6rem 1.375rem;
+  }
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
     font-size: 3rem;
@@ -741,18 +813,24 @@ label.error {
 @media (max-width: 47.9375rem) {
   .home-banner,
   .home-media {
-    margin-bottom: 6rem;
+    position: static;
+    height: auto;
+    margin-bottom: 2rem;
   }
   .home-banner .future-space-definer,
   .home-media .future-space-definer {
-    bottom: -3rem;
+    position: static;
+    width: 100%;
+    bottom: auto;
+    transform: translateX(0);
   }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
+    padding: .4rem .875rem;
     width: 100%;
     height: auto;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid #000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
   }
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
@@ -1276,8 +1354,9 @@ label.error {
   width: 67.5rem;
   height: 18.75rem;
   background-color: #fff;
-  border-top: 0.625rem solid #000;
-  border-bottom: 0.625rem solid #000;
+  color: #000;
+  border-top: .625rem solid;
+  border-bottom: .625rem solid;
   padding: .6rem 1rem;
   letter-spacing: .1em;
   overflow-y: auto;
@@ -1344,39 +1423,15 @@ label.error {
   }
   .work h2 {
     position: static;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
     height: auto;
     background-color: #fff;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid #000;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
     bottom: auto;
-    margin-top: 1rem;
-    margin-bottom: 7rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
-}
-@media (max-width: 47.9375rem) and (min-width: 75rem) {
-  .work h2 {
-    width: 67.5rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
-  .work h2 {
-    width: 60.625rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
-  .work h2 {
-    width: 46.875rem;
-  }
-}
-@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
-  .work h2 {
-    width: 87.5%;
-  }
-}
-@media (max-width: 47.9375rem) {
   .work h2 span {
     display: block;
     color: #000;
@@ -1666,7 +1721,6 @@ label.error {
 @media (max-width: 30rem) {
   #footer .footer-left {
     float: none;
-    margin-bottom: 1rem;
   }
   #footer .footer-right {
     float: none;
@@ -2111,10 +2165,13 @@ label.error {
 @media (max-width: 47.9375rem) {
   .talk-recommend > .text h2 span.en {
     font-size: 1.25rem;
-    line-height: 1.5;
+    line-height: 1.5em;
+    max-height: none;
   }
   .talk-recommend > .text h2 span.cn {
     font-size: 1rem;
+    overflow: visible;
+    white-space: normal;
   }
   .talk-recommend > .text time {
     display: block;
@@ -2362,6 +2419,9 @@ label.error {
 }
 
 @media (max-width: 47.9375rem) {
+  .tab-content {
+    margin-top: 0;
+  }
   .tab-content > ul.active {
     width: 100%;
   }
@@ -2481,6 +2541,11 @@ label.error {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 47.9375rem) {
+  .talk-heading {
+    margin-bottom: 0;
+  }
+}
 .talk-details-list {
   display: block;
   margin-right: auto;
@@ -3016,7 +3081,10 @@ label.error {
 
 @media (max-width: 47.9375rem) {
   .about-heading {
+    width: 100%;
     bottom: auto;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
   }
   .about-heading span:first-of-type {
     font-size: 1.3rem;
@@ -3332,6 +3400,7 @@ label.error {
   color: #000;
   list-style-type: disc;
   margin-bottom: .6rem;
+  list-style-position: inside;
 }
 .partner .partner-list .partner-details li:last-of-type {
   margin-bottom: 0;
@@ -3382,8 +3451,8 @@ label.error {
   color: #000;
   background-color: #fff;
   padding: 2.5rem;
-  border-top: 0.3rem solid #000;
-  border-bottom: 0.3rem solid #000;
+  border-top: .3rem solid;
+  border-bottom: .3rem solid;
 }
 @media (min-width: 75rem) {
   .philosophy-banner .future-space-definer {
@@ -3445,35 +3514,14 @@ label.error {
     object-fit: cover;
   }
   .philosophy-banner .future-space-definer {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
     position: static;
     bottom: auto;
     transform: translateX(0);
+    padding: 1.5rem;
   }
-}
-@media (max-width: 47.9375rem) and (min-width: 75rem) {
-  .philosophy-banner .future-space-definer {
-    width: 67.5rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
-  .philosophy-banner .future-space-definer {
-    width: 60.625rem;
-  }
-}
-@media (max-width: 47.9375rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
-  .philosophy-banner .future-space-definer {
-    width: 46.875rem;
-  }
-}
-@media (max-width: 47.9375rem) and (max-width: 47.9375rem) {
-  .philosophy-banner .future-space-definer {
-    width: 87.5%;
-  }
-}
-@media (max-width: 47.9375rem) {
   .philosophy-banner .future-space-definer h2 {
     margin-bottom: 1.5rem;
   }
@@ -3893,7 +3941,6 @@ label.error {
   }
   .idea-show .idea-sidebar-left {
     position: relative;
-    margin-bottom: 2rem;
   }
   .idea-show .idea-sidebar-left img {
     display: block;
@@ -4002,6 +4049,7 @@ label.error {
     height: 3.5rem;
     line-height: 3.5rem;
     font-size: 1.5rem;
+    margin-bottom: 0;
   }
 }
 .idea-list {
@@ -4337,6 +4385,7 @@ label.error {
     height: 15.25rem;
   }
   .idea-intro .intro {
+    width: 100%;
     position: static;
     bottom: auto;
     transform: translateX(0);
@@ -4420,6 +4469,11 @@ label.error {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 47.9375rem) {
+  .idea-heading {
+    margin-bottom: 0;
+  }
+}
 .idea-details-list {
   display: block;
   margin-right: auto;
@@ -5413,6 +5467,7 @@ label.error {
     object-fit: none;
   }
   .project-intro .intro {
+    width: 100%;
     position: static;
     bottom: auto;
     transform: translateX(0);
@@ -5856,14 +5911,12 @@ article img + div p {
     width: 100%;
     padding: 1rem 6.25%;
   }
-
-  h3 {
+  article h3 {
     padding-right: 0;
     padding-left: 0;
   }
-
-  div,
-  p {
+  article div,
+  article p {
     padding-right: 0;
     padding-left: 0;
   }
@@ -5879,6 +5932,11 @@ article img + div p {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 47.9375rem) {
+  .project-heading {
+    margin-bottom: 0;
+  }
+}
 /*瀑布流布局新的项目*/
 .new-projects-list {
   display: block;

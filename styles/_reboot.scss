@@ -52,17 +52,17 @@ fieldset {
 
 //在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
 html {
-  @media (min-width: 1200px) {
-    font-size: 16px;
+  @media (min-width: 75rem) {
+    font-size: $font-size;
   }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    font-size: 15px;
+  @media (min-width: 62rem) and (max-width: 74.9375rem) {
+    font-size: calc(#{$font-size} - 1px);
   }
-  @media (min-width: 768px) and (max-width: 991px) {
-    font-size: 14px;
+  @media (min-width: 48rem) and (max-width: 61.9375rem) {
+    font-size: calc(#{$font-size} - 2px);
   }
-  @media (max-width: 767px) {
-    font-size: 13px;
+  @media (max-width: 47.9375rem) {
+    font-size: calc(#{$font-size} - 3px);
   }
   height: 100%;
   -webkit-text-size-adjust: 100%;
@@ -85,6 +85,16 @@ html {
   margin-left: auto;
 }
 
+/*===全站除英文外字体使用‘思源黑体-细’，英文在后面特殊定义===*/
+@font-face {
+  font-family: "SourceHanSans";
+  src: url('../fonts/webfont.eot'); /* IE9*/
+  src: url('../fonts/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/webfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+
 body {
   @extend %page;
   width: 100%;
@@ -92,7 +102,12 @@ body {
   font-size: 1rem;
   color: $text-color;
   background: #eee url("../images/body-bg-image.png") repeat;
-  font-family: "Microsoft Yahei", Arial, sans-serif;
+  //font-family: "Microsoft Yahei", Arial, sans-serif;
+  font-family: "SourceHanSans" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 //在 IE 9 及低版本浏览器中为下列元素设置为 inline-block 的显示方式
@@ -491,12 +506,48 @@ label.error {
   visibility: hidden;
 }
 
+/*===矢量图标字体===*/
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont.eot?t=1505180876574'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1505180876574#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.ttf?t=1505180876574') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1505180876574#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-totop:before { content: "\e68a"; }
+
+.icon-weibo:before { content: "\e603"; }
+
+.icon-weixin:before { content: "\e604"; }
+
+.icon-purelogo:before { content: "\e605"; }
+
+.icon-menu:before { content: "\e606"; }
+
+.icon-close:before { content: "\e607"; }
+
+.icon-chongqingmap:before { content: "\e608"; }
+
+.icon-chengdumap:before { content: "\e609"; }
+
+.icon-shanghaimap:before { content: "\e60a"; }
+
+
 /*===英文字体===*/
 @font-face {
   font-family: "scalasans";
   src: url("../fonts/ScalaSans.otf"),
-        url("../fonts/scalasans-webfont.woff"),
-        url("../fonts/scalasans-webfont.woff2");
+       url("../fonts/scalasans-webfont.woff"),
+       url("../fonts/scalasans-webfont.woff2");
 }
 .special-fonts,
 .en {
