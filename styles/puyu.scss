@@ -91,8 +91,6 @@
           }
           &:hover,
           &.active {
-            border-bottom-width: .3rem;
-            border-bottom-color: $text-color;
             strong {
               color: $main-color;
               &:first-of-type {
@@ -102,6 +100,10 @@
                 top: 0;
               }
             }
+          }
+          &:hover {
+            border-bottom-width: .3rem;
+            border-bottom-color: $text-color;
           }
         }
         > ul {
@@ -135,6 +137,7 @@
             }
             strong {
               font-size: .9375rem;
+              font-weight: normal;
               &:first-of-type {
                 float: left;
                 text-align: left;
@@ -321,6 +324,7 @@
         &.en {
           font-size: 5rem;
           text-transform: uppercase;
+          letter-spacing: .1em;
         }
         &.cn {
           margin-top: .8rem;
@@ -1234,6 +1238,8 @@
           strong {
             display: block;
             color: #909090;
+            text-transform: capitalize;
+            font-weight: lighter;
             &:last-of-type {
               display: none;
               color: #fff;
@@ -1272,6 +1278,8 @@
             transform: translateY(-50%);
           }
           strong {
+            font-weight: lighter;
+            text-transform: capitalize;
             &:last-of-type {
               display: none;
             }
@@ -1279,7 +1287,7 @@
         }
       }
       &:first-of-type {
-        width: 26.5rem;
+        width: 25rem;
         li {
           &:nth-of-type(4),
           &:last-of-type {
@@ -2436,13 +2444,13 @@
       span {
         display: block;
         text-decoration: underline;
-        &:first-of-type {
+        &.en {
           font-size: 3.2375rem;
           text-transform: capitalize;
           line-height: 1.1;
           margin-bottom: .5rem;
         }
-        &:last-of-type {
+        &.cn {
           font-size: 1.125rem;
         }
       }

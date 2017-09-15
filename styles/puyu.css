@@ -550,10 +550,6 @@ label.error {
   #nav > ul > li > a strong:last-of-type {
     top: 5.95rem;
   }
-  #nav > ul > li > a:hover, #nav > ul > li > a.active {
-    border-bottom-width: .3rem;
-    border-bottom-color: #000;
-  }
   #nav > ul > li > a:hover strong, #nav > ul > li > a.active strong {
     color: #f7ac3b;
   }
@@ -562,6 +558,10 @@ label.error {
   }
   #nav > ul > li > a:hover strong:last-of-type, #nav > ul > li > a.active strong:last-of-type {
     top: 0;
+  }
+  #nav > ul > li > a:hover {
+    border-bottom-width: .3rem;
+    border-bottom-color: #000;
   }
   #nav > ul > li > ul {
     z-index: 99;
@@ -595,6 +595,7 @@ label.error {
   }
   #nav > ul > li > ul a strong {
     font-size: .9375rem;
+    font-weight: normal;
   }
   #nav > ul > li > ul a strong:first-of-type {
     float: left;
@@ -781,6 +782,7 @@ label.error {
 .home-banner .future-space-definer h2 span.en {
   font-size: 5rem;
   text-transform: uppercase;
+  letter-spacing: .1em;
 }
 .home-banner .future-space-definer h2 span.cn {
   margin-top: .8rem;
@@ -1766,6 +1768,8 @@ label.error {
 #quickNav > ul li a strong {
   display: block;
   color: #909090;
+  text-transform: capitalize;
+  font-weight: lighter;
 }
 #quickNav > ul li a strong:last-of-type {
   display: none;
@@ -1802,11 +1806,15 @@ label.error {
   right: 0;
   transform: translateY(-50%);
 }
+#quickNav > .quickSubMenu ul li a strong {
+  font-weight: lighter;
+  text-transform: capitalize;
+}
 #quickNav > .quickSubMenu ul li a strong:last-of-type {
   display: none;
 }
 #quickNav > .quickSubMenu ul:first-of-type {
-  width: 26.5rem;
+  width: 25rem;
 }
 #quickNav > .quickSubMenu ul:first-of-type li:nth-of-type(4) a:after, #quickNav > .quickSubMenu ul:first-of-type li:last-of-type a:after {
   content: "";
@@ -3355,13 +3363,13 @@ label.error {
   display: block;
   text-decoration: underline;
 }
-.philosophy-banner .future-space-definer h2 span:first-of-type {
+.philosophy-banner .future-space-definer h2 span.en {
   font-size: 3.2375rem;
   text-transform: capitalize;
   line-height: 1.1;
   margin-bottom: .5rem;
 }
-.philosophy-banner .future-space-definer h2 span:last-of-type {
+.philosophy-banner .future-space-definer h2 span.cn {
   font-size: 1.125rem;
 }
 .philosophy-banner .future-space-definer .details {
