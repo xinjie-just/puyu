@@ -85,14 +85,25 @@ html {
   margin-left: auto;
 }
 
+body {
+  @extend %page;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: $text-color;
+  background: #eee url("../images/body-bg-image.png") repeat;
+  font-family: "Microsoft Yahei", Arial, sans-serif;
+}
+
 /*===全站除英文外字体使用‘思源黑体-细’，英文在后面特殊定义===*/
+/*
 @font-face {
   font-family: "SourceHanSans";
-  src: url('../fonts/webfont.eot'); /* IE9*/
-  src: url('../fonts/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../fonts/webfont.woff') format('woff'), /* chrome、firefox */
-  url('../fonts/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('../fonts/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+  src: url('../fonts/webfont.eot'); // IE9
+  src: url('../fonts/webfont.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+  url('../fonts/webfont.woff') format('woff'), // chrome、firefox
+  url('../fonts/webfont.ttf') format('truetype'), // chrome、firefox、opera、Safari, Android, iOS 4.2+
+  url('../fonts/webfont.svg#webfont') format('svg'); // iOS 4.1-
 }
 
 body {
@@ -102,13 +113,12 @@ body {
   font-size: 1rem;
   color: $text-color;
   background: #eee url("../images/body-bg-image.png") repeat;
-  //font-family: "Microsoft Yahei", Arial, sans-serif;
   font-family: "SourceHanSans" !important;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 
 //在 IE 9 及低版本浏览器中为下列元素设置为 inline-block 的显示方式
 audio,
