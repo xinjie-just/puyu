@@ -26,12 +26,28 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+      @include transition(0.4s);
+    }
+  }
+}
+@media (min-width: 75rem) {
+  #header {
+    .logo {
+      a {
+        &:hover {
+          i {
+            color: $main-color;
+          }
+        }
+      }
     }
   }
 }
 @media (max-width: 47.9375rem) {
   #header {
+    $size: 5rem;
     .logo {
+      height: $size;
       width: 9rem;
       i {
         font-size: 1.8rem;
@@ -146,6 +162,7 @@
               &:last-of-type {
                 float: right;
                 text-align: right;
+                letter-spacing: .2em;
               }
             }
           }
@@ -186,7 +203,6 @@
         width: 100%;
         height: $size - 2rem;
         > a {
-          $size: 6.25rem;
           $height: 6.25rem - .3rem;
           display: block;
           width: 100%;
@@ -221,7 +237,6 @@
               text-align: right;
             }
           }
-          &:hover,
           &.active {
             background-color: $main-color;
             border-bottom-color: $main-color;
@@ -232,12 +247,12 @@
         }
         &.projects {
           > ul {
-            width: 16rem;
+            width: 18rem;
           }
         }
         &.pure {
           > ul {
-            width: 7.5rem;
+            width: 9rem;
           }
         }
       }
@@ -259,10 +274,19 @@
 }
 @media (max-width: 47.9375rem) {
   #nav {
+    $size: 5rem;
     > .menu-icon {
       i {
         font-size: 2rem;
       }
+    }
+    > ul {
+      top: $size;
+    }
+    > .menu-icon {
+      width: $size;
+      height: $size;
+      line-height: $size;
     }
   }
 }
@@ -313,8 +337,8 @@
     h2 {
       width: 28.125rem;
       padding: 1rem 2.375rem;
-      border-top: .625rem solid $text-color;
-      border-bottom: .625rem solid $text-color;
+      border-top: 8px solid $text-color;
+      border-bottom: 8px solid $text-color;
       background-color: #fff;
       color: $text-color;
       line-height: 1.1;
@@ -384,8 +408,8 @@
         padding: .4rem .875rem;
         width: 100%;
         height: auto;
-        border-top: 2px solid $text-color;
-        border-bottom: 2px solid $text-color;
+        border-top: 5px solid $text-color;
+        border-bottom: 5px solid $text-color;
         span {
           &.en {
             font-size: 2rem;
@@ -428,29 +452,6 @@
     width: 100%;
     height: 100%;
     padding: 2.5rem 1.75rem;
-    &:hover {
-      h2 {
-        background-color: $main-color;
-        color: #fff;
-      }
-      h3 {
-        span {
-          background-color: $main-color;
-        }
-      }
-      .label {
-        .classify {
-          border-color: $main-color;
-          background-color: $main-color;
-          color: #fff;
-        }
-        .details {
-          border-color: $main-color;
-          background-color: rgba(255, 255, 255, .6);
-          color: $main-color;
-        }
-      }
-    }
     h2 {
       display: inline-block;
       background-color: $text-color;
@@ -503,6 +504,35 @@
         border-color: $text-color;
         background-color: rgba(255, 255, 255, .6);
         color: $text-color;
+      }
+    }
+  }
+}
+@media (min-width: 75rem) {
+  .holiday-mode {
+    .content {
+      &:hover {
+        h2 {
+          background-color: $main-color;
+          color: #fff;
+        }
+        h3 {
+          span {
+            background-color: $main-color;
+          }
+        }
+        .label {
+          .classify {
+            border-color: $main-color;
+            background-color: $main-color;
+            color: #fff;
+          }
+          .details {
+            border-color: $main-color;
+            background-color: rgba(255, 255, 255, .6);
+            color: $main-color;
+          }
+        }
       }
     }
   }
@@ -587,31 +617,6 @@
     padding: .5rem 1.5rem 2rem;
     border-top: .2rem solid $text-color;
     @include transition();
-    &:hover {
-      border-top-color: $main-color;
-      h2 {
-        a {
-          color: $main-color;
-        }
-      }
-      h3 {
-        margin-bottom: 1.5rem;
-        font-size: 0;
-        span {
-          color: $main-color;
-        }
-      }
-      .label {
-        .classify {
-          border-color: $main-color;
-          background-color: $main-color;
-        }
-        .details {
-          border-color: $main-color;
-          color: $main-color;
-        }
-      }
-    }
     h2 {
       display: inline-block;
       a {
@@ -699,28 +704,6 @@
     height: 100%;
     padding: 2.5rem 1.75rem;
     @include transition();
-    &:hover {
-      h2 {
-        a {
-          background-color: $main-color;
-        }
-      }
-      h3 {
-        span {
-          background-color: $main-color;
-        }
-      }
-      .label {
-        .classify {
-          border-color: $main-color;
-          background-color: $main-color;
-        }
-        .details {
-          border-color: $main-color;
-          color: $main-color;
-        }
-      }
-    }
     h2 {
       display: inline-block;
       a {
@@ -819,15 +802,21 @@
         display: none;
       }
     }
-    &:hover {
-      border-color: $main-color;
-      color: $main-color;
-      strong {
-        &:first-of-type {
-          display: none;
-        }
-        &:last-of-type {
-          display: block;
+  }
+}
+@media (min-width: 75rem) {
+  .tab {
+    a {
+      &:hover {
+        border-color: $main-color;
+        color: $main-color;
+        strong {
+          &:first-of-type {
+            display: none;
+          }
+          &:last-of-type {
+            display: block;
+          }
         }
       }
     }
@@ -846,16 +835,6 @@
         }
         &:last-of-type {
           display: inline-block;
-        }
-      }
-      &:hover {
-        strong {
-          &:first-of-type {
-          display: inline-block;
-          }
-          &:last-of-type {
-          display: inline-block;
-          }
         }
       }
     }
@@ -889,9 +868,9 @@
     height: 18.75rem;
     background-color: #fff;
     color: $text-color;
-    border-top: .625rem solid;
-    border-bottom: .625rem solid;
-    padding: .6rem 1rem;
+    border-top: 8px solid;
+    border-bottom: 8px solid;
+    padding: .6rem 1.3rem;
     letter-spacing: .1em;
     overflow-y: auto;
     font-weight: 500;
@@ -941,8 +920,8 @@
       width: 100%;
       height: auto;
       background-color: #fff;
-      border-top-width: 2px;
-      border-bottom-width: 2px;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
       bottom: auto;
       margin-top: 0;
       margin-bottom: 2rem;
@@ -997,30 +976,18 @@
         }
         &:last-of-type {
           font-size: 1rem;
-          letter-spacing: .3em;
-          line-height: 1.3;
-          padding-right: .6rem;
-          padding-left: .9rem;
+          letter-spacing: .2em;
+          line-height: 1.8;
+          padding-right: .5rem;
+          padding-left: .7rem;
           background-color: $text-color;
-        }
-      }
-      &:hover {
-        strong {
-          &:first-of-type {
-            span {
-              background-color: $main-color;
-            }
-          }
-          &:last-of-type {
-            background-color: $main-color;
-          }
         }
       }
     }
     p {
       width: 100%;
-      border-top: .3125rem solid $text-color;
-      border-bottom: .3125rem solid $text-color;
+      border-top: 8px solid $text-color;
+      border-bottom: 8px solid $text-color;
       padding-top: 1rem;
       padding-bottom: 1rem;
       font-size: .875rem;
@@ -1033,6 +1000,20 @@
 @media (min-width: 75rem) {
   .home-innovation {
     li {
+      h3 {
+        &:hover {
+          strong {
+            &:first-of-type {
+              span {
+                background-color: $main-color;
+              }
+            }
+            &:last-of-type {
+              background-color: $main-color;
+            }
+          }
+        }
+      }
       p {
         height: 9.625rem;
       }
@@ -1068,7 +1049,11 @@
       }
       &:not(:last-of-type) {
         padding-right: 0;
-      }      
+      }
+      p {
+        border-top-width: 5px;
+        border-bottom-width: 5px;
+      }
     }
   }  
 }
@@ -1084,6 +1069,8 @@
     background-color: $text-color;
     color: #fff;
     margin-bottom: 1rem;
+    text-transform: capitalize;
+    letter-spacing: .2em;
   }
   ul {
     @extend .clearfix;
@@ -1108,9 +1095,19 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
-        &:hover {
-          img {
-            opacity: .8;
+      }
+    }
+  }
+}
+@media (min-width: 75rem) {
+  .cooperation {
+    ul {
+      li {
+        a {
+          &:hover {
+            img {
+              opacity: .8;
+            }
           }
         }
       }
@@ -1147,6 +1144,7 @@
     @extend .clearfix;
   }
   .footer-left {
+    width: 41.875rem;
     float: left;
     small {
       display: block;
@@ -1154,10 +1152,14 @@
       line-height: 1.714;
       color: #909090;
       text-transform: capitalize;
+      font-weight: lighter;
+      padding-left: .1em;
+      letter-spacing: .1em;
     }
   }
   .footer-right {
     float: right;
+    width: 21rem;
     .follow {
       > span {
         font-size: 1.375rem;
@@ -1195,10 +1197,10 @@
     }
     .other-info {
       margin-top: .875rem;
-      line-height: 1.5;
+      line-height: 1.7;
       p {
         font-size: .75rem;
-        margin-bottom: .5em;
+        margin-bottom: .6em;
         text-decoration: underline;
       }
     }
@@ -1317,6 +1319,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     .footer-left {
+      width: 100%;
       float: none;
       text-align: center;
     }
@@ -1337,16 +1340,6 @@
   display: none;
   z-index: 9999;
   position: fixed;
-  @media (min-width: 75rem) {
-    bottom: 19.375rem;
-    left: 50%;
-    transform: translateX(33.75rem);
-  }
-  @media (max-width: 74.9375rem) {
-    bottom: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-  }
   i {
     $size: 3rem;
     display: block;
@@ -1360,11 +1353,25 @@
     font-size: 2rem;
     @include transition();
   }
-  &:hover {
-    i {
-      border-color: $main-color;
-      color: $main-color;
+}
+@media (min-width: 75rem) {
+  #toTop {
+    bottom: 19.375rem;
+    left: 50%;
+    transform: translateX(33.75rem);
+    &:hover {
+      i {
+        border-color: $main-color;
+        color: $main-color;
+      }
     }
+  }
+}
+@media (max-width: 74.9375rem) {
+  #toTop {
+    bottom: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
   }
 }
 
@@ -2137,8 +2144,8 @@
   .about-heading {
     width: 100%;
     bottom: auto;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
     span {
       &:first-of-type {
         font-size: 1.3rem;
@@ -2480,8 +2487,8 @@
     }
     .future-space-definer {
       width: 100%;
-      border-top-width: 2px;
-      border-bottom-width: 2px;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
       position: static;
       bottom: auto;
       transform: translateX(0);
@@ -3165,7 +3172,7 @@
         float: none;
         height: auto;
         padding: 1rem;
-        border-top: 2px solid $text-color;
+        border-top: 5px solid $text-color;
         h3 {
           .en {
             font-size: 1.2rem;
@@ -3320,7 +3327,7 @@
       bottom: auto;
       transform: translateX(0);
       padding: 1rem .8rem .8rem 0;
-      border-top: 2px solid $text-color;
+      border-top: 5px solid $text-color;
       h3.en {
         font-size: 1.4rem;
       }
@@ -3591,8 +3598,8 @@
       bottom: auto;
       transform: translateX(0);
       padding: .5rem 1rem;
-      border-top: 2px solid $text-color;
-      border-bottom: 2px solid $text-color;
+      border-top: 5px solid $text-color;
+      border-bottom: 5px solid $text-color;
       span {
         &:first-of-type {
           font-size: 1.4rem;
@@ -4173,7 +4180,7 @@
       bottom: auto;
       transform: translateX(0);
       padding: 1rem .8rem .8rem 0;
-      border-top: 2px solid $text-color;
+      border-top: 5px solid $text-color;
       h3.en {
         font-size: 1.4rem;
       }
@@ -4448,7 +4455,7 @@
     width: 100%;
     float: none;
     height: auto;
-    border-top: 2px solid $text-color;
+    border-top: 5px solid $text-color;
     padding: 1.5rem 6.25%;
     h3 {
       margin-bottom: 1.5rem;
