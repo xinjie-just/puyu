@@ -268,6 +268,7 @@
       i {
         font-size: 3rem;
         color: $text-color;
+        @include transition(0.4s);
       }
     }
   }
@@ -307,26 +308,10 @@
   max-width: 100%;
   height: auto;
 }
-@media (max-width: 47.9375rem) {
-  .home-banner,
-  .home-media {
-    margin-bottom: 10rem;
-    width: 100%;
-    height: 20.25rem;
-  }
-  .home-banner img,
-  .home-media video {
-    z-index: 4;
-    display: block;
-    max-width: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
 
 /*未来空间产品定义者*/
-.home-banner {
+.home-banner,
+.home-media {
   .future-space-definer {
     z-index: 9;
     position: absolute;
@@ -336,7 +321,7 @@
     @include center-content();
     h2 {
       width: 28.125rem;
-      padding: 1rem 2.375rem;
+      padding: 1rem 2.375rem 1.4rem;
       border-top: 8px solid $text-color;
       border-bottom: 8px solid $text-color;
       background-color: #fff;
@@ -349,6 +334,7 @@
           font-size: 5rem;
           text-transform: uppercase;
           letter-spacing: .1em;
+          margin-left: -.1em;
         }
         &.cn {
           margin-top: .8rem;
@@ -366,7 +352,7 @@
     .future-space-definer {
       bottom: -7rem;
       h2 {
-        padding: .8rem 1.875rem;
+        padding: .8rem 1.875rem 1.1rem;
         span {
           &.en {
             font-size: 4rem;
@@ -383,7 +369,7 @@
     .future-space-definer {
       bottom: -5rem;
       h2 {
-        padding: .6rem 1.375rem;
+        padding: .6rem 1.375rem .9rem;
         span {
           &.en {
             font-size: 3rem;
@@ -397,15 +383,16 @@
   .home-banner,
   .home-media {
     position: static;
-    height: auto;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 20.25rem;
+    margin-bottom: 10rem;
     .future-space-definer {
       position: static;
       width: 100%;
       bottom: auto;
       transform: translateX(0);
       h2 {
-        padding: .4rem .875rem;
+        padding: .4rem .875rem .7rem;
         width: 100%;
         height: auto;
         border-top: 5px solid $text-color;
@@ -417,6 +404,15 @@
         }
       }
     }
+  }
+  .home-banner img,
+  .home-media video {
+    z-index: 4;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -441,6 +437,7 @@
     display: block;
     max-width: 100%;
     height: auto;
+    min-height: 12.5rem;
     margin-right: auto;
     margin-left: auto;
   }
@@ -461,7 +458,7 @@
       font-size: 2.25rem;
       font-weight: normal;
       text-transform: capitalize;
-      padding: .2em .6em;
+      padding: .2em 1rem;
       @include transition();
     }
     h3 {
@@ -472,7 +469,7 @@
         background-color: $text-color;
         color: #fff;
         font-weight: normal;
-        padding: .2em .6em;
+        padding: .2em 1rem;
         @include transition();
         &:first-of-type {
           font-size: 1rem;
@@ -487,11 +484,12 @@
     .label {
       font-size: 0;
       strong {
-        line-height: 1.5;
-        font-size: .875rem;
+        height: 1.8em;
+        line-height: 1.8em;
+        font-size: 12px;
         display: inline-block;
         vertical-align: middle;
-        padding: .2em .6em;
+        padding: 0 .6em;
         text-transform: capitalize;
         @include transition();
       }
@@ -560,7 +558,7 @@
 /*瀑布流布局的一些内容*/
 .grid {
   @include center-content();
-  margin-bottom: 3.5rem;
+  margin-bottom: .75rem;
   li {
     margin-bottom: 1.25rem;
     background-color: #fff;
@@ -605,6 +603,7 @@
 }
 @media(max-width: 47.9375rem) {
   .grid {
+    margin-bottom: 2rem;
     li {
       width: 100%;
       margin-bottom: 0;
@@ -615,7 +614,7 @@
 .home-outside {
   .content {
     padding: .5rem 1.5rem 2rem;
-    border-top: .2rem solid $text-color;
+    border-top: 8px solid $text-color;
     @include transition();
     h2 {
       display: inline-block;
@@ -641,7 +640,7 @@
         display: inline-block;
         color: $text-color;
         font-weight: normal;
-        padding: .2em .6em;
+        padding: .2em 0;
         @include transition();
         @extend %ellipsis;
         &:first-of-type {
@@ -649,7 +648,7 @@
           line-height: 1.4;
         }
         &:last-of-type {
-          font-size: .75rem;
+          font-size: 13px;
           line-height: 1.6;
         }
       }
@@ -657,9 +656,9 @@
     .label {
       font-size: 0;
       strong {
-        height: 1.75rem;
-        line-height: 1.75rem;
-        font-size: .875rem;
+        height: 2em;
+        line-height: 2em;
+        font-size: 12px;
         display: inline-block;
         vertical-align: middle;
         padding-right: .6em;
@@ -681,6 +680,43 @@
     }
   }
 }
+@media (min-width: 75rem) {
+  .home-outside {
+    .content {
+      &:hover {
+        h2 {
+          a {
+            color: $main-color;
+          }
+        }
+        h3 {
+          span {
+            color: $main-color;
+          }
+        }
+        .label {
+          .classify {
+            border: 1px solid $main-color;
+            background-color: $main-color;
+          }
+          .details {
+            border: 1px solid $main-color;
+            background-color: rgba(255, 255, 255, .6);
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 47.9375rem) {
+  .home-outside {
+    .content {
+      border-top-width: 5px;
+    }
+  }
+}
+
 .home-inside {
   z-index: 3;
   position: relative;
@@ -715,7 +751,7 @@
         font-size: 2.25rem;
         font-weight: normal;
         text-transform: capitalize;
-        padding: .2em .6em;
+        padding: .2em 1rem;
         display: block;
         @include transition();
       }
@@ -729,7 +765,7 @@
         background-color: $text-color;
         color: #fff;
         font-weight: normal;
-        padding: .2em .6em;
+        padding: .2em 1rem;
         @include transition();
         @extend %ellipsis;
         &:first-of-type {
@@ -745,9 +781,9 @@
     .label {
       font-size: 0;
       strong {
-        height: 1.75rem;
-        line-height: 1.75rem;
-        font-size: .875rem;
+        height: 2em;
+        line-height: 2em;
+        font-size: 12px;
         display: inline-block;
         vertical-align: middle;
         padding-right: .6em;
@@ -769,6 +805,37 @@
     }
   }
 }
+@media (min-width: 75rem) {
+  .home-inside {
+    .content {
+      &:hover {
+        h2 {
+          a {
+            background-color: $main-color;
+            color: #fff;
+          }
+        }
+        h3 {
+          span {
+            background-color: $main-color;
+          }
+        }
+        .label {
+          .classify {
+            border-color: $main-color;
+            background-color: $main-color;
+            color: #fff;
+          }
+          .details {
+            border-color: $main-color;
+            background-color: rgba(255, 255, 255, .6);
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
 
 /*菜单切换*/
 .tab {
@@ -780,8 +847,8 @@
     margin-bottom: .5rem;
     width: 30%;
     float: left;
-    height: 2rem;
-    line-height: 2rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
     text-align: center;
     color: $text-color;
     border: 1px solid;
@@ -792,14 +859,16 @@
     }
     strong {
       display: block;
-      height: 2rem;
-      line-height: 2rem;
-      font-size: .875rem;
+      font-size: 1rem;
       &:first-of-type {
-
+        text-transform: capitalize;
+        transition: display 0.4s ease 0s;
       }
       &:last-of-type {
         display: none;
+        padding-left: .1em;
+        letter-spacing: .1em;
+        transition: display 0.4s ease 0s;
       }
     }
   }
@@ -871,7 +940,7 @@
     color: $text-color;
     border-top: 8px solid;
     border-bottom: 8px solid;
-    padding: .6rem 1.3rem;
+    padding: .6rem 1.3rem .9rem;
     letter-spacing: .1em;
     overflow-y: auto;
     font-weight: 500;
@@ -916,6 +985,13 @@
     z-index: 3;
     position: static;
     margin-bottom: auto;
+    img {
+      display: block;
+      max-width: none;
+      width: 100%;
+      height: 18rem;
+      object-fit: cover;
+    }
     h2 {
       position: static;
       width: 100%;
@@ -993,6 +1069,7 @@
       padding-bottom: 1rem;
       font-size: .875rem;
       line-height: 1.6;
+      letter-spacing: .1em;
       overflow-y: hidden;
       color: $text-color;
     }
@@ -1071,7 +1148,7 @@
     color: #fff;
     margin-bottom: 1rem;
     text-transform: capitalize;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
   }
   ul {
     @extend .clearfix;
@@ -1160,7 +1237,7 @@
   }
   .footer-right {
     float: right;
-    width: 21rem;
+    width: 19rem;
     .follow {
       > span {
         font-size: 1.375rem;
@@ -1246,6 +1323,7 @@
             &:last-of-type {
               display: none;
               color: #fff;
+              font-family: "scalasans" !important;
             }
             &:last-of-type {
               display: none;
@@ -1285,12 +1363,13 @@
             text-transform: capitalize;
             &:last-of-type {
               display: none;
+              font-family: "scalasans" !important;
             }
           }
         }
       }
       &:first-of-type {
-        width: 25rem;
+        width: 24rem;
         li {
           &:nth-of-type(4),
           &:last-of-type {

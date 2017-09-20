@@ -467,6 +467,11 @@ label.error {
   font-family: "scalasans" !important;
 }
 
+#quickNav > ul li a strong,
+#quickNav > .quickSubMenu ul li a strong {
+  font-family: "scalasans" !important;
+}
+
 /*===首页===*/
 /*头部*/
 #header {
@@ -702,6 +707,7 @@ label.error {
   #nav > .menu-icon i {
     font-size: 3rem;
     color: #000;
+    transition: all 0.4s linear 0s;
   }
 }
 @media (max-width: 47.9375rem) {
@@ -733,26 +739,9 @@ label.error {
   height: auto;
 }
 
-@media (max-width: 47.9375rem) {
-  .home-banner,
-  .home-media {
-    margin-bottom: 10rem;
-    width: 100%;
-    height: 20.25rem;
-  }
-
-  .home-banner img,
-  .home-media video {
-    z-index: 4;
-    display: block;
-    max-width: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
 /*未来空间产品定义者*/
-.home-banner .future-space-definer {
+.home-banner .future-space-definer,
+.home-media .future-space-definer {
   z-index: 9;
   position: absolute;
   left: 50%;
@@ -763,28 +752,33 @@ label.error {
   margin-left: auto;
 }
 @media (min-width: 75rem) {
-  .home-banner .future-space-definer {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
     width: 67.5rem;
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
-  .home-banner .future-space-definer {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
     width: 60.625rem;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
-  .home-banner .future-space-definer {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
     width: 46.875rem;
   }
 }
 @media (max-width: 47.9375rem) {
-  .home-banner .future-space-definer {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
     width: 87.5%;
   }
 }
-.home-banner .future-space-definer h2 {
+.home-banner .future-space-definer h2,
+.home-media .future-space-definer h2 {
   width: 28.125rem;
-  padding: 1rem 2.375rem;
+  padding: 1rem 2.375rem 1.4rem;
   border-top: 8px solid #000;
   border-bottom: 8px solid #000;
   background-color: #fff;
@@ -792,15 +786,19 @@ label.error {
   line-height: 1.1;
   overflow-y: auto;
 }
-.home-banner .future-space-definer h2 span {
+.home-banner .future-space-definer h2 span,
+.home-media .future-space-definer h2 span {
   display: block;
 }
-.home-banner .future-space-definer h2 span.en {
+.home-banner .future-space-definer h2 span.en,
+.home-media .future-space-definer h2 span.en {
   font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: .1em;
+  margin-left: -.1em;
 }
-.home-banner .future-space-definer h2 span.cn {
+.home-banner .future-space-definer h2 span.cn,
+.home-media .future-space-definer h2 span.cn {
   margin-top: .8rem;
   font-size: .875rem;
   letter-spacing: .3em;
@@ -817,7 +815,7 @@ label.error {
   }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
-    padding: .8rem 1.875rem;
+    padding: .8rem 1.875rem 1.1rem;
   }
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
@@ -835,7 +833,7 @@ label.error {
   }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
-    padding: .6rem 1.375rem;
+    padding: .6rem 1.375rem .9rem;
   }
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
@@ -846,8 +844,9 @@ label.error {
   .home-banner,
   .home-media {
     position: static;
-    height: auto;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 20.25rem;
+    margin-bottom: 10rem;
   }
   .home-banner .future-space-definer,
   .home-media .future-space-definer {
@@ -858,7 +857,7 @@ label.error {
   }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
-    padding: .4rem .875rem;
+    padding: .4rem .875rem .7rem;
     width: 100%;
     height: auto;
     border-top: 5px solid #000;
@@ -867,6 +866,16 @@ label.error {
   .home-banner .future-space-definer h2 span.en,
   .home-media .future-space-definer h2 span.en {
     font-size: 2rem;
+  }
+
+  .home-banner img,
+  .home-media video {
+    z-index: 4;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @media (max-width: 47.9375rem) {
@@ -913,6 +922,7 @@ label.error {
   display: block;
   max-width: 100%;
   height: auto;
+  min-height: 12.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -934,7 +944,7 @@ label.error {
   font-size: 2.25rem;
   font-weight: normal;
   text-transform: capitalize;
-  padding: .2em .6em;
+  padding: .2em 1rem;
   transition: all 0.6s linear 0s;
 }
 .holiday-mode .content h3 {
@@ -946,7 +956,7 @@ label.error {
   background-color: #000;
   color: #fff;
   font-weight: normal;
-  padding: .2em .6em;
+  padding: .2em 1rem;
   transition: all 0.6s linear 0s;
 }
 .holiday-mode .content h3 span:first-of-type {
@@ -961,11 +971,12 @@ label.error {
   font-size: 0;
 }
 .holiday-mode .content .label strong {
-  line-height: 1.5;
-  font-size: .875rem;
+  height: 1.8em;
+  line-height: 1.8em;
+  font-size: 12px;
   display: inline-block;
   vertical-align: middle;
-  padding: .2em .6em;
+  padding: 0 .6em;
   text-transform: capitalize;
   transition: all 0.6s linear 0s;
 }
@@ -1023,7 +1034,7 @@ label.error {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 3.5rem;
+  margin-bottom: .75rem;
 }
 @media (min-width: 75rem) {
   .grid {
@@ -1084,6 +1095,9 @@ label.error {
   }
 }
 @media (max-width: 47.9375rem) {
+  .grid {
+    margin-bottom: 2rem;
+  }
   .grid li {
     width: 100%;
     margin-bottom: 0;
@@ -1091,7 +1105,7 @@ label.error {
 }
 .home-outside .content {
   padding: .5rem 1.5rem 2rem;
-  border-top: 0.2rem solid #000;
+  border-top: 8px solid #000;
   transition: all 0.6s linear 0s;
 }
 .home-outside .content h2 {
@@ -1118,7 +1132,7 @@ label.error {
   display: inline-block;
   color: #000;
   font-weight: normal;
-  padding: .2em .6em;
+  padding: .2em 0;
   transition: all 0.6s linear 0s;
 }
 .home-outside .content h3 span:first-of-type {
@@ -1126,16 +1140,16 @@ label.error {
   line-height: 1.4;
 }
 .home-outside .content h3 span:last-of-type {
-  font-size: .75rem;
+  font-size: 13px;
   line-height: 1.6;
 }
 .home-outside .content .label {
   font-size: 0;
 }
 .home-outside .content .label strong {
-  height: 1.75rem;
-  line-height: 1.75rem;
-  font-size: .875rem;
+  height: 2em;
+  line-height: 2em;
+  font-size: 12px;
   display: inline-block;
   vertical-align: middle;
   padding-right: .6em;
@@ -1155,6 +1169,28 @@ label.error {
   transition: all 0.6s linear 0s;
 }
 
+@media (min-width: 75rem) {
+  .home-outside .content:hover h2 a {
+    color: #f7ac3b;
+  }
+  .home-outside .content:hover h3 span {
+    color: #f7ac3b;
+  }
+  .home-outside .content:hover .label .classify {
+    border: 1px solid #f7ac3b;
+    background-color: #f7ac3b;
+  }
+  .home-outside .content:hover .label .details {
+    border: 1px solid #f7ac3b;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f7ac3b;
+  }
+}
+@media (max-width: 47.9375rem) {
+  .home-outside .content {
+    border-top-width: 5px;
+  }
+}
 .home-inside {
   z-index: 3;
   position: relative;
@@ -1192,7 +1228,7 @@ label.error {
   font-size: 2.25rem;
   font-weight: normal;
   text-transform: capitalize;
-  padding: .2em .6em;
+  padding: .2em 1rem;
   display: block;
   transition: all 0.6s linear 0s;
 }
@@ -1206,7 +1242,7 @@ label.error {
   background-color: #000;
   color: #fff;
   font-weight: normal;
-  padding: .2em .6em;
+  padding: .2em 1rem;
   transition: all 0.6s linear 0s;
 }
 .home-inside .content h3 span:first-of-type {
@@ -1221,9 +1257,9 @@ label.error {
   font-size: 0;
 }
 .home-inside .content .label strong {
-  height: 1.75rem;
-  line-height: 1.75rem;
-  font-size: .875rem;
+  height: 2em;
+  line-height: 2em;
+  font-size: 12px;
   display: inline-block;
   vertical-align: middle;
   padding-right: .6em;
@@ -1243,6 +1279,25 @@ label.error {
   transition: all 0.6s linear 0s;
 }
 
+@media (min-width: 75rem) {
+  .home-inside .content:hover h2 a {
+    background-color: #f7ac3b;
+    color: #fff;
+  }
+  .home-inside .content:hover h3 span {
+    background-color: #f7ac3b;
+  }
+  .home-inside .content:hover .label .classify {
+    border-color: #f7ac3b;
+    background-color: #f7ac3b;
+    color: #fff;
+  }
+  .home-inside .content:hover .label .details {
+    border-color: #f7ac3b;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #f7ac3b;
+  }
+}
 /*菜单切换*/
 .tab {
   margin-bottom: 2.5rem;
@@ -1275,8 +1330,8 @@ label.error {
   margin-bottom: .5rem;
   width: 30%;
   float: left;
-  height: 2rem;
-  line-height: 2rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
   text-align: center;
   color: #000;
   border: 1px solid;
@@ -1288,12 +1343,16 @@ label.error {
 }
 .tab a strong {
   display: block;
-  height: 2rem;
-  line-height: 2rem;
-  font-size: .875rem;
+  font-size: 1rem;
+}
+.tab a strong:first-of-type {
+  text-transform: capitalize;
+  transition: display 0.4s ease 0s;
 }
 .tab a strong:last-of-type {
   display: none;
+  padding-left: .1em;
+  letter-spacing: .1em;
 }
 
 @media (min-width: 75rem) {
@@ -1353,7 +1412,7 @@ label.error {
   color: #000;
   border-top: 8px solid;
   border-bottom: 8px solid;
-  padding: .6rem 1.3rem;
+  padding: .6rem 1.3rem .9rem;
   letter-spacing: .1em;
   overflow-y: auto;
   font-weight: 500;
@@ -1416,6 +1475,13 @@ label.error {
     z-index: 3;
     position: static;
     margin-bottom: auto;
+  }
+  .work img {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
   }
   .work h2 {
     position: static;
@@ -1515,6 +1581,7 @@ label.error {
   padding-bottom: 1rem;
   font-size: .875rem;
   line-height: 1.6;
+  letter-spacing: .1em;
   overflow-y: hidden;
   color: #000;
 }
@@ -1592,7 +1659,7 @@ label.error {
   color: #fff;
   margin-bottom: 1rem;
   text-transform: capitalize;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
 }
 .cooperation ul li {
   margin: .8rem .3rem;
@@ -1682,7 +1749,7 @@ label.error {
 }
 #footer .footer-right {
   float: right;
-  width: 21rem;
+  width: 19rem;
 }
 #footer .footer-right .follow > span {
   font-size: 1.375rem;
@@ -1767,6 +1834,7 @@ label.error {
 #quickNav > ul li a strong:last-of-type {
   display: none;
   color: #fff;
+  font-family: "scalasans" !important;
 }
 #quickNav > ul li a strong:last-of-type {
   display: none;
@@ -1805,9 +1873,10 @@ label.error {
 }
 #quickNav > .quickSubMenu ul li a strong:last-of-type {
   display: none;
+  font-family: "scalasans" !important;
 }
 #quickNav > .quickSubMenu ul:first-of-type {
-  width: 25rem;
+  width: 24rem;
 }
 #quickNav > .quickSubMenu ul:first-of-type li:nth-of-type(4) a:after, #quickNav > .quickSubMenu ul:first-of-type li:last-of-type a:after {
   content: "";

@@ -46,11 +46,18 @@ function secondGrade() {
 function firstGrade() {
     if ($("body").outerWidth() < 1200) {
         $("#menuIcon").click(function (e) {
-            $("#navList").slideToggle(400);
+            if ($("#navList").css("display") == "block") {
+                $("#navList").slideUp(400);
+                $(this).find("i").removeClass("icon-close").addClass("icon-menu");
+            } else {
+                $("#navList").slideDown(400);
+                $(this).find("i").removeClass("icon-menu").addClass("icon-close");
+            }
             e.stopPropagation();
         });
         $(document).click(function () {
-            $("#navList").slideUp();
+            $("#navList").slideUp(400);
+            $("#menuIcon").find("i").removeClass("icon-close").addClass("icon-menu");
         });
         $("#navList").click(function (e) {
             e.stopPropagation();
