@@ -139,7 +139,8 @@
                 <!--不同的项目分类-->
                 <div class="project-list-classify">
                     <button type="button" class="look-list" id="lookList">
-                        <span class="triangle"></span>
+                        <!--<span class="triangle"></span>-->
+                        <i class="iconfont icon-menu"></i>
                     </button>
                     <ul id="projectClassifyList">
                         <!--当前项目下给 a 标签添加 active 类-->
@@ -558,8 +559,24 @@
                 /*$(".project-list-classify").pin();*/
 
                 // 手机和平板下项目分类列表的显示和隐藏
+                /*$("#lookList").click(function () {
+                    if ($("#projectClassifyList").css("display") == "block") {
+                        $("#projectClassifyList").slideUp(400);
+                        $(this).find("span").css("transform", "rotate(0deg)");
+                    } else {
+                        $("#projectClassifyList").slideDown(400);
+                        $(this).find("span").css("transform", "rotate(180deg)");
+                    }
+                });*/
+
                 $("#lookList").click(function () {
-                    $("#projectClassifyList").slideToggle(300);
+                    if ($("#projectClassifyList").css("display") == "block") {
+                        $("#projectClassifyList").slideUp(400);
+                        $(this).find("i").addClass("icon-menu").removeClass("icon-close");
+                    } else {
+                        $("#projectClassifyList").slideDown(400);
+                        $(this).find("i").addClass("icon-close").removeClass("icon-menu");
+                    }
                 });
             });
         </script>

@@ -320,7 +320,7 @@
     transform: translate(-50%);
     @include center-content();
     h2 {
-      width: 28.125rem;
+      width: 25.5rem;
       padding: 1rem 2.375rem 1.4rem;
       border-top: 8px solid $text-color;
       border-bottom: 8px solid $text-color;
@@ -333,7 +333,7 @@
         &.en {
           font-size: 5rem;
           text-transform: uppercase;
-          letter-spacing: .1em;
+          letter-spacing: .05em;
           margin-left: -.1em;
         }
         &.cn {
@@ -384,8 +384,7 @@
   .home-media {
     position: static;
     width: 100%;
-    height: 20.25rem;
-    margin-bottom: 10rem;
+    margin-bottom: 0;
     .future-space-definer {
       position: static;
       width: 100%;
@@ -411,7 +410,7 @@
     display: block;
     max-width: none;
     width: 100%;
-    height: 100%;
+    height: 20.25rem;
     object-fit: cover;
   }
 }
@@ -474,18 +473,20 @@
         &:first-of-type {
           font-size: 1rem;
           line-height: 1.4;
+          letter-spacing: .1em;
         }
         &:last-of-type {
           font-size: .75rem;
           line-height: 1.6;
+          letter-spacing: .1em;
         }
       }
     }
     .label {
       font-size: 0;
       strong {
-        height: 1.8em;
-        line-height: 1.8em;
+        height: 2em;
+        line-height: calc(2em - 2px);
         font-size: 12px;
         display: inline-block;
         vertical-align: middle;
@@ -494,19 +495,19 @@
         @include transition();
       }
       .classify {
-        border-color: $text-color;
+        border: 1px solid $text-color;
         background-color: $text-color;
         color: #fff;
       }
       .details {
-        border-color: $text-color;
+        border: 1px solid $text-color;
         background-color: rgba(255, 255, 255, .6);
         color: $text-color;
       }
     }
   }
 }
-@media (min-width: 75rem) {
+/*@media (min-width: 75rem) {
   .holiday-mode {
     .content {
       &:hover {
@@ -534,7 +535,7 @@
       }
     }
   }
-}
+}*/
 @media (max-width: 47.9375rem) {
   .holiday-mode {
     height: auto;
@@ -646,10 +647,12 @@
         &:first-of-type {
           font-size: 1rem;
           line-height: 1.4;
+          letter-spacing: .1em;
         }
         &:last-of-type {
           font-size: 13px;
           line-height: 1.6;
+          letter-spacing: .1em;
         }
       }
     }
@@ -657,7 +660,7 @@
       font-size: 0;
       strong {
         height: 2em;
-        line-height: 2em;
+        line-height: calc(2em - 2px);
         font-size: 12px;
         display: inline-block;
         vertical-align: middle;
@@ -684,6 +687,7 @@
   .home-outside {
     .content {
       &:hover {
+        border-top-color: $main-color;
         h2 {
           a {
             color: $main-color;
@@ -771,10 +775,12 @@
         &:first-of-type {
           font-size: 1rem;
           line-height: 1.4;
+          letter-spacing: .1em;
         }
         &:last-of-type {
           font-size: .75rem;
           line-height: 1.6;
+          letter-spacing: .1em;
         }
       }
     }
@@ -782,7 +788,7 @@
       font-size: 0;
       strong {
         height: 2em;
-        line-height: 2em;
+        line-height: calc(2em - 2px);
         font-size: 12px;
         display: inline-block;
         vertical-align: middle;
@@ -809,6 +815,7 @@
   .home-inside {
     .content {
       &:hover {
+        border-top-color: $main-color;
         h2 {
           a {
             background-color: $main-color;
@@ -1934,6 +1941,7 @@
   font-weight: normal;
   color: #fff;
   margin-bottom: 2rem;
+  letter-spacing: .1em;
 }
 @media (max-width: 47.9375rem) {
   .talk-heading {
@@ -3099,6 +3107,7 @@
   font-weight: normal;
   color: #fff;
   margin-bottom: 2rem;
+  letter-spacing: .1em;
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .idea-heading {
@@ -3442,6 +3451,7 @@
   color: #fff;
   text-transform: capitalize;
   margin-bottom: 2rem;
+  letter-spacing: .1em;
 }
 @media (max-width: 47.9375rem) {
   .idea-heading {
@@ -3600,7 +3610,8 @@
       }
       &:last-of-type {
         font-size: .875rem;
-        line-height: 1.2em;
+        line-height: 2em;
+        letter-spacing: .1em;
       }
     }
   }
@@ -3654,7 +3665,7 @@
       padding: .6rem 1.2rem;
       span {
         &:first-of-type {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
       }
     }
@@ -3664,7 +3675,7 @@
   .project-banner {
     width: 100%;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     position: static;
     img {
       max-width: none;
@@ -3682,7 +3693,7 @@
       border-bottom: 5px solid $text-color;
       span {
         &:first-of-type {
-          font-size: 1.4rem;
+          font-size: 1.8rem;
         }
       }
     }
@@ -3743,13 +3754,15 @@
         .cn {
           display: block;
           font-size: 1rem;
-          line-height: 1.5;
+          line-height: 2;
+          letter-spacing: .1em;
         }
       }
       p {
         padding: 0 1.4rem 1.4rem;
         font-size: .875rem;
         color: $text-color;
+        letter-spacing: .1em;
         @include transition(0.4s);
       }
       &:hover {
@@ -3798,11 +3811,13 @@
             width: 65%;
             text-align: left;
             font-size: 1.215rem;
+            letter-spacing: .1em;
           }
           &:last-of-type {
             width: 35%;
             text-align: right;
             font-size: .875rem;
+            letter-spacing: .1em;
           }
         }
         &:hover,
@@ -3852,11 +3867,11 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
-        width: 2.4rem;
-        height: 2.4rem;
-        line-height: 2.4rem;
+        width: 3rem;
+        height: 3rem;
+        line-height: calc(3rem - 2px);
         text-align: center;
-        background-color: rgba(255, 255, 255, .6);
+        background-color: rgba(255, 255, 255, .7);
         border: 1px solid $text-color;
         span {
           display: inline-block;
@@ -3865,14 +3880,20 @@
           border-top: .875rem solid $text-color;
           border-right: .5rem solid transparent;
           border-left: .5rem solid transparent;
-          //@include transition(0.3s);
+          @include transition(0.4s);
+        }
+        i {
+          color: $text-color;
+          font-size: 1.6rem;
+          font-weight: 500;
+          @include transition(0.4s);
         }
       }
       ul {
         display: none;
         z-index: 4;
         position: absolute;
-        top: 3.4rem;
+        top: 4rem;
         right: 1rem;
         &::before,
         &::after {
@@ -3944,12 +3965,14 @@
             display: block;
             font-size: 1rem;
             line-height: 1.5;
+            letter-spacing: .1em;
           }
         }
         p {
           padding: 0 1.4rem 1.4rem;
           font-size: .875rem;
           color: $text-color;
+          letter-spacing: .1em;
         }
       }
     }
@@ -4028,9 +4051,10 @@
           }
           &.cn {
             font-size: 1rem;
-            line-height: 1.5em;
+            line-height: 2em;
+            letter-spacing: .1em;
             @media (min-width: 48rem) {
-              max-height: 3em;
+              max-height: 6em;
             }
             margin-bottom: 1rem;
             @include transition(0.3s);
@@ -4650,6 +4674,7 @@ article {
   color: #fff;
   text-transform: capitalize;
   margin-bottom: 2rem;
+  letter-spacing: .1em;
 }
 @media (max-width: 47.9375rem) {
   .project-heading {
