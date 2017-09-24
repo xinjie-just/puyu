@@ -139,6 +139,7 @@
                         <div class="en">
                             <p>Headquartered in Shenzhen, Pure Architects has subsidiary design offices in Shanghai, Chengdu and Chongqing. Established by the partners with extensive experience in architectural design and project management, the company provides design services in urban planning, TOD (Transit-Oriented-Development), business complex, super high-rise building, hospitality, elderly care, office, residential building, interior design, landscape architecture, etc.</p>
                             <p>Based on the service mode ‘Design&Management’ , our company provides clients with one-stop and multidimensional services, including early planning, architectural design in the whole process, design management and construction management. Creative design solutions are given by our absolute profession; the deliveries of the whole architectural design are realized by our quality management. Combined with many renowned design consulting resources, Pure Architects  provide our clients with customized services by professional value and management experience.</p>
+                            <!--<p>Headquartered in Shenzhen, Pure Architects has subsidiary design offices in Shanghai, </p>-->
                         </div>
                     </div>
                 </div>
@@ -497,5 +498,55 @@
         <script src="scripts/carousel.js"></script>
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
+        <script>
+            $(function () {
+                // 设置banner图部分的高度
+                setHeight();
+                displayAllEnglish();
+                $(window).resize(function(){
+                    setHeight();
+                    displayAllEnglish();
+                });
+                function setHeight() {
+                    var $width = $(window).width();
+                    if ($width >= 768) {
+                        var $imgHeight =  $(".philosophy-banner > img").outerHeight();
+                        var $divHeight =  $(".philosophy-banner > div").outerHeight();
+                        $(".philosophy-banner").height($imgHeight + $divHeight - 90);
+                    }else {
+                        $(".philosophy-banner").css("height", "auto");
+                    }
+                }
+
+                // 为简介中的英文设置显示全部与收起
+                function displayAllEnglish() {
+                    var $width = $(window).width();
+                    var $en = $(".future-space-definer .details .en");
+                    var $enHeight = $en.height();
+                    if ($width <= 767) {
+                        if ($enHeight > 65) {
+                            $en.height(45);
+                            $en.css("overflow", "hidden");
+                            $($en).prepend("<button type='button' class='all-en' title='显示全部'>显示全部</button>");
+                        }
+                    } else {
+                        $($en).find(".all-en").remove();
+                        $en.height("auto");
+                    }
+                    $(".all-en").click(function () {
+                        if ($(this).attr("title") == "显示全部") {
+                            $en.height("auto");
+                            $(this).attr("title", "收起");
+                            $(this).text("收起");
+                        } else {
+                            $en.height(45);
+                            $(this).attr("title", "显示全部");
+                            $(this).text("显示全部");
+                        }
+                    });
+                }
+
+            });
+        </script>
     </body>
 </html>

@@ -598,22 +598,28 @@
             $(function() {
                 // 团队核心成员的显示与收起
                 showMoreTeamMember();
-                $(window).resize = function () {
+                $(window).resize(function () {
                     showMoreTeamMember();
-                };
+                });
                 function hideText(obj) {
                     obj.html("收起<span></span>");
+                    obj.attr("title", "收起");
                     obj.find("span").css({
                         transform: "rotate(45deg)",
                         verticalAlign: "-4px"
                     });
                 }
                 function showText(obj) {
-                    $(this).html("显示全部<span></span>");
+                    obj.html("显示全部<span></span>");
+                    obj.attr("title", "显示全部");
                 }
                 function showMoreTeamMember() {
                     var $width = $(window).width();
+                    if ($width >= 1200) {
+                        $("#teamMemberList li").show();
+                    }
                     if ($width >= 992 && $width <= 1199) {
+                        $("#teamMemberList li").show();
                         $("#teamMemberList li:eq(14)").nextAll().hide();
                         $("#moreTeamMember").click(function () {
                             if ($(this).text() == "显示全部") {
@@ -626,6 +632,7 @@
                         });
                     }
                     if ($width >= 768 && $width <= 991) {
+                        $("#teamMemberList li").show();
                         $("#teamMemberList li:eq(11)").nextAll().hide();
                         $("#moreTeamMember").click(function () {
                             if ($(this).text() == "显示全部") {
@@ -638,6 +645,7 @@
                         });
                     }
                     if ($width >= 480 && $width <= 767) {
+                        $("#teamMemberList li").show();
                         $("#teamMemberList li:eq(8)").nextAll().hide();
                         $("#moreTeamMember").click(function () {
                             if ($(this).text() == "显示全部") {
@@ -650,6 +658,7 @@
                         });
                     }
                     if ($width >= 320 && $width <= 479) {
+                        $("#teamMemberList li").show();
                         $("#teamMemberList li:eq(5)").nextAll().hide();
                         $("#moreTeamMember").click(function () {
                             if ($(this).text() == "显示全部") {
@@ -662,6 +671,7 @@
                         });
                     }
                     if ($width <= 319) {
+                        $("#teamMemberList li").show();
                         $("#teamMemberList li:eq(2)").nextAll().hide();
                         $("#moreTeamMember").click(function () {
                             if ($(this).text() == "显示全部") {

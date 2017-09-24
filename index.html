@@ -623,9 +623,9 @@
         <script>
             $(function(){
                 setHeight();
-                $(window).resize = function () {
+                $(window).resize(function () {
                     setHeight();
-                };
+                });
 
                 function setHeight() {
                     var insideLen = $(".home-inside").length;

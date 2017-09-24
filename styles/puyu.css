@@ -384,7 +384,7 @@ label:hover {
   white-space: nowrap;
 }
 
-.work img, .team img {
+.work img, .team img, .philosophy-banner img, .project-intro img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -1025,11 +1025,18 @@ label.error {
     margin-bottom: 0;
   }
   .holiday-mode .content {
-    padding: 1.25rem .875rem;
+    width: 87.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.25rem 0;
+    height: 100%;
   }
   .holiday-mode .content h2 {
-    margin-bottom: .6rem;
-    font-size: 1.25rem;
+    max-width: 100%;
+  }
+  .holiday-mode .content h2 a {
+    font-size: 1.8rem;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1114,7 +1121,7 @@ label.error {
 }
 .home-outside .content {
   padding: .5rem 1.5rem 2rem;
-  border-top: 8px solid #000;
+  border-top: 5px solid #000;
   transition: all 0.6s linear 0s;
 }
 .home-outside .content h2 {
@@ -1198,11 +1205,6 @@ label.error {
     border: 1px solid #f7ac3b;
     background-color: rgba(255, 255, 255, 0.6);
     color: #f7ac3b;
-  }
-}
-@media (max-width: 47.9375rem) {
-  .home-outside .content {
-    border-top-width: 5px;
   }
 }
 .home-inside {
@@ -1580,28 +1582,29 @@ label.error {
 .home-innovation li h3 strong:first-of-type span {
   display: inline-block;
   line-height: 1.3;
-  padding-right: .6rem;
-  padding-left: .6rem;
+  padding-right: .8rem;
+  padding-left: .8rem;
   font-size: 2rem;
   background-color: #000;
+  letter-spacing: 0.05em;
   transition: all 0.4s linear 0s;
 }
 .home-innovation li h3 strong:last-of-type {
-  font-size: 1rem;
-  letter-spacing: .2em;
-  line-height: 1.8;
-  padding-right: .5rem;
-  padding-left: .7rem;
+  font-size: 14px;
+  letter-spacing: .1em;
+  line-height: 2;
+  padding-right: .7rem;
+  padding-left: .8rem;
   background-color: #000;
 }
 .home-innovation li p {
   width: 100%;
-  border-top: 8px solid #000;
-  border-bottom: 8px solid #000;
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: .875rem;
-  line-height: 1.6;
+  line-height: 2em;
   letter-spacing: .1em;
   overflow-y: hidden;
   color: #000;
@@ -1615,17 +1618,17 @@ label.error {
     background-color: #f7ac3b;
   }
   .home-innovation li p {
-    height: 9.625rem;
+    height: calc(10.75rem + 10px);
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .home-innovation li p {
-    height: 11.025rem;
+    height: calc(12.5rem + 10px);
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .home-innovation li p {
-    height: 12.425rem;
+    height: calc(14.25rem + 10px);
   }
 }
 @media (max-width: 47.9375rem) {
@@ -1639,10 +1642,6 @@ label.error {
   }
   .home-innovation li:not(:last-of-type) {
     padding-right: 0;
-  }
-  .home-innovation li p {
-    border-top-width: 5px;
-    border-bottom-width: 5px;
   }
 }
 /*合作伙伴*/
@@ -2877,6 +2876,21 @@ label.error {
   height: auto;
 }
 
+@media (max-width: 47.9375rem) {
+  .about-carousel-inner {
+    position: static;
+    width: 100%;
+    overflow: hidden;
+  }
+  .about-carousel-inner > .item > img,
+  .about-carousel-inner > .item > a > img {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 24.3rem;
+    object-fit: cover;
+  }
+}
 @media all and (transform-3d), (-webkit-transform-3d) {
   .about-carousel-inner > .item {
     -webkit-transition: -webkit-transform .6s ease-in-out;
@@ -2991,9 +3005,15 @@ label.error {
   background-color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .about-carousel-indicators {
     bottom: 5rem;
+  }
+}
+@media (max-width: 767px) {
+  .about-carousel-indicators {
+    top: 21rem;
+    bottom: auto;
   }
 }
 /*轮播 end*/
@@ -3049,8 +3069,10 @@ label.error {
 
 @media (max-width: 47.9375rem) {
   .about-heading {
+    position: static;
     width: 100%;
     bottom: auto;
+    transform: translateX(0);
     border-top-width: 5px;
     border-bottom-width: 5px;
   }
@@ -3105,17 +3127,28 @@ label.error {
   font-size: 1rem;
   text-decoration: underline;
   line-height: 1.5;
+  letter-spacing: .1em;
 }
 .about .about-details {
   margin-top: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.5;
   color: #000;
 }
 .about .about-details .en {
   margin-bottom: .6rem;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+.about .about-details .cn {
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 
+@media (max-width: 47.9375rem) {
+  .about {
+    margin-top: 2rem;
+  }
+}
 /*关于团队*/
 .team {
   margin-top: 5rem;
@@ -3168,9 +3201,13 @@ label.error {
 }
 
 @media (max-width: 47.9375rem) {
+  .team {
+    margin-top: 2rem;
+  }
   .team img {
     display: block;
-    max-width: 100%;
+    max-width: none;
+    width: 24rem;
     height: 16.8rem;
     overflow: hidden;
     object-fit: cover;
@@ -3396,11 +3433,14 @@ label.error {
 }
 .partner h2 span:first-of-type {
   font-size: 2rem;
-  margin-bottom: .8rem;
+  margin-bottom: .4rem;
+  letter-spacing: .05em;
   text-transform: capitalize;
 }
 .partner h2 span:last-of-type {
   font-size: 1rem;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .partner .partner-list > li {
   float: left;
@@ -3448,18 +3488,21 @@ label.error {
   display: inline-block;
   background-color: #000;
   color: #fff;
-  font-size: 1.2rem;
-  padding: .2rem .7rem .2rem 1rem;
-  letter-spacing: .3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: .1em;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  padding-right: calc(.6rem - .1em);
+  padding-left: .6rem;
 }
 .partner .partner-list .partner-details li {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: .875rem;
+  line-height: 1.5;
   color: #000;
   list-style-type: disc;
   margin-bottom: .6rem;
+  letter-spacing: .1em;
   list-style-position: inside;
 }
 .partner .partner-list .partner-details li:last-of-type {
@@ -3489,30 +3532,23 @@ label.error {
 }
 /*===企业理念===*/
 .philosophy-banner {
-  height: 65rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
-}
-.philosophy-banner img {
-  display: block;
-  width: 100%;
-  height: 37.5rem;
-  object-fit: cover;
 }
 .philosophy-banner .future-space-definer {
   display: block;
   margin-right: auto;
   margin-left: auto;
   position: absolute;
-  bottom: 0;
+  bottom: 6rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 5rem);
   color: #000;
   background-color: #fff;
   padding: 2.5rem;
-  border-top: .3rem solid;
-  border-bottom: .3rem solid;
+  border-top: 5px solid;
+  border-bottom: 5px solid;
 }
 @media (min-width: 75rem) {
   .philosophy-banner .future-space-definer {
@@ -3535,7 +3571,7 @@ label.error {
   }
 }
 .philosophy-banner .future-space-definer h2 {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 .philosophy-banner .future-space-definer h2 span {
   display: block;
@@ -3551,15 +3587,21 @@ label.error {
   font-size: 1.125rem;
 }
 .philosophy-banner .future-space-definer .details {
-  line-height: 1.5;
   color: #000;
 }
 .philosophy-banner .future-space-definer .details .cn {
-  margin-bottom: 1rem;
-  font-size: .875rem;
+  margin-bottom: .4rem;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .philosophy-banner .future-space-definer .details .en {
   font-size: 1rem;
+  line-height: 1.5;
+}
+.philosophy-banner .future-space-definer .details .en p,
+.philosophy-banner .future-space-definer .details .en div {
+  font-family: inherit;
 }
 
 @media (max-width: 47.9375rem) {
@@ -3570,6 +3612,9 @@ label.error {
     overflow: hidden;
   }
   .philosophy-banner img {
+    display: block;
+    max-width: none;
+    width: 100%;
     height: 27.5rem;
     object-fit: cover;
   }
@@ -3598,6 +3643,18 @@ label.error {
   }
   .philosophy-banner .future-space-definer .details .en {
     font-size: 1rem;
+    overflow: hidden;
+  }
+  .philosophy-banner .future-space-definer .details .all-en {
+    cursor: pointer;
+    display: block;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), white);
+    width: 100%;
+    padding: 1rem 0 1rem .1em;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: .1em;
+    color: #000;
   }
 }
 /*理念*/
@@ -3649,18 +3706,19 @@ label.error {
 .philosophy-innovation li h3 strong:first-of-type span {
   display: inline-block;
   line-height: 1.3;
-  padding-right: .6rem;
-  padding-left: .6rem;
+  padding-right: .8rem;
+  padding-left: .8rem;
   font-size: 2rem;
   background-color: #000;
+  letter-spacing: 0.05em;
   transition: all 0.4s linear 0s;
 }
 .philosophy-innovation li h3 strong:last-of-type {
-  font-size: 1rem;
-  letter-spacing: .3em;
-  line-height: 1.3;
-  padding-right: .6rem;
-  padding-left: .9rem;
+  font-size: 14px;
+  letter-spacing: .1em;
+  line-height: 2;
+  padding-right: .7rem;
+  padding-left: .8rem;
   background-color: #000;
 }
 .philosophy-innovation li h3:hover strong:first-of-type span {
@@ -3676,8 +3734,10 @@ label.error {
   color: #000;
 }
 .philosophy-innovation li .details > div:first-of-type {
-  margin-bottom: 1rem;
-  font-size: .875rem;
+  margin-bottom: .4rem;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .philosophy-innovation li .details > div:last-of-type {
   font-size: 1rem;
@@ -3780,12 +3840,14 @@ label.error {
 }
 .idea-show .idea-sidebar-left h2 span.cn {
   font-size: .875rem;
-  line-height: 1.5;
+  line-height: 2;
+  letter-spacing: .1em;
   margin-top: .8rem;
 }
 .idea-show .idea-sidebar-left h2 span.en {
   font-size: 3rem;
   line-height: 1.1;
+  letter-spacing: .05em;
 }
 .idea-show .idea-side-right .item-outside {
   width: 100%;
@@ -3815,13 +3877,14 @@ label.error {
 }
 .idea-show .idea-side-right .item-outside .content h3 span.cn {
   font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: .5em;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .idea-show .idea-side-right .item-outside .content p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: .5em;
+  font-size: .875rem;
+  line-height: 2;
+  letter-spacing: .1em;
+  margin-bottom: .4em;
 }
 .idea-show .idea-side-right .item-outside .content a {
   position: absolute;
@@ -3830,28 +3893,42 @@ label.error {
   padding: .3rem 1rem;
   color: #000;
   border: 1px solid #000;
-  transition: all 0.3s linear 0s;
+  transition: all 0.4s linear 0s;
 }
-.idea-show .idea-side-right .item-outside .content a:hover {
-  color: #f7ac3b;
-  border-color: #f7ac3b;
-}
-.idea-show .idea-side-right .item-outside img {
+.idea-show .idea-side-right .item-outside > figure {
   float: left;
   display: block;
   width: 50%;
   height: 100%;
+  background-color: #dedede;
+  position: relative;
+}
+.idea-show .idea-side-right .item-outside > figure img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .idea-show .idea-side-right .item-inside {
   width: 100%;
   height: 50%;
   position: relative;
+  cursor: pointer;
 }
-.idea-show .idea-side-right .item-inside img {
+.idea-show .idea-side-right .item-inside > figure {
+  width: 100%;
+  height: 100%;
+}
+.idea-show .idea-side-right .item-inside > figure a {
+  width: 100%;
+  height: 100%;
+}
+.idea-show .idea-side-right .item-inside > figure img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.6s linear 0s;
 }
 .idea-show .idea-side-right .item-inside .content {
   position: absolute;
@@ -3881,10 +3958,16 @@ label.error {
 .idea-show .idea-side-right .item-inside .content h3 .cn,
 .idea-show .idea-side-right .item-inside .content h3 .intro {
   background-color: #000;
-  font-size: 1rem;
-  line-height: 1.7;
-  padding-right: 1rem;
+  line-height: 2;
+  padding-right: calc(1rem - .1em);
   padding-left: 1rem;
+  letter-spacing: .1em;
+}
+.idea-show .idea-side-right .item-inside .content h3 .cn {
+  font-size: 1rem;
+}
+.idea-show .idea-side-right .item-inside .content h3 .intro {
+  font-size: .875rem;
 }
 .idea-show .idea-side-right .item-inside .content a {
   display: block;
@@ -3898,11 +3981,20 @@ label.error {
   font-size: 1rem;
   transition: all 0.3s linear 0s;
 }
-.idea-show .idea-side-right .item-inside .content a:hover {
-  color: #f7ac3b;
-  border-color: #f7ac3b;
-}
 
+@media (min-width: 75rem) {
+  .idea-show .idea-side-right .item-outside .content a:hover {
+    color: #f7ac3b;
+    border-color: #f7ac3b;
+  }
+  .idea-show .idea-side-right .item-inside:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  .idea-show .idea-side-right .item-inside .content a:hover {
+    color: #f7ac3b;
+    border-color: #f7ac3b;
+  }
+}
 @media (min-width: 75rem) and (max-width: 99.9375rem) {
   .idea-show {
     height: 50rem;
@@ -4016,7 +4108,7 @@ label.error {
     border-bottom: .2rem solid #fff;
   }
   .idea-show .idea-sidebar-left h2 span.en {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   .idea-show .idea-side-right .item-outside {
     width: 100%;
@@ -4171,10 +4263,13 @@ label.error {
 }
 .idea-list li .text h3 .cn {
   font-size: 1rem;
-  margin-bottom: .5em;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .idea-list li .text p {
   font-size: .875rem;
+  line-height: 2;
+  letter-spacing: .1em;
   margin-bottom: 4rem;
 }
 .idea-list li .text .learn-more {
@@ -4261,8 +4356,8 @@ label.error {
     border-top: 5px solid #000;
   }
   .idea-list li .text h3 .en {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.8rem;
+    line-height: 1.3;
     max-height: none;
   }
   .idea-list li .text p {
@@ -4519,23 +4614,6 @@ label.error {
   }
 }
 
-.idea-heading {
-  height: 3.8rem;
-  line-height: 3.8rem;
-  font-size: 2rem;
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  text-transform: capitalize;
-  margin-bottom: 2rem;
-  letter-spacing: .1em;
-}
-
-@media (max-width: 47.9375rem) {
-  .idea-heading {
-    margin-bottom: 0;
-  }
-}
 .idea-details-list {
   display: block;
   margin-right: auto;
@@ -4889,9 +4967,8 @@ label.error {
   }
   .project-list-content li h4 {
     padding: 1rem 1.4rem 0;
-    margin-bottom: .5rem;
     color: #000;
-    border-top: .4rem solid;
+    border-top: 5px solid;
     transition: all 0.4s linear 0s;
   }
   .project-list-content li h4 a {
@@ -4916,6 +4993,7 @@ label.error {
   .project-list-content li p {
     padding: 0 1.4rem 1.4rem;
     font-size: .875rem;
+    line-height: 2em;
     color: #000;
     letter-spacing: .1em;
     transition: all 0.4s linear 0s;
@@ -5162,7 +5240,7 @@ label.error {
     padding: 1rem 1.4rem 0;
     margin-bottom: .5rem;
     color: #000;
-    border-top: .4rem solid;
+    border-top: 5px solid;
   }
   .all-project .project-list-content li h4 a {
     display: block;
@@ -5368,7 +5446,7 @@ label.error {
   width: 60%;
   height: 100%;
   background-color: #fff;
-  border-top: 0.3rem solid #000;
+  border-top: 5px solid #000;
   padding: 1.875rem 1.25rem;
 }
 .project-list li .text a {
@@ -5530,26 +5608,19 @@ label.error {
 }
 /*===项目内页===*/
 .project-intro {
-  height: 60rem;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
   position: relative;
-}
-.project-intro img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .project-intro .intro {
   position: absolute;
-  bottom: -8rem;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   display: block;
   margin-right: auto;
   margin-left: auto;
   padding: 2.5rem 2rem 2rem 0;
-  border-top: 0.4rem solid #000;
+  border-top: 8px solid #000;
   background-color: #fff;
 }
 @media (min-width: 75rem) {
@@ -5594,12 +5665,14 @@ label.error {
   color: #fff;
   padding-right: 1rem;
   padding-left: 1rem;
-  line-height: 1.5;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .project-intro .intro .content .sidebar-left p {
   display: inline-block;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 2;
+  letter-spacing: .1em;
   padding-right: 1rem;
   padding-left: 1rem;
   background-color: #000;
@@ -5615,6 +5688,7 @@ label.error {
   font-size: .875rem;
   line-height: 1.5;
   margin-bottom: .5em;
+  letter-spacing: .1em;
 }
 .project-intro .intro .content .sidebar-right {
   float: right;
@@ -5622,16 +5696,11 @@ label.error {
   color: #000;
   font-size: .875rem;
   line-height: 2;
+  letter-spacing: .1em;
 }
 
 @media (min-width: 75rem) and (max-width: 99.9375rem) {
-  .project-intro {
-    height: 50rem;
-    margin-bottom: 7.5rem;
-    position: relative;
-  }
   .project-intro .intro {
-    bottom: -6rem;
     padding: 2rem 1.6rem 1.6rem 0;
   }
   .project-intro .intro h3.en {
@@ -5639,30 +5708,16 @@ label.error {
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
-  .project-intro {
-    height: 40rem;
-    margin-bottom: 6.5rem;
-    position: relative;
-  }
   .project-intro .intro {
-    bottom: -5rem;
     padding: 1.6rem 1.2rem 1.2rem 0;
-    border-top: 0.3rem solid #000;
   }
   .project-intro .intro h3.en {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
-  .project-intro {
-    height: 30rem;
-    margin-bottom: 5.5rem;
-    position: relative;
-  }
   .project-intro .intro {
-    bottom: -4rem;
     padding: 1.2rem 1rem 1rem 0;
-    border-top: 0.2rem solid #000;
   }
   .project-intro .intro h3.en {
     font-size: 1.6rem;
@@ -5671,15 +5726,15 @@ label.error {
 @media (max-width: 47.9375rem) {
   .project-intro {
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     position: static;
   }
   .project-intro img {
     display: block;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
     height: auto;
-    object-fit: none;
+    object-fit: cover;
   }
   .project-intro .intro {
     width: 100%;
@@ -5875,11 +5930,13 @@ label.error {
 }
 .project-carousel .info h3 span.cn {
   font-size: 1.125rem;
+  line-height: 2;
+  letter-spacing: .1em;
   font-weight: normal;
 }
 
 .project-carousel-indicators li {
-  margin-bottom: 2.8em;
+  margin-bottom: 1.6rem;
   color: #808080;
   cursor: pointer;
 }
@@ -5898,8 +5955,9 @@ label.error {
   vertical-align: middle;
   width: calc(100% - 2.5rem);
   font-size: .875rem;
-  line-height: 1.6em;
-  max-height: 4.8em;
+  line-height: 2em;
+  max-height: 6em;
+  letter-spacing: .1em;
 }
 
 .project-carousel-indicators .active {
@@ -5909,6 +5967,11 @@ label.error {
 @media screen and (min-width: 768px) {
   .project-carousel-indicators {
     bottom: 5rem;
+  }
+}
+@media (min-width: 100rem) {
+  .project-carousel-indicators li {
+    margin-bottom: 1.6rem;
   }
 }
 @media (min-width: 75rem) and (max-width: 99.9375rem) {
@@ -5928,11 +5991,10 @@ label.error {
   }
 
   .project-carousel-indicators li {
-    margin-bottom: 2.6rem;
+    margin-bottom: 1.4rem;
   }
   .project-carousel-indicators li p {
-    line-height: 1.6em;
-    max-height: 3.2em;
+    max-height: 4em;
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -5952,11 +6014,10 @@ label.error {
   }
 
   .project-carousel-indicators li {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.6rem;
   }
   .project-carousel-indicators li p {
-    line-height: 1.6em;
-    max-height: 3.2em;
+    max-height: 4em;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
@@ -5976,18 +6037,17 @@ label.error {
   }
 
   .project-carousel-indicators li {
-    margin-bottom: 2rem;
+    margin-bottom: 1.1rem;
   }
   .project-carousel-indicators li p {
-    line-height: 1.6em;
-    max-height: 3.2em;
+    max-height: 4em;
   }
 }
 @media (max-width: 47.9375rem) {
   .project-carousel {
     position: static;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   .project-carousel-inner {
@@ -6093,11 +6153,12 @@ article img + img {
 }
 article p,
 article div {
-  line-height: 1.8em;
+  line-height: 2;
   word-wrap: break-word;
   margin-top: .5rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  letter-spacing: .1em;
 }
 article img + p, article img + div {
   margin-top: .5rem;
@@ -6115,6 +6176,7 @@ article img + div p {
   article {
     width: 100%;
     padding: 1rem 6.25%;
+    margin-bottom: 0;
   }
   article h3 {
     padding-right: 0;
@@ -6192,9 +6254,8 @@ article img + div p {
 }
 .new-projects-list li h4 {
   padding: 1rem .8rem 0;
-  margin-bottom: .5rem;
   color: #000;
-  border-top: .4rem solid;
+  border-top: 5px solid;
   transition: all 0.4s linear 0s;
 }
 .new-projects-list li h4 span {
@@ -6208,23 +6269,16 @@ article img + div p {
 .new-projects-list li h4 .cn {
   display: block;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .new-projects-list li p {
   padding-right: .8rem;
   padding-left: .8rem;
   font-size: .875rem;
+  line-height: 2;
+  letter-spacing: .1em;
   color: #000;
-  transition: all 0.4s linear 0s;
-}
-.new-projects-list li:hover h4 {
-  color: #f7ac3b;
-}
-.new-projects-list li:hover h4 span {
-  transition: all 0.4s linear 0s;
-}
-.new-projects-list li:hover p {
-  color: #f7ac3b;
   transition: all 0.4s linear 0s;
 }
 
@@ -6237,6 +6291,16 @@ article img + div p {
   }
   .new-projects-list li:hover img {
     transform: scale(1.1, 1.1);
+  }
+  .new-projects-list li:hover h4 {
+    color: #f7ac3b;
+  }
+  .new-projects-list li:hover h4 span {
+    transition: all 0.4s linear 0s;
+  }
+  .new-projects-list li:hover p {
+    color: #f7ac3b;
+    transition: all 0.4s linear 0s;
   }
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
@@ -6251,6 +6315,7 @@ article img + div p {
 }
 @media (max-width: 47.9375rem) {
   .new-projects-list {
+    margin-bottom: 0;
     width: 100%;
   }
   .new-projects-list li {
@@ -6303,7 +6368,7 @@ article img + div p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50%;
+  width: 60%;
   height: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -6325,6 +6390,7 @@ article img + div p {
   display: block;
   margin-bottom: .8rem;
   text-transform: capitalize;
+  letter-spacing: .1em;
 }
 .project-classify-list li a strong:last-of-type {
   margin-bottom: 0;

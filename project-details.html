@@ -486,7 +486,23 @@
                 $(".new-projects-list").masonry({
                     itemSelector: ".new-projects-item"
                 });
-            })
+
+                // 设置banner图部分的高度
+                setHeight();
+                $(window).resize(function(){
+                    setHeight();
+                });
+                function setHeight() {
+                    var $width = $(window).width();
+                    if ($width >= 768) {
+                        var $imgHeight =  $(".project-intro > img").outerHeight();
+                        var $divHeight =  $(".project-intro > div").outerHeight();
+                        $(".project-intro").height($imgHeight + $divHeight - 90);
+                    }else {
+                        $(".project-intro").css("height", "auto");
+                    }
+                }
+            });
         </script>
     </body>
 </html>
