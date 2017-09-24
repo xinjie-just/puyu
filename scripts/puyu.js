@@ -105,4 +105,4 @@ $("article img").css({
     maxWidth: "100%",
     height: "auto",
     margin: "15px auto"
-})
+});

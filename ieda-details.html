@@ -212,7 +212,11 @@
             <h2 class="idea-heading">new ideas</h2>
             <ul class="idea-details-list">
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -227,7 +231,11 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -242,7 +250,11 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -405,5 +417,24 @@
         <script src="scripts/polyfill.object-fit.min.js"></script>
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
+        <script>
+            $(function() {
+                // 设置banner图部分的高度
+                setHeight();
+                $(window).resize(function(){
+                    setHeight();
+                });
+                function setHeight() {
+                    var $width = $(window).width();
+                    if ($width >= 768) {
+                        var $imgHeight =  $(".idea-intro > img").outerHeight();
+                        var $divHeight =  $(".idea-intro > div").outerHeight();
+                        $(".idea-intro").height($imgHeight + $divHeight - 90);
+                    }else {
+                        $(".idea-intro").css("height", "auto");
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
