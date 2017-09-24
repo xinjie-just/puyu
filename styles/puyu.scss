@@ -1494,9 +1494,10 @@
   }
   h2 {
     font-size: 1.125rem;
+    line-height: 2;
     font-weight: 500;
     text-decoration: underline;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
   }
 }
 @media (max-width: 47.9375rem) {
@@ -2060,18 +2061,27 @@
     margin-bottom: 1.25rem;
     @extend .clearfix;
     height: 15rem;
-    img {
+    figure {
       display: block;
       float: left;
       width: 40%;
       height: 100%;
+      a {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          @include transition();
+        }
+      }
     }
     .text {
       float: right;
       width: 60%;
       height: 100%;
       background-color: #fff;
-      border-top: .3rem solid $text-color;
+      border-top: 5px solid $text-color;
       padding: 1.875rem 1.25rem;
       a {
         display: block;
@@ -2087,24 +2097,18 @@
             @media (min-width: 48rem) {
               max-height: 2.4em;
             }
-            margin-bottom: .5rem;
+            margin-bottom: .8rem;
             text-decoration: underline;
-            @include transition(0.3s);
-            &:hover {
-              color: $main-color;
-            }
+            @include transition(0.4s);
           }
           &.cn {
             font-size: 1rem;
             line-height: 1.5em;
             @media (min-width: 48rem) {
-              max-height: 3em;
+              max-height: 1.5em;
             }
-            margin-bottom: 1rem;
-            @include transition(0.3s);
-            &:hover {
-              color: $main-color;
-            }
+            margin-bottom: .5rem;
+            @include transition(0.4s);
           }
         }
       }
@@ -2116,24 +2120,57 @@
           display: block;
           float: left;
           font-size: 1rem;
-          font-weight: lighter;
-          font-style: italic;
         }
         a {
           display: block;
           float: right;
-          width: 9rem;
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
           height: 2rem;
           line-height: 2rem;
           text-align: center;
-          border: 1px solid $text-color;
+          color: $text-color;
+          border: 1px solid;
           font-size: 1rem;
           font-weight: lighter;
-          color: $text-color;
-          @include transition(0.3s);
-          &:hover {
-            border-color: $main-color;
-            color: $main-color;
+          @include transition(0.4s);
+        }
+      }
+    }
+  }
+}
+@media (min-width: 75rem) {
+  .talk-details-list {
+    @include center-content();
+    li {
+      figure {
+        &:hover {
+          img {
+            @include scale();
+          }
+        }
+      }
+      .text {
+        h2 {
+          span {
+            &.en {
+              &:hover {
+                color: $main-color;
+              }
+            }
+            &.cn {
+              &:hover {
+                color: $main-color;
+              }
+            }
+          }
+        }
+        .source-and-more {
+          a {
+            &:hover {
+              border-color: $main-color;
+              color: $main-color;
+            }
           }
         }
       }
@@ -2143,14 +2180,34 @@
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .talk-details-list {
     li {
-      height: 14rem;
+      height: 13.4rem;
+      .text {
+        padding: 1.4rem 1rem;
+        h2 {
+          span {
+            &:first-of-type {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
     }
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .talk-details-list {
     li {
-      height: 13rem;
+      height: 10.4rem;
+      .text {
+        padding: 1rem .8rem;
+        h2 {
+          span {
+            &:first-of-type {
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -2160,10 +2217,17 @@
     li {
       margin-bottom: 0;
       height: auto;
-      img {
+      figure {
         float: none;
         width: 100%;
         height: auto;
+        img {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+        }
       }
       .text {
         float: none;
@@ -2456,7 +2520,7 @@
     img {
       display: block;
       max-width: none;
-      width: 24rem;
+      width: 100%;
       height: 16.8rem;
       overflow: hidden;
       object-fit: cover;
@@ -4438,11 +4502,19 @@
     margin-bottom: 1.25rem;
     @extend .clearfix;
     height: 15rem;
-    img {
-      display: block;
+    figure {
       float: left;
       width: 40%;
       height: 100%;
+      a {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          @include transition();
+        }
+      }
     }
     .text {
       float: right;
@@ -4465,25 +4537,19 @@
             @media (min-width: 48rem) {
               max-height: 2.4em;
             }
-            margin-bottom: .5rem;
+            margin-bottom: .8rem;
             text-decoration: underline;
-            @include transition(0.3s);
-            &:hover {
-              color: $main-color;
-            }
+            @include transition(0.4s);
           }
           &.cn {
             font-size: 1rem;
-            line-height: 2em;
+            line-height: 1.5em;
             letter-spacing: .1em;
             @media (min-width: 48rem) {
-              max-height: 6em;
+              max-height: 1.5em;
             }
-            margin-bottom: 1rem;
-            @include transition(0.3s);
-            &:hover {
-              color: $main-color;
-            }
+            margin-bottom: .5rem;
+            @include transition(0.4s);
           }
         }
       }
@@ -4495,13 +4561,12 @@
           display: block;
           float: left;
           font-size: 1rem;
-          font-weight: lighter;
-          font-style: italic;
         }
         a {
           display: block;
           float: right;
-          width: 9rem;
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
           height: 2rem;
           line-height: 2rem;
           text-align: center;
@@ -4509,10 +4574,37 @@
           font-size: 1rem;
           font-weight: lighter;
           color: $text-color;
-          @include transition(0.3s);
-          &:hover {
-            border-color: $main-color;
-            color: $main-color;
+          @include transition(0.4s);
+        }
+      }
+    }
+  }
+}
+@media (min-width: 75rem) {
+  .project-list {
+    @include center-content();
+    li {
+      .text {
+        h2 {
+          span {
+            &.en {
+              &:hover {
+                color: $main-color;
+              }
+            }
+            &.cn {
+              &:hover {
+                color: $main-color;
+              }
+            }
+          }
+        }
+        .source-and-more {
+          a {
+            &:hover {
+              border-color: $main-color;
+              color: $main-color;
+            }
           }
         }
       }
@@ -4522,14 +4614,34 @@
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .project-list {
     li {
-      height: 14rem;
+      height: 13.4rem;
+      .text {
+        padding: 1.4rem 1rem;
+        h2 {
+          span {
+            &:first-of-type {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
     }
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .project-list {
     li {
-      height: 13rem;
+      height: 10.4rem;
+      .text {
+        padding: 1rem 0.8rem;
+        h2 {
+          span {
+            &:first-of-type {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -4539,10 +4651,17 @@
     li {
       margin-bottom: 0;
       height: auto;
-      img {
+      figure {
         float: none;
         width: 100%;
         height: auto;
+        img {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+        }
       }
       .text {
         float: none;
@@ -5292,14 +5411,12 @@ article {
 /*===访谈内页===*/
 .talk-details-banner {
   @extend %page;
-  height: 25rem;
-  margin-bottom: 33rem;
+  margin-bottom: 100px;
   position: relative;
   background-color: $text-color;
   .heading {
-    height: 100%;
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 90px;
     @include center-content();
     color: #fff;
     h3 {
@@ -5309,10 +5426,13 @@ article {
           font-size: 3rem;
           line-height: 1.1;
           margin-bottom: .5em;
+          font-weight: 500;
+          text-decoration: underline;
         }
         &.cn {
           font-size: 1rem;
-          line-height: 1.6;
+          line-height: 2;
+          letter-spacing: .1em;
         }
       }
     }
@@ -5327,9 +5447,9 @@ article {
   img {
     display: block;
     @include center-content();
-    height: 37.5rem;
+    height: auto;
     position: absolute;
-    bottom: -33rem;
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -5339,7 +5459,6 @@ article {
 }
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .talk-details-banner {
-    margin-bottom: 29rem;
     .heading {
       h3 {
         span {
@@ -5350,16 +5469,10 @@ article {
         }
       }
     }
-    .video,
-    img {
-      height: 33rem;
-      bottom: -29rem;
-    }
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .talk-details-banner {
-    margin-bottom: 24rem;
     .heading {
       h3 {
         span {
@@ -5370,16 +5483,10 @@ article {
         }
       }
     }
-    .video,
-    img {
-      height: 27rem;
-      bottom: -24rem;
-    }
   }
 }
 @media (max-width: 47.9375rem) {
   .talk-details-banner {
-    height: auto;
     margin-bottom: 0;
     position: static;
     .heading {
@@ -5389,7 +5496,7 @@ article {
       h3 {
         span {
           &.en {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             line-height: 1.5;
             margin-bottom: .5em;
           }

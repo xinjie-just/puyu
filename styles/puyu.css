@@ -2013,9 +2013,10 @@ label.error {
 }
 .contact-heading h2 {
   font-size: 1.125rem;
+  line-height: 2;
   font-weight: 500;
   text-decoration: underline;
-  letter-spacing: .2em;
+  letter-spacing: .1em;
 }
 
 @media (max-width: 47.9375rem) {
@@ -2736,18 +2737,27 @@ label.error {
   margin-bottom: 1.25rem;
   height: 15rem;
 }
-.talk-details-list li img {
+.talk-details-list li figure {
   display: block;
   float: left;
   width: 40%;
   height: 100%;
+}
+.talk-details-list li figure a {
+  width: 100%;
+  height: 100%;
+}
+.talk-details-list li figure a img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s linear 0s;
 }
 .talk-details-list li .text {
   float: right;
   width: 60%;
   height: 100%;
   background-color: #fff;
-  border-top: 0.3rem solid #000;
+  border-top: 5px solid #000;
   padding: 1.875rem 1.25rem;
 }
 .talk-details-list li .text a {
@@ -2761,31 +2771,25 @@ label.error {
 .talk-details-list li .text h2 span.en {
   font-size: 1.75rem;
   line-height: 1.2em;
-  margin-bottom: .5rem;
+  margin-bottom: .8rem;
   text-decoration: underline;
-  transition: all 0.3s linear 0s;
+  transition: all 0.4s linear 0s;
 }
 @media (min-width: 48rem) {
   .talk-details-list li .text h2 span.en {
     max-height: 2.4em;
   }
 }
-.talk-details-list li .text h2 span.en:hover {
-  color: #f7ac3b;
-}
 .talk-details-list li .text h2 span.cn {
   font-size: 1rem;
   line-height: 1.5em;
-  margin-bottom: 1rem;
-  transition: all 0.3s linear 0s;
+  margin-bottom: .5rem;
+  transition: all 0.4s linear 0s;
 }
 @media (min-width: 48rem) {
   .talk-details-list li .text h2 span.cn {
-    max-height: 3em;
+    max-height: 1.5em;
   }
-}
-.talk-details-list li .text h2 span.cn:hover {
-  color: #f7ac3b;
 }
 .talk-details-list li .text .source-and-more .source {
   height: 2rem;
@@ -2793,35 +2797,84 @@ label.error {
   display: block;
   float: left;
   font-size: 1rem;
-  font-weight: lighter;
-  font-style: italic;
 }
 .talk-details-list li .text .source-and-more a {
   display: block;
   float: right;
-  width: 9rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  border: 1px solid #000;
+  color: #000;
+  border: 1px solid;
   font-size: 1rem;
   font-weight: lighter;
-  color: #000;
-  transition: all 0.3s linear 0s;
-}
-.talk-details-list li .text .source-and-more a:hover {
-  border-color: #f7ac3b;
-  color: #f7ac3b;
+  transition: all 0.4s linear 0s;
 }
 
+@media (min-width: 75rem) {
+  .talk-details-list {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (min-width: 75rem) and (min-width: 75rem) {
+  .talk-details-list {
+    width: 67.5rem;
+  }
+}
+@media (min-width: 75rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .talk-details-list {
+    width: 60.625rem;
+  }
+}
+@media (min-width: 75rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .talk-details-list {
+    width: 46.875rem;
+  }
+}
+@media (min-width: 75rem) and (max-width: 47.9375rem) {
+  .talk-details-list {
+    width: 87.5%;
+  }
+}
+@media (min-width: 75rem) {
+  .talk-details-list li figure:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  .talk-details-list li .text h2 span.en:hover {
+    color: #f7ac3b;
+  }
+  .talk-details-list li .text h2 span.cn:hover {
+    color: #f7ac3b;
+  }
+  .talk-details-list li .text .source-and-more a:hover {
+    border-color: #f7ac3b;
+    color: #f7ac3b;
+  }
+}
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .talk-details-list li {
-    height: 14rem;
+    height: 13.4rem;
+  }
+  .talk-details-list li .text {
+    padding: 1.4rem 1rem;
+  }
+  .talk-details-list li .text h2 span:first-of-type {
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .talk-details-list li {
-    height: 13rem;
+    height: 10.4rem;
+  }
+  .talk-details-list li .text {
+    padding: 1rem .8rem;
+  }
+  .talk-details-list li .text h2 span:first-of-type {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 47.9375rem) {
@@ -2832,10 +2885,17 @@ label.error {
     margin-bottom: 0;
     height: auto;
   }
-  .talk-details-list li img {
+  .talk-details-list li figure {
     float: none;
     width: 100%;
     height: auto;
+  }
+  .talk-details-list li figure img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .talk-details-list li .text {
     float: none;
@@ -3262,7 +3322,7 @@ label.error {
   .team img {
     display: block;
     max-width: none;
-    width: 24rem;
+    width: 100%;
     height: 16.8rem;
     overflow: hidden;
     object-fit: cover;
@@ -5512,11 +5572,19 @@ label.error {
   margin-bottom: 1.25rem;
   height: 15rem;
 }
-.project-list li img {
-  display: block;
+.project-list li figure {
   float: left;
   width: 40%;
   height: 100%;
+}
+.project-list li figure a {
+  width: 100%;
+  height: 100%;
+}
+.project-list li figure a img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s linear 0s;
 }
 .project-list li .text {
   float: right;
@@ -5537,32 +5605,26 @@ label.error {
 .project-list li .text h2 span.en {
   font-size: 1.75rem;
   line-height: 1.2em;
-  margin-bottom: .5rem;
+  margin-bottom: .8rem;
   text-decoration: underline;
-  transition: all 0.3s linear 0s;
+  transition: all 0.4s linear 0s;
 }
 @media (min-width: 48rem) {
   .project-list li .text h2 span.en {
     max-height: 2.4em;
   }
 }
-.project-list li .text h2 span.en:hover {
-  color: #f7ac3b;
-}
 .project-list li .text h2 span.cn {
   font-size: 1rem;
-  line-height: 2em;
+  line-height: 1.5em;
   letter-spacing: .1em;
-  margin-bottom: 1rem;
-  transition: all 0.3s linear 0s;
+  margin-bottom: .5rem;
+  transition: all 0.4s linear 0s;
 }
 @media (min-width: 48rem) {
   .project-list li .text h2 span.cn {
-    max-height: 6em;
+    max-height: 1.5em;
   }
-}
-.project-list li .text h2 span.cn:hover {
-  color: #f7ac3b;
 }
 .project-list li .text .source-and-more .source {
   height: 2rem;
@@ -5570,13 +5632,12 @@ label.error {
   display: block;
   float: left;
   font-size: 1rem;
-  font-weight: lighter;
-  font-style: italic;
 }
 .project-list li .text .source-and-more a {
   display: block;
   float: right;
-  width: 9rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   height: 2rem;
   line-height: 2rem;
   text-align: center;
@@ -5584,21 +5645,68 @@ label.error {
   font-size: 1rem;
   font-weight: lighter;
   color: #000;
-  transition: all 0.3s linear 0s;
-}
-.project-list li .text .source-and-more a:hover {
-  border-color: #f7ac3b;
-  color: #f7ac3b;
+  transition: all 0.4s linear 0s;
 }
 
+@media (min-width: 75rem) {
+  .project-list {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (min-width: 75rem) and (min-width: 75rem) {
+  .project-list {
+    width: 67.5rem;
+  }
+}
+@media (min-width: 75rem) and (min-width: 62rem) and (max-width: 74.9375rem) {
+  .project-list {
+    width: 60.625rem;
+  }
+}
+@media (min-width: 75rem) and (min-width: 48rem) and (max-width: 61.9375rem) {
+  .project-list {
+    width: 46.875rem;
+  }
+}
+@media (min-width: 75rem) and (max-width: 47.9375rem) {
+  .project-list {
+    width: 87.5%;
+  }
+}
+@media (min-width: 75rem) {
+  .project-list li .text h2 span.en:hover {
+    color: #f7ac3b;
+  }
+  .project-list li .text h2 span.cn:hover {
+    color: #f7ac3b;
+  }
+  .project-list li .text .source-and-more a:hover {
+    border-color: #f7ac3b;
+    color: #f7ac3b;
+  }
+}
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
   .project-list li {
-    height: 14rem;
+    height: 13.4rem;
+  }
+  .project-list li .text {
+    padding: 1.4rem 1rem;
+  }
+  .project-list li .text h2 span:first-of-type {
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
   .project-list li {
-    height: 13rem;
+    height: 10.4rem;
+  }
+  .project-list li .text {
+    padding: 1rem 0.8rem;
+  }
+  .project-list li .text h2 span:first-of-type {
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 47.9375rem) {
@@ -5609,10 +5717,17 @@ label.error {
     margin-bottom: 0;
     height: auto;
   }
-  .project-list li img {
+  .project-list li figure {
     float: none;
     width: 100%;
     height: auto;
+  }
+  .project-list li figure img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .project-list li .text {
     float: none;
@@ -6509,15 +6624,13 @@ article img + div p {
 }
 /*===访谈内页===*/
 .talk-details-banner {
-  height: 25rem;
-  margin-bottom: 33rem;
+  margin-bottom: 100px;
   position: relative;
   background-color: #000;
 }
 .talk-details-banner .heading {
-  height: 100%;
   padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 90px;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -6550,10 +6663,13 @@ article img + div p {
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: .5em;
+  font-weight: 500;
+  text-decoration: underline;
 }
 .talk-details-banner .heading h3 span.cn {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 2;
+  letter-spacing: .1em;
 }
 .talk-details-banner .heading time {
   display: block;
@@ -6567,9 +6683,9 @@ article img + div p {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  height: 37.5rem;
+  height: auto;
   position: absolute;
-  bottom: -33rem;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -6602,36 +6718,19 @@ article img + div p {
 }
 
 @media (min-width: 62rem) and (max-width: 74.9375rem) {
-  .talk-details-banner {
-    margin-bottom: 29rem;
-  }
   .talk-details-banner .heading h3 span.en {
     font-size: 2.5rem;
     line-height: 1.2;
   }
-  .talk-details-banner .video,
-  .talk-details-banner img {
-    height: 33rem;
-    bottom: -29rem;
-  }
 }
 @media (min-width: 48rem) and (max-width: 61.9375rem) {
-  .talk-details-banner {
-    margin-bottom: 24rem;
-  }
   .talk-details-banner .heading h3 span.en {
     font-size: 2rem;
     line-height: 1.3;
   }
-  .talk-details-banner .video,
-  .talk-details-banner img {
-    height: 27rem;
-    bottom: -24rem;
-  }
 }
 @media (max-width: 47.9375rem) {
   .talk-details-banner {
-    height: auto;
     margin-bottom: 0;
     position: static;
   }
@@ -6641,7 +6740,7 @@ article img + div p {
     padding-bottom: 2rem;
   }
   .talk-details-banner .heading h3 span.en {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     margin-bottom: .5em;
   }

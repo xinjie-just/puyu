@@ -154,7 +154,11 @@
             <!--访谈详情列表-->
             <ul class="talk-details-list">
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -169,7 +173,11 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -184,7 +192,11 @@
                     </div>
                 </li>
                 <li>
-                    <img src="images/pure2.jpg" alt="">
+                    <figure>
+                        <a href="" title="">
+                            <img src="images/pure2.jpg" alt="">
+                        </a>
+                    </figure>
                     <div class="text">
                         <h2>
                             <a href="#" title="">
@@ -350,12 +362,29 @@
             $(function(){
                 // 多行文本省略号
                 ellipsis();
-                $(window).resize = function () {
+                setHeight();
+                $(window).resize(function () {
                     ellipsis();
-                };
+                    setHeight();
+                });
                 function ellipsis() {
                     $(".tab-content span.en, .tab-content span.cn").dotdotdot();
                     $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
+                }
+                function setHeight() {
+                    var $width = $(window).width();
+                    if ($width >= 768) {
+                        var $divHeight =  $(".talk-details-banner > div").outerHeight();
+                        if ($(".talk-details-banner").find("img")) {
+                            var $imgHeight =  $(".talk-details-banner > img").outerHeight();
+                            $(".talk-details-banner").height($imgHeight + $divHeight - 100);
+                        }else if ($(".talk-details-banner").find("video")) {
+                            var $videoHeight =  $(".talk-details-banner > video").outerHeight();
+                            $(".talk-details-banner").height($videoHeight + $divHeight - 100);
+                        }
+                    }else {
+                        $(".talk-details-banner").css("height", "auto");
+                    }
                 }
 
                 // tab 切换(第一tab按钮对应第一tab内容)
