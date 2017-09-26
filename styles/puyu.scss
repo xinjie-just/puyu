@@ -1052,6 +1052,9 @@
     }
     h3 {
       margin-bottom: 1.875rem;
+      a {
+        display: block;
+      }
       strong {
         display: inline-block;
         text-transform: capitalize;
@@ -2961,7 +2964,7 @@
           background-color: $text-color;
         }
       }
-      &:hover {
+      /*&:hover {
         strong {
           &:first-of-type {
             span {
@@ -2972,7 +2975,7 @@
             background-color: $main-color;
           }
         }
-      }
+      }*/
     }
     .details {
       width: 70%;
