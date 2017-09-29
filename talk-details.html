@@ -373,7 +373,7 @@
                     $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
                 }
                 function setHeight() {
-                    var $width = $(window).width();
+                    var $width = $(window).outerWidth();
                     if ($width >= 768) {
                         var $divHeight =  $(".talk-details-banner > div").outerHeight();
                         if ($(".talk-details-banner").find("img")) {

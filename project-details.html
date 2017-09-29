@@ -493,7 +493,7 @@
                     setHeight();
                 });
                 function setHeight() {
-                    var $width = $(window).width();
+                    var $width = $(window).outerWidth();
                     if ($width >= 768) {
                         var $imgHeight =  $(".project-intro > img").outerHeight();
                         var $divHeight =  $(".project-intro > div").outerHeight();
