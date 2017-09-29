@@ -93,6 +93,7 @@ body {
   color: $text-color;
   background: #eee url("../images/body-bg-image.png") repeat;
   font-family: "Microsoft Yahei", Arial, sans-serif;
+  -webkit-overflow-scrolling: touch; /* ios5+ */
 }
 
 /*===全站除英文外字体使用‘思源黑体-细’，英文在后面特殊定义===*/
@@ -161,6 +162,10 @@ a {
     outline-width: 0;
     text-decoration: none;
   }
+}
+// 对于没有内容的 a 标签，为它设置生成内容---href 的值
+a[href]:empty::before {
+  content: attr(href);
 }
 
 /* ===文本=== */
