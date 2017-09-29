@@ -14,7 +14,6 @@ $("#toTop").click(function () {
     return false;
 });
 
-
 // 重新加载页面时
 $(function () {
     firstGrade();
@@ -31,7 +30,7 @@ $(window).resize(function () {
 
 // 当页面宽度不小于 1200px 时，二级菜单显示与隐藏
 function secondGrade() {
-    if (!($("body").outerWidth() < 1200)) {
+    if (!($(window).width() < 1200)) {
         $("#nav ul li").hover(
             // 导航菜单二级列表缓慢下滑，600ms同css中时间一致
             function () {
@@ -45,7 +44,7 @@ function secondGrade() {
 
 // 当页面宽度小于 1200px 时，一级菜单显示与隐藏
 function firstGrade() {
-    if ($("body").outerWidth() < 1200) {
+    //if ($(window).width() < 1200) {
         $("#menuIcon").click(function (e) {
             if ($("#navList").css("display") == "block") {
                 $("#navList").slideUp(400);
@@ -63,7 +62,7 @@ function firstGrade() {
         $("#navList").click(function (e) {
             e.stopPropagation();
         });
-    }
+    //}
 }
 
 // 多行文本省略号
