@@ -52,16 +52,16 @@ fieldset {
 
 //在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
 html {
-  @media (min-width: 75rem) {
+  @media (min-width: 1200px) {
     font-size: $font-size;
   }
-  @media (min-width: 62rem) and (max-width: 74.9375rem) {
+  @media (min-width: 992px) and (max-width: 1199px) {
     font-size: calc(#{$font-size} - 1px);
   }
-  @media (min-width: 48rem) and (max-width: 61.9375rem) {
+  @media (min-width: 768px) and (max-width: 991px) {
     font-size: calc(#{$font-size} - 2px);
   }
-  @media (max-width: 47.9375rem) {
+  @media (max-width: 767px) {
     font-size: calc(#{$font-size} - 3px);
   }
   height: 100%;
@@ -474,16 +474,16 @@ label {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 75rem) {
-    width: 67.5rem; // 1080px
+  @media (min-width: 1200px) {
+    width: 1080px;
   }
-  @media (min-width: 62rem) and (max-width: 74.9375rem) {
-    width: 60.625rem; // 970px
+  @media (min-width: 992px) and (max-width: 1199px) {
+    width: 970px;
   }
-  @media (min-width: 48rem) and (max-width: 61.9375rem) {
-    width: 46.875rem; // 750px
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 750px;
   }
-  @media (max-width: 47.9375rem) {
+  @media (max-width: 767px) {
     width: $width;
   }
 }
@@ -529,7 +529,6 @@ label.error {
   url('../fonts/iconfont.ttf?t=1505180876574') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   url('../fonts/iconfont.svg?t=1505180876574#iconfont') format('svg'); /* iOS 4.1- */
 }
-
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 1rem;
@@ -537,25 +536,15 @@ label.error {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-totop:before { content: "\e68a"; }
-
 .icon-weibo:before { content: "\e603"; }
-
 .icon-weixin:before { content: "\e604"; }
-
 .icon-purelogo:before { content: "\e605"; }
-
 .icon-menu:before { content: "\e606"; }
-
 .icon-close:before { content: "\e607"; }
-
 .icon-chongqingmap:before { content: "\e608"; }
-
 .icon-chengdumap:before { content: "\e609"; }
-
 .icon-shanghaimap:before { content: "\e60a"; }
-
 
 /*===英文字体===*/
 @font-face {
