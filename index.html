@@ -368,7 +368,7 @@
                 </a>
             </div>
             <div class="work">
-                <img src="images/home-work.jpg" alt="幸勤工作的人们">
+                <img src="images/home-work.jpg" alt="幸勤工作的人们" class="object-fit">
                 <h2>
                     <span class="en">in pure architects,the work limit boundary is explored width practices by all our architects.</span>
                     <span class="cn">朴隅建筑希望用自身的实践去探索建筑工程师的工作边界</span>
@@ -639,8 +639,18 @@
                         $($(".home-inside").get(i)).height($($(".home-inside").get(i)).find("img").outerHeight());
                     }
 
-                    // 度假模式
-                    //$(".holiday-mode").height($(".holiday-mode").find("img").outerHeight());
+                    if (!($(window).outerWidth() < 768)) {
+                        if ($(".home-media")) {
+                            var videoHeight = $(".home-media").find("video").outerHeight();
+                            var videoTextHeight = $(".home-media").find(".future-space-definer").outerHeight();
+                            $(".home-media").height(videoHeight + videoTextHeight - 90);
+                        }
+                        if ($(".home-banner")) {
+                            var imgHeight = $(".home-banner").find("img").outerHeight();
+                            var imgTextHeight = $(".home-banner").find(".future-space-definer").outerHeight();
+                            $(".home-media").height(imgHeight + imgTextHeight - 90);
+                        }
+                    }
                 }
 
                 // 瀑布流布局

@@ -478,6 +478,11 @@ label.error {
   font-family: "scalasans" !important;
 }
 
+/*===其它杂项===*/
+.object-fit {
+  overflow: hidden;
+}
+
 /*===首页===*/
 /*头部*/
 #header {
@@ -734,7 +739,7 @@ label.error {
 .home-media {
   z-index: 3;
   position: relative;
-  margin-bottom: 12.5rem;
+  margin-bottom: 2rem;
 }
 
 .home-banner img,
@@ -751,7 +756,7 @@ label.error {
   z-index: 9;
   position: absolute;
   left: 50%;
-  bottom: -10rem;
+  bottom: 0;
   transform: translate(-50%);
   display: block;
   margin-right: auto;
@@ -811,14 +816,6 @@ label.error {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .home-banner,
-  .home-media {
-    margin-bottom: 10rem;
-  }
-  .home-banner .future-space-definer,
-  .home-media .future-space-definer {
-    bottom: -7rem;
-  }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
     padding: .8rem 1.875rem 1.1rem;
@@ -829,14 +826,6 @@ label.error {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .home-banner,
-  .home-media {
-    margin-bottom: 8rem;
-  }
-  .home-banner .future-space-definer,
-  .home-media .future-space-definer {
-    bottom: -5rem;
-  }
   .home-banner .future-space-definer h2,
   .home-media .future-space-definer h2 {
     padding: .6rem 1.375rem .9rem;
