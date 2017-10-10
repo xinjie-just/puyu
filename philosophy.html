@@ -499,54 +499,60 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function () {
-                // 设置banner图部分的高度
-                setHeight();
-                // 英文的显示与收起
-                displayAllEnglish();
-                $(window).resize(function(){
-                    setHeight();
-                    displayAllEnglish();
-                });
-                function setHeight() {
-                    var $width = $(window).outerWidth();
-                    if ($width >= 768) {
-                        var $imgHeight =  $(".philosophy-banner > img").outerHeight();
-                        var $divHeight =  $(".philosophy-banner > div").outerHeight();
-                        $(".philosophy-banner").height($imgHeight + $divHeight - 90);
-                    }else {
-                        $(".philosophy-banner").css("height", "auto");
-                    }
+            // 设置banner图部分的高度
+            function setHeight() {
+                var $width = $(window).outerWidth();
+                var $imgHeight =  $(".philosophy-banner > img").outerHeight();
+                var $divHeight =  $(".philosophy-banner > div").outerHeight();
+                if ($width >= 1200) {
+                    $(".philosophy-banner").height($imgHeight + $divHeight - 90);
                 }
-
-                // 为简介中的英文设置显示全部与收起
-                function displayAllEnglish() {
-                    var $width = $(window).width();
-                    var $en = $(".future-space-definer .details .en");
-                    var $enHeight = $en.height();
-                    if ($width <= 767) {
-                        if ($enHeight > 65) {
-                            $en.height(45);
-                            $en.css("overflow", "hidden");
-                            $($en).prepend("<button type='button' class='all-en' title='显示全部'>显示全部</button>");
-                        }
-                    } else {
-                        $($en).find(".all-en").remove();
+                else if ($width >= 992) {
+                    $(".philosophy-banner").height($imgHeight + $divHeight - 70);
+                }
+                else if ($width >= 768) {
+                    $(".philosophy-banner").height($imgHeight + $divHeight - 50);
+                }
+                else {
+                    $(".philosophy-banner").css("height", "auto");
+                }
+            }
+            // 为简介中的英文设置显示全部与收起
+            function displayAllEnglish() {
+                var $width = $(window).outerWidth();
+                var $en = $(".future-space-definer .details .en");
+                var $enHeight = $en.height();
+                if (!($width > 767)) {
+                    if ($enHeight > 65) {
+                        $en.height(45);
+                        $en.css("overflow", "hidden");
+                        $($en).prepend("<button type='button' class='all-en' title='显示全部'>显示全部</button>");
+                    }
+                } else {
+                    $($en).find(".all-en").remove();
+                    $en.height("auto");
+                }
+                $(".all-en").click(function () {
+                    if ($(this).attr("title") == "显示全部") {
                         $en.height("auto");
+                        $(this).attr("title", "收起");
+                        $(this).text("收起");
+                    } else {
+                        $en.height(45);
+                        $(this).attr("title", "显示全部");
+                        $(this).text("显示全部");
                     }
-                    $(".all-en").click(function () {
-                        if ($(this).attr("title") == "显示全部") {
-                            $en.height("auto");
-                            $(this).attr("title", "收起");
-                            $(this).text("收起");
-                        } else {
-                            $en.height(45);
-                            $(this).attr("title", "显示全部");
-                            $(this).text("显示全部");
-                        }
-                    });
-                }
-
+                });
+            }
+            $(window).resize(function(){
+                setHeight();
+                displayAllEnglish();
+            });
+            window.onload = function () {
+                setHeight();
+            };
+            $(function () {
+                displayAllEnglish();
             });
         </script>
     </body>

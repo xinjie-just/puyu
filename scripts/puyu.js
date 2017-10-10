@@ -14,17 +14,33 @@ $("#toTop").click(function () {
     return false;
 });
 
+// 菜单的显示与隐藏
+function displayMenu() {
+    if (!($(window).outerWidth() > 1199)) {
+        $("#nav > ul").css("display", "none");
+    }else {
+        $("#nav > ul").css("display", "block");
+    }
+}
+
+// 多行文本省略号
+function ellipsis() {
+    $(".multi-line-ellipsis").dotdotdot();
+}
+
 // 重新加载页面时
-window.onload = function () {
+$(function () {
     firstGrade();
     secondGrade();
-    ellipsis();
     displayMenu();
-};
+    ellipsis()
+});
 //页面缩放时
-window.onresize = function () {
+$(window).resize(function () {
+    secondGrade();
     displayMenu();
-};
+    ellipsis();
+});
 
 // 当页面宽度不小于 1200px 时，二级菜单显示与隐藏
 function secondGrade() {
@@ -42,40 +58,25 @@ function secondGrade() {
 
 // 当页面宽度小于 1200px 时，一级菜单显示与隐藏
 function firstGrade() {
-    //if (!($(window).outerWidth() > 1199)) {
-        $("#menuIcon").click(function (e) {
-            if ($("#navList").css("display") === "block") {
-                $("#navList").slideUp(400);
-                $(this).find("i").removeClass("icon-close").addClass("icon-menu");
-            } else {
-                $("#navList").slideDown(400);
-                $(this).find("i").removeClass("icon-menu").addClass("icon-close");
-            }
-            e.stopPropagation();
-        });
-        $(document).click(function () {
+    $("#menuIcon").click(function (e) {
+        if ($("#navList").css("display") === "block") {
             $("#navList").slideUp(400);
-            $("#menuIcon").find("i").removeClass("icon-close").addClass("icon-menu");
-        });
-        $("#navList").click(function (e) {
-            e.stopPropagation();
-        });
-    //}
+            $(this).find("i").removeClass("icon-close").addClass("icon-menu");
+        } else {
+            $("#navList").slideDown(400);
+            $(this).find("i").removeClass("icon-menu").addClass("icon-close");
+        }
+        e.stopPropagation();
+    });
+    $(document).click(function () {
+        $("#navList").slideUp(400);
+        $("#menuIcon").find("i").removeClass("icon-close").addClass("icon-menu");
+    });
+    $("#navList").click(function (e) {
+        e.stopPropagation();
+    });
 }
 
-// 菜单的显示与隐藏
-function displayMenu() {
-    if (!($(window).outerWidth() > 1199)) {
-        $("#nav > ul").css("display", "none");
-    }else {
-        $("#nav > ul").css("display", "block");
-    }
-}
-
-// 多行文本省略号
-function ellipsis() {
-    $(".multi-line-ellipsis").dotdotdot();
-}
 
 // 微信二维码的显示与影藏
 $("#weixinIcon").hover(
