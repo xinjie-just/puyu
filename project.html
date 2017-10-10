@@ -585,29 +585,37 @@
         <script src="scripts/carousel.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function () {
+            // 计算banner图的高度
+            function setHeight() {
+                var $width = $(window).outerWidth();
+                var imgHeight = $(".project-banner > img").outerHeight();
+                var headingHeight = $(".project-banner > h3").outerHeight();
+                if ($width >= 1200) {
+                    $(".project-banner").height(imgHeight + headingHeight - 90);
+                }
+                else if ($width >= 992) {
+                    $(".project-banner").height(imgHeight + headingHeight - 70);
+                }
+                else if ($width >= 768) {
+                    $(".project-banner").height(imgHeight + headingHeight - 50);
+                }
+                else {
+                    $(".project-banner").height("auto");
+                }
+            }
+            // 在图片或视频加载完后才计算高度
+            window.onload = function () {
+                setHeight();
                 // 瀑布流布局
                 $(".project-list-content ul").masonry({
                     itemSelector: ".project-item-content"
                 });
-
-                // 将项目分类列表钉在某处
-                /*$(".project-list-classify").pin({
-                    containerSelector: ".all-project"
-                });*/
-                /*$(".project-list-classify").pin();*/
-
-                // 手机和平板下项目分类列表的显示和隐藏
-                /*$("#lookList").click(function () {
-                    if ($("#projectClassifyList").css("display") == "block") {
-                        $("#projectClassifyList").slideUp(400);
-                        $(this).find("span").css("transform", "rotate(0deg)");
-                    } else {
-                        $("#projectClassifyList").slideDown(400);
-                        $(this).find("span").css("transform", "rotate(180deg)");
-                    }
-                });*/
-
+            };
+            $(window).resize(function () {
+                setHeight();
+            });
+            $(function () {
+                // 项目分类的显示与隐藏
                 $("#lookList").click(function () {
                     if ($("#projectClassifyList").css("display") == "block") {
                         $("#projectClassifyList").slideUp(400);

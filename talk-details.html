@@ -360,34 +360,47 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function(){
-                // 多行文本省略号
-                ellipsis();
-                setHeight();
-                $(window).resize(function () {
-                    ellipsis();
-                    setHeight();
-                });
-                function ellipsis() {
-                    $(".tab-content span.en, .tab-content span.cn").dotdotdot();
-                    $(".talk-recommend .text p, .talk-recommend h2 span.en").dotdotdot();
-                }
-                function setHeight() {
-                    var $width = $(window).outerWidth();
-                    if ($width >= 768) {
-                        var $divHeight =  $(".talk-details-banner > div").outerHeight();
-                        if ($(".talk-details-banner").find("img")) {
-                            var $imgHeight =  $(".talk-details-banner > img").outerHeight();
-                            $(".talk-details-banner").height($imgHeight + $divHeight - 100);
-                        }else if ($(".talk-details-banner").find("video")) {
-                            var $videoHeight =  $(".talk-details-banner > video").outerHeight();
-                            $(".talk-details-banner").height($videoHeight + $divHeight - 100);
-                        }
-                    }else {
-                        $(".talk-details-banner").css("height", "auto");
+            function setHeight() {
+                var $width = $(window).outerWidth();
+                var $divHeight =  $(".talk-details-banner > div").outerHeight();
+                if ($width >= 1200) {
+                    if ($(".talk-details-banner").find("img")) {
+                        var $imgHeight =  $(".talk-details-banner > img").outerHeight();
+                        $(".talk-details-banner").height($imgHeight + $divHeight - 100);
+                    }else if ($(".talk-details-banner").find("video")) {
+                        var $videoHeight =  $(".talk-details-banner > video").outerHeight();
+                        $(".talk-details-banner").height($videoHeight + $divHeight - 100);
                     }
                 }
-
+                else if ($width >= 992) {
+                    if ($(".talk-details-banner").find("img")) {
+                        var $imgHeight =  $(".talk-details-banner > img").outerHeight();
+                        $(".talk-details-banner").height($imgHeight + $divHeight - 100);
+                    }else if ($(".talk-details-banner").find("video")) {
+                        var $videoHeight =  $(".talk-details-banner > video").outerHeight();
+                        $(".talk-details-banner").height($videoHeight + $divHeight - 100);
+                    }
+                }
+                else if ($width >= 768) {
+                    if ($(".talk-details-banner").find("img")) {
+                        var $imgHeight =  $(".talk-details-banner > img").outerHeight();
+                        $(".talk-details-banner").height($imgHeight + $divHeight - 100);
+                    }else if ($(".talk-details-banner").find("video")) {
+                        var $videoHeight =  $(".talk-details-banner > video").outerHeight();
+                        $(".talk-details-banner").height($videoHeight + $divHeight - 100);
+                    }
+                }
+                else {
+                    $(".talk-details-banner").css("height", "auto");
+                }
+            }
+            window.onload = function () {
+                setHeight();
+            };
+            $(window).resize(function () {
+                setHeight();
+            });
+            $(function(){
                 // tab 切换(第一tab按钮对应第一tab内容)
                 for (var i = 0, tabCount = $(".tab-list a").length; i < tabCount; i++) {
                     $($(".tab-list a").get(i)).on("click", function(e){

@@ -33,7 +33,7 @@ $(function () {
     firstGrade();
     secondGrade();
     displayMenu();
-    ellipsis()
+    ellipsis();
 });
 //页面缩放时
 $(window).resize(function () {
@@ -67,13 +67,13 @@ function firstGrade() {
             $(this).find("i").removeClass("icon-menu").addClass("icon-close");
         }
         e.stopPropagation();
-    });
-    $(document).click(function () {
-        $("#navList").slideUp(400);
-        $("#menuIcon").find("i").removeClass("icon-close").addClass("icon-menu");
-    });
-    $("#navList").click(function (e) {
-        e.stopPropagation();
+        $(document).click(function () {
+            $("#navList").slideUp(400);
+            $("#menuIcon").find("i").removeClass("icon-close").addClass("icon-menu");
+        });
+        $("#navList").click(function (e) {
+            e.stopPropagation();
+        });
     });
 }
 

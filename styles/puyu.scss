@@ -603,7 +603,7 @@
 }
 @media (min-width: 1200px) {
   .grid {
-    width: 68.85rem;
+    width: 1102px;
     li {
       &:hover {
         img {
@@ -615,12 +615,12 @@
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .grid {
-    width: 61.8375rem;
+    width: 990px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
-    width: 47.8125rem;
+    width: 765px;
   }
 }
 @media(max-width: 767px) {
@@ -643,13 +643,12 @@
       a {
         color: $text-color;
         line-height: 1.2em;
-        max-height: 2.8em;
+        height: 2.8em;
         margin-bottom: 1rem;
         font-size: 2.25rem;
         font-weight: normal;
         text-transform: capitalize;
         padding: .2em 0;
-        //color: $text-color;
         display: block;
         @include transition();
       }
@@ -1174,8 +1173,9 @@
   }
   ul {
     @extend .clearfix;
+    margin-bottom: -1.25rem;
     li {
-      margin: .8rem .3rem;
+      margin-bottom: 1.25rem;
       float: left;
       a {
         display: block;
@@ -1192,8 +1192,7 @@
           height: auto;
           position: absolute;
           top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          transform: translateY(-50%);
         }
       }
     }
@@ -1271,6 +1270,9 @@
         margin-right: .875rem;
         i {
           font-size: 1.5rem;
+          &:hover {
+            color: #fff;
+          }
         }
       }
       > .weixin {
@@ -3768,7 +3770,7 @@
 @media (max-width: 767px) {
   .idea-intro {
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     position: static;
     img {
       max-width: none;
@@ -4009,7 +4011,7 @@
 /*===项目===*/
 .project-banner {
   @extend %page;
-  margin-bottom: 14rem;
+  margin-bottom: 2rem;
   position: relative;
   img {
     display: block;
@@ -4019,7 +4021,7 @@
   h3 {
     position: absolute;
     left: 24%;
-    bottom: -10rem;
+    bottom: 0;
     width: 76%;
     padding: 1rem 2rem;
     border-top: .5rem solid $text-color;
@@ -4044,11 +4046,9 @@
 }
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-banner {
-    margin-bottom: 12rem;
     h3 {
       width: 72%;
       left: 28%;
-      bottom: -8rem;
       padding: .8rem 1.6rem;
       span {
         &:first-of-type {
@@ -4071,9 +4071,7 @@
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-banner {
-    margin-bottom: 10rem;
     h3 {
-      bottom: -6rem;
       padding: .7rem 1.4rem;
       span {
         &:first-of-type {
@@ -4085,9 +4083,7 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .project-banner {
-    margin-bottom: 9rem;
     h3 {
-      bottom: -5rem;
       padding: .6rem 1.2rem;
       span {
         &:first-of-type {

@@ -137,15 +137,6 @@
                     </h2>
                 </div>
             </div>
-            <!--<div class="home-banner">
-                <img src="images/home-banner.jpg" alt="朴隅建筑首页banner" class="object-fit">
-                <div class="future-space-definer">
-                    <h2>
-                        <span class="en">future space definer</span>
-                        <span class="cn">未来空间产品定义者</span>
-                    </h2>
-                </div>
-            </div>-->
             <!--下面有三种切换模式，项目(projects)、创意(ideas)、朴隅(pure+)-->
             <div class="projects">
                 <!--未来的度假模式-->
@@ -627,32 +618,36 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function(){
-                setHeight();
-                $(window).resize(function () {
-                    setHeight();
-                });
-
-                function setHeight() {
-                    var insideLen = $(".home-inside").length;
-                    for (var i = 0; i < insideLen; i++) {
-                        $($(".home-inside").get(i)).height($($(".home-inside").get(i)).find("img").outerHeight());
-                    }
-
-                    if (!($(window).outerWidth() < 768)) {
-                        if ($(".home-media")) {
-                            var videoHeight = $(".home-media").find("video").outerHeight();
-                            var videoTextHeight = $(".home-media").find(".future-space-definer").outerHeight();
-                            $(".home-media").height(videoHeight + videoTextHeight - 90);
-                        }
-                        if ($(".home-banner")) {
-                            var imgHeight = $(".home-banner").find("img").outerHeight();
-                            var imgTextHeight = $(".home-banner").find(".future-space-definer").outerHeight();
-                            $(".home-media").height(imgHeight + imgTextHeight - 90);
-                        }
-                    }
+            // 计算视频的高度
+            function setHeight() {
+                var $width = $(window).outerWidth();
+                var videoHeight = $(".home-media").find("video").outerHeight();
+                var videoTextHeight = $(".home-media").find(".future-space-definer").outerHeight();
+                if ($width >= 1200) {
+                    $(".home-media").height(videoHeight + videoTextHeight - 90);
                 }
-
+                else if ($width >= 992) {
+                    $(".home-media").height(videoHeight + videoTextHeight - 70);
+                }
+                else if ($width >= 768) {
+                    $(".home-media").height(videoHeight + videoTextHeight - 50);
+                }
+                else {
+                    $(".home-media").height("auto");
+                }
+            }
+            // 在图片或视频加载完后才计算高度
+            window.onload = function () {
+                setHeight();
+            };
+            $(window).resize(function () {
+                setHeight();
+            });
+            $(function(){
+                var insideLen = $(".home-inside").length;
+                for (var i = 0; i < insideLen; i++) {
+                    $($(".home-inside").get(i)).height($($(".home-inside").get(i)).find("img").outerHeight());
+                }
                 // 瀑布流布局
                 $(".grid").masonry({
                     itemSelector: ".grid-item"

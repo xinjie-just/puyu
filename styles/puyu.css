@@ -1088,7 +1088,7 @@ label.error {
 
 @media (min-width: 1200px) {
   .grid {
-    width: 68.85rem;
+    width: 1102px;
   }
   .grid li:hover img {
     transform: scale(1.1, 1.1);
@@ -1096,12 +1096,12 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .grid {
-    width: 61.8375rem;
+    width: 990px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
-    width: 47.8125rem;
+    width: 765px;
   }
 }
 @media (max-width: 767px) {
@@ -1124,7 +1124,7 @@ label.error {
 .home-outside .content h2 a {
   color: #000;
   line-height: 1.2em;
-  max-height: 2.8em;
+  height: 2.8em;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: normal;
@@ -1678,8 +1678,11 @@ label.error {
   text-transform: capitalize;
   letter-spacing: .1em;
 }
+.cooperation ul {
+  margin-bottom: -1.25rem;
+}
 .cooperation ul li {
-  margin: .8rem .3rem;
+  margin-bottom: 1.25rem;
   float: left;
 }
 .cooperation ul li a {
@@ -1698,8 +1701,7 @@ label.error {
   height: auto;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
 }
 
 @media (min-width: 1200px) {
@@ -1779,6 +1781,9 @@ label.error {
 }
 #footer .footer-right .follow > a i {
   font-size: 1.5rem;
+}
+#footer .footer-right .follow > a i:hover {
+  color: #fff;
 }
 #footer .footer-right .follow > .weixin {
   display: inline-block;
@@ -4627,7 +4632,7 @@ label.error {
 @media (max-width: 767px) {
   .idea-intro {
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     position: static;
   }
   .idea-intro img {
@@ -4945,7 +4950,7 @@ label.error {
 }
 /*===项目===*/
 .project-banner {
-  margin-bottom: 14rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 .project-banner img {
@@ -4956,7 +4961,7 @@ label.error {
 .project-banner h3 {
   position: absolute;
   left: 24%;
-  bottom: -10rem;
+  bottom: 0;
   width: 76%;
   padding: 1rem 2rem;
   border-top: 0.5rem solid #000;
@@ -4980,13 +4985,9 @@ label.error {
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
-  .project-banner {
-    margin-bottom: 12rem;
-  }
   .project-banner h3 {
     width: 72%;
     left: 28%;
-    bottom: -8rem;
     padding: .8rem 1.6rem;
   }
   .project-banner h3 span:first-of-type {
@@ -5026,11 +5027,7 @@ label.error {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .project-banner {
-    margin-bottom: 10rem;
-  }
   .project-banner h3 {
-    bottom: -6rem;
     padding: .7rem 1.4rem;
   }
   .project-banner h3 span:first-of-type {
@@ -5038,11 +5035,7 @@ label.error {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .project-banner {
-    margin-bottom: 9rem;
-  }
   .project-banner h3 {
-    bottom: -5rem;
     padding: .6rem 1.2rem;
   }
   .project-banner h3 span:first-of-type {

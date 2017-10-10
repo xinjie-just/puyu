@@ -418,22 +418,28 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function() {
-                // 设置banner图部分的高度
-                setHeight();
-                $(window).resize(function(){
-                    setHeight();
-                });
-                function setHeight() {
-                    var $width = $(window).outerWidth();
-                    if ($width >= 768) {
-                        var $imgHeight =  $(".idea-intro > img").outerHeight();
-                        var $divHeight =  $(".idea-intro > div").outerHeight();
-                        $(".idea-intro").height($imgHeight + $divHeight - 90);
-                    }else {
-                        $(".idea-intro").css("height", "auto");
-                    }
+            // 设置banner图部分的高度
+            function setHeight() {
+                var $width = $(window).outerWidth();
+                var $imgHeight =  $(".idea-intro > img").outerHeight();
+                var $divHeight =  $(".idea-intro > div").outerHeight();
+                if ($width >= 1200) {
+                    $(".idea-intro").height($imgHeight + $divHeight - 90);
                 }
+                else if ($width >= 992) {
+                    $(".idea-intro").height($imgHeight + $divHeight - 70);
+                }
+                else if ($width >= 768) {
+                    $(".idea-intro").height($imgHeight + $divHeight - 50);
+                }else {
+                    $(".idea-intro").css("height", "auto");
+                }
+            }
+            window.onload = function () {
+                setHeight();
+            };
+            $(window).resize(function(){
+                setHeight();
             });
         </script>
     </body>
