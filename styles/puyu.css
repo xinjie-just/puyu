@@ -350,11 +350,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .talk-details-list li:before, .talk-details-list li .text .source-and-more:before, .team-member ul:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-intro .intro .content:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
+.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .talk-details-list li:before, .team-member ul:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .talk-details-list li:after, .talk-details-list li .text .source-and-more:after, .team-member ul:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-intro .intro .content:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
+.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .talk-details-list li:after, .team-member ul:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
   content: "";
   display: table;
   clear: both;
@@ -747,6 +747,7 @@ label.error {
   display: block;
   max-width: 100%;
   height: auto;
+  overflow: hidden;
 }
 
 /*未来空间产品定义者*/
@@ -756,7 +757,7 @@ label.error {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -1234,7 +1235,7 @@ label.error {
   background-color: #000;
   color: #fff;
   line-height: 1.2em;
-  height: 2.8em;
+  max-height: 2.8em;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: normal;
@@ -2535,13 +2536,13 @@ label.error {
 }
 
 @media (min-width: 1200px) {
+  .tab-content > ul li figure:hover img {
+    transform: scale(1.1, 1.1);
+  }
   .tab-content > ul li .text h2 span:first-of-type:hover {
     color: #f7ac3b;
   }
   .tab-content > ul li .text h2 span:last-of-type:hover {
-    color: #f7ac3b;
-  }
-  .tab-content > ul li .text .time-and-more time:hover {
     color: #f7ac3b;
   }
   .tab-content > ul li .text .time-and-more a:hover {
@@ -2756,6 +2757,7 @@ label.error {
   transition: all 0.6s linear 0s;
 }
 .talk-details-list li .text {
+  position: relative;
   float: right;
   width: 60%;
   height: 100%;
@@ -2794,26 +2796,24 @@ label.error {
     max-height: 1.5em;
   }
 }
-.talk-details-list li .text .source-and-more .source {
+.talk-details-list li .text .source {
   height: 2rem;
   line-height: 2rem;
   display: block;
   float: left;
   font-size: 1rem;
 }
-.talk-details-list li .text .source-and-more a {
+.talk-details-list li .text .badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: block;
-  float: right;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  height: 2rem;
-  line-height: 2rem;
-  text-align: center;
-  color: #000;
-  border: 1px solid;
+  padding: .1rem .6rem;
+  background-color: #000;
+  color: #fff;
   font-size: 1rem;
   font-weight: lighter;
-  transition: all 0.4s linear 0s;
+  text-transform: uppercase;
 }
 
 @media (min-width: 1200px) {
@@ -2851,10 +2851,6 @@ label.error {
     color: #f7ac3b;
   }
   .talk-details-list li .text h2 span.cn:hover {
-    color: #f7ac3b;
-  }
-  .talk-details-list li .text .source-and-more a:hover {
-    border-color: #f7ac3b;
     color: #f7ac3b;
   }
 }
@@ -2934,41 +2930,35 @@ label.error {
   }
 }
 @media (max-width: 767px) {
-  .talk-details-list li .text .source-and-more {
+  .talk-details-list li .text .source {
     display: block;
     margin-right: auto;
     margin-left: auto;
+    float: none;
+    margin-bottom: .5rem;
   }
 }
 @media (max-width: 767px) and (min-width: 1200px) {
-  .talk-details-list li .text .source-and-more {
+  .talk-details-list li .text .source {
     width: 1080px;
   }
 }
 @media (max-width: 767px) and (min-width: 992px) and (max-width: 1199px) {
-  .talk-details-list li .text .source-and-more {
+  .talk-details-list li .text .source {
     width: 970px;
   }
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
-  .talk-details-list li .text .source-and-more {
+  .talk-details-list li .text .source {
     width: 750px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
-  .talk-details-list li .text .source-and-more {
+  .talk-details-list li .text .source {
     width: 87.5%;
   }
 }
-@media (max-width: 767px) {
-  .talk-details-list li .text .source-and-more .source {
-    float: none;
-    margin-bottom: .5rem;
-  }
-  .talk-details-list li .text .source-and-more a {
-    float: none;
-  }
-}
+
 /*===关于我们===*/
 /*轮播 start*/
 .about-carousel {
@@ -4356,11 +4346,20 @@ label.error {
   height: 22.5rem;
   margin-bottom: 1rem;
 }
-.idea-list li img {
+.idea-list li figure {
   float: left;
   display: block;
   width: 60%;
   height: 100%;
+}
+.idea-list li figure a {
+  display: block;
+}
+.idea-list li figure a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s linear 0s;
 }
 .idea-list li .text {
   float: left;
@@ -4382,11 +4381,13 @@ label.error {
   line-height: 1.2em;
   max-height: 3.6em;
   margin-bottom: .5em;
+  transition: all 0.4s linear 0s;
 }
 .idea-list li .text h3 .cn {
   font-size: 1rem;
   line-height: 2;
   letter-spacing: .1em;
+  transition: all 0.4s linear 0s;
 }
 .idea-list li .text p {
   font-size: .875rem;
@@ -4399,11 +4400,7 @@ label.error {
   padding: .3rem 1rem;
   color: #000;
   border: 1px solid;
-  transition: all 0.3s linear 0s;
-}
-.idea-list li .text .learn-more:hover {
-  color: #f7ac3b;
-  border-color: #f7ac3b;
+  transition: all 0.4s linear 0s;
 }
 .idea-list .more {
   width: 100%;
@@ -4415,13 +4412,25 @@ label.error {
   border: 2px solid;
   cursor: pointer;
   font-size: 2rem;
-  transition: all 0.3s linear 0s;
-}
-.idea-list .more:hover {
-  color: #f7ac3b;
-  border-color: #f7ac3b;
+  transition: all 0.4s linear 0s;
 }
 
+@media (min-width: 1200px) {
+  .idea-list li figure:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  .idea-list li .text h3 span:hover {
+    color: #f7ac3b;
+  }
+  .idea-list li .text .learn-more:hover {
+    color: #f7ac3b;
+    border-color: #f7ac3b;
+  }
+  .idea-list .more:hover {
+    color: #f7ac3b;
+    border-color: #f7ac3b;
+  }
+}
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-list li {
     height: 18rem;
@@ -4462,9 +4471,11 @@ label.error {
     height: auto;
     margin-bottom: 0;
   }
-  .idea-list li img {
+  .idea-list li figure {
     float: none;
-    width: auto;
+    width: 100%;
+  }
+  .idea-list li figure img {
     max-width: 100%;
     height: auto;
     margin-right: auto;
@@ -4529,6 +4540,7 @@ label.error {
   padding: 2.5rem 2rem 2rem 0;
   border-top: 5px solid #000;
   background-color: #fff;
+  font-size: 0;
 }
 @media (min-width: 1200px) {
   .idea-intro .intro {
@@ -4561,11 +4573,7 @@ label.error {
   margin-bottom: 1em;
   text-transform: capitalize;
 }
-.idea-intro .intro .content .sidebar-left {
-  float: left;
-  width: 35%;
-}
-.idea-intro .intro .content .sidebar-left h3.cn {
+.idea-intro .intro h3.cn {
   display: inline-block;
   font-size: 1rem;
   background-color: #000;
@@ -4575,7 +4583,7 @@ label.error {
   line-height: 2;
   letter-spacing: .1em;
 }
-.idea-intro .intro .content .sidebar-left p {
+.idea-intro .intro p {
   display: inline-block;
   font-size: .875rem;
   line-height: 2;
@@ -4585,25 +4593,12 @@ label.error {
   background-color: #000;
   color: #fff;
 }
-.idea-intro .intro .content .sidebar-left .customer-info {
-  color: #000;
-  margin-top: 1rem;
-  padding-left: 1rem;
-}
-.idea-intro .intro .content .sidebar-left .customer-info span {
-  display: block;
-  font-size: .875rem;
-  line-height: 2;
-  letter-spacing: .1em;
-  margin-bottom: .4em;
-}
-.idea-intro .intro .content .sidebar-right {
-  float: right;
-  width: 55%;
+.idea-intro .intro .info {
   color: #000;
   font-size: .875rem;
   line-height: 2;
   letter-spacing: .1em;
+  padding: 1rem 0 1rem 1rem;
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -5675,6 +5670,9 @@ label.error {
   }
 }
 @media (min-width: 1200px) {
+  .project-list li figure:hover img {
+    transform: scale(1.1, 1.1);
+  }
   .project-list li .text h2 span.en:hover {
     color: #f7ac3b;
   }

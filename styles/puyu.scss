@@ -298,7 +298,6 @@
   z-index: 3;
   @extend %page;
   position: relative;
-  //margin-bottom: 12.5rem;
   margin-bottom: 2rem;
 }
 
@@ -308,6 +307,7 @@
   display: block;
   max-width: 100%;
   height: auto;
+  overflow: hidden;
 }
 
 /*未来空间产品定义者*/
@@ -317,9 +317,8 @@
     z-index: 9;
     position: absolute;
     left: 50%;
-    //bottom: -10rem;
     bottom: 0;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     @include center-content();
     h2 {
       width: 25.5rem;
@@ -350,9 +349,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .home-banner,
   .home-media {
-    //margin-bottom: 10rem;
     .future-space-definer {
-      //bottom: -7rem;
       h2 {
         padding: .8rem 1.875rem 1.1rem;
         span {
@@ -367,9 +364,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .home-banner,
   .home-media {
-    //margin-bottom: 8rem;
     .future-space-definer {
-      //bottom: -5rem;
       h2 {
         padding: .6rem 1.375rem .9rem;
         span {
@@ -764,7 +759,7 @@
         background-color: $text-color;
         color: #fff;
         line-height: 1.2em;
-        height: 2.8em;
+        max-height: 2.8em;
         margin-bottom: 1rem;
         font-size: 2.25rem;
         font-weight: normal;
@@ -1917,6 +1912,13 @@
   .tab-content {
     > ul {
       li {
+        figure {
+          &:hover {
+            img {
+              @include scale();
+            }
+          }
+        }
         .text {
           h2 {
             span {
@@ -1933,11 +1935,6 @@
             }
           }
           .time-and-more {
-            time {
-              &:hover {
-                color: $main-color;
-              }
-            }
             a {
               &:hover {
                 border-color: $main-color;
@@ -2085,6 +2082,7 @@
       }
     }
     .text {
+      position: relative;
       float: right;
       width: 60%;
       height: 100%;
@@ -2120,29 +2118,24 @@
           }
         }
       }
-      .source-and-more {
-        @extend .clearfix;
-        .source {
-          height: 2rem;
-          line-height: 2rem;
-          display: block;
-          float: left;
-          font-size: 1rem;
-        }
-        a {
-          display: block;
-          float: right;
-          padding-right: 1.5rem;
-          padding-left: 1.5rem;
-          height: 2rem;
-          line-height: 2rem;
-          text-align: center;
-          color: $text-color;
-          border: 1px solid;
-          font-size: 1rem;
-          font-weight: lighter;
-          @include transition(0.4s);
-        }
+      .source {
+        height: 2rem;
+        line-height: 2rem;
+        display: block;
+        float: left;
+        font-size: 1rem;
+      }
+      .badge {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+        padding: .1rem .6rem;
+        background-color: $text-color;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: lighter;
+        text-transform: uppercase;
       }
     }
   }
@@ -2170,14 +2163,6 @@
               &:hover {
                 color: $main-color;
               }
-            }
-          }
-        }
-        .source-and-more {
-          a {
-            &:hover {
-              border-color: $main-color;
-              color: $main-color;
             }
           }
         }
@@ -2246,15 +2231,10 @@
         h2 {
           @include center-content();
         }
-        .source-and-more {
+        .source {
           @include center-content();
-          .source {
-            float: none;
-            margin-bottom: .5rem;
-          }
-          a {
-            float: none;
-          }
+          float: none;
+          margin-bottom: .5rem;
         }
       }
     }
@@ -3515,11 +3495,20 @@
     @extend .clearfix;
     height: 22.5rem;
     margin-bottom: 1rem;
-    img {
+    figure {
       float: left;
       display: block;
       width: 60%;
       height: 100%;
+      a {
+        display: block;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          @include transition();
+        }
+      }
     }
     .text {
       float: left;
@@ -3539,11 +3528,13 @@
           line-height: 1.2em;
           max-height: 3.6em;
           margin-bottom: .5em;
+          @include transition(.4s);
         }
         .cn {
           font-size: 1rem;
           line-height: 2;
           letter-spacing: .1em;
+          @include transition(.4s);
         }
       }
       p {
@@ -3557,11 +3548,7 @@
         padding: .3rem 1rem;
         color: $text-color;
         border: 1px solid;
-        @include transition(0.3s);
-        &:hover {
-          color: $main-color;
-          border-color: $main-color;
-        }
+        @include transition(0.4s);
       }
     }
   }
@@ -3575,10 +3562,40 @@
     border: 2px solid;
     cursor: pointer;
     font-size: 2rem;
-    @include transition(0.3s);
-    &:hover {
-      color: $main-color;
-      border-color: $main-color;
+    @include transition(0.4s);
+  }
+}
+@media (min-width: 1200px) {
+  .idea-list {
+    li {
+      figure {
+        &:hover {
+          img {
+            @include scale();
+          }
+        }
+      }
+      .text {
+        h3 {
+          span {
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+        .learn-more {
+          &:hover {
+            color: $main-color;
+            border-color: $main-color;
+          }
+        }
+      }
+    }
+    .more {
+      &:hover {
+        color: $main-color;
+        border-color: $main-color;
+      }
     }
   }
 }
@@ -3628,13 +3645,15 @@
     li {
       height: auto;
       margin-bottom: 0;
-      img {
+      figure {
         float: none;
-        width: auto;
-        max-width: 100%;
-        height: auto;
-        margin-right: auto;
-        margin-left: auto;
+        width: 100%;
+        img {
+          max-width: 100%;
+          height: auto;
+          margin-right: auto;
+          margin-left: auto;
+        }
       }
       .text {
         width: 100%;
@@ -3678,6 +3697,7 @@
     padding: 2.5rem 2rem 2rem 0;
     border-top: 5px solid $text-color;
     background-color: #fff;
+    font-size: 0;
     h3.en {
       display: inline-block;
       line-height: 1.4;
@@ -3689,52 +3709,32 @@
       margin-bottom: 1em;
       text-transform: capitalize;
     }
-    .content {
-      @extend .clearfix;
-      .sidebar-left {
-        float: left;
-        width: 35%;
-        h3.cn {
-          display: inline-block;
-          font-size: 1rem;
-          background-color: $text-color;
-          color: #fff;
-          padding-right: 1rem;
-          padding-left: 1rem;
-          line-height: 2;
-          letter-spacing: .1em;
-        }
-        p {
-          display: inline-block;
-          font-size: .875rem;
-          line-height: 2;
-          letter-spacing: .1em;
-          padding-right: 1rem;
-          padding-left: 1rem;
-          background-color: $text-color;
-          color: #fff;
-        }
-        .customer-info {
-          color: $text-color;
-          margin-top: 1rem;
-          padding-left: 1rem;
-          span {
-            display: block;
-            font-size: .875rem;
-            line-height: 2;
-            letter-spacing: .1em;
-            margin-bottom: .4em;
-          }
-        }
-      }
-      .sidebar-right {
-        float: right;
-        width: 55%;
-        color: $text-color;
-        font-size: .875rem;
-        line-height: 2;
-        letter-spacing: .1em;
-      }
+    h3.cn {
+      display: inline-block;
+      font-size: 1rem;
+      background-color: $text-color;
+      color: #fff;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      line-height: 2;
+      letter-spacing: .1em;
+    }
+    p {
+      display: inline-block;
+      font-size: .875rem;
+      line-height: 2;
+      letter-spacing: .1em;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      background-color: $text-color;
+      color: #fff;
+    }
+    .info {
+      color: $text-color;
+      font-size: .875rem;
+      line-height: 2;
+      letter-spacing: .1em;
+      padding: 1rem 0 1rem 1rem;
     }
   }
 }
@@ -4254,7 +4254,6 @@
             width: 65%;
             text-align: left;
             font-size: 1.215rem;
-            //letter-spacing: .1em;
           }
           &:last-of-type {
             width: 35%;
@@ -4588,6 +4587,13 @@
   .project-list {
     @include center-content();
     li {
+      figure {
+        &:hover {
+          img {
+            @include scale();
+          }
+        }
+      }
       .text {
         h2 {
           span {

@@ -620,6 +620,14 @@
         <script>
             // 计算视频的高度
             function setHeight() {
+                var insideLen = $(".home-inside").length;
+                for (var i = 0; i < insideLen; i++) {
+                    $($(".home-inside").get(i)).height($($(".home-inside").get(i)).find("img").outerHeight());
+                    // 瀑布流布局
+                    $(".grid").masonry({
+                        itemSelector: ".grid-item"
+                    });
+                }
                 var $width = $(window).outerWidth();
                 var videoHeight = $(".home-media").find("video").outerHeight();
                 var videoTextHeight = $(".home-media").find(".future-space-definer").outerHeight();
@@ -643,16 +651,8 @@
             $(window).resize(function () {
                 setHeight();
             });
-            $(function(){
-                var insideLen = $(".home-inside").length;
-                for (var i = 0; i < insideLen; i++) {
-                    $($(".home-inside").get(i)).height($($(".home-inside").get(i)).find("img").outerHeight());
-                }
-                // 瀑布流布局
-                $(".grid").masonry({
-                    itemSelector: ".grid-item"
-                });
-            });
+            /*$(function(){
+            });*/
         </script>
     </body>
 </html>
