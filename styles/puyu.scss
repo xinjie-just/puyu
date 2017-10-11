@@ -410,10 +410,10 @@
   .home-media video {
     z-index: 4;
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 24.3rem;
     object-fit: cover;
+    overflow: hidden;
   }
 }
 
@@ -1008,10 +1008,10 @@
     margin-bottom: auto;
     img {
       display: block;
-      max-width: none;
-      width: 100%;
+      max-width: 100%;
       height: 18rem;
       object-fit: cover;
+      overflow: hidden;
     }
     h2 {
       position: static;
@@ -1596,6 +1596,7 @@
     width: 55%;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
   }
   > .text {
     background-color: #fff;
@@ -2292,10 +2293,10 @@
       > img,
       > a > img {
         display: block;
-        max-width: none;
-        width: 100%;
+        max-width: 100%;
         height: 24.3rem;
         object-fit: cover;
+        overflow: hidden;
       }
     }
   }
@@ -2526,8 +2527,7 @@
     margin-top: 2rem;
     img {
       display: block;
-      max-width: none;
-      width: 100%;
+      max-width: 100%;
       height: 16.8rem;
       overflow: hidden;
       object-fit: cover;
@@ -2881,10 +2881,10 @@
     overflow: hidden;
     img {
       display: block;
-      max-width: none;
-      width: 100%;
+      max-width: 100%;
       height: 27.5rem;
       object-fit: cover;
+      overflow: hidden;
     }
     .future-space-definer {
       width: 100%;
@@ -3172,9 +3172,10 @@
         height: 100%;
         img {
           display: block;
-          width: 100%;
+          max-width: 100%;
           height: 100%;
           object-fit: cover;
+          overflow: hidden;
           @include transition();
         }
       }
@@ -3773,10 +3774,11 @@
     margin-bottom: 0;
     position: static;
     img {
-      max-width: none;
-      width: 100%;
+      display: block;
+      max-width: 100%;
       height: 10.5rem;
       object-fit: cover;
+      overflow: hidden;
     }
     .intro {
       width: 100%;
@@ -4100,10 +4102,11 @@
     margin-bottom: 0;
     position: static;
     img {
-      max-width: none;
+      display: block;
+      max-width: 100%;
       height: 14.625rem;
-      width: 100%;
       object-fit: cover;
+      overflow: hidden;
     }
     h3 {
       position: static;
@@ -4802,10 +4805,10 @@
     position: static;
     img {
       display: block;
-      width: 100%;
-      max-width: none;
+      max-width: 100%;
       height: auto;
       object-fit: cover;
+      overflow: hidden;
     }
     .intro {
       width: 100%;
@@ -4861,10 +4864,11 @@
     transition: .6s ease-in-out left;
     > img,
     > a > img {
-      object-fit: cover;
       display: block;
-      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
       height: 100%;
+      overflow: hidden;
     }
   }
 }
@@ -5087,6 +5091,7 @@
       max-width: 100%;
       width: auto;
       height: auto;
+      overflow: hidden;
     }
   }
   .project-carousel .info {
@@ -5412,15 +5417,14 @@ article {
 /*===访谈内页===*/
 .talk-details-banner {
   @extend %page;
-  margin-bottom: 100px;
   position: relative;
-  background-color: $text-color;
   .heading {
+    background-color: $text-color;
     padding-top: 2rem;
-    padding-bottom: 90px;
-    @include center-content();
+    padding-bottom: calc(2rem + 110px);
     color: #fff;
     h3 {
+      @include center-content();
       span {
         display: block;
         &.en {
@@ -5438,6 +5442,7 @@ article {
       }
     }
     time {
+      @include center-content();
       display: block;
       font-size: .875rem;
       margin-top: 1em;
@@ -5450,7 +5455,7 @@ article {
     @include center-content();
     height: auto;
     position: absolute;
-    bottom: -100px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -5461,6 +5466,7 @@ article {
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-banner {
     .heading {
+      padding-bottom: calc(2rem + 90px);
       h3 {
         span {
           &.en {
@@ -5475,6 +5481,7 @@ article {
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-banner {
     .heading {
+      padding-bottom: calc(2rem + 70px);
       h3 {
         span {
           &.en {

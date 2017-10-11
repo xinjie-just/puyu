@@ -865,10 +865,10 @@ label.error {
   .home-media video {
     z-index: 4;
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 24.3rem;
     object-fit: cover;
+    overflow: hidden;
   }
 }
 @media (max-width: 767px) {
@@ -1495,10 +1495,10 @@ label.error {
   }
   .work img {
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 18rem;
     object-fit: cover;
+    overflow: hidden;
   }
   .work h2 {
     position: static;
@@ -2118,6 +2118,7 @@ label.error {
   width: 55%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 .talk-recommend > .text {
   background-color: #fff;
@@ -3002,10 +3003,10 @@ label.error {
   .about-carousel-inner > .item > img,
   .about-carousel-inner > .item > a > img {
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 24.3rem;
     object-fit: cover;
+    overflow: hidden;
   }
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
@@ -3323,8 +3324,7 @@ label.error {
   }
   .team img {
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 16.8rem;
     overflow: hidden;
     object-fit: cover;
@@ -3730,10 +3730,10 @@ label.error {
   }
   .philosophy-banner img {
     display: block;
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
     height: 27.5rem;
     object-fit: cover;
+    overflow: hidden;
   }
   .philosophy-banner .future-space-definer {
     width: 100%;
@@ -4048,9 +4048,10 @@ label.error {
 }
 .idea-show .idea-side-right .item-inside > figure img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
   transition: all 0.6s linear 0s;
 }
 .idea-show .idea-side-right .item-inside .content {
@@ -4636,10 +4637,11 @@ label.error {
     position: static;
   }
   .idea-intro img {
-    max-width: none;
-    width: 100%;
+    display: block;
+    max-width: 100%;
     height: 10.5rem;
     object-fit: cover;
+    overflow: hidden;
   }
   .idea-intro .intro {
     width: 100%;
@@ -5050,10 +5052,11 @@ label.error {
     position: static;
   }
   .project-banner img {
-    max-width: none;
+    display: block;
+    max-width: 100%;
     height: 14.625rem;
-    width: 100%;
     object-fit: cover;
+    overflow: hidden;
   }
   .project-banner h3 {
     position: static;
@@ -5919,10 +5922,10 @@ label.error {
   }
   .project-intro img {
     display: block;
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
+    overflow: hidden;
   }
   .project-intro .intro {
     width: 100%;
@@ -6022,10 +6025,11 @@ label.error {
 }
 .project-carousel-inner > .item > img,
 .project-carousel-inner > .item > a > img {
-  object-fit: cover;
   display: block;
-  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
   height: 100%;
+  overflow: hidden;
 }
 
 @media all and (transform-3d), (-webkit-transform-3d) {
@@ -6251,6 +6255,7 @@ label.error {
     max-width: 100%;
     width: auto;
     height: auto;
+    overflow: hidden;
   }
 
   .project-carousel .info {
@@ -6620,35 +6625,36 @@ article img + div p {
 }
 /*===访谈内页===*/
 .talk-details-banner {
-  margin-bottom: 100px;
   position: relative;
-  background-color: #000;
 }
 .talk-details-banner .heading {
+  background-color: #000;
   padding-top: 2rem;
-  padding-bottom: 90px;
+  padding-bottom: calc(2rem + 110px);
+  color: #fff;
+}
+.talk-details-banner .heading h3 {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  color: #fff;
 }
 @media (min-width: 1200px) {
-  .talk-details-banner .heading {
+  .talk-details-banner .heading h3 {
     width: 1080px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .talk-details-banner .heading {
+  .talk-details-banner .heading h3 {
     width: 970px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .talk-details-banner .heading {
+  .talk-details-banner .heading h3 {
     width: 750px;
   }
 }
 @media (max-width: 767px) {
-  .talk-details-banner .heading {
+  .talk-details-banner .heading h3 {
     width: 87.5%;
   }
 }
@@ -6669,9 +6675,32 @@ article img + div p {
 }
 .talk-details-banner .heading time {
   display: block;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
   font-size: .875rem;
   margin-top: 1em;
   font-style: italic;
+}
+@media (min-width: 1200px) {
+  .talk-details-banner .heading time {
+    width: 1080px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .talk-details-banner .heading time {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .talk-details-banner .heading time {
+    width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .talk-details-banner .heading time {
+    width: 87.5%;
+  }
 }
 .talk-details-banner .video,
 .talk-details-banner img {
@@ -6681,7 +6710,7 @@ article img + div p {
   margin-left: auto;
   height: auto;
   position: absolute;
-  bottom: -100px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -6714,12 +6743,18 @@ article img + div p {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .talk-details-banner .heading {
+    padding-bottom: calc(2rem + 90px);
+  }
   .talk-details-banner .heading h3 span.en {
     font-size: 2.5rem;
     line-height: 1.2;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .talk-details-banner .heading {
+    padding-bottom: calc(2rem + 70px);
+  }
   .talk-details-banner .heading h3 span.en {
     font-size: 2rem;
     line-height: 1.3;

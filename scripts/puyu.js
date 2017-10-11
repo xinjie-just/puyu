@@ -89,20 +89,12 @@ $("#weixinIcon").hover(
     }
 );
 
-// IE浏览器对替换内容(img,video等)object-fit不兼容的处理
-/*objectFit.polyfill({
+/*// IE浏览器对替换内容(img,video等)object-fit不兼容的处理
+objectFit.polyfill({
     selector: ".object-fit", // this can be any CSS selector
     fittype: "cover", // either contain, cover, fill or none
     disableCrossDomain: "true" // either 'true' or 'false' to not parse external CSS files.
 });*/
-
-// IE浏览器对替换内容(img,video等)object-fit不兼容的处理
-document.addEventListener('DOMContentLoaded', function () {
-    objectFit.polyfill({
-        selector: '.object-fit',
-        fittype: 'cover'
-    });
-});
 
 
 // 轮播图自定义配置

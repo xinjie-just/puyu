@@ -127,7 +127,6 @@
         </header>
         <main id="main" role="main">
             <div id="carousel-example-generic" class="carousel about-carousel slide" data-ride="carousel">
-                <!-- Indicators -->
                 <ol class="carousel-indicators about-carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -135,7 +134,6 @@
                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
                 </ol>
-                <!-- Wrapper for slides -->
                 <div class="carousel-inner about-carousel-inner" role="listbox">
                     <div class="item active">
                         <img src="images/gylunbo1.jpg" alt="关于我们轮播图1" class="object-fit">
@@ -153,7 +151,6 @@
                         <img src="images/gylunbo5.jpg" alt="关于我们轮播图5" class="object-fit">
                     </div>
                 </div>
-                <!--关于我们的标题-->
                 <h1 class="about-heading">
                     <span class="en multi-line-ellipsis">We aim to become a product manager instead of a pen</span>
                     <span class="cn">我们将从只知伏案绘图的“一支笔”转变为实现设计最终价值的“产品经理”</span>
@@ -595,96 +592,96 @@
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
         <script>
-            $(function() {
-                // 团队核心成员的显示与收起
-                showMoreTeamMember();
-                $(window).resize(function () {
-                    showMoreTeamMember();
+            /*// 团队核心成员的显示与收起
+            function hideText(obj) {
+                obj.html("收起<span></span>");
+                obj.attr("title", "收起");
+                obj.find("span").css({
+                    transform: "rotate(45deg)",
+                    verticalAlign: "-4px"
                 });
-                function hideText(obj) {
-                    obj.html("收起<span></span>");
-                    obj.attr("title", "收起");
-                    obj.find("span").css({
-                        transform: "rotate(45deg)",
-                        verticalAlign: "-4px"
+            }
+            function showText(obj) {
+                obj.html("显示全部<span></span>");
+                obj.attr("title", "显示全部");
+            }
+            function showMoreTeamMember() {
+                var $width = $(window).outerWidth();
+                if ($width >= 1200) {
+                    $("#teamMemberList li").show();
+                }
+                else if ($width >= 992) {
+                    $("#teamMemberList li").show();
+                    $("#teamMemberList li:eq(14)").nextAll().hide();
+                    $("#moreTeamMember").click(function () {
+                        if ($(this).text() == "显示全部") {
+                            $("#teamMemberList li:eq(14)").nextAll().show();
+                            hideText($(this));
+                        } else {
+                            $("#teamMemberList li:eq(14)").nextAll().hide();
+                            showText($(this));
+                        }
                     });
                 }
-                function showText(obj) {
-                    obj.html("显示全部<span></span>");
-                    obj.attr("title", "显示全部");
+                else if ($width >= 768) {
+                    $("#teamMemberList li").show();
+                    $("#teamMemberList li:eq(11)").nextAll().hide();
+                    $("#moreTeamMember").click(function () {
+                        if ($(this).text() == "显示全部") {
+                            $("#teamMemberList li:eq(11)").nextAll().show();
+                            hideText($(this));
+                        } else {
+                            $("#teamMemberList li:eq(11)").nextAll().hide();
+                            showText($(this));
+                        }
+                    });
                 }
-                function showMoreTeamMember() {
-                    var $width = $(window).outerWidth();
-                    if ($width >= 1200) {
-                        $("#teamMemberList li").show();
-                    }
-                    if ($width >= 992 && $width <= 1199) {
-                        $("#teamMemberList li").show();
-                        $("#teamMemberList li:eq(14)").nextAll().hide();
-                        $("#moreTeamMember").click(function () {
-                            if ($(this).text() == "显示全部") {
-                                $("#teamMemberList li:eq(14)").nextAll().show();
-                                hideText($(this));
-                            } else {
-                                $("#teamMemberList li:eq(14)").nextAll().hide();
-                                showText($(this));
-                            }
-                        });
-                    }
-                    if ($width >= 768 && $width <= 991) {
-                        $("#teamMemberList li").show();
-                        $("#teamMemberList li:eq(11)").nextAll().hide();
-                        $("#moreTeamMember").click(function () {
-                            if ($(this).text() == "显示全部") {
-                                $("#teamMemberList li:eq(11)").nextAll().show();
-                                hideText($(this));
-                            } else {
-                                $("#teamMemberList li:eq(11)").nextAll().hide();
-                                showText($(this));
-                            }
-                        });
-                    }
-                    if ($width >= 480 && $width <= 767) {
-                        $("#teamMemberList li").show();
-                        $("#teamMemberList li:eq(8)").nextAll().hide();
-                        $("#moreTeamMember").click(function () {
-                            if ($(this).text() == "显示全部") {
-                                $("#teamMemberList li:eq(8)").nextAll().show();
-                                hideText($(this));
-                            } else {
-                                $("#teamMemberList li:eq(8)").nextAll().hide();
-                                showText($(this));
-                            }
-                        });
-                    }
-                    if ($width >= 320 && $width <= 479) {
-                        $("#teamMemberList li").show();
-                        $("#teamMemberList li:eq(5)").nextAll().hide();
-                        $("#moreTeamMember").click(function () {
-                            if ($(this).text() == "显示全部") {
-                                $("#teamMemberList li:eq(5)").nextAll().show();
-                                hideText($(this));
-                            } else {
-                                $("#teamMemberList li:eq(5)").nextAll().hide();
-                                showText($(this));
-                            }
-                        });
-                    }
-                    if ($width <= 319) {
-                        $("#teamMemberList li").show();
-                        $("#teamMemberList li:eq(2)").nextAll().hide();
-                        $("#moreTeamMember").click(function () {
-                            if ($(this).text() == "显示全部") {
-                                $("#teamMemberList li:eq(2)").nextAll().show();
-                                hideText($(this));
-                            } else {
-                                $("#teamMemberList li:eq(2)").nextAll().hide();
-                                showText($(this));
-                            }
-                        });
-                    }
+                else if ($width >= 480) {
+                    $("#teamMemberList li").show();
+                    $("#teamMemberList li:eq(8)").nextAll().hide();
+                    $("#moreTeamMember").click(function () {
+                        if ($(this).text() == "显示全部") {
+                            $("#teamMemberList li:eq(8)").nextAll().show();
+                            hideText($(this));
+                        } else {
+                            $("#teamMemberList li:eq(8)").nextAll().hide();
+                            showText($(this));
+                        }
+                    });
                 }
+                else if ($width >= 320) {
+                    $("#teamMemberList li").show();
+                    $("#teamMemberList li:eq(5)").nextAll().hide();
+                    $("#moreTeamMember").click(function () {
+                        if ($(this).text() == "显示全部") {
+                            $("#teamMemberList li:eq(5)").nextAll().show();
+                            hideText($(this));
+                        } else {
+                            $("#teamMemberList li:eq(5)").nextAll().hide();
+                            showText($(this));
+                        }
+                    });
+                }
+                else {
+                    $("#teamMemberList li").show();
+                    $("#teamMemberList li:eq(2)").nextAll().hide();
+                    $("#moreTeamMember").click(function () {
+                        if ($(this).text() == "显示全部") {
+                            $("#teamMemberList li:eq(2)").nextAll().show();
+                            hideText($(this));
+                        } else {
+                            $("#teamMemberList li:eq(2)").nextAll().hide();
+                            showText($(this));
+                        }
+                    });
+                }
+            }
+            $(function() {
+                showMoreTeamMember();
             });
+            $(window).resize(function () {
+                showMoreTeamMember();
+            });*/
         </script>
     </body>
 </html>

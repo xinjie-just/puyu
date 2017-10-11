@@ -527,22 +527,22 @@
                         $en.height(45);
                         $en.css("overflow", "hidden");
                         $($en).prepend("<button type='button' class='all-en' title='显示全部'>显示全部</button>");
+                        $(".all-en").click(function () {
+                            if ($(this).attr("title") == "显示全部") {
+                                $en.height("auto");
+                                $(this).attr("title", "收起");
+                                $(this).text("收起");
+                            } else {
+                                $en.height(45);
+                                $(this).attr("title", "显示全部");
+                                $(this).text("显示全部");
+                            }
+                        });
                     }
                 } else {
                     $($en).find(".all-en").remove();
                     $en.height("auto");
                 }
-                $(".all-en").click(function () {
-                    if ($(this).attr("title") == "显示全部") {
-                        $en.height("auto");
-                        $(this).attr("title", "收起");
-                        $(this).text("收起");
-                    } else {
-                        $en.height(45);
-                        $(this).attr("title", "显示全部");
-                        $(this).text("显示全部");
-                    }
-                });
             }
             $(window).resize(function(){
                 setHeight();
