@@ -186,7 +186,7 @@
 }
 @media (max-width: 1199px) {
   #header {
-    padding-right: 3rem;
+    padding-right: 0;
     padding-left: 3rem;
   }
   #nav {
@@ -260,7 +260,8 @@
     > .menu-icon {
       display: block;
       float: right;
-      width: $size;
+      padding-right: 3rem;
+      padding-left: 3rem;
       height: $size;
       line-height: $size;
       text-align: right;
@@ -285,7 +286,8 @@
       top: $size;
     }
     > .menu-icon {
-      width: $size;
+      padding-right: 3rem;
+      padding-left: 3rem;
       height: $size;
       line-height: $size;
     }
@@ -1944,7 +1946,7 @@
   .tab-content {
     > ul {
       li {
-        height: 13.4rem;
+        height: 14.3rem;
         .text {
           padding: 1.4rem 1rem;
           h2 {
@@ -1963,7 +1965,7 @@
   .tab-content {
     > ul {
       li {
-        height: 10.4rem;
+        height: 11.9rem;
         .text {
           padding: 1rem .8rem;
           h2 {
@@ -2161,7 +2163,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-list {
     li {
-      height: 13.4rem;
+      height: 14.3rem;
       .text {
         padding: 1.4rem 1rem;
         h2 {
@@ -2178,7 +2180,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-list {
     li {
-      height: 10.4rem;
+      height: 11.9rem;
       .text {
         padding: 1rem .8rem;
         h2 {
@@ -3100,6 +3102,7 @@
           line-height: 2;
           letter-spacing: .1em;
           margin-bottom: .4em;
+          @extend %ellipsis;
         }
         a {
           position: absolute;
@@ -3118,11 +3121,15 @@
         height: 100%;
         background-color: #dedede;
         position: relative;
+        a {
+          display: block;
+        }
         img {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          @include transition();
         }
       }
     }
@@ -3204,6 +3211,15 @@
 @media (min-width: 1200px) {
   .idea-show {
     .idea-side-right {
+      .item-outside {
+        > figure {
+          &:hover {
+            img {
+              transform: scale(1.1, 1.1) translate(-50%, -50%);
+            }
+          }
+        }
+      }
       .item-outside {
         .content {
           a {
@@ -3590,7 +3606,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-list {
     li {
-      height: 18rem;
+      height: 22rem;
       .text {
         padding: 1.5rem 1.5rem 0;
         h3 {
@@ -3610,7 +3626,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-list {
     li {
-      height: 15rem;
+      height: 18.2rem;
       .text {
         padding: 1.2rem 1.2rem 0;
         h3 {
@@ -3693,7 +3709,7 @@
       background-color: $text-color;
       color: #fff;
       padding-right: 1rem;
-      padding-left: 1rem;
+      padding-left: 2rem;
       margin-bottom: 1em;
       text-transform: capitalize;
     }
@@ -3703,7 +3719,7 @@
       background-color: $text-color;
       color: #fff;
       padding-right: 1rem;
-      padding-left: 1rem;
+      padding-left: 2rem;
       line-height: 2;
       letter-spacing: .1em;
     }
@@ -3713,7 +3729,7 @@
       line-height: 2;
       letter-spacing: .1em;
       padding-right: 1rem;
-      padding-left: 1rem;
+      padding-left: 2rem;
       background-color: $text-color;
       color: #fff;
     }
@@ -3722,7 +3738,7 @@
       font-size: .875rem;
       line-height: 2;
       letter-spacing: .1em;
-      padding: 1rem 0 1rem 1rem;
+      padding: 2rem 0 1rem 2rem;
     }
   }
 }
@@ -3925,7 +3941,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-details-list {
     li {
-      height: 13.4rem;
+      height: 14.3rem;
       .text {
         padding: 1.475rem 1.15rem;
         h2 {
@@ -3942,7 +3958,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-details-list {
     li {
-      height: 10.4rem;
+      height: 11.9rem;
       .text {
         padding: 1.275rem 1rem;
         h2 {
@@ -4612,7 +4628,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-list {
     li {
-      height: 13.4rem;
+      height: 14.3rem;
       .text {
         padding: 1.4rem 1rem;
         h2 {
@@ -4629,7 +4645,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .project-list {
     li {
-      height: 10.4rem;
+      height: 11.9rem;
       .text {
         padding: 1rem 0.8rem;
         h2 {
@@ -5078,14 +5094,16 @@
     position: static;
     width: 100%;
     float: none;
-    > img,
-    > a > img{
-      object-fit: none;
-      display: block;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      overflow: hidden;
+    > .item {
+      > img,
+      > a > img{
+        object-fit: none;
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+      }
     }
   }
   .project-carousel .info {
@@ -5444,7 +5462,8 @@ article {
     }
   }
   .video,
-  img {
+  img,
+  #videodiv {
     display: block;
     @include center-content();
     height: auto;

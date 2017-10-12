@@ -383,7 +383,7 @@ label:hover {
   opacity: .8;
 }
 
-.home-outside .content h3 span, .home-inside .content h3 span, .talk-recommend > .text h2 span.cn, .about-heading span:last-of-type, .idea-show .idea-sidebar-left h2 span.cn, .idea-show .idea-side-right .item-outside .content h3 span.cn, .project-carousel .info h3 span.cn {
+.home-outside .content h3 span, .home-inside .content h3 span, .talk-recommend > .text h2 span.cn, .about-heading span:last-of-type, .idea-show .idea-sidebar-left h2 span.cn, .idea-show .idea-side-right .item-outside .content h3 span.cn, .idea-show .idea-side-right .item-outside .content p, .project-carousel .info h3 span.cn {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -413,9 +413,9 @@ label.error {
 /*===矢量图标字体===*/
 @font-face {
   font-family: "iconfont";
-  src: url("../fonts/iconfont.eot?t=1505180876574");
+  src: url("../fonts/iconfont.eot?t=1507811847829");
   /* IE9*/
-  src: url("../fonts/iconfont.eot?t=1505180876574#iefix") format("embedded-opentype"), url("../fonts/iconfont.ttf?t=1505180876574") format("truetype"), url("../fonts/iconfont.svg?t=1505180876574#iconfont") format("svg");
+  src: url("../fonts/iconfont.eot?t=1507811847829#iefix") format("embedded-opentype"), url("../fonts/iconfont.ttf?t=1507811847829") format("truetype"), url("../fonts/iconfont.svg?t=1507811847829#iconfont") format("svg");
   /* iOS 4.1- */
 }
 .iconfont {
@@ -450,16 +450,16 @@ label.error {
   content: "\e607";
 }
 
-.icon-chongqingmap:before {
-  content: "\e608";
+.icon-chengdumap:before {
+  content: "\e60d";
 }
 
-.icon-chengdumap:before {
-  content: "\e609";
+.icon-chongqingmap:before {
+  content: "\e60e";
 }
 
 .icon-shanghaimap:before {
-  content: "\e60a";
+  content: "\e60f";
 }
 
 /*===英文字体===*/
@@ -641,7 +641,7 @@ label.error {
 }
 @media (max-width: 1199px) {
   #header {
-    padding-right: 3rem;
+    padding-right: 0;
     padding-left: 3rem;
   }
 
@@ -708,7 +708,8 @@ label.error {
   #nav > .menu-icon {
     display: block;
     float: right;
-    width: 6.25rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     height: 6.25rem;
     line-height: 6.25rem;
     text-align: right;
@@ -728,7 +729,8 @@ label.error {
     top: 5rem;
   }
   #nav > .menu-icon {
-    width: 5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     height: 5rem;
     line-height: 5rem;
   }
@@ -2547,7 +2549,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .tab-content > ul li {
-    height: 13.4rem;
+    height: 14.3rem;
   }
   .tab-content > ul li .text {
     padding: 1.4rem 1rem;
@@ -2558,7 +2560,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .tab-content > ul li {
-    height: 10.4rem;
+    height: 11.9rem;
   }
   .tab-content > ul li .text {
     padding: 1rem .8rem;
@@ -2848,7 +2850,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-list li {
-    height: 13.4rem;
+    height: 14.3rem;
   }
   .talk-details-list li .text {
     padding: 1.4rem 1rem;
@@ -2859,7 +2861,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-list li {
-    height: 10.4rem;
+    height: 11.9rem;
   }
   .talk-details-list li .text {
     padding: 1rem .8rem;
@@ -4008,11 +4010,15 @@ label.error {
   background-color: #dedede;
   position: relative;
 }
+.idea-show .idea-side-right .item-outside > figure a {
+  display: block;
+}
 .idea-show .idea-side-right .item-outside > figure img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.6s linear 0s;
 }
 .idea-show .idea-side-right .item-inside {
   width: 100%;
@@ -4089,6 +4095,9 @@ label.error {
 }
 
 @media (min-width: 1200px) {
+  .idea-show .idea-side-right .item-outside > figure:hover img {
+    transform: scale(1.1, 1.1) translate(-50%, -50%);
+  }
   .idea-show .idea-side-right .item-outside .content a:hover {
     color: #f7ac3b;
     border-color: #f7ac3b;
@@ -4425,7 +4434,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-list li {
-    height: 18rem;
+    height: 22rem;
   }
   .idea-list li .text {
     padding: 1.5rem 1.5rem 0;
@@ -4441,7 +4450,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-list li {
-    height: 15rem;
+    height: 18.2rem;
   }
   .idea-list li .text {
     padding: 1.2rem 1.2rem 0;
@@ -4561,7 +4570,7 @@ label.error {
   background-color: #000;
   color: #fff;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   margin-bottom: 1em;
   text-transform: capitalize;
 }
@@ -4571,7 +4580,7 @@ label.error {
   background-color: #000;
   color: #fff;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   line-height: 2;
   letter-spacing: .1em;
 }
@@ -4581,7 +4590,7 @@ label.error {
   line-height: 2;
   letter-spacing: .1em;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   background-color: #000;
   color: #fff;
 }
@@ -4590,7 +4599,7 @@ label.error {
   font-size: .875rem;
   line-height: 2;
   letter-spacing: .1em;
-  padding: 1rem 0 1rem 1rem;
+  padding: 2rem 0 1rem 2rem;
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -4828,7 +4837,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-details-list li {
-    height: 13.4rem;
+    height: 14.3rem;
   }
   .idea-details-list li .text {
     padding: 1.475rem 1.15rem;
@@ -4839,7 +4848,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-details-list li {
-    height: 10.4rem;
+    height: 11.9rem;
   }
   .idea-details-list li .text {
     padding: 1.275rem 1rem;
@@ -5678,7 +5687,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-list li {
-    height: 13.4rem;
+    height: 14.3rem;
   }
   .project-list li .text {
     padding: 1.4rem 1rem;
@@ -5689,7 +5698,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .project-list li {
-    height: 10.4rem;
+    height: 11.9rem;
   }
   .project-list li .text {
     padding: 1rem 0.8rem;
@@ -6238,8 +6247,8 @@ label.error {
     width: 100%;
     float: none;
   }
-  .project-carousel-inner > img,
-  .project-carousel-inner > a > img {
+  .project-carousel-inner > .item > img,
+  .project-carousel-inner > .item > a > img {
     object-fit: none;
     display: block;
     max-width: 100%;
@@ -6693,7 +6702,8 @@ article img + div p {
   }
 }
 .talk-details-banner .video,
-.talk-details-banner img {
+.talk-details-banner img,
+.talk-details-banner #videodiv {
   display: block;
   display: block;
   margin-right: auto;
@@ -6706,25 +6716,29 @@ article img + div p {
 }
 @media (min-width: 1200px) {
   .talk-details-banner .video,
-  .talk-details-banner img {
+  .talk-details-banner img,
+  .talk-details-banner #videodiv {
     width: 1080px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-banner .video,
-  .talk-details-banner img {
+  .talk-details-banner img,
+  .talk-details-banner #videodiv {
     width: 970px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-banner .video,
-  .talk-details-banner img {
+  .talk-details-banner img,
+  .talk-details-banner #videodiv {
     width: 750px;
   }
 }
 @media (max-width: 767px) {
   .talk-details-banner .video,
-  .talk-details-banner img {
+  .talk-details-banner img,
+  .talk-details-banner #videodiv {
     width: 87.5%;
   }
 }
