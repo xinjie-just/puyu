@@ -1679,30 +1679,16 @@ label.error {
   text-transform: capitalize;
   letter-spacing: .1em;
 }
-.cooperation ul {
-  margin-bottom: -1.25rem;
-}
 .cooperation ul li {
   margin-bottom: 1.25rem;
+  margin-right: 6.25rem;
   float: left;
 }
 .cooperation ul li a {
   display: block;
-  width: 12.5rem;
-  height: 7.5rem;
-  padding: .2rem;
-  overflow: hidden;
-  position: relative;
 }
 .cooperation ul li a img {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 @media (min-width: 1200px) {
@@ -1710,13 +1696,19 @@ label.error {
     opacity: .8;
   }
 }
-@media (max-width: 767px) {
-  .cooperation ul li a {
-    display: block;
-    width: 7.8rem;
-    height: 4.62rem;
+/*@media (max-width: 767px) {
+  .cooperation {
+    ul {
+      li {
+        a {
+          display: block;
+          width: 7.8rem;
+          height: 4.62rem;
+        }
+      }
+    }
   }
-}
+}*/
 /*底部*/
 #footer {
   margin-top: 2rem;
