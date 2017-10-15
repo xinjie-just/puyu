@@ -304,5 +304,20 @@
         <script src="scripts/polyfill.object-fit.min.js"></script>
         <script src="scripts/jquery.dotdotdot.js"></script>
         <script src="scripts/puyu.js"></script>
+        <script>
+            //设置main主要内容部分的高度
+            function setHeight() {
+                var $headerHeight = $("#header").outerHeight();
+                var $footerHeight = $("#footer").outerHeight();
+                var $windowHeight = $(window).outerHeight();
+                $("#main").css("minHeight", $windowHeight - $headerHeight - $footerHeight + "px");
+            }
+            $(function () {
+                setHeight();
+            });
+            $(window).resize(function () {
+               setHeight();
+            });
+        </script>
     </body>
 </html>

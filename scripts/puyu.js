@@ -23,6 +23,15 @@ function displayMenu() {
     }
 }
 
+// 当页面宽度不小于 1200px 时，项目分类列表的显示与隐藏
+function displayProject() {
+    if (!($(window).outerWidth() > 1199)) {
+        $(".projectClassifyList").css("display", "none");
+    }else {
+        $(".projectClassifyList").css("display", "block");
+    }
+}
+
 // 多行文本省略号
 function ellipsis() {
     $(".multi-line-ellipsis").dotdotdot();
@@ -33,12 +42,14 @@ $(function () {
     firstGrade();
     secondGrade();
     displayMenu();
+    displayProject();
     ellipsis();
 });
 //页面缩放时
 $(window).resize(function () {
     secondGrade();
     displayMenu();
+    displayProject();
     ellipsis();
 });
 

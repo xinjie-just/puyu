@@ -603,16 +603,43 @@
                     $(".project-banner").height("auto");
                 }
             }
+
+            // 计算所有项目容器高度
+            function getHeight() {
+                var $projectListContent = $(".project-list-content").outerHeight();
+                $(".all-project").height($projectListContent);
+            }
+
             // 在图片或视频加载完后才计算高度
             window.onload = function () {
                 setHeight();
+
                 // 瀑布流布局
                 $(".project-list-content ul").masonry({
                     itemSelector: ".project-item-content"
                 });
+
+                getHeight();
+
+                //项目列表浮动
+                $(".project-list-classify").pin({
+                    containerSelector: ".all-project"
+                });
             };
             $(window).resize(function () {
                 setHeight();
+
+                // 瀑布流布局
+                $(".project-list-content ul").masonry({
+                    itemSelector: ".project-item-content"
+                });
+
+                getHeight();
+
+                //项目列表浮动
+                $(".project-list-classify").pin({
+                    containerSelector: ".all-project"
+                });
             });
             $(function () {
                 // 项目分类的显示与隐藏

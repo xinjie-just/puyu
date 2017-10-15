@@ -613,6 +613,7 @@
                 else if ($width >= 992) {
                     $("#teamMemberList li").show();
                     $("#teamMemberList li:eq(14)").nextAll().hide();
+                    showText($("#moreTeamMember"));
                     $("#moreTeamMember").click(function () {
                         if ($(this).text() == "显示全部") {
                             $("#teamMemberList li:eq(14)").nextAll().show();
@@ -626,6 +627,7 @@
                 else if ($width >= 768) {
                     $("#teamMemberList li").show();
                     $("#teamMemberList li:eq(11)").nextAll().hide();
+                    showText($("#moreTeamMember"));
                     $("#moreTeamMember").click(function () {
                         if ($(this).text() == "显示全部") {
                             $("#teamMemberList li:eq(11)").nextAll().show();
@@ -639,6 +641,7 @@
                 else if ($width >= 480) {
                     $("#teamMemberList li").show();
                     $("#teamMemberList li:eq(8)").nextAll().hide();
+                    showText($("#moreTeamMember"));
                     $("#moreTeamMember").click(function () {
                         if ($(this).text() == "显示全部") {
                             $("#teamMemberList li:eq(8)").nextAll().show();
@@ -652,6 +655,7 @@
                 else if ($width >= 320) {
                     $("#teamMemberList li").show();
                     $("#teamMemberList li:eq(5)").nextAll().hide();
+                    showText($("#moreTeamMember"));
                     $("#moreTeamMember").click(function () {
                         if ($(this).text() == "显示全部") {
                             $("#teamMemberList li:eq(5)").nextAll().show();
@@ -665,6 +669,7 @@
                 else {
                     $("#teamMemberList li").show();
                     $("#teamMemberList li:eq(2)").nextAll().hide();
+                    showText($("#moreTeamMember"));
                     $("#moreTeamMember").click(function () {
                         if ($(this).text() == "显示全部") {
                             $("#teamMemberList li:eq(2)").nextAll().show();

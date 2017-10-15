@@ -481,7 +481,8 @@ label {
     width: 970px;
   }
   @media (min-width: 768px) and (max-width: 991px) {
-    width: 750px;
+    //width: 750px;
+    width: 730px;
   }
   @media (max-width: 767px) {
     width: $width;

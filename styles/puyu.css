@@ -350,11 +350,11 @@ ul {
 }
 
 /* ===关于浮动=== */
-.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .talk-details-list li:before, .team-member ul:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .all-project:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
+.clearfix:before, #header:before, .tab:before, .home-innovation:before, .cooperation ul:before, #footer .footer-wrapper:before, #quickNav > ul:before, #quickNav > .quickSubMenu:before, #quickNav > .quickSubMenu ul:before, .map-list:before, .talk-recommend:before, .tab-nav .tab-list:before, .tab-content > ul li:before, .tab-content > ul li .text .time-and-more:before, .talk-details-list li:before, .team-member ul:before, .partner .partner-list:before, .philosophy-innovation li:before, .idea-show:before, .idea-show .idea-side-right .item-outside:before, .idea-list li:before, .idea-details-list li:before, .idea-details-list li .text .source-and-more:before, .project-list li:before, .project-list li .text .source-and-more:before, .project-intro .intro .content:before, .project-carousel:before, .project-carousel-indicators li:before, .project-classify-list:before {
   content: "";
   display: table;
 }
-.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .talk-details-list li:after, .team-member ul:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .all-project:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
+.clearfix:after, #header:after, .tab:after, .home-innovation:after, .cooperation ul:after, #footer .footer-wrapper:after, #quickNav > ul:after, #quickNav > .quickSubMenu:after, #quickNav > .quickSubMenu ul:after, .map-list:after, .talk-recommend:after, .tab-nav .tab-list:after, .tab-content > ul li:after, .tab-content > ul li .text .time-and-more:after, .talk-details-list li:after, .team-member ul:after, .partner .partner-list:after, .philosophy-innovation li:after, .idea-show:after, .idea-show .idea-side-right .item-outside:after, .idea-list li:after, .idea-details-list li:after, .idea-details-list li .text .source-and-more:after, .project-list li:after, .project-list li .text .source-and-more:after, .project-intro .intro .content:after, .project-carousel:after, .project-carousel-indicators li:after, .project-classify-list:after {
   content: "";
   display: table;
   clear: both;
@@ -779,7 +779,7 @@ label.error {
 @media (min-width: 768px) and (max-width: 991px) {
   .home-banner .future-space-definer,
   .home-media .future-space-definer {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -907,7 +907,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .holiday-mode {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -919,7 +919,7 @@ label.error {
   display: block;
   max-width: 100%;
   height: auto;
-  min-height: 12.5rem;
+  min-height: 14.5rem;
   margin-right: auto;
   margin-left: auto;
   transition: all 0.6s linear 0s;
@@ -1061,7 +1061,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1190,6 +1190,7 @@ label.error {
   }
   .home-outside .content:hover h2 a {
     color: #f7ac3b;
+    height: auto;
   }
   .home-outside .content:hover h3 span {
     color: #f7ac3b;
@@ -1336,7 +1337,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .tab {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1449,7 +1450,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .work h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1547,7 +1548,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .home-innovation {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1663,7 +1664,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .cooperation {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1739,7 +1740,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #footer .footer-wrapper {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -1994,7 +1995,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .contact-heading {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -2041,7 +2042,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .map-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -2270,7 +2271,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .talk-recommend > .text h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2308,7 +2309,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .talk-recommend > .text time {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2338,7 +2339,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .talk-recommend > .text p {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2375,7 +2376,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .tab-nav .tab-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -2426,7 +2427,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .tab-content > ul.active {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -2617,7 +2618,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .tab-content > ul li .text h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2644,7 +2645,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .tab-content > ul li .text .time-and-more {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2678,7 +2679,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .tab-content > ul .more {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2723,7 +2724,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -2829,7 +2830,7 @@ label.error {
 }
 @media (min-width: 1200px) and (min-width: 768px) and (max-width: 991px) {
   .talk-details-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (min-width: 1200px) and (max-width: 767px) {
@@ -2915,7 +2916,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .talk-details-list li .text h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -2944,7 +2945,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .talk-details-list li .text .source {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -3062,33 +3063,10 @@ label.error {
   bottom: 10px;
   left: 50%;
   z-index: 15;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
   padding-left: 0;
   transform: translateX(-50%);
   list-style: none;
   text-align: right;
-}
-@media (min-width: 1200px) {
-  .about-carousel-indicators {
-    width: 1080px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  .about-carousel-indicators {
-    width: 970px;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .about-carousel-indicators {
-    width: 750px;
-  }
-}
-@media (max-width: 767px) {
-  .about-carousel-indicators {
-    width: 87.5%;
-  }
 }
 .about-carousel-indicators li {
   display: inline-block;
@@ -3145,7 +3123,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .about-heading {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3203,7 +3181,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .about {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3279,7 +3257,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .team h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3413,7 +3391,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .team-member .more-team-member {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3459,7 +3437,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .team-details {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3515,7 +3493,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .partner {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3663,7 +3641,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .philosophy-banner .future-space-definer {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3777,7 +3755,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .philosophy-innovation {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3885,7 +3863,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .partner-bg .partner {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -3971,6 +3949,7 @@ label.error {
 }
 .idea-show .idea-side-right .item-outside .content h3 {
   font-weight: normal;
+  transition: all 0.4s linear 0s;
 }
 .idea-show .idea-side-right .item-outside .content h3 span {
   display: block;
@@ -4097,6 +4076,9 @@ label.error {
 @media (min-width: 1200px) {
   .idea-show .idea-side-right .item-outside > figure:hover img {
     transform: scale(1.1, 1.1) translate(-50%, -50%);
+  }
+  .idea-show .idea-side-right .item-outside .content h3:hover {
+    color: #f7ac3b;
   }
   .idea-show .idea-side-right .item-outside .content a:hover {
     color: #f7ac3b;
@@ -4335,7 +4317,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -4516,7 +4498,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .idea-list .more {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -4555,7 +4537,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-intro .intro {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -4674,7 +4656,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .idea-intro .intro .content .sidebar-left .customer-info {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -4703,7 +4685,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .idea-intro .intro .content .sidebar-right {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -4729,7 +4711,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-details-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -4902,7 +4884,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .idea-details-list li .text h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -4929,7 +4911,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .idea-details-list li .text .source-and-more {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -5015,7 +4997,7 @@ label.error {
 }
 @media (max-width: 1199px) and (min-width: 768px) and (max-width: 991px) {
   .project-banner h3 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 1199px) and (max-width: 767px) {
@@ -5069,13 +5051,18 @@ label.error {
 }
 /*所有的项目*/
 .all-project {
+  position: relative;
   margin-bottom: 2rem;
 }
 .all-project .project-list-classify {
-  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .all-project .project-list-content {
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media (min-width: 1200px) {
@@ -5152,7 +5139,6 @@ label.error {
     letter-spacing: .1em;
     padding-left: .1em;
     background-color: #fff;
-    margin-bottom: 2rem;
     margin-top: 1rem;
     transition: all 0.4s linear 0s;
   }
@@ -5232,8 +5218,6 @@ label.error {
 @media (max-width: 1199px) {
   .all-project .project-list-classify {
     z-index: 3;
-    position: relative;
-    float: none;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -5251,7 +5235,7 @@ label.error {
 }
 @media (max-width: 1199px) and (min-width: 768px) and (max-width: 991px) {
   .all-project .project-list-classify {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 1199px) and (max-width: 767px) {
@@ -5330,7 +5314,8 @@ label.error {
     background-color: #f7ac3b;
   }
   .all-project .project-list-content {
-    float: none;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -5348,7 +5333,7 @@ label.error {
 }
 @media (max-width: 1199px) and (min-width: 768px) and (max-width: 991px) {
   .all-project .project-list-content {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 1199px) and (max-width: 767px) {
@@ -5435,7 +5420,7 @@ label.error {
 }
 @media (min-width: 992px) and (max-width: 1199px) and (min-width: 768px) and (max-width: 991px) {
   .project-list-content button {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) and (max-width: 767px) {
@@ -5481,7 +5466,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) and (min-width: 768px) and (max-width: 991px) {
   .project-list-content button {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) and (max-width: 767px) {
@@ -5529,7 +5514,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .all-project .project-list-content button {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -5555,7 +5540,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .project-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -5662,7 +5647,7 @@ label.error {
 }
 @media (min-width: 1200px) and (min-width: 768px) and (max-width: 991px) {
   .project-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (min-width: 1200px) and (max-width: 767px) {
@@ -5752,7 +5737,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .project-list li .text h2 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -5779,7 +5764,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .project-list li .text .source-and-more {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -5825,7 +5810,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .project-intro .intro {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -5962,7 +5947,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .project-intro .intro .content .sidebar-left .customer-info {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -5991,7 +5976,7 @@ label.error {
 }
 @media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
   .project-intro .intro .content .sidebar-right {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) and (max-width: 767px) {
@@ -6327,7 +6312,7 @@ article h3 {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   article {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6389,6 +6374,7 @@ article img + div p {
   background-color: #000;
   color: #fff;
   text-transform: capitalize;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   letter-spacing: .1em;
   padding-left: .1em;
@@ -6418,7 +6404,7 @@ article img + div p {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .new-projects-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6543,7 +6529,7 @@ article img + div p {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .project-classify-list {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6649,7 +6635,7 @@ article img + div p {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-banner .heading h3 {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6693,7 +6679,7 @@ article img + div p {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-banner .heading time {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6732,7 +6718,7 @@ article img + div p {
   .talk-details-banner .video,
   .talk-details-banner img,
   .talk-details-banner #videodiv {
-    width: 750px;
+    width: 730px;
   }
 }
 @media (max-width: 767px) {
@@ -6789,6 +6775,37 @@ article img + div p {
     bottom: auto;
     transform: translateX(0);
   }
+}
+.about-carousel .carousel-inner .item,
+.project-carousel .carousel-inner .item {
+  transition-property: opacity;
+}
+.about-carousel .carousel-inner .item,
+.about-carousel .carousel-inner .active.left,
+.about-carousel .carousel-inner .active.right,
+.project-carousel .carousel-inner .item,
+.project-carousel .carousel-inner .active.left,
+.project-carousel .carousel-inner .active.right {
+  opacity: 0;
+}
+.about-carousel .carousel-inner .active,
+.about-carousel .carousel-inner .next.left,
+.about-carousel .carousel-inner .prev.right,
+.project-carousel .carousel-inner .active,
+.project-carousel .carousel-inner .next.left,
+.project-carousel .carousel-inner .prev.right {
+  opacity: 1;
+}
+.about-carousel .carousel-inner .next,
+.about-carousel .carousel-inner .prev,
+.about-carousel .carousel-inner .active.left,
+.about-carousel .carousel-inner .active.right,
+.project-carousel .carousel-inner .next,
+.project-carousel .carousel-inner .prev,
+.project-carousel .carousel-inner .active.left,
+.project-carousel .carousel-inner .active.right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
 }
 
 /*# sourceMappingURL=puyu.css.map */

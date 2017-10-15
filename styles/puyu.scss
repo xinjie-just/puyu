@@ -4137,14 +4137,19 @@
 
 /*所有的项目*/
 .all-project {
+  position: relative;
   @extend %page;
-  @extend .clearfix;
+  //@extend .clearfix;
   margin-bottom: 2rem;
   .project-list-classify {
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   .project-list-content {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 @media (min-width: 1200px) {
@@ -4226,7 +4231,7 @@
       letter-spacing: .1em;
       padding-left: .1em;
       background-color: #fff;
-      margin-bottom: 2rem;
+      //margin-bottom: 2rem;
       margin-top: 1rem;
       @include transition(0.4s);
       &:hover {
@@ -4310,8 +4315,6 @@
   .all-project {
     .project-list-classify {
       z-index: 3;
-      position: relative;
-      float: none;
       @include center-content();
       .look-list {
         z-index: 5;
@@ -4385,7 +4388,8 @@
       }
     }
     .project-list-content {
-      float: none;
+      left: 50%;
+      transform: translateX(-50%);
       @include center-content();
       li {
         margin-bottom: .75rem;
@@ -5233,6 +5237,7 @@ article {
   background-color: $text-color;
   color: #fff;
   text-transform: capitalize;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   letter-spacing: .1em;
   padding-left: .1em;
@@ -5539,6 +5544,35 @@ article {
       position: static;
       bottom: auto;
       transform: translateX(0);
+    }
+  }
+}
+
+// 轮播图淡入淡出效果
+.about-carousel,
+.project-carousel {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
     }
   }
 }
