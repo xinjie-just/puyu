@@ -2337,7 +2337,6 @@
   bottom: 10px;
   left: 50%;
   z-index: 15;
-  @include center-content();
   padding-left: 0;
   transform: translateX(-50%);
   list-style: none;
