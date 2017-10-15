@@ -436,7 +436,7 @@
     display: block;
     max-width: 100%;
     height: auto;
-    min-height: 12.5rem;
+    min-height: 14.5rem;
     margin-right: auto;
     margin-left: auto;
     @include transition();
@@ -708,6 +708,7 @@
         h2 {
           a {
             color: $main-color;
+            height: auto;
           }
         }
         h3 {
@@ -3079,6 +3080,7 @@
         padding: 3rem;
         h3 {
           font-weight: normal;
+          @include transition(0.4s);
           span {
             display: block;
             &.en {
@@ -3221,6 +3223,11 @@
       }
       .item-outside {
         .content {
+          h3 {
+            &:hover {
+              color: $main-color;
+            }
+          }
           a {
             &:hover {
               color: $main-color;
