@@ -360,8 +360,8 @@
             // 设置多媒体的高度
             function setHeight() {
                 var $width = $(window).outerWidth();
-                var $divHeight =  $(".talk-details-banner > div").outerHeight();
-                if ($width >= 1200) {
+                var $divHeight =  $(".talk-details-banner > .heading").outerHeight();
+                /*if ($width >= 1200) {
                     if ($(".talk-details-banner").find("img")) {
                         var $imgHeight =  $(".talk-details-banner > img").outerHeight();
                         $(".talk-details-banner").height($imgHeight + $divHeight - 90);
@@ -369,7 +369,12 @@
                         var $videoHeight =  $(".talk-details-banner > video").outerHeight();
                         $(".talk-details-banner").height($videoHeight + $divHeight - 90);
                     }
+                }*/
+                if ($width >= 1200) {
+                    var $videoHeight =  $(".talk-details-banner > #videodiv").outerHeight();
+                    $(".talk-details-banner").height($videoHeight + $divHeight - 90);
                 }
+                
                 else if ($width >= 992) {
                     if ($(".talk-details-banner").find("img")) {
                         var $imgHeight =  $(".talk-details-banner > img").outerHeight();

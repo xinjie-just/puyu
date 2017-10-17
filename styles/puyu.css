@@ -940,7 +940,7 @@ label.error {
   display: block;
   background-color: #000;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.2em;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: normal;
@@ -1037,6 +1037,7 @@ label.error {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    max-height: 2.8em;
   }
   .holiday-mode .content h3 {
     margin-bottom: .6rem;
@@ -1104,7 +1105,7 @@ label.error {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
-    width: 765px;
+    width: 745px;
   }
 }
 @media (max-width: 767px) {
@@ -1203,6 +1204,11 @@ label.error {
     border: 1px solid #f7ac3b;
     background-color: rgba(255, 255, 255, 0.6);
     color: #f7ac3b;
+  }
+}
+@media (max-width: 767px) {
+  .home-outside .content h2 a {
+    height: auto;
   }
 }
 .home-inside {
