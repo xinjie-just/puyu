@@ -3073,6 +3073,29 @@ label.error {
   transform: translateX(-50%);
   list-style: none;
   text-align: right;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 1200px) {
+  .about-carousel-indicators {
+    width: 1080px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-carousel-indicators {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-carousel-indicators {
+    width: 730px;
+  }
+}
+@media (max-width: 767px) {
+  .about-carousel-indicators {
+    width: 87.5%;
+  }
 }
 .about-carousel-indicators li {
   display: inline-block;

@@ -2354,6 +2354,7 @@
   transform: translateX(-50%);
   list-style: none;
   text-align: right;
+  @include center-content();
   li {
     display: inline-block;
     width: 1.2rem;
