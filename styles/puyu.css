@@ -6772,7 +6772,8 @@ article img + div p {
     margin-bottom: .5em;
   }
   .talk-details-banner .video,
-  .talk-details-banner img {
+  .talk-details-banner img,
+  .talk-details-banner #videodiv {
     display: block;
     max-width: 100%;
     width: auto;

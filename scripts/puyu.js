@@ -126,3 +126,11 @@ $("article img").css({
     height: "auto",
     margin: "15px auto"
 });
+
+// 移除 iframe 的宽高属性
+if ($("#videodiv iframe[width]")) {
+    $("#videodiv iframe").removeAttr("width");
+}
+if ($("#videodiv iframe[height]")) {
+    $("#videodiv iframe").removeAttr("height");
+}

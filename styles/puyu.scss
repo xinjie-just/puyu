@@ -5548,7 +5548,8 @@ article {
       }
     }
     .video,
-    img {
+    img,
+    #videodiv {
       display: block;
       max-width: 100%;
       width: auto;
