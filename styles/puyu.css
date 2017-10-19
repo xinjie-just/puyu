@@ -4011,18 +4011,23 @@ label.error {
   transition: all 0.4s linear 0s;
 }
 .idea-show .idea-side-right .item-outside > figure {
+  position: relative;
   float: left;
   display: block;
   width: 50%;
   height: 100%;
   background-color: #dedede;
-  position: relative;
+  overflow: hidden;
 }
 .idea-show .idea-side-right .item-outside > figure a {
   display: block;
 }
 .idea-show .idea-side-right .item-outside > figure img {
   position: absolute;
+  display: block;
+  max-width: none;
+  width: 480px;
+  height: 480px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -4125,6 +4130,10 @@ label.error {
   .idea-show {
     height: 50rem;
   }
+  .idea-show .idea-side-right .item-outside > figure img {
+    width: 400px;
+    height: 400px;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-show {
@@ -4154,6 +4163,10 @@ label.error {
   .idea-show .idea-side-right .item-outside .content a {
     bottom: 2rem;
     left: 2rem;
+  }
+  .idea-show .idea-side-right .item-outside > figure img {
+    width: 300px;
+    height: 300px;
   }
   .idea-show .idea-side-right .item-inside .content {
     padding: 2rem;
@@ -4195,6 +4208,10 @@ label.error {
   .idea-show .idea-side-right .item-outside .content a {
     bottom: 1.5rem;
     left: 1.5rem;
+  }
+  .idea-show .idea-side-right .item-outside > figure img {
+    width: 248px;
+    height: 248px;
   }
   .idea-show .idea-side-right .item-inside .content {
     padding: 1.5rem;
@@ -4266,11 +4283,21 @@ label.error {
     bottom: auto;
     left: auto;
   }
-  .idea-show .idea-side-right .item-outside img {
+  .idea-show .idea-side-right .item-outside > figure {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    float: none;
+  }
+  .idea-show .idea-side-right .item-outside > figure img {
+    position: static;
     float: none;
     width: auto;
     max-width: 100%;
     height: auto;
+    top: auto;
+    left: auto;
+    transform: translate(0);
   }
   .idea-show .idea-side-right .item-inside {
     width: auto;

@@ -3129,17 +3129,22 @@
         }
       }
       > figure {
+        position: relative;
         float: left;
         display: block;
         width: 50%;
         height: 100%;
         background-color: #dedede;
-        position: relative;
+        overflow: hidden;
         a {
           display: block;
         }
         img {
           position: absolute;
+          display: block;
+          max-width: none;
+          width: 480px;
+          height: 480px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -3270,6 +3275,16 @@
 @media (min-width: 1200px) and (max-width: 1599px) {
   .idea-show {
     height: 50rem;
+    .idea-side-right {
+      .item-outside {
+        > figure {
+          img {
+            width: 400px;
+            height: 400px;
+          }
+        }
+      }
+    }
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -3304,6 +3319,12 @@
           a {
             bottom: 2rem;
             left: 2rem;
+          }
+        }
+        > figure {
+          img {
+            width: 300px;
+            height: 300px;
           }
         }
       }
@@ -3359,6 +3380,12 @@
             left: 1.5rem;
           }
         }
+        > figure {
+          img {
+            width: 248px;
+            height: 248px;
+          }
+        }
       }
       .item-inside {
         .content {
@@ -3388,7 +3415,6 @@
     }
     .idea-sidebar-left {
       position: relative;
-      //margin-bottom: 2rem;
       img {
         display: block;
         max-width: 100%;
@@ -3442,11 +3468,21 @@
             left: auto;
           }
         }
-        img {
-          float: none;
+        > figure {
+          position: static;
           width: auto;
           max-width: 100%;
-          height: auto;
+          float: none;
+          img {
+            position: static;
+            float: none;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            top: auto;
+            left: auto;
+            transform: translate(0);
+          }
         }
       }
       .item-inside {
