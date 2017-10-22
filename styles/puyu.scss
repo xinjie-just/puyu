@@ -5071,7 +5071,7 @@
 
 @media (min-width: 1600px) {
   .project-carousel-indicators li {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 }
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -5154,14 +5154,17 @@
     width: 100%;
     float: none;
     > .item {
-      > img,
-      > a > img{
-        object-fit: none;
+      img,
+      a img{
+        object-fit: fill;
         display: block;
         max-width: 100%;
         width: auto;
         height: auto;
         overflow: hidden;
+      }
+      .carousel-caption {
+
       }
     }
   }
@@ -5182,13 +5185,9 @@
       }
     }
   }
-  /*.project-carousel-indicators {
-    text-align: center;
-  }*/
   .project-carousel-indicators li {
     display: inline-block;
     text-align: center;
-    //margin-bottom: 0;
     span {
       width: 1.5rem;
       height: 1.5rem;
@@ -5197,13 +5196,14 @@
       margin-right: 2rem;
     }
     p {
+      width: 100%;
       display: none;
     }
-    /*&.active {
+    &.active {
       p {
         display: block;
       }
-    }*/
+    }
   }
 }
 /*文章部分*/
@@ -5380,12 +5380,12 @@ article {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .new-projects-list {
-    width: 61.8375rem;
+    width: 65.4rem;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .new-projects-list {
-    width: 47.8125rem;
+    width: 52.65rem;
   }
 }
 @media(max-width: 767px) {

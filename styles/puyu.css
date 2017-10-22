@@ -6204,7 +6204,7 @@ label.error {
 }
 @media (min-width: 1600px) {
   .project-carousel-indicators li {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 }
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -6288,9 +6288,9 @@ label.error {
     width: 100%;
     float: none;
   }
-  .project-carousel-inner > .item > img,
-  .project-carousel-inner > .item > a > img {
-    object-fit: none;
+  .project-carousel-inner > .item img,
+  .project-carousel-inner > .item a img {
+    object-fit: fill;
     display: block;
     max-width: 100%;
     width: auto;
@@ -6314,17 +6314,9 @@ label.error {
     line-height: 1.3em;
   }
 
-  /*.project-carousel-indicators {
-    text-align: center;
-  }*/
   .project-carousel-indicators li {
     display: inline-block;
     text-align: center;
-    /*&.active {
-      p {
-        display: block;
-      }
-    }*/
   }
   .project-carousel-indicators li span {
     width: 1.5rem;
@@ -6334,7 +6326,11 @@ label.error {
     margin-right: 2rem;
   }
   .project-carousel-indicators li p {
+    width: 100%;
     display: none;
+  }
+  .project-carousel-indicators li.active p {
+    display: block;
   }
 }
 /*文章部分*/
@@ -6541,12 +6537,12 @@ article img + div p {
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .new-projects-list {
-    width: 61.8375rem;
+    width: 65.4rem;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .new-projects-list {
-    width: 47.8125rem;
+    width: 52.65rem;
   }
 }
 @media (max-width: 767px) {
