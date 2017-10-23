@@ -1142,6 +1142,10 @@ label.error {
   font-size: 0;
   transition: all 0.6s linear 0s;
 }
+.home-outside .content h3 a {
+  display: block;
+  font-size: 0;
+}
 .home-outside .content h3 span {
   display: inline-block;
   color: #000;
@@ -1179,7 +1183,7 @@ label.error {
   transition: all 0.6s linear 0s;
 }
 .home-outside .content .label .details {
-  border: 1px solid #000;
+  border: 1px solid;
   background-color: rgba(255, 255, 255, 0.6);
   color: #000;
   transition: all 0.6s linear 0s;
@@ -1190,18 +1194,18 @@ label.error {
     border-top-color: #f7ac3b;
   }
   .home-outside .content:hover h2 a {
+    display: block;
     color: #f7ac3b;
-    height: auto;
   }
   .home-outside .content:hover h3 span {
     color: #f7ac3b;
   }
   .home-outside .content:hover .label .classify {
-    border: 1px solid #f7ac3b;
+    border-color: #f7ac3b;
     background-color: #f7ac3b;
   }
   .home-outside .content:hover .label .details {
-    border: 1px solid #f7ac3b;
+    border-color: #f7ac3b;
     background-color: rgba(255, 255, 255, 0.6);
     color: #f7ac3b;
   }
@@ -2977,6 +2981,7 @@ label.error {
   -webkit-transition: .6s ease-in-out left;
   -o-transition: .6s ease-in-out left;
   transition: .6s ease-in-out left;
+  overflow: hidden;
 }
 .about-carousel-inner > .item > img,
 .about-carousel-inner > .item > a > img {
@@ -3009,6 +3014,7 @@ label.error {
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
     perspective: 1000px;
+    overflow: hidden;
   }
   .about-carousel-inner > .item.next, .about-carousel-inner > .item.active.right {
     left: 0;
@@ -4681,6 +4687,7 @@ label.error {
     width: 100%;
     position: static;
     bottom: auto;
+    left: 0;
     transform: translateX(0);
     padding: 1rem .8rem .8rem 0;
   }
@@ -6283,18 +6290,19 @@ label.error {
   .project-carousel-indicators-min767 li p {
     display: inline-block;
   }
-
-  .project-carousel-inner-min768 .item .carousel-caption {
+  .project-carousel-indicators-min767 .carousel-caption {
     display: none;
   }
 }
 @media (max-width: 767px) {
   .project-carousel {
+    position: static;
+    height: auto;
     margin-bottom: 0;
   }
 
   .project-carousel-inner {
-    position: absolute;
+    position: static;
     width: 100%;
     float: none;
   }
@@ -6309,7 +6317,7 @@ label.error {
   }
 
   .project-carousel .info {
-    position: absolute;
+    position: static;
     width: 100%;
     float: none;
     height: auto;
@@ -6338,16 +6346,11 @@ label.error {
   .project-carousel-indicators li p {
     width: 100%;
     display: none;
+    height: auto;
+    max-height: none;
   }
-
-  .project-carousel-indicators-min767 li p {
-    display: none;
-  }
-
-  .project-carousel-inner-min768 .item .carousel-caption {
-    display: block;
-    position: absolute;
-    bottom: 0;
+  .project-carousel-indicators li.active p {
+    display: inline-block;
   }
 }
 /*文章部分*/
@@ -6848,7 +6851,7 @@ article img + div p {
 }
 .about-carousel .carousel-inner .item,
 .project-carousel .carousel-inner .item {
-  transition-property: all;
+  transition-property: opacity;
 }
 .about-carousel .carousel-inner .item,
 .about-carousel .carousel-inner .active.left,
