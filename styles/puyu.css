@@ -3316,7 +3316,7 @@ label.error {
   .team img {
     display: block;
     max-width: 100%;
-    height: 16.8rem;
+    height: 18.4375rem;
     overflow: hidden;
     object-fit: cover;
   }
@@ -4637,7 +4637,7 @@ label.error {
   font-size: .875rem;
   line-height: 2;
   letter-spacing: .1em;
-  padding: 2rem 0 1rem 2rem;
+  padding: 2rem 0 0 2rem;
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
@@ -5088,7 +5088,7 @@ label.error {
   .project-banner img {
     display: block;
     max-width: 100%;
-    height: 14.625rem;
+    height: 18.4375rem;
     object-fit: cover;
     overflow: hidden;
   }
@@ -5881,7 +5881,7 @@ label.error {
   background-color: #000;
   color: #fff;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   margin-bottom: 1em;
   text-transform: capitalize;
 }
@@ -5895,7 +5895,7 @@ label.error {
   background-color: #000;
   color: #fff;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   line-height: 2;
   letter-spacing: .1em;
 }
@@ -5905,14 +5905,14 @@ label.error {
   line-height: 2;
   letter-spacing: .1em;
   padding-right: 1rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   background-color: #000;
   color: #fff;
 }
 .project-intro .intro .content .sidebar-left .customer-info {
   color: #000;
-  margin-top: 1rem;
-  padding-left: 1rem;
+  margin-top: 2rem;
+  padding-left: 2rem;
 }
 .project-intro .intro .content .sidebar-left .customer-info span {
   display: block;
@@ -5920,6 +5920,9 @@ label.error {
   line-height: 1.5;
   margin-bottom: .5em;
   letter-spacing: .1em;
+}
+.project-intro .intro .content .sidebar-left .customer-info span:last-of-type {
+  margin-bottom: 0;
 }
 .project-intro .intro .content .sidebar-right {
   float: right;
@@ -6276,15 +6279,22 @@ label.error {
     max-height: 4em;
   }
 }
+@media (min-width: 768px) {
+  .project-carousel-indicators-min767 li p {
+    display: inline-block;
+  }
+
+  .project-carousel-inner-min768 .item .carousel-caption {
+    display: none;
+  }
+}
 @media (max-width: 767px) {
   .project-carousel {
-    position: static;
-    height: auto;
     margin-bottom: 0;
   }
 
   .project-carousel-inner {
-    position: static;
+    position: absolute;
     width: 100%;
     float: none;
   }
@@ -6299,7 +6309,7 @@ label.error {
   }
 
   .project-carousel .info {
-    position: static;
+    position: absolute;
     width: 100%;
     float: none;
     height: auto;
@@ -6329,8 +6339,15 @@ label.error {
     width: 100%;
     display: none;
   }
-  .project-carousel-indicators li.active p {
+
+  .project-carousel-indicators-min767 li p {
+    display: none;
+  }
+
+  .project-carousel-inner-min768 .item .carousel-caption {
     display: block;
+    position: absolute;
+    bottom: 0;
   }
 }
 /*文章部分*/
@@ -6831,7 +6848,7 @@ article img + div p {
 }
 .about-carousel .carousel-inner .item,
 .project-carousel .carousel-inner .item {
-  transition-property: opacity;
+  transition-property: all;
 }
 .about-carousel .carousel-inner .item,
 .about-carousel .carousel-inner .active.left,
