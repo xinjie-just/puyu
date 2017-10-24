@@ -1980,6 +1980,7 @@ label.error {
 }
 
 .contact-main {
+  display: block;
   background-color: #000;
   padding-top: 3rem;
   padding-bottom: 3rem;
