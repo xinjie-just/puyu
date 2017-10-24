@@ -4017,16 +4017,18 @@ label.error {
   transition: all 0.4s linear 0s;
 }
 .idea-show .idea-side-right .item-outside > figure {
-  position: relative;
   float: left;
   display: block;
   width: 50%;
   height: 100%;
   background-color: #dedede;
-  overflow: hidden;
 }
 .idea-show .idea-side-right .item-outside > figure a {
+  position: relative;
+  overflow: hidden;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 .idea-show .idea-side-right .item-outside > figure img {
   position: absolute;
@@ -4116,6 +4118,9 @@ label.error {
 @media (min-width: 1200px) {
   .idea-show .idea-side-right .item-outside > figure:hover img {
     transform: scale(1.1, 1.1) translate(-50%, -50%);
+    transform-origin: center;
+    top: 50%;
+    left: 50%;
   }
   .idea-show .idea-side-right .item-outside .content h3:hover {
     color: #f7ac3b;
@@ -4582,7 +4587,7 @@ label.error {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 2.5rem 2rem 2rem 0;
+  padding: 2rem 2rem 2rem 0;
   border-top: 5px solid #000;
   background-color: #fff;
   font-size: 0;
@@ -4647,25 +4652,16 @@ label.error {
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
-  .idea-intro .intro {
-    padding: 2rem 1.6rem 1.6rem 0;
-  }
   .idea-intro .intro h3.en {
     font-size: 2rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .idea-intro .intro {
-    padding: 1.6rem 1.2rem 1.2rem 0;
-  }
   .idea-intro .intro h3.en {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .idea-intro .intro {
-    padding: 1.2rem 1rem 1rem 0;
-  }
   .idea-intro .intro h3.en {
     font-size: 1.6rem;
   }
@@ -4689,11 +4685,40 @@ label.error {
     bottom: auto;
     left: 0;
     transform: translateX(0);
-    padding: 1rem .8rem .8rem 0;
+    padding: 2rem 0 2rem 0;
   }
   .idea-intro .intro h3.en {
     font-size: 1.4rem;
   }
+  .idea-intro .intro .info {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 767px) and (min-width: 1200px) {
+  .idea-intro .intro .info {
+    width: 1080px;
+  }
+}
+@media (max-width: 767px) and (min-width: 992px) and (max-width: 1199px) {
+  .idea-intro .intro .info {
+    width: 970px;
+  }
+}
+@media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
+  .idea-intro .intro .info {
+    width: 730px;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  .idea-intro .intro .info {
+    width: 87.5%;
+  }
+}
+@media (max-width: 767px) {
   .idea-intro .intro .content .sidebar-left {
     float: none;
     width: 100%;
@@ -4733,7 +4758,6 @@ label.error {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    line-height: 1.7;
   }
 }
 @media (max-width: 767px) and (min-width: 1200px) {
@@ -5857,7 +5881,7 @@ label.error {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 2.5rem 2rem 2rem 0;
+  padding: 2rem 2rem 2rem 0;
   border-top: 8px solid #000;
   background-color: #fff;
 }
@@ -5941,25 +5965,16 @@ label.error {
 }
 
 @media (min-width: 1200px) and (max-width: 1599px) {
-  .project-intro .intro {
-    padding: 2rem 1.6rem 1.6rem 0;
-  }
   .project-intro .intro h3.en {
     font-size: 2rem;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .project-intro .intro {
-    padding: 1.6rem 1.2rem 1.2rem 0;
-  }
   .project-intro .intro h3.en {
     font-size: 1.8rem;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .project-intro .intro {
-    padding: 1.2rem 1rem 1rem 0;
-  }
   .project-intro .intro h3.en {
     font-size: 1.6rem;
   }
@@ -6027,7 +6042,6 @@ label.error {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    line-height: 1.7;
   }
 }
 @media (max-width: 767px) and (min-width: 1200px) {
@@ -6353,6 +6367,113 @@ label.error {
     display: inline-block;
   }
 }
+/*针对手机端特殊处理banner图部分*/
+@media (min-width: 768px) {
+  #carousel-example-generic {
+    display: block;
+  }
+
+  #carousel-example-generic-max767 {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  #carousel-example-generic {
+    display: none;
+  }
+
+  #carousel-example-generic-max767 {
+    display: block;
+    background-color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  #carousel-example-generic-max767 h3 {
+    margin-bottom: 2rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 767px) and (min-width: 1200px) {
+  #carousel-example-generic-max767 h3 {
+    width: 1080px;
+  }
+}
+@media (max-width: 767px) and (min-width: 992px) and (max-width: 1199px) {
+  #carousel-example-generic-max767 h3 {
+    width: 970px;
+  }
+}
+@media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
+  #carousel-example-generic-max767 h3 {
+    width: 730px;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  #carousel-example-generic-max767 h3 {
+    width: 87.5%;
+  }
+}
+@media (max-width: 767px) {
+  #carousel-example-generic-max767 h3 span {
+    display: block;
+    text-decoration: underline;
+    color: #000;
+  }
+  #carousel-example-generic-max767 h3 span.en {
+    font-size: 2rem;
+    line-height: 1.2em;
+    letter-spacing: .05em;
+    font-weight: lighter;
+    margin-bottom: .5em;
+  }
+  #carousel-example-generic-max767 h3 span.cn {
+    font-size: 1.125rem;
+    line-height: 2;
+    letter-spacing: .1em;
+    font-weight: normal;
+  }
+  #carousel-example-generic-max767 ul li:not(:last-of-type) {
+    margin-bottom: 1.8rem;
+  }
+  #carousel-example-generic-max767 ul li img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  #carousel-example-generic-max767 ul li p {
+    display: block;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 13px;
+    line-height: 2em;
+    letter-spacing: .1em;
+  }
+}
+@media (max-width: 767px) and (min-width: 1200px) {
+  #carousel-example-generic-max767 ul li p {
+    width: 1080px;
+  }
+}
+@media (max-width: 767px) and (min-width: 992px) and (max-width: 1199px) {
+  #carousel-example-generic-max767 ul li p {
+    width: 970px;
+  }
+}
+@media (max-width: 767px) and (min-width: 768px) and (max-width: 991px) {
+  #carousel-example-generic-max767 ul li p {
+    width: 730px;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  #carousel-example-generic-max767 ul li p {
+    width: 87.5%;
+  }
+}
+
 /*文章部分*/
 article {
   padding-top: 1.5rem;

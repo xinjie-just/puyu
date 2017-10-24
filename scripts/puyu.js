@@ -110,7 +110,7 @@ objectFit.polyfill({
 
 // 轮播图自定义配置
 $(".carousel").carousel({
-    interval: 5000
+    interval: 2000
 });
 
 // 为文章中的图片设置一些限制

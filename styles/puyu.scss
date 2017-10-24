@@ -3135,15 +3135,17 @@
         }
       }
       > figure {
-        position: relative;
         float: left;
         display: block;
         width: 50%;
         height: 100%;
         background-color: #dedede;
-        overflow: hidden;
         a {
+          position: relative;
+          overflow: hidden;
           display: block;
+          width: 100%;
+          height: 100%;
         }
         img {
           position: absolute;
@@ -3241,6 +3243,9 @@
           &:hover {
             img {
               transform: scale(1.1, 1.1) translate(-50%, -50%);
+              transform-origin: center;
+              top: 50%;
+              left: 50%;
             }
           }
         }
@@ -3759,7 +3764,7 @@
     left: 50%;
     transform: translateX(-50%);
     @include center-content();
-    padding: 2.5rem 2rem 2rem 0;
+    padding: 2rem 2rem 2rem 0;
     border-top: 5px solid $text-color;
     background-color: #fff;
     font-size: 0;
@@ -3806,7 +3811,6 @@
 @media (min-width: 1200px) and (max-width: 1599px) {
   .idea-intro {
     .intro {
-      padding: 2rem 1.6rem 1.6rem 0;
       h3.en {
         font-size: 2rem;
       }
@@ -3816,7 +3820,6 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-intro {
     .intro {
-      padding: 1.6rem 1.2rem 1.2rem 0;
       h3.en {
         font-size: 1.8rem;
       }
@@ -3826,7 +3829,6 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-intro {
     .intro {
-      padding: 1.2rem 1rem 1rem 0;
       h3.en {
         font-size: 1.6rem;
       }
@@ -3851,9 +3853,14 @@
       bottom: auto;
       left: 0;
       transform: translateX(0);
-      padding: 1rem .8rem .8rem 0;
+      padding: 2rem 0 2rem 0;
       h3.en {
         font-size: 1.4rem;
+      }
+      .info {
+        @include center-content();
+        padding: 0;
+        margin-top: 2rem;
       }
       .content {
         .sidebar-left {
@@ -3869,7 +3876,6 @@
         .sidebar-right {
           float: none;
           @include center-content();
-          line-height: 1.7;
         }
       }
     }
@@ -4781,7 +4787,7 @@
     left: 50%;
     transform: translateX(-50%);
     @include center-content();
-    padding: 2.5rem 2rem 2rem 0;
+    padding: 2rem 2rem 2rem 0;
     border-top: 8px solid $text-color;
     background-color: #fff;
     h3.en {
@@ -4850,7 +4856,6 @@
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-intro {
     .intro {
-      padding: 2rem 1.6rem 1.6rem 0;
       h3.en {
         font-size: 2rem;
       }
@@ -4860,7 +4865,6 @@
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-intro {
     .intro {
-      padding: 1.6rem 1.2rem 1.2rem 0;
       h3.en {
         font-size: 1.8rem;
       }
@@ -4870,7 +4874,6 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .project-intro {
     .intro {
-      padding: 1.2rem 1rem 1rem 0;
       h3.en {
         font-size: 1.6rem;
       }
@@ -4913,7 +4916,6 @@
         .sidebar-right {
           float: none;
           @include center-content();
-          line-height: 1.7;
         }
       }
     }
@@ -5230,6 +5232,70 @@
     }
   }
 }
+/*针对手机端特殊处理banner图部分*/
+@media (min-width: 768px) {
+  #carousel-example-generic {
+    display: block;
+  }
+  #carousel-example-generic-max767 {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  #carousel-example-generic {
+    display: none;
+  }
+  #carousel-example-generic-max767 {
+    display: block;
+    background-color: #fff;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    h3 {
+      margin-bottom: 2rem;
+      @include center-content();
+      span {
+        display: block;
+        text-decoration: underline;
+        color: $text-color;
+        &.en {
+          font-size: 2rem;
+          line-height: 1.2em;
+          letter-spacing: .05em;
+          font-weight: lighter;
+          margin-bottom: .5em;
+        }
+        &.cn {
+          font-size: 1.125rem;
+          line-height: 2;
+          letter-spacing: .1em;
+          font-weight: normal;
+        }
+      }
+    }
+    ul {
+      li {
+        &:not(:last-of-type) {
+          margin-bottom: 1.8rem;
+        }
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 1rem;
+        }
+        p {
+          display: block;
+          @include center-content();
+          font-size: 13px;
+          line-height: 2em;
+          letter-spacing: .1em;
+        }
+      }
+    }
+  }
+}
+
+
 /*文章部分*/
 article {
   padding-top: 1.5rem;
