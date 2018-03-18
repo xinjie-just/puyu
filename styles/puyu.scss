@@ -1521,9 +1521,9 @@
 .map-list {
   @include center-content();
   @extend .clearfix;
-  border-bottom: .3rem solid #606060;
+  border-bottom: 2px solid #606060;
   padding-bottom: 1rem;
-  margin-bottom: -2rem;
+  //margin-bottom: -2rem;
   li {
     float: left;
     width: 30%;
@@ -1586,6 +1586,18 @@
       width: 100%;
     }
   }
+}
+
+// 招聘
+.join-us {
+  @include center-content();
+  font-size: .875rem;
+  color: #aeaeae;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  text-align: center;
+  border-bottom: .3rem solid #606060;
 }
 
 /*===pure(访谈，新闻)===*/

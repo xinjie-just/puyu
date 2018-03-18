@@ -2037,9 +2037,8 @@ label.error {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  border-bottom: .3rem solid #606060;
+  border-bottom: 2px solid #606060;
   padding-bottom: 1rem;
-  margin-bottom: -2rem;
 }
 @media (min-width: 1200px) {
   .map-list {
@@ -2114,6 +2113,39 @@ label.error {
     width: 100%;
   }
 }
+.join-us {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: .875rem;
+  color: #aeaeae;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  text-align: center;
+  border-bottom: .3rem solid #606060;
+}
+@media (min-width: 1200px) {
+  .join-us {
+    width: 1080px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .join-us {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .join-us {
+    width: 730px;
+  }
+}
+@media (max-width: 767px) {
+  .join-us {
+    width: 87.5%;
+  }
+}
+
 /*===pure(访谈，新闻)===*/
 .talk-recommend {
   height: 39rem;
