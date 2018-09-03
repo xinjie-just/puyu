@@ -10,14 +10,21 @@
   @extend %page;
   position: relative;
   background-color: #eee;
-  padding-right: $size - 2rem;
-  padding-left: $size - 2rem;
+  padding: {
+    right: $size - 2rem;
+    left: $size - 2rem;
+  }
+;
   @extend .clearfix;
   .logo {
     float: left;
     position: relative;
     width: 13.75rem;
     height: $size;
+    @media (max-width: 767px) {
+      height: 5rem;
+      width: 9rem;
+    }
     i {
       display: block;
       font-size: 2.8rem;
@@ -26,10 +33,14 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      @include transition(0.4s);
+      @include transition(.4s);
+      @media (max-width: 767px) {
+        font-size: 1.8rem;
+      }
     }
   }
 }
+
 @media (min-width: 1200px) {
   #header {
     .logo {
@@ -43,18 +54,7 @@
     }
   }
 }
-@media (max-width: 767px) {
-  #header {
-    $size: 5rem;
-    .logo {
-      height: $size;
-      width: 9rem;
-      i {
-        font-size: 1.8rem;
-      }
-    }
-  }
-}
+
 /*导航*/
 @media (min-width: 1200px) {
   #nav {
@@ -68,9 +68,8 @@
         position: relative;
         height: $size;
         float: left;
-        margin-right: 2rem;
-        &:last-of-type {
-          margin-right: 0;
+        &:not(:last-of-type) {
+          margin-right: 2rem;
         }
         > a {
           $size: 6.25rem;
@@ -83,7 +82,7 @@
           font-size: 1rem;
           border-bottom: 1px solid transparent;
           overflow: hidden;
-          @include transition(0.6s);
+          @include transition(.6s);
           strong {
             z-index: 2;
             display: block;
@@ -128,12 +127,16 @@
           position: absolute;
           top: $size;
           left: 0;
-          border-top: 1px solid $text-color;
-          border-bottom: 1px solid $text-color;
+          border: {
+            top: 1px solid $text-color;
+            bottom: 1px solid $text-color;
+          }
           background-color: rgba(255, 255, 255, .8);
           li {
-            border-top: 1px solid $text-color;
-            border-bottom: 1px solid $text-color;
+            border: {
+              top: 1px solid $text-color;
+              bottom: 1px solid $text-color;
+            }
           }
           a {
             display: block;
@@ -168,12 +171,12 @@
           }
         }
         &.projects {
-          > ul{
+          > ul {
             width: 16rem;
           }
         }
         &.pure {
-          > ul{
+          > ul {
             width: 7.5rem;
           }
         }
@@ -184,6 +187,7 @@
     }
   }
 }
+
 @media (max-width: 1199px) {
   #header {
     padding-right: 0;
@@ -269,11 +273,12 @@
       i {
         font-size: 3rem;
         color: $text-color;
-        @include transition(0.4s);
+        @include transition(.4s);
       }
     }
   }
 }
+
 @media (max-width: 767px) {
   #nav {
     $size: 5rem;
@@ -315,6 +320,11 @@
 /*未来空间产品定义者*/
 .home-banner,
 .home-media {
+  @media (max-width: 767px) {
+    position: static;
+    width: 100%;
+    margin-bottom: 0;
+  }
   .future-space-definer {
     z-index: 9;
     position: absolute;
@@ -322,6 +332,12 @@
     bottom: 0;
     transform: translateX(-50%);
     @include center-content();
+    @media (max-width: 767px) {
+      position: static;
+      width: 100%;
+      bottom: auto;
+      transform: translateX(0);
+    }
     h2 {
       width: 25.5rem;
       padding: 1rem 2.375rem 1.4rem;
@@ -331,6 +347,19 @@
       color: $text-color;
       line-height: 1.1;
       overflow-y: auto;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        padding: .8rem 1.875rem 1.1rem;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        padding: .6rem 1.375rem .9rem;
+      }
+      @media (max-width: 767px) {
+        padding: .4rem .875rem .7rem;
+        width: 100%;
+        height: auto;
+        border-top: 5px solid $text-color;
+        border-bottom: 5px solid $text-color;
+      }
       span {
         display: block;
         &.en {
@@ -338,6 +367,15 @@
           text-transform: uppercase;
           letter-spacing: .05em;
           margin-left: -.1em;
+          @media (min-width: 992px) and (max-width: 1199px) {
+            font-size: 4rem;
+          }
+          @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 3rem;
+          }
+          @media (max-width: 767px) {
+            font-size: 2rem;
+          }
         }
         &.cn {
           margin-top: .8rem;
@@ -348,61 +386,9 @@
     }
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
-  .home-banner,
-  .home-media {
-    .future-space-definer {
-      h2 {
-        padding: .8rem 1.875rem 1.1rem;
-        span {
-          &.en {
-            font-size: 4rem;
-          }
-        }
-      }
-    }
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .home-banner,
-  .home-media {
-    .future-space-definer {
-      h2 {
-        padding: .6rem 1.375rem .9rem;
-        span {
-          &.en {
-            font-size: 3rem;
-          }
-        }
-      }
-    }
-  }
-}
+
+
 @media (max-width: 767px) {
-  .home-banner,
-  .home-media {
-    position: static;
-    width: 100%;
-    margin-bottom: 0;
-    .future-space-definer {
-      position: static;
-      width: 100%;
-      bottom: auto;
-      transform: translateX(0);
-      h2 {
-        padding: .4rem .875rem .7rem;
-        width: 100%;
-        height: auto;
-        border-top: 5px solid $text-color;
-        border-bottom: 5px solid $text-color;
-        span {
-          &.en {
-            font-size: 2rem;
-          }
-        }
-      }
-    }
-  }
   .home-banner img,
   .home-media video {
     z-index: 4;
@@ -511,6 +497,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .holiday-mode {
     &:hover {
@@ -547,6 +534,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .holiday-mode {
     height: auto;
@@ -599,6 +587,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .grid {
     width: 1102px;
@@ -611,16 +600,19 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .grid {
     width: 990px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .grid {
     width: 745px;
   }
 }
+
 @media(max-width: 767px) {
   .grid {
     margin-bottom: 2rem;
@@ -705,6 +697,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .home-outside {
     .content {
@@ -736,6 +729,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .home-outside {
     .content {
@@ -839,6 +833,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .home-inside {
     .content {
@@ -876,7 +871,7 @@
 .tab {
   margin-bottom: 2.5rem;
   @include center-content();
-  @extend.clearfix;
+  @extend .clearfix;
   a {
     display: block;
     margin-bottom: .5rem;
@@ -897,17 +892,18 @@
       font-size: 1rem;
       &:first-of-type {
         text-transform: capitalize;
-        transition: display 0.4s ease 0s;
+        transition: display .4s ease 0s;
       }
       &:last-of-type {
         display: none;
         padding-left: .1em;
         letter-spacing: .1em;
-        transition: display 0.4s ease 0s;
+        transition: display .4s ease 0s;
       }
     }
   }
 }
+
 @media (min-width: 1200px) {
   .tab {
     a {
@@ -926,6 +922,7 @@
     }
   }
 }
+
 @media (max-width: 991px) {
   .tab {
     a {
@@ -945,13 +942,14 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .tab {
     a {
       height: 2.5rem;
       line-height: 2.5rem;
       width: 100%;
-      float: none;     
+      float: none;
     }
   }
 }
@@ -1002,6 +1000,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .work {
     h2 {
@@ -1015,6 +1014,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .work {
     z-index: 3;
@@ -1075,7 +1075,7 @@
         text-transform: capitalize;
         color: #fff;
         font-weight: normal;
-        @include transition(0.4s);
+        @include transition(.4s);
         &:first-of-type {
           margin-bottom: .625rem;
           font-size: 0;
@@ -1086,8 +1086,8 @@
             padding-left: .8rem;
             font-size: 2rem;
             background-color: $text-color;
-            letter-spacing: 0.05em;
-            @include transition(0.4s);
+            letter-spacing: .05em;
+            @include transition(.4s);
           }
         }
         &:last-of-type {
@@ -1114,6 +1114,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .home-innovation {
     li {
@@ -1137,6 +1138,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .home-innovation {
     li {
@@ -1146,6 +1148,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .home-innovation {
     li {
@@ -1155,6 +1158,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .home-innovation {
     li {
@@ -1168,7 +1172,7 @@
         padding-right: 0;
       }
     }
-  }  
+  }
 }
 
 /*合作伙伴*/
@@ -1200,6 +1204,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .cooperation {
     ul {
@@ -1215,6 +1220,7 @@
     }
   }
 }
+
 /*@media (max-width: 767px) {
   .cooperation {
     ul {
@@ -1310,6 +1316,7 @@
     }
   }
 }
+
 @media (max-width: 480px) {
   #footer {
     .footer-left {
@@ -1320,44 +1327,45 @@
     }
   }
 }
+
 /*底部左侧快捷导航*/
 #quickNav {
   $height: 34px;
   margin-bottom: 1rem;
   > ul {
-      border-bottom: 1px solid #808080;
-      height: $height;
-      @extend .clearfix;
-      li {
-        float: left;
-        margin-right: 2rem;
-        &:last-of-type {
-          margin-right: 0;
-        }
-        a {
+    border-bottom: 1px solid #808080;
+    height: $height;
+    @extend .clearfix;
+    li {
+      float: left;
+      margin-right: 2rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      a {
+        display: block;
+        padding-right: .4em;
+        padding-left: .4em;
+        font-size: 1rem;
+        height: $height;
+        line-height: $height;
+        strong {
           display: block;
-          padding-right: .4em;
-          padding-left: .4em;
-          font-size: 1rem;
-          height: $height;
-          line-height: $height;
-          strong {
-            display: block;
-            color: #909090;
-            text-transform: capitalize;
-            font-weight: lighter;
-            &:last-of-type {
-              display: none;
-              color: #fff;
-              font-family: "scalasans" !important;
-            }
-            &:last-of-type {
-              display: none;
-            }
+          color: #909090;
+          text-transform: capitalize;
+          font-weight: lighter;
+          &:last-of-type {
+            display: none;
+            color: #fff;
+            font-family: "scalasans" !important;
+          }
+          &:last-of-type {
+            display: none;
           }
         }
       }
     }
+  }
   > .quickSubMenu {
     padding-top: .8rem;
     padding-bottom: .8rem;
@@ -1420,7 +1428,8 @@
     }
   }
 }
-@media (max-width: 1199px){
+
+@media (max-width: 1199px) {
   #footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -1449,7 +1458,7 @@
   i {
     $size: 3rem;
     display: block;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, .7);
     border: 1px solid $text-color;
     color: $text-color;
     width: $size;
@@ -1460,6 +1469,7 @@
     @include transition();
   }
 }
+
 @media (min-width: 1200px) {
   #toTop {
     bottom: 19.375rem;
@@ -1473,6 +1483,7 @@
     }
   }
 }
+
 @media (max-width: 1199px) {
   #toTop {
     bottom: 50%;
@@ -1485,12 +1496,14 @@
 #footer.contact-footer {
   margin-top: 0;
 }
+
 .contact-main {
   display: block;
   background-color: $text-color;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
 .contact-heading {
   @include center-content();
   line-height: 1.1;
@@ -1510,6 +1523,7 @@
     letter-spacing: .1em;
   }
 }
+
 @media (max-width: 767px) {
   .contact-heading {
     h1 {
@@ -1517,6 +1531,7 @@
     }
   }
 }
+
 // 地图
 .map-list {
   @include center-content();
@@ -1561,6 +1576,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .map-list {
     li {
@@ -1570,6 +1586,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .map-list {
     li {
@@ -1579,6 +1596,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .map-list {
     li {
@@ -1665,6 +1683,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-recommend {
     height: 21.45rem;
@@ -1699,6 +1718,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-recommend {
     height: 15rem;
@@ -1732,6 +1752,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .talk-recommend {
     height: auto;
@@ -1800,7 +1821,7 @@
       font-size: 2rem;
       text-transform: capitalize;
       letter-spacing: .05em;
-      @include transition(0.3s);
+      @include transition(.3s);
       &:hover,
       &.active {
         color: $main-color;
@@ -1859,7 +1880,7 @@
               }
               margin-bottom: .8rem;
               text-decoration: underline;
-              @include transition(0.4s);
+              @include transition(.4s);
             }
             &:last-of-type {
               font-size: 1rem;
@@ -1868,7 +1889,7 @@
               @media (min-width: 768px) {
                 max-height: 1.5em;
               }
-              @include transition(0.4s);
+              @include transition(.4s);
             }
           }
         }
@@ -1882,7 +1903,7 @@
             font-size: 1rem;
             font-weight: lighter;
             font-style: italic;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
           a {
             display: block;
@@ -1896,7 +1917,7 @@
             font-size: 1rem;
             font-weight: lighter;
             color: $text-color;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
         }
       }
@@ -1916,6 +1937,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .tab-content {
     > ul {
@@ -1960,6 +1982,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .tab-content {
     > ul {
@@ -1979,6 +2002,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .tab-content {
     > ul {
@@ -1998,6 +2022,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .tab-content {
     margin-top: 0;
@@ -2062,6 +2087,7 @@
   margin-bottom: 2rem;
   letter-spacing: .1em;
 }
+
 @media (max-width: 767px) {
   .talk-heading {
     margin-bottom: 0;
@@ -2113,7 +2139,7 @@
             }
             margin-bottom: .8rem;
             text-decoration: underline;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
           &.cn {
             font-size: 1rem;
@@ -2122,7 +2148,7 @@
               max-height: 1.5em;
             }
             margin-bottom: .5rem;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
         }
       }
@@ -2148,6 +2174,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) {
   .talk-details-list {
     @include center-content();
@@ -2178,6 +2205,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-list {
     li {
@@ -2195,6 +2223,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-list {
     li {
@@ -2212,6 +2241,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .talk-details-list {
     width: 100%;
@@ -2254,6 +2284,7 @@
 .about-carousel {
   position: relative;
 }
+
 .about-carousel-inner {
   position: relative;
   width: 100%;
@@ -2273,6 +2304,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .about-carousel-inner {
     position: static;
@@ -2290,12 +2322,12 @@
     }
   }
 }
+
 @media all and (transform-3d), (-webkit-transform-3d) {
   .about-carousel-inner > .item {
     -webkit-transition: -webkit-transform .6s ease-in-out;
-    -o-transition:      -o-transform .6s ease-in-out;
-    transition:         transform .6s ease-in-out;
-
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
@@ -2322,36 +2354,45 @@
     }
   }
 }
+
 .about-carousel-inner > .active,
 .about-carousel-inner > .next,
 .about-carousel-inner > .prev {
   display: block;
 }
+
 .about-carousel-inner > .active {
   left: 0;
 }
+
 .about-carousel-inner > .next,
 .about-carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 .about-carousel-inner > .next {
   left: 100%;
 }
+
 .about-carousel-inner > .prev {
   left: -100%;
 }
+
 .about-carousel-inner > .next.left,
 .about-carousel-inner > .prev.right {
   left: 0;
 }
+
 .about-carousel-inner > .active.left {
   left: -100%;
 }
+
 .about-carousel-inner > .active.right {
   left: 100%;
 }
+
 .about-carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -2379,17 +2420,20 @@
     background-color: #fff;
   }
 }
+
 @media (min-width: 768px) {
   .about-carousel-indicators {
     bottom: 5rem;
   }
 }
+
 @media (max-width: 767px) {
   .about-carousel-indicators {
     top: 21rem;
     bottom: auto;
   }
 }
+
 /*轮播 end*/
 .about-heading {
   position: absolute;
@@ -2419,6 +2463,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .about-heading {
     position: static;
@@ -2436,6 +2481,7 @@
     }
   }
 }
+
 /*公司介绍*/
 .about {
   margin-top: 10rem;
@@ -2475,11 +2521,13 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .about {
     margin-top: 2rem;
   }
 }
+
 /*关于团队*/
 .team {
   @extend %page;
@@ -2512,6 +2560,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .team {
     margin-top: 2rem;
@@ -2524,6 +2573,7 @@
     }
   }
 }
+
 /*团队核心成员*/
 .team-member {
   ul {
@@ -2633,7 +2683,7 @@
       transform: rotate(225deg);
       transform-origin: center;
       margin-left: .6rem;
-      @include transition(0.4s);
+      @include transition(.4s);
     }
     @media (max-width: 1199px) {
       & {
@@ -2676,6 +2726,7 @@
     }
   }
 }
+
 /*合作伙伴*/
 .partner {
   margin-top: 3rem;
@@ -2774,6 +2825,7 @@
     }
   }
 }
+
 @media (min-width: 992px) {
   .partner {
     .partner-list {
@@ -2786,6 +2838,7 @@
     }
   }
 }
+
 @media (min-width: 480px) and (max-width: 991px) {
   .partner {
     .partner-list {
@@ -2798,6 +2851,7 @@
     }
   }
 }
+
 @media (max-width: 479px) {
   .partner {
     .partner-list {
@@ -2863,6 +2917,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .philosophy-banner {
     height: auto;
@@ -2906,7 +2961,7 @@
         .all-en {
           cursor: pointer;
           display: block;
-          background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1));
+          background-image: linear-gradient(to bottom, rgba(255, 255, 255, .6), rgba(255, 255, 255, 1));
           width: 100%;
           padding: 1rem 0 1rem .1em;
           text-align: center;
@@ -2918,6 +2973,7 @@
     }
   }
 }
+
 /*理念*/
 .philosophy-innovation {
   @include center-content();
@@ -2934,7 +2990,7 @@
         text-transform: capitalize;
         color: #fff;
         font-weight: normal;
-        @include transition(0.4s);
+        @include transition(.4s);
         &:first-of-type {
           margin-bottom: .625rem;
           font-size: 0;
@@ -2945,8 +3001,8 @@
             padding-left: .8rem;
             font-size: 2rem;
             background-color: $text-color;
-            letter-spacing: 0.05em;
-            @include transition(0.4s);
+            letter-spacing: .05em;
+            @include transition(.4s);
           }
         }
         &:last-of-type {
@@ -2988,6 +3044,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .philosophy-innovation {
     li {
@@ -3002,6 +3059,7 @@
     }
   }
 }
+
 /*合作伙伴*/
 .partner-bg {
   @extend %page;
@@ -3100,7 +3158,7 @@
         padding: 3rem;
         h3 {
           font-weight: normal;
-          @include transition(0.4s);
+          @include transition(.4s);
           span {
             display: block;
             &.en {
@@ -3132,7 +3190,7 @@
           padding: .3rem 1rem;
           color: $text-color;
           border: 1px solid $text-color;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
       }
       > figure {
@@ -3206,7 +3264,7 @@
             padding-left: 1rem;
           }
           .cn,
-          .intro{
+          .intro {
             background-color: $text-color;
             line-height: 2;
             padding-right: calc(1rem - .1em);
@@ -3230,12 +3288,13 @@
           border: 1px solid;
           padding: .3rem 1rem;
           font-size: 1rem;
-          @include transition(0.3s);
+          @include transition(.3s);
         }
       }
     }
   }
 }
+
 @media (min-width: 1200px) {
   .idea-show {
     .idea-side-right {
@@ -3284,6 +3343,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .idea-show {
     height: 50rem;
@@ -3299,6 +3359,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-show {
     height: 40rem;
@@ -3358,6 +3419,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-show {
     height: 480px;
@@ -3417,6 +3479,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .idea-show {
     height: auto;
@@ -3540,6 +3603,7 @@
   padding-left: .1em;
   letter-spacing: .1em;
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-heading {
     height: 5.5rem;
@@ -3547,6 +3611,7 @@
     font-size: 2.5rem;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-heading {
     height: 4.5rem;
@@ -3554,6 +3619,7 @@
     font-size: 2rem;
   }
 }
+
 @media (max-width: 767px) {
   .idea-heading {
     margin-bottom: 0;
@@ -3619,7 +3685,7 @@
         padding: .3rem 1rem;
         color: $text-color;
         border: 1px solid;
-        @include transition(0.4s);
+        @include transition(.4s);
       }
     }
   }
@@ -3633,9 +3699,10 @@
     border: 2px solid;
     cursor: pointer;
     font-size: 2rem;
-    @include transition(0.4s);
+    @include transition(.4s);
   }
 }
+
 @media (min-width: 1200px) {
   .idea-list {
     li {
@@ -3670,6 +3737,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-list {
     li {
@@ -3690,6 +3758,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-list {
     li {
@@ -3710,6 +3779,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .idea-list {
     width: 100%;
@@ -3809,6 +3879,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .idea-intro {
     .intro {
@@ -3818,6 +3889,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-intro {
     .intro {
@@ -3827,6 +3899,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-intro {
     .intro {
@@ -3836,6 +3909,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .idea-intro {
     height: auto;
@@ -3926,7 +4000,7 @@
             }
             margin-bottom: .5rem;
             text-decoration: underline;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
           &.cn {
             font-size: 1rem;
@@ -3939,7 +4013,7 @@
             @media (min-width: 768px) {
               max-height: 1.5em;
             }
-            @include transition(0.4s);
+            @include transition(.4s);
           }
         }
       }
@@ -3964,12 +4038,13 @@
           font-size: 1rem;
           font-weight: lighter;
           color: $text-color;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
       }
     }
   }
 }
+
 @media (min-width: 1200px) {
   .idea-details-list {
     li {
@@ -4007,6 +4082,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .idea-details-list {
     li {
@@ -4024,6 +4100,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .idea-details-list {
     li {
@@ -4041,6 +4118,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .idea-details-list {
     width: 100%;
@@ -4119,6 +4197,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-banner {
     h3 {
@@ -4133,6 +4212,7 @@
     }
   }
 }
+
 @media (max-width: 1199px) {
   .project-banner {
     h3 {
@@ -4144,6 +4224,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-banner {
     h3 {
@@ -4156,6 +4237,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .project-banner {
     h3 {
@@ -4168,6 +4250,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .project-banner {
     width: 100%;
@@ -4215,6 +4298,7 @@
     top: 0;
   }
 }
+
 @media (min-width: 1200px) {
   .project-list-content {
     li {
@@ -4240,14 +4324,14 @@
         padding: 1rem 1.4rem 0;
         color: $text-color;
         border-top: 5px solid;
-        @include transition(0.4s);
+        @include transition(.4s);
         a {
           display: block;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
         span {
           display: block;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
         .en {
           font-size: 1.5rem;
@@ -4267,7 +4351,7 @@
         line-height: 2em;
         color: $text-color;
         letter-spacing: .1em;
-        @include transition(0.4s);
+        @include transition(.4s);
       }
       &:hover {
         h4 {
@@ -4296,7 +4380,7 @@
       background-color: #fff;
       //margin-bottom: 2rem;
       margin-top: 1rem;
-      @include transition(0.4s);
+      @include transition(.4s);
       &:hover {
         color: $main-color;
       }
@@ -4322,7 +4406,7 @@
         padding-right: .875rem;
         padding-left: .875rem;
         font-size: 0;
-        @include transition(0.4s);
+        @include transition(.4s);
         strong {
           display: inline-block;
           vertical-align: middle;
@@ -4350,6 +4434,7 @@
     }
   }
 }
+
 @media (min-width: 1600px) {
   .project-list-classify {
     width: 17%;
@@ -4362,6 +4447,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-list-classify {
     width: 23%;
@@ -4374,6 +4460,7 @@
     }
   }
 }
+
 @media (max-width: 1199px) {
   .all-project {
     .project-list-classify {
@@ -4398,13 +4485,13 @@
           border-top: .875rem solid $text-color;
           border-right: .5rem solid transparent;
           border-left: .5rem solid transparent;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
         i {
           color: $text-color;
           font-size: 1.6rem;
           font-weight: 500;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
       }
       ul {
@@ -4432,7 +4519,7 @@
           border: 1px solid;
           strong {
             display: block;
-            @include transition(0.4s);
+            @include transition(.4s);
             text-align: center;
             &:first-of-type {
               margin-bottom: .2rem;
@@ -4444,7 +4531,7 @@
             }
           }
           &:hover
-          &.active{
+          &.active {
             background-color: $main-color;
           }
         }
@@ -4496,8 +4583,8 @@
       }
     }
   }
-
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-list-content {
     li {
@@ -4523,6 +4610,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .project-list-content {
     li {
@@ -4548,6 +4636,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .all-project {
     .project-list-content {
@@ -4619,7 +4708,7 @@
             }
             margin-bottom: .8rem;
             text-decoration: underline;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
           &.cn {
             font-size: 1rem;
@@ -4629,7 +4718,7 @@
               max-height: 1.5em;
             }
             margin-bottom: .5rem;
-            @include transition(0.4s);
+            @include transition(.4s);
           }
         }
       }
@@ -4654,12 +4743,13 @@
           font-size: 1rem;
           font-weight: lighter;
           color: $text-color;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
       }
     }
   }
 }
+
 @media (min-width: 1200px) {
   .project-list {
     @include center-content();
@@ -4698,6 +4788,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-list {
     li {
@@ -4715,12 +4806,13 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .project-list {
     li {
       height: 11.9rem;
       .text {
-        padding: 1rem 0.8rem;
+        padding: 1rem .8rem;
         h2 {
           span {
             &:first-of-type {
@@ -4732,6 +4824,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .project-list {
     width: 100%;
@@ -4854,6 +4947,7 @@
     }
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-intro {
     .intro {
@@ -4863,6 +4957,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-intro {
     .intro {
@@ -4872,6 +4967,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .project-intro {
     .intro {
@@ -4881,6 +4977,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .project-intro {
     height: auto;
@@ -4931,6 +5028,7 @@
   height: 45.25rem;
   margin-bottom: 2rem;
 }
+
 .project-carousel-inner {
   position: relative;
   width: 67%;
@@ -4954,12 +5052,12 @@
     }
   }
 }
+
 @media all and (transform-3d), (-webkit-transform-3d) {
   .project-carousel-inner > .item {
     -webkit-transition: -webkit-transform .6s ease-in-out;
-    -o-transition:      -o-transform .6s ease-in-out;
-    transition:         transform .6s ease-in-out;
-
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
@@ -4985,33 +5083,41 @@
     }
   }
 }
+
 .project-carousel-inner > .active,
 .project-carousel-inner > .next,
 .project-carousel-inner > .prev {
   display: block;
 }
+
 .project-carousel-inner > .active {
   left: 0;
 }
+
 .project-carousel-inner > .next,
 .project-carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 .project-carousel-inner > .next {
   left: 100%;
 }
+
 .project-carousel-inner > .prev {
   left: -100%;
 }
+
 .project-carousel-inner > .next.left,
 .project-carousel-inner > .prev.right {
   left: 0;
 }
+
 .project-carousel-inner > .active.left {
   left: -100%;
 }
+
 .project-carousel-inner > .active.right {
   left: 100%;
 }
@@ -5048,6 +5154,7 @@
     }
   }
 }
+
 .project-carousel-indicators li {
   margin-bottom: 1.6rem;
   color: #808080;
@@ -5073,9 +5180,11 @@
     letter-spacing: .1em;
   }
 }
+
 .project-carousel-indicators .active {
   color: $text-color;
 }
+
 @media screen and (min-width: 768px) {
   .project-carousel-indicators {
     bottom: 5rem;
@@ -5087,6 +5196,7 @@
     margin-bottom: 1.4rem;
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1599px) {
   .project-carousel {
     height: 40rem;
@@ -5110,6 +5220,7 @@
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .project-carousel {
     height: 36rem;
@@ -5133,6 +5244,7 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .project-carousel {
     height: 32rem;
@@ -5156,6 +5268,7 @@
     }
   }
 }
+
 @media (min-width: 768px) {
   .project-carousel-indicators-min767 {
     li {
@@ -5168,6 +5281,7 @@
     }
   }
 }
+
 @media (max-width: 767px) {
   .project-carousel {
     position: static;
@@ -5180,7 +5294,7 @@
     float: none;
     > .item {
       img,
-      a img{
+      a img {
         object-fit: fill;
         display: block;
         max-width: 100%;
@@ -5189,7 +5303,6 @@
         overflow: hidden;
       }
       .carousel-caption {
-
       }
     }
   }
@@ -5233,6 +5346,7 @@
     }
   }
 }
+
 /*针对手机端特殊处理banner图部分*/
 @media (min-width: 768px) {
   #carousel-example-generic {
@@ -5242,6 +5356,7 @@
     display: none;
   }
 }
+
 @media (max-width: 767px) {
   #carousel-example-generic {
     display: none;
@@ -5295,7 +5410,6 @@
     }
   }
 }
-
 
 /*文章部分*/
 article {
@@ -5352,6 +5466,7 @@ article {
     }
   }
 }
+
 @media (max-width: 767px) {
   article {
     width: 100%;
@@ -5368,6 +5483,7 @@ article {
     }
   }
 }
+
 .project-heading {
   @extend %page;
   height: 3.8rem;
@@ -5382,6 +5498,7 @@ article {
   letter-spacing: .1em;
   padding-left: .1em;
 }
+
 @media (max-width: 767px) {
   .project-heading {
     margin-bottom: 0;
@@ -5393,14 +5510,14 @@ article {
   @include center-content();
   margin-bottom: 2rem;
   li {
-    margin-bottom: 0.75rem;
+    margin-bottom: .75rem;
     background-color: #fff;
     padding-bottom: 1rem;
     @media(min-width: 768px) {
       & {
         width: 32.23333333%;
-        margin-left: 0.55%;
-        margin-right: 0.55%;
+        margin-left: .55%;
+        margin-right: .55%;
       }
     }
     img {
@@ -5415,7 +5532,7 @@ article {
       padding: 1rem .8rem 0;
       color: $text-color;
       border-top: 5px solid;
-      @include transition(0.4s);
+      @include transition(.4s);
       span {
         display: block;
       }
@@ -5438,10 +5555,11 @@ article {
       line-height: 2;
       letter-spacing: .1em;
       color: $text-color;
-      @include transition(0.4s);
+      @include transition(.4s);
     }
   }
 }
+
 @media (min-width: 1200px) {
   .new-projects-list {
     width: 68.85rem;
@@ -5457,28 +5575,31 @@ article {
       &:hover {
         h4 {
           span {
-            @include transition(0.4s);
+            @include transition(.4s);
           }
           color: $main-color;
         }
         p {
           color: $main-color;
-          @include transition(0.4s);
+          @include transition(.4s);
         }
       }
     }
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .new-projects-list {
     width: 65.4rem;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .new-projects-list {
     width: 52.65rem;
   }
 }
+
 @media(max-width: 767px) {
   .new-projects-list {
     margin-bottom: 0;
@@ -5498,6 +5619,7 @@ article {
   padding-bottom: 10%;
   margin-bottom: -2rem;
 }
+
 .project-classify-list {
   @include center-content();
   height: 100%;
@@ -5518,7 +5640,7 @@ article {
       text-align: center;
       color: #fff;
       border: 1px solid;
-      @include transition(0.4s);
+      @include transition(.4s);
       &:hover {
         color: $main-color;
       }
@@ -5541,6 +5663,7 @@ article {
     }
   }
 }
+
 @media (max-width: 767px) {
   .project-classify-list {
     li {
@@ -5627,6 +5750,7 @@ article {
     cursor: pointer;
   }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .talk-details-banner {
     .heading {
@@ -5642,6 +5766,7 @@ article {
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .talk-details-banner {
     .heading {
@@ -5657,6 +5782,7 @@ article {
     }
   }
 }
+
 @media (max-width: 767px) {
   .talk-details-banner {
     margin-bottom: 0;

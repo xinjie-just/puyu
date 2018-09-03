@@ -179,7 +179,7 @@ dfn {
 article h1,
 section h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: .67em 0;
 }
 
 mark {
@@ -199,11 +199,11 @@ sub, sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 /* ===嵌入式内容=== */
@@ -285,7 +285,7 @@ button:-moz-focusring,
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
 }
 
 legend {
@@ -324,7 +324,7 @@ textarea {
 
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54;
+  opacity: .54;
 }
 
 ::-webkit-file-upload-button {
@@ -496,6 +496,12 @@ label.error {
   width: 13.75rem;
   height: 6.25rem;
 }
+@media (max-width: 767px) {
+  #header .logo {
+    height: 5rem;
+    width: 9rem;
+  }
+}
 #header .logo i {
   display: block;
   font-size: 2.8rem;
@@ -506,19 +512,15 @@ label.error {
   transform: translateY(-50%);
   transition: all 0.4s linear 0s;
 }
+@media (max-width: 767px) {
+  #header .logo i {
+    font-size: 1.8rem;
+  }
+}
 
 @media (min-width: 1200px) {
   #header .logo a:hover i {
     color: #f7ac3b;
-  }
-}
-@media (max-width: 767px) {
-  #header .logo {
-    height: 5rem;
-    width: 9rem;
-  }
-  #header .logo i {
-    font-size: 1.8rem;
   }
 }
 /*导航*/
@@ -535,10 +537,9 @@ label.error {
     position: relative;
     height: 6.25rem;
     float: left;
-    margin-right: 2rem;
   }
-  #nav > ul > li:last-of-type {
-    margin-right: 0;
+  #nav > ul > li:not(:last-of-type) {
+    margin-right: 2rem;
   }
   #nav > ul > li > a {
     position: relative;
@@ -753,6 +754,14 @@ label.error {
 }
 
 /*未来空间产品定义者*/
+@media (max-width: 767px) {
+  .home-banner,
+  .home-media {
+    position: static;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
 .home-banner .future-space-definer,
 .home-media .future-space-definer {
   z-index: 9;
@@ -788,6 +797,15 @@ label.error {
     width: 87.5%;
   }
 }
+@media (max-width: 767px) {
+  .home-banner .future-space-definer,
+  .home-media .future-space-definer {
+    position: static;
+    width: 100%;
+    bottom: auto;
+    transform: translateX(0);
+  }
+}
 .home-banner .future-space-definer h2,
 .home-media .future-space-definer h2 {
   width: 25.5rem;
@@ -798,6 +816,28 @@ label.error {
   color: #000;
   line-height: 1.1;
   overflow-y: auto;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
+    padding: .8rem 1.875rem 1.1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
+    padding: .6rem 1.375rem .9rem;
+  }
+}
+@media (max-width: 767px) {
+  .home-banner .future-space-definer h2,
+  .home-media .future-space-definer h2 {
+    padding: .4rem .875rem .7rem;
+    width: 100%;
+    height: auto;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+  }
 }
 .home-banner .future-space-definer h2 span,
 .home-media .future-space-definer h2 span {
@@ -810,6 +850,24 @@ label.error {
   letter-spacing: .05em;
   margin-left: -.1em;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .home-banner .future-space-definer h2 span.en,
+  .home-media .future-space-definer h2 span.en {
+    font-size: 2rem;
+  }
+}
 .home-banner .future-space-definer h2 span.cn,
 .home-media .future-space-definer h2 span.cn {
   margin-top: .8rem;
@@ -817,53 +875,7 @@ label.error {
   letter-spacing: .3em;
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .home-banner .future-space-definer h2,
-  .home-media .future-space-definer h2 {
-    padding: .8rem 1.875rem 1.1rem;
-  }
-  .home-banner .future-space-definer h2 span.en,
-  .home-media .future-space-definer h2 span.en {
-    font-size: 4rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .home-banner .future-space-definer h2,
-  .home-media .future-space-definer h2 {
-    padding: .6rem 1.375rem .9rem;
-  }
-  .home-banner .future-space-definer h2 span.en,
-  .home-media .future-space-definer h2 span.en {
-    font-size: 3rem;
-  }
-}
 @media (max-width: 767px) {
-  .home-banner,
-  .home-media {
-    position: static;
-    width: 100%;
-    margin-bottom: 0;
-  }
-  .home-banner .future-space-definer,
-  .home-media .future-space-definer {
-    position: static;
-    width: 100%;
-    bottom: auto;
-    transform: translateX(0);
-  }
-  .home-banner .future-space-definer h2,
-  .home-media .future-space-definer h2 {
-    padding: .4rem .875rem .7rem;
-    width: 100%;
-    height: auto;
-    border-top: 5px solid #000;
-    border-bottom: 5px solid #000;
-  }
-  .home-banner .future-space-definer h2 span.en,
-  .home-media .future-space-definer h2 span.en {
-    font-size: 2rem;
-  }
-
   .home-banner img,
   .home-media video {
     z-index: 4;
@@ -1377,13 +1389,13 @@ label.error {
 }
 .tab a strong:first-of-type {
   text-transform: capitalize;
-  transition: display 0.4s ease 0s;
+  transition: display .4s ease 0s;
 }
 .tab a strong:last-of-type {
   display: none;
   padding-left: .1em;
   letter-spacing: .1em;
-  transition: display 0.4s ease 0s;
+  transition: display .4s ease 0s;
 }
 
 @media (min-width: 1200px) {
@@ -1597,7 +1609,7 @@ label.error {
   padding-left: .8rem;
   font-size: 2rem;
   background-color: #000;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   transition: all 0.4s linear 0s;
 }
 .home-innovation li h3 strong:last-of-type {
@@ -3837,7 +3849,7 @@ label.error {
   padding-left: .8rem;
   font-size: 2rem;
   background-color: #000;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   transition: all 0.4s linear 0s;
 }
 .philosophy-innovation li h3 strong:last-of-type {
@@ -5774,7 +5786,7 @@ label.error {
     height: 11.9rem;
   }
   .project-list li .text {
-    padding: 1rem 0.8rem;
+    padding: 1rem .8rem;
   }
   .project-list li .text h2 span:first-of-type {
     font-size: 1.6rem;
@@ -6607,15 +6619,15 @@ article img + div p {
   }
 }
 .new-projects-list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: .75rem;
   background-color: #fff;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .new-projects-list li {
     width: 32.23333333%;
-    margin-left: 0.55%;
-    margin-right: 0.55%;
+    margin-left: .55%;
+    margin-right: .55%;
   }
 }
 .new-projects-list li img {

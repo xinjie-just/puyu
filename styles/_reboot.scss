@@ -66,7 +66,7 @@ html {
   }
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
 //设置所有元素的盒模型，将内填充和边距算在宽或高之列
@@ -198,7 +198,7 @@ dfn {
 article h1,
 section h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: .67em 0;
 }
 
 //在 IE 9 及之前的浏览器版本中为 mark 元素添加背景颜色和字体颜色
@@ -222,12 +222,12 @@ small {
 
 sub {
   @extend %sub-sup;
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
   @extend %sub-sup;
-  top: -0.5em;
+  top: -.5em;
 }
 
 
@@ -328,7 +328,7 @@ button:-moz-focusring,
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
 }
 
 //在 Edge 和 IE 中纠正文本包裹
@@ -377,7 +377,7 @@ textarea {
 //纠正在 Chrome, Edge 和 Safari 中文本占位符属性的样式
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54;
+  opacity: .54;
 }
 
 //纠正在 iOS 和 Safair 中可点击类型不能点击的样式
@@ -439,7 +439,7 @@ figure {
   }
 }
 
-@mixin transition($duration: 0.6s) {
+@mixin transition($duration: .6s) {
   transition: all $duration linear 0s;
 }
 
@@ -524,11 +524,12 @@ label.error {
 
 /*===矢量图标字体===*/
 
-@font-face {font-family: "iconfont";
-  src: url('../fonts/iconfont.eot?t=1507811847829'); /* IE9*/
-  src: url('../fonts/iconfont.eot?t=1507811847829#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../fonts/iconfont.ttf?t=1507811847829') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../fonts/iconfont.svg?t=1507811847829#iconfont') format('svg'); /* iOS 4.1- */
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot?t=1507811847829"); /* IE9*/
+  src: url("../fonts/iconfont.eot?t=1507811847829#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/iconfont.ttf?t=1507811847829") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url("../fonts/iconfont.svg?t=1507811847829#iconfont") format("svg"); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -539,15 +540,33 @@ label.error {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-totop:before { content: "\e68a"; }
-.icon-weibo:before { content: "\e603"; }
-.icon-weixin:before { content: "\e604"; }
-.icon-purelogo:before { content: "\e605"; }
-.icon-menu:before { content: "\e606"; }
-.icon-close:before { content: "\e607"; }
-.icon-chengdumap:before { content: "\e60d"; }
-.icon-chongqingmap:before { content: "\e60e"; }
-.icon-shanghaimap:before { content: "\e60f"; }
+.icon-totop:before {
+  content: "\e68a";
+}
+.icon-weibo:before {
+  content: "\e603";
+}
+.icon-weixin:before {
+  content: "\e604";
+}
+.icon-purelogo:before {
+  content: "\e605";
+}
+.icon-menu:before {
+  content: "\e606";
+}
+.icon-close:before {
+  content: "\e607";
+}
+.icon-chengdumap:before {
+  content: "\e60d";
+}
+.icon-chongqingmap:before {
+  content: "\e60e";
+}
+.icon-shanghaimap:before {
+  content: "\e60f";
+}
 
 
 
@@ -555,8 +574,8 @@ label.error {
 @font-face {
   font-family: "scalasans";
   src: url("../fonts/ScalaSans.otf"),
-       url("../fonts/scalasans-webfont.woff"),
-       url("../fonts/scalasans-webfont.woff2");
+  url("../fonts/scalasans-webfont.woff"),
+  url("../fonts/scalasans-webfont.woff2");
 }
 .special-fonts,
 .en {
