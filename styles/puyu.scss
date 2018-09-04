@@ -10,11 +10,8 @@
   @extend %page;
   position: relative;
   background-color: #eee;
-  padding: {
-    right: $size - 2rem;
-    left: $size - 2rem;
-  }
-;
+  padding-right: $size - 2rem;
+  padding-left: $size - 2rem;
   @extend .clearfix;
   .logo {
     float: left;
@@ -127,10 +124,8 @@
           position: absolute;
           top: $size;
           left: 0;
-          border: {
-            top: 1px solid $text-color;
-            bottom: 1px solid $text-color;
-          }
+          border-top: 1px solid $text-color;
+          border-bottom: 1px solid $text-color;
           background-color: rgba(255, 255, 255, .8);
           li {
             border: {
@@ -1538,7 +1533,6 @@
   @extend .clearfix;
   border-bottom: 2px solid #606060;
   padding-bottom: 1rem;
-  //margin-bottom: -2rem;
   li {
     float: left;
     width: 30%;
@@ -1548,6 +1542,10 @@
     &:last-of-type {
       margin-right: 0;
     }
+    @media (max-width: 767px) {
+      float: none;
+      width: 100%;
+    }
     .map {
       display: block;
       margin-bottom: 1rem;
@@ -1556,6 +1554,12 @@
       @include transition();
       &:hover {
         color: $main-color;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 18rem;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 14rem;
       }
     }
     .address-en {
@@ -1577,34 +1581,6 @@
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .map-list {
-    li {
-      .map {
-        font-size: 18rem;
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .map-list {
-    li {
-      .map {
-        font-size: 14rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .map-list {
-    li {
-      float: none;
-      width: 100%;
-    }
-  }
-}
 
 // 招聘
 .join-us {
@@ -1622,6 +1598,15 @@
 .talk-recommend {
   @extend .clearfix;
   height: 39rem;
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height: 21.45rem;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: 15rem;
+  }
+  @media (max-width: 767px) {
+    height: auto;
+  }
   > img {
     float: left;
     display: block;
@@ -1630,6 +1615,17 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    @media (min-width: 992px) and (max-width: 1199px) {
+      width: 38.5rem;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      width: 26rem;
+    }
+    @media (max-width: 767px) {
+      float: none;
+      width: 100%;
+      height: auto;
+    }
   }
   > .text {
     background-color: #fff;
@@ -1638,8 +1634,25 @@
     height: 100%;
     border-top: .3rem solid $text-color;
     padding: 3rem;
+    @media (min-width: 992px) and (max-width: 1199px) {
+      width: calc(100% - 38.5rem);
+      padding: 2rem;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      width: calc(100% - 26rem);
+      padding: 1rem;
+    }
+    @media (max-width: 767px) {
+      float: none;
+      width: 100%;
+      height: auto;
+      padding: 1.5rem 0;
+    }
     h2 {
       font-weight: normal;
+      @media (max-width: 767px) {
+        @include center-content();
+      }
       span {
         display: block;
         color: $text-color;
@@ -1648,6 +1661,22 @@
           line-height: 1.2em;
           max-height: 2.4em;
           margin-bottom: .5rem;
+          @media (min-width: 992px) and (max-width: 1199px) {
+            font-size: 1.75rem;
+            line-height: 1.3em;
+            max-height: 2.6em;
+            margin-bottom: .5rem;
+          }
+          @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 1.25rem;
+            line-height: 1.4em;
+            max-height: 2.8em;
+          }
+          @media (max-width: 767px) {
+            font-size: 1.25rem;
+            line-height: 1.5em;
+            max-height: none;
+          }
         }
         &.cn {
           font-size: 1.125rem;
@@ -1655,6 +1684,11 @@
           letter-spacing: .1em;
           margin-bottom: .3rem;
           @extend %ellipsis;
+          @media (max-width: 767px) {
+            font-size: 1rem;
+            overflow: visible;
+            white-space: normal;
+          }
         }
       }
     }
@@ -1663,6 +1697,16 @@
       font-size: .875rem;
       font-style: italic;
       margin-bottom: 5rem;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        margin-bottom: .5rem;
+      }
+      @media (max-width: 767px) {
+        @include center-content();
+        margin-bottom: .5rem;
+      }
     }
     p {
       line-height: 2em;
@@ -1671,6 +1715,20 @@
       max-height: 6em;
       margin-bottom: 2rem;
       letter-spacing: .1em;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        max-height: 4em;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        max-height: 4em;
+        margin-bottom: .5rem;
+      }
+      @media (max-width: 767px) {
+        @include center-content();
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        font-size: .875rem;
+      }
     }
     .read-all {
       display: inline-block;
@@ -1688,124 +1746,22 @@
       font-size: 1.125rem;
       font-weight: lighter;
       @include transition();
-      &:hover {
-        border-color: $main-color;
-        color: $main-color;
-      }
-    }
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .talk-recommend {
-    height: 21.45rem;
-    > img {
-      width: 38.5rem;
-    }
-    > .text {
-      width: calc(100% - 38.5rem);
-      padding: 2rem;
-      h2 {
-        span {
-          &.en {
-            font-size: 1.75rem;
-            line-height: 1.3em;
-            max-height: 2.6em;
-            margin-bottom: .5rem;
-          }
-        }
-      }
-      time {
-        margin-bottom: 1rem;
-      }
-      p {
-        max-height: 4em;
-        margin-bottom: 1rem;
-      }
-      .more {
+      @media (min-width: 992px) and (max-width: 1199px) {
         width: 9rem;
         height: 2rem;
         line-height: 2rem;
       }
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .talk-recommend {
-    height: 15rem;
-    > img {
-      width: 26rem;
-    }
-    > .text {
-      width: calc(100% - 26rem);
-      padding: 1rem;
-      h2 {
-        span {
-          &.en {
-            font-size: 1.25rem;
-            line-height: 1.4em;
-            max-height: 2.8em;
-          }
-        }
-      }
-      time {
-        margin-bottom: .5rem;
-      }
-      p {
-        max-height: 4em;
-        margin-bottom: .5rem;
-      }
-      .more {
+      @media (min-width: 768px) and (max-width: 991px) {
         width: 8rem;
         height: 1.8rem;
         line-height: 1.8rem;
       }
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .talk-recommend {
-    height: auto;
-    > img {
-      float: none;
-      width: 100%;
-      height: auto;
-    }
-    > .text {
-      float: none;
-      width: 100%;
-      height: auto;
-      padding: 1.5rem 0;
-      h2 {
-        @include center-content();
-        span {
-          &.en {
-            font-size: 1.25rem;
-            line-height: 1.5em;
-            max-height: none;
-          }
-          &.cn {
-            font-size: 1rem;
-            overflow: visible;
-            //text-overflow: none;
-            white-space: normal;
-          }
-        }
-      }
-      time {
-        @include center-content();
-        margin-bottom: .5rem;
-      }
-      p {
-        @include center-content();
-        line-height: 1.8;
-        margin-bottom: 1rem;
-        font-size: .875rem;
-      }
-      .more {
+      @media (max-width: 767px) {
         margin-left: 6.25%;
+      }
+      &:hover {
+        border-color: $main-color;
+        color: $main-color;
       }
     }
   }
@@ -1845,20 +1801,41 @@
 .tab-content {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
   > ul {
     display: none;
     &.active {
       display: block;
       @include center-content();
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
     li {
       margin-bottom: 1.25rem;
       height: 15rem;
       @extend .clearfix;
+      @media (min-width: 992px) and (max-width: 1199px) {
+        height: 14.3rem;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        height: 11.9rem;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+        height: auto;
+      }
       figure {
         float: left;
         width: 40%;
         height: 100%;
+        @media (max-width: 767px) {
+          float: none;
+          width: 100%;
+          height: auto;
+        }
         a {
           width: 100%;
           height: 100%;
@@ -1868,6 +1845,22 @@
             @include transition();
           }
         }
+        @media (max-width: 767px) {
+          img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+        @media (min-width: 1200px) {
+            &:hover {
+              img {
+                @include scale();
+              }
+            }
+        }
       }
       .text {
         float: right;
@@ -1876,10 +1869,26 @@
         background-color: #fff;
         border-top: 5px solid $text-color;
         padding: 1.875rem 1.25rem;
+        @media (min-width: 992px) and (max-width: 1199px) {
+          padding: 1.4rem 1rem;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+          padding: 1rem .8rem;
+        }
+        @media (max-width: 767px) {
+          float: none;
+          height: auto;
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
         a {
           display: block;
         }
         h2 {
+          @media (max-width: 767px) {
+            @include center-content();
+          }
           span {
             font-weight: lighter;
             display: block;
@@ -1887,6 +1896,17 @@
             &:first-of-type {
               font-size: 1.75rem;
               line-height: 1.2em;
+              @media (min-width: 1200px) {
+                &:hover {
+                  color: $main-color;
+                }
+              }
+              @media (min-width: 992px) and (max-width: 1199px) {
+                font-size: 1.6rem;
+              }
+              @media (min-width: 768px) and (max-width: 991px) {
+                font-size: 1.3rem;
+              }
               @media (min-width: 768px) {
                 max-height: 2.4em;
               }
@@ -1898,6 +1918,11 @@
               font-size: 1rem;
               line-height: 1.5em;
               margin-bottom: .5rem;
+              @media (min-width: 1200px) {
+                &:hover {
+                  color: $main-color;
+                }
+              }
               @media (min-width: 768px) {
                 max-height: 1.5em;
               }
@@ -1907,6 +1932,9 @@
         }
         .time-and-more {
           @extend .clearfix;
+          @media (max-width: 767px) {
+            @include center-content();
+          }
           time {
             height: 1.8rem;
             line-height: 1.8rem;
@@ -1916,6 +1944,10 @@
             font-weight: lighter;
             font-style: italic;
             @include transition(.4s);
+            @media (max-width: 767px) {
+              float: none;
+              margin-bottom: .5rem;
+            }
           }
           a {
             display: block;
@@ -1930,6 +1962,15 @@
             font-weight: lighter;
             color: $text-color;
             @include transition(.4s);
+            @media (min-width: 1200px) {
+              &:hover {
+                border-color: $main-color;
+                color: $main-color;
+              }
+            }
+            @media (max-width: 767px) {
+              float: none;
+            }
           }
         }
       }
@@ -1946,139 +1987,12 @@
       background-color: #fff;
       @include transition();
       cursor: pointer;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .tab-content {
-    > ul {
-      li {
-        figure {
-          &:hover {
-            img {
-              @include scale();
-            }
-          }
-        }
-        .text {
-          h2 {
-            span {
-              &:first-of-type {
-                &:hover {
-                  color: $main-color;
-                }
-              }
-              &:last-of-type {
-                &:hover {
-                  color: $main-color;
-                }
-              }
-            }
-          }
-          .time-and-more {
-            a {
-              &:hover {
-                border-color: $main-color;
-                color: $main-color;
-              }
-            }
-          }
-        }
-      }
-      .more {
+      @media (min-width: 1200px) {
         &:hover {
           color: $main-color;
         }
       }
-    }
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .tab-content {
-    > ul {
-      li {
-        height: 14.3rem;
-        .text {
-          padding: 1.4rem 1rem;
-          h2 {
-            span {
-              &:first-of-type {
-                font-size: 1.6rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .tab-content {
-    > ul {
-      li {
-        height: 11.9rem;
-        .text {
-          padding: 1rem .8rem;
-          h2 {
-            span {
-              &:first-of-type {
-                font-size: 1.3rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .tab-content {
-    margin-top: 0;
-    > ul {
-      &.active {
-        width: 100%;
-      }
-      li {
-        margin-bottom: 0;
-        height: auto;
-        figure {
-          float: none;
-          width: 100%;
-          height: auto;
-          img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-          }
-        }
-        .text {
-          float: none;
-          height: auto;
-          width: 100%;
-          padding-left: 0;
-          padding-right: 0;
-          h2 {
-            @include center-content();
-          }
-          .time-and-more {
-            @include center-content();
-            time {
-              float: none;
-              margin-bottom: .5rem;
-            }
-            a {
-              float: none;
-            }
-          }
-        }
-      }
-      .more {
+      @media (max-width: 767px) {
         @include center-content();
       }
     }
